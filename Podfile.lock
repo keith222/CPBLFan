@@ -1,0 +1,30 @@
+PODS:
+  - Alamofire (4.2.0)
+  - DynamicColor (3.1.0)
+  - Kanna (2.1.1)
+  - Kingfisher (3.2.4)
+  - PKHUD (3.2.1)
+  - SwifterSwift (1.3.7)
+  - SwiftyJSON (3.1.3)
+
+DEPENDENCIES:
+  - Alamofire
+  - DynamicColor (~> 3.1.0)
+  - Kanna (~> 2.1.0)
+  - Kingfisher
+  - PKHUD (~> 3.0)
+  - SwifterSwift
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  DynamicColor: 4dec283a881f7f9d9f3bc88fb5f306724242575f
+  Kanna: 9b4b086c218703f2b94f5b21a466217dd2f9332e
+  Kingfisher: 8d80f39da403cd9c9ee11984e1655f4d6a566cdb
+  PKHUD: 001c11518f125a273ddf026bcc64918423744ea2
+  SwifterSwift: 6c1af62b50e0bcafb4fbf3ca0d99963e3e33adb7
+  SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
+
+PODFILE CHECKSUM: 17b869c6237db16b48ec9e95aac266760cc1d723
+
+COCOAPODS: 1.1.1
