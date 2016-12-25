@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="NewsTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsTableViewCell" rowHeight="200" id="KGk-i7-Jjw" customClass="NewsTableViewCell" customModule="CPBLFan" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X16-ZF-Sib">
+                        <rect key="frame" x="0.0" y="5" width="320" height="194.5"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="to1-Y2-Gab">
+                        <rect key="frame" x="0.0" y="155" width="320" height="44.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中華職棒新聞" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="if4-kf-Qrs">
+                                <rect key="frame" x="8" y="5" width="312" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="2016.01.01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ir-8e-Ras">
+                                <rect key="frame" x="10" y="25.5" width="310" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0039215686274509803" green="0.0039215686274509803" blue="0.0039215686274509803" alpha="0.34999999999999998" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="if4-kf-Qrs" firstAttribute="top" secondItem="to1-Y2-Gab" secondAttribute="top" constant="5" id="3TC-aI-HFy"/>
+                            <constraint firstAttribute="bottom" secondItem="6Ir-8e-Ras" secondAttribute="bottom" constant="5" id="7IQ-49-Ibq"/>
+                            <constraint firstItem="6Ir-8e-Ras" firstAttribute="leading" secondItem="to1-Y2-Gab" secondAttribute="leading" constant="10" id="7T1-7c-GgA"/>
+                            <constraint firstItem="if4-kf-Qrs" firstAttribute="leading" secondItem="to1-Y2-Gab" secondAttribute="leading" constant="8" id="I7I-FH-h46"/>
+                            <constraint firstAttribute="trailing" secondItem="if4-kf-Qrs" secondAttribute="trailing" id="TEZ-00-KVT"/>
+                            <constraint firstAttribute="trailing" secondItem="6Ir-8e-Ras" secondAttribute="trailing" id="VsM-TV-RK7"/>
+                            <constraint firstItem="6Ir-8e-Ras" firstAttribute="top" secondItem="if4-kf-Qrs" secondAttribute="bottom" id="yWA-uc-FIC"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="to1-Y2-Gab" secondAttribute="trailing" id="CnA-mE-oxI"/>
+                    <constraint firstItem="to1-Y2-Gab" firstAttribute="bottom" secondItem="X16-ZF-Sib" secondAttribute="bottom" id="FRV-WI-CZ9"/>
+                    <constraint firstAttribute="trailing" secondItem="X16-ZF-Sib" secondAttribute="trailing" id="aOm-zZ-g36"/>
+                    <constraint firstAttribute="bottom" secondItem="X16-ZF-Sib" secondAttribute="bottom" id="bla-ip-OFt"/>
+                    <constraint firstItem="X16-ZF-Sib" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="hI1-Sm-cjT"/>
+                    <constraint firstItem="X16-ZF-Sib" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="o3s-aG-Y1c"/>
+                    <constraint firstItem="to1-Y2-Gab" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="qPT-3I-bJJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
+            <connections>
+                <outlet property="newsDateLabel" destination="6Ir-8e-Ras" id="Npn-6d-rwx"/>
+                <outlet property="newsImage" destination="X16-ZF-Sib" id="Uf1-PX-1ZH"/>
+                <outlet property="newsTitleLabel" destination="if4-kf-Qrs" id="zcJ-36-Qib"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="183.5"/>
+        </tableViewCell>
+    </objects>
+</document>

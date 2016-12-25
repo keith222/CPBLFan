@@ -3,7 +3,7 @@ PODS:
   - DynamicColor (3.1.0)
   - Kanna (2.1.1)
   - Kingfisher (3.2.4)
-  - PKHUD (3.2.1)
+  - PKHUD (4.1.0)
   - SwifterSwift (1.3.7)
   - SwiftyJSON (3.1.3)
 
@@ -12,7 +12,7 @@ DEPENDENCIES:
   - DynamicColor (~> 3.1.0)
   - Kanna (~> 2.1.0)
   - Kingfisher
-  - PKHUD (~> 3.0)
+  - PKHUD (~> 4.0)
   - SwifterSwift
   - SwiftyJSON
 
@@ -21,10 +21,10 @@ SPEC CHECKSUMS:
   DynamicColor: 4dec283a881f7f9d9f3bc88fb5f306724242575f
   Kanna: 9b4b086c218703f2b94f5b21a466217dd2f9332e
   Kingfisher: 8d80f39da403cd9c9ee11984e1655f4d6a566cdb
-  PKHUD: 001c11518f125a273ddf026bcc64918423744ea2
+  PKHUD: a0ecdee9f67d9b462c0c5e4ba38400292ea6ae6e
   SwifterSwift: 6c1af62b50e0bcafb4fbf3ca0d99963e3e33adb7
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
 
-PODFILE CHECKSUM: 17b869c6237db16b48ec9e95aac266760cc1d723
+PODFILE CHECKSUM: ae7278c8772ebb7c08b767375d805c97cfe06fd8
 
 COCOAPODS: 1.1.1

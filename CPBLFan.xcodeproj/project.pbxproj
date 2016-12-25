@@ -9,13 +9,18 @@
 /* Begin PBXBuildFile section */
 		4942F1D4C2E6FAA4B2E0917F /* Pods_CPBLFan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DA969A0B0630BE49B2AF90 /* Pods_CPBLFan.framework */; };
 		53CBA2A51E0D5F5F0012FFFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2A41E0D5F5F0012FFFB /* AppDelegate.swift */; };
-		53CBA2A71E0D5F5F0012FFFB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2A61E0D5F5F0012FFFB /* FirstViewController.swift */; };
-		53CBA2A91E0D5F5F0012FFFB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2A81E0D5F5F0012FFFB /* SecondViewController.swift */; };
 		53CBA2AC1E0D5F5F0012FFFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CBA2AA1E0D5F5F0012FFFB /* Main.storyboard */; };
 		53CBA2AE1E0D5F5F0012FFFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53CBA2AD1E0D5F5F0012FFFB /* Assets.xcassets */; };
 		53CBA2B11E0D5F5F0012FFFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CBA2AF1E0D5F5F0012FFFB /* LaunchScreen.storyboard */; };
 		53CBA2BC1E0D5F5F0012FFFB /* CPBLFanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2BB1E0D5F5F0012FFFB /* CPBLFanTests.swift */; };
 		53CBA2C71E0D5F5F0012FFFB /* CPBLFanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2C61E0D5F5F0012FFFB /* CPBLFanUITests.swift */; };
+		53CBA2DB1E0D66AB0012FFFB /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2DA1E0D66AB0012FFFB /* APIService.swift */; };
+		53CBA2DE1E0D7DAC0012FFFB /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2DC1E0D7DAC0012FFFB /* NewsTableViewCell.swift */; };
+		53CBA2DF1E0D7DAC0012FFFB /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53CBA2DD1E0D7DAC0012FFFB /* NewsTableViewCell.xib */; };
+		53CBA2E31E0D80BD0012FFFB /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2E21E0D80BD0012FFFB /* NewsViewController.swift */; };
+		53CBA2E71E0D920D0012FFFB /* TableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2E61E0D920D0012FFFB /* TableViewHelper.swift */; };
+		53CBA2EA1E0D96670012FFFB /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2E91E0D96670012FFFB /* NewsViewModel.swift */; };
+		53CBA2EC1E0ECC1E0012FFFB /* NewsContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2EB1E0ECC1E0012FFFB /* NewsContentViewController.swift */; };
 		98576FFE086CBF2D2AAECAC2 /* Pods_CPBLFanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9800F6C1BFD0DC46FE73BFFA /* Pods_CPBLFanTests.framework */; };
 		E585054292EA96FC3BAE7457 /* Pods_CPBLFanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 031AC937497451A2DE3EDB61 /* Pods_CPBLFanUITests.framework */; };
 /* End PBXBuildFile section */
@@ -37,6 +42,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		530152331E0FBABB00AE6FDE /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0214F9294E9FC1F421BE8D43 /* Pods-CPBLFanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPBLFanUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CPBLFanUITests/Pods-CPBLFanUITests.release.xcconfig"; sourceTree = "<group>"; };
 		031AC937497451A2DE3EDB61 /* Pods_CPBLFanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPBLFanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,8 +62,6 @@
 		33A63E445BD3C441C933A21C /* Pods-CPBLFan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPBLFan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CPBLFan/Pods-CPBLFan.debug.xcconfig"; sourceTree = "<group>"; };
 		53CBA2A11E0D5F5E0012FFFB /* CPBLFan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPBLFan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53CBA2A41E0D5F5F0012FFFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		53CBA2A61E0D5F5F0012FFFB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		53CBA2A81E0D5F5F0012FFFB /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		53CBA2AB1E0D5F5F0012FFFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		53CBA2AD1E0D5F5F0012FFFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53CBA2B01E0D5F5F0012FFFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +72,13 @@
 		53CBA2C21E0D5F5F0012FFFB /* CPBLFanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CPBLFanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53CBA2C61E0D5F5F0012FFFB /* CPBLFanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPBLFanUITests.swift; sourceTree = "<group>"; };
 		53CBA2C81E0D5F5F0012FFFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53CBA2DA1E0D66AB0012FFFB /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIService.swift; path = Helper/APIService.swift; sourceTree = "<group>"; };
+		53CBA2DC1E0D7DAC0012FFFB /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsTableViewCell.swift; path = View/NewsTableViewCell.swift; sourceTree = "<group>"; };
+		53CBA2DD1E0D7DAC0012FFFB /* NewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsTableViewCell.xib; path = View/NewsTableViewCell.xib; sourceTree = "<group>"; };
+		53CBA2E21E0D80BD0012FFFB /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsViewController.swift; path = View/ViewController/NewsViewController.swift; sourceTree = "<group>"; };
+		53CBA2E61E0D920D0012FFFB /* TableViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewHelper.swift; path = Helper/TableViewHelper.swift; sourceTree = "<group>"; };
+		53CBA2E91E0D96670012FFFB /* NewsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsViewModel.swift; path = ViewModel/NewsViewModel.swift; sourceTree = "<group>"; };
+		53CBA2EB1E0ECC1E0012FFFB /* NewsContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsContentViewController.swift; path = View/ViewController/NewsContentViewController.swift; sourceTree = "<group>"; };
 		5B0090C7CC4830DD1B064E54 /* Pods-CPBLFanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPBLFanTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CPBLFanTests/Pods-CPBLFanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9800F6C1BFD0DC46FE73BFFA /* Pods_CPBLFanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPBLFanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2DA969A0B0630BE49B2AF90 /* Pods_CPBLFan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPBLFan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,9 +139,11 @@
 		53CBA2A31E0D5F5F0012FFFB /* CPBLFan */ = {
 			isa = PBXGroup;
 			children = (
+				53CBA2E81E0D964B0012FFFB /* ViewModel */,
+				53CBA2D81E0D667C0012FFFB /* View */,
+				53CBA2D71E0D66770012FFFB /* Model */,
+				53CBA2D61E0D66660012FFFB /* Helpers */,
 				53CBA2A41E0D5F5F0012FFFB /* AppDelegate.swift */,
-				53CBA2A61E0D5F5F0012FFFB /* FirstViewController.swift */,
-				53CBA2A81E0D5F5F0012FFFB /* SecondViewController.swift */,
 				53CBA2AA1E0D5F5F0012FFFB /* Main.storyboard */,
 				53CBA2AD1E0D5F5F0012FFFB /* Assets.xcassets */,
 				53CBA2AF1E0D5F5F0012FFFB /* LaunchScreen.storyboard */,
@@ -143,6 +168,49 @@
 				53CBA2C81E0D5F5F0012FFFB /* Info.plist */,
 			);
 			path = CPBLFanUITests;
+			sourceTree = "<group>";
+		};
+		53CBA2D61E0D66660012FFFB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				53CBA2DA1E0D66AB0012FFFB /* APIService.swift */,
+				53CBA2E61E0D920D0012FFFB /* TableViewHelper.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		53CBA2D71E0D66770012FFFB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		53CBA2D81E0D667C0012FFFB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				53CBA2D91E0D66850012FFFB /* ViewController */,
+				53CBA2DC1E0D7DAC0012FFFB /* NewsTableViewCell.swift */,
+				53CBA2DD1E0D7DAC0012FFFB /* NewsTableViewCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		53CBA2D91E0D66850012FFFB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				53CBA2E21E0D80BD0012FFFB /* NewsViewController.swift */,
+				53CBA2EB1E0ECC1E0012FFFB /* NewsContentViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		53CBA2E81E0D964B0012FFFB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				53CBA2E91E0D96670012FFFB /* NewsViewModel.swift */,
+			);
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 		66FD5EA4EBFE2AD74F66A754 /* Frameworks */ = {
@@ -181,6 +249,7 @@
 				53CBA29F1E0D5F5E0012FFFB /* Resources */,
 				FE943A1C9D99A2F89B907D09 /* [CP] Embed Pods Frameworks */,
 				8F5917E1E56841991615686F /* [CP] Copy Pods Resources */,
+				530152331E0FBABB00AE6FDE /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -247,6 +316,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 8MREJM6257;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					53CBA2B61E0D5F5F0012FFFB = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -267,8 +341,8 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				"zh-Hant",
 			);
 			mainGroup = 53CBA2981E0D5F5E0012FFFB;
 			productRefGroup = 53CBA2A21E0D5F5F0012FFFB /* Products */;
@@ -289,6 +363,7 @@
 			files = (
 				53CBA2B11E0D5F5F0012FFFB /* LaunchScreen.storyboard in Resources */,
 				53CBA2AE1E0D5F5F0012FFFB /* Assets.xcassets in Resources */,
+				53CBA2DF1E0D7DAC0012FFFB /* NewsTableViewCell.xib in Resources */,
 				53CBA2AC1E0D5F5F0012FFFB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,9 +527,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53CBA2A91E0D5F5F0012FFFB /* SecondViewController.swift in Sources */,
+				53CBA2DB1E0D66AB0012FFFB /* APIService.swift in Sources */,
+				53CBA2EA1E0D96670012FFFB /* NewsViewModel.swift in Sources */,
 				53CBA2A51E0D5F5F0012FFFB /* AppDelegate.swift in Sources */,
-				53CBA2A71E0D5F5F0012FFFB /* FirstViewController.swift in Sources */,
+				53CBA2DE1E0D7DAC0012FFFB /* NewsTableViewCell.swift in Sources */,
+				53CBA2EC1E0ECC1E0012FFFB /* NewsContentViewController.swift in Sources */,
+				53CBA2E71E0D920D0012FFFB /* TableViewHelper.swift in Sources */,
+				53CBA2E31E0D80BD0012FFFB /* NewsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +592,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -563,6 +643,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -606,7 +687,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 33A63E445BD3C441C933A21C /* Pods-CPBLFan.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8MREJM6257;
 				INFOPLIST_FILE = CPBLFan/Info.plist;
@@ -621,7 +702,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F3FC4FF9ECC545551F027CFE /* Pods-CPBLFan.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8MREJM6257;
 				INFOPLIST_FILE = CPBLFan/Info.plist;

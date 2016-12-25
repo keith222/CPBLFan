@@ -18,7 +18,9 @@ target 'CPBLFan' do
   #Pods about UI
   pod 'Kingfisher'
   pod 'DynamicColor', '~> 3.1.0'
-  pod 'PKHUD', '~> 3.0'
+  pod 'PKHUD', '~> 4.0'
+  
+  #Google APIS
 
   target 'CPBLFanTests' do
     inherit! :search_paths
