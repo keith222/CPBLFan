@@ -25,23 +25,28 @@ class NewsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //show loading activity view
         HUD.show(.progress)
         
+        //set navigation bar title
         self.navigationItem.title = "CPBL Fans"
         
+        //load and show news from cpbl website
         self.newsViewModel.fetchNews(from: page, handler: { [unowned self] data in
             
             let source: [NewsViewModel] = data.map{ value -> NewsViewModel in
                 return NewsViewModel(data: value)
             }
             
+            //use tableview helper class to seperate uitableview delegate and datasource for reuse
             self.tableViewHelper = TableViewHelper(
                 tableView: self.newsTableView,
                 nibName: "NewsTableViewCell",
                 source: source as [AnyObject],
                 selectAction:{ [unowned self] num in
-                    let destion: NewsContentViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsContentViewController") as! NewsContentViewController
+                    //closure for tableview cell tapping
                     
+                    let destion: NewsContentViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsContentViewController") as! NewsContentViewController
                     destion.newsUrl = data[num].newsUrl
                     destion.newsTitle = data[num].title
                     destion.newsDate = data[num].date
@@ -60,6 +65,7 @@ class NewsViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
+        
         // Tab bar height + Navigation bar height
         let adjustForTabbarInsets = UIEdgeInsets(top: -5, left: 0, bottom: 0, right: 0)
         self.newsTableView.contentInset = adjustForTabbarInsets

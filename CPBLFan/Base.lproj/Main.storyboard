@@ -100,7 +100,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="影音" id="02H-Jm-f2u"/>
+                    <tabBarItem key="tabBarItem" title="影音" image="video" selectedImage="video-fill" id="02H-Jm-f2u"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ljc-3c-WNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -265,5 +265,7 @@
         <image name="calendar-fill" width="16" height="16"/>
         <image name="news" width="16" height="16"/>
         <image name="news-fill" width="16" height="16"/>
+        <image name="video" width="16" height="16"/>
+        <image name="video-fill" width="16" height="16"/>
     </resources>
 </document>

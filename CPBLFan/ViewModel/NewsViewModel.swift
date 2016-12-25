@@ -20,24 +20,24 @@ class NewsViewModel{
 
     init(){}
     
-    init(data: (title:String, date:String, imageUrl:String, newsUrl: String)){
+    init(data: News){
         self.imageURL = data.imageUrl.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
         self.newsUrl = data.newsUrl.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
         self.title = data.title
         self.date = data.date
     }
     
-    func fetchNews(from page: Int, handler: @escaping (([(title:String, date:String, imageUrl:String, newsUrl: String)])->())){
+    func fetchNews(from page: Int, handler: @escaping (([News])->())){
         let route = "/news/lists/news_lits.html?per_page=\(page)"
         APIService.request(.get, route: route, completionHandler: { text in
-            var news: [(title: String, date: String, imageUrl: String, newsUrl: String)]? = []
+            var news: [News]? = []
             
             if let doc = HTML(html: text, encoding: .utf8){
                 let topNewsTitle = doc.at_css(".news_head_title > a")?.text
                 let topNewsDate = doc.at_css(".news_head_date")?.text
                 let topNewsImageUrl = doc.at_css(".games_news_pic > a > img")?["src"]?.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
                 let topNewsUrl = doc.at_css(".games_news_pic > a")?["href"]?.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
-                let topNewsElemet = (topNewsTitle!, topNewsDate!, topNewsImageUrl!, topNewsUrl!)
+                let topNewsElemet: News = News(title: topNewsTitle!, date: topNewsDate!, imageUrl: topNewsImageUrl!, newsUrl: topNewsUrl!)
                 news?.append(topNewsElemet)
                 
                 for (index,node) in doc.css(".news_row").enumerated(){
@@ -53,7 +53,7 @@ class NewsViewModel{
                     
                     let newsImageUrl = node.at_css(".news_row_pic > img")?["src"]!.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
                     let newsUrl = node.at_css(".news_row_cont > div > a")?["href"]!.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
-                    let newsElement = (newsTitle!, newsDate!, newsImageUrl!, newsUrl!)
+                    let newsElement: News = News(title: newsTitle!, date: newsDate!, imageUrl: newsImageUrl!, newsUrl: newsUrl!)
                     news?.append(newsElement)
                 }
                 
