@@ -58,7 +58,6 @@
                     <constraint firstItem="to1-Y2-Gab" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="qPT-3I-bJJ"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
             <connections>
                 <outlet property="newsDateLabel" destination="6Ir-8e-Ras" id="Npn-6d-rwx"/>
                 <outlet property="newsImage" destination="X16-ZF-Sib" id="Uf1-PX-1ZH"/>
