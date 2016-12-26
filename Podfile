@@ -12,6 +12,7 @@ target 'CPBLFan' do
 
   #Pods about internet request/response/parse
   pod 'Alamofire'
+  pod 'AlamofireObjectMapper', '~> 4.0'
   pod 'SwiftyJSON'
   pod 'Kanna', '~> 2.1.0'
 
