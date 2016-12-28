@@ -24,13 +24,13 @@
                         <rect key="frame" x="0.0" y="155" width="320" height="44.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中華職棒新聞" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="if4-kf-Qrs">
-                                <rect key="frame" x="8" y="5" width="312" height="20.5"/>
+                                <rect key="frame" x="8" y="5" width="304" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="2016.01.01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ir-8e-Ras">
-                                <rect key="frame" x="10" y="25.5" width="310" height="14"/>
+                                <rect key="frame" x="10" y="25.5" width="302" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -42,8 +42,8 @@
                             <constraint firstAttribute="bottom" secondItem="6Ir-8e-Ras" secondAttribute="bottom" constant="5" id="7IQ-49-Ibq"/>
                             <constraint firstItem="6Ir-8e-Ras" firstAttribute="leading" secondItem="to1-Y2-Gab" secondAttribute="leading" constant="10" id="7T1-7c-GgA"/>
                             <constraint firstItem="if4-kf-Qrs" firstAttribute="leading" secondItem="to1-Y2-Gab" secondAttribute="leading" constant="8" id="I7I-FH-h46"/>
-                            <constraint firstAttribute="trailing" secondItem="if4-kf-Qrs" secondAttribute="trailing" id="TEZ-00-KVT"/>
-                            <constraint firstAttribute="trailing" secondItem="6Ir-8e-Ras" secondAttribute="trailing" id="VsM-TV-RK7"/>
+                            <constraint firstAttribute="trailing" secondItem="if4-kf-Qrs" secondAttribute="trailing" constant="8" id="TEZ-00-KVT"/>
+                            <constraint firstAttribute="trailing" secondItem="6Ir-8e-Ras" secondAttribute="trailing" constant="8" id="VsM-TV-RK7"/>
                             <constraint firstItem="6Ir-8e-Ras" firstAttribute="top" secondItem="if4-kf-Qrs" secondAttribute="bottom" id="yWA-uc-FIC"/>
                         </constraints>
                     </view>
