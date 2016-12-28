@@ -10,7 +10,7 @@ import UIKit
 import DynamicColor
 import Kingfisher
 
-class NewsTableViewCell: UITableViewCell, BindView {
+class NewsCell: UITableViewCell, BindView {
 
     @IBOutlet weak var newsImage: UIImageView!
     @IBOutlet weak var newsTitleLabel: UILabel!

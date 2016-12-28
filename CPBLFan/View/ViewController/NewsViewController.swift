@@ -41,7 +41,7 @@ class NewsViewController: UIViewController {
         let footerView = UIView(frame: CGRect(x: 0, y: 5, width: self.view.bounds.size.width, height: 50))
         let activity: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         activity.frame = CGRect(x: (self.view.bounds.size.width - 44) / 2, y: 5, width: 44, height: 44)
-        activity.transform = CGAffineTransform(scaleX: 2, y: 2)
+        activity.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
         footerView.addSubview(activity)
         footerView.isHidden = true
         self.newsTableView.tableFooterView = footerView
@@ -57,7 +57,7 @@ class NewsViewController: UIViewController {
             //use tableview helper class to seperate uitableview delegate and datasource for reuse
             self.tableViewHelper = TableViewHelper(
                 tableView: self.newsTableView,
-                nibName: "NewsTableViewCell",
+                nibName: "NewsCell",
                 source: source as [AnyObject],
                 selectAction:{ [unowned self] num in
                     //closure for tableview cell tapping
@@ -79,7 +79,6 @@ class NewsViewController: UIViewController {
                     })
                 }
             )
-            
             footerView.isHidden = false
             
             HUD.hide(animated: true)
