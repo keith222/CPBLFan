@@ -62,7 +62,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="個人成績" id="GS0-Rn-d1S"/>
+                    <tabBarItem key="tabBarItem" title="個人成績" image="statistics" selectedImage="statistics-fill" id="GS0-Rn-d1S"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tgH-Qn-B9Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,7 +81,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="聯盟排名" id="5oG-hN-c4u"/>
+                    <tabBarItem key="tabBarItem" title="聯盟排名" image="rank" selectedImage="rank-fill" id="5oG-hN-c4u"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t9U-UZ-sVJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -265,6 +265,10 @@
         <image name="calendar-fill" width="16" height="16"/>
         <image name="news" width="16" height="16"/>
         <image name="news-fill" width="16" height="16"/>
+        <image name="rank" width="16" height="16"/>
+        <image name="rank-fill" width="16" height="16"/>
+        <image name="statistics" width="16" height="16"/>
+        <image name="statistics-fill" width="16" height="16"/>
         <image name="video" width="16" height="16"/>
         <image name="video-fill" width="16" height="16"/>
     </resources>
