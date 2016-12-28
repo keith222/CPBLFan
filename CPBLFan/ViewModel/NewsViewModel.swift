@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 import Kanna
+import ObjectMapper
 
 class NewsViewModel{
     
@@ -37,7 +38,7 @@ class NewsViewModel{
                 let topNewsDate = doc.at_css(".news_head_date")?.text
                 let topNewsImageUrl = doc.at_css(".games_news_pic > a > img")?["src"]?.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
                 let topNewsUrl = doc.at_css(".games_news_pic > a")?["href"]?.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
-                let topNewsElemet: News = News(title: topNewsTitle!, date: topNewsDate!, imageUrl: topNewsImageUrl!, newsUrl: topNewsUrl!)
+                let topNewsElemet: News = News(JSON: ["title": topNewsTitle!, "date": topNewsDate!, "imageUrl": topNewsImageUrl!, "newsUrl": topNewsUrl!])!
                 news?.append(topNewsElemet)
                 
                 for (index,node) in doc.css(".news_row").enumerated(){
@@ -53,7 +54,7 @@ class NewsViewModel{
                     
                     let newsImageUrl = node.at_css(".news_row_pic > img")?["src"]!.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
                     let newsUrl = node.at_css(".news_row_cont > div > a")?["href"]!.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
-                    let newsElement: News = News(title: newsTitle!, date: newsDate!, imageUrl: newsImageUrl!, newsUrl: newsUrl!)
+                    let newsElement:News = News(JSON: ["title": newsTitle!, "date": newsDate!, "imageUrl": newsImageUrl!, "newsUrl": newsUrl!])!
                     news?.append(newsElement)
                 }
                 
