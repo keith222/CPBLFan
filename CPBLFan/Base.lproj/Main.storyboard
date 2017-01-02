@@ -87,10 +87,10 @@
             </objects>
             <point key="canvasLocation" x="754" y="1588"/>
         </scene>
-        <!--影音-->
+        <!--Video View Controller-->
         <scene sceneID="2yJ-8p-zof">
             <objects>
-                <viewController id="1l8-se-7xg" sceneMemberID="viewController">
+                <viewController id="1l8-se-7xg" customClass="VideoViewController" customModule="CPBLFan" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qyq-zK-pBy"/>
                         <viewControllerLayoutGuide type="bottom" id="DCs-K4-QJd"/>
@@ -98,13 +98,28 @@
                     <view key="view" contentMode="scaleToFill" id="50r-Uc-tX2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sy3-aQ-f2D">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DCs-K4-QJd" firstAttribute="top" secondItem="sy3-aQ-f2D" secondAttribute="bottom" id="0eJ-0A-hbb"/>
+                            <constraint firstAttribute="trailing" secondItem="sy3-aQ-f2D" secondAttribute="trailing" id="YAg-Kb-d4x"/>
+                            <constraint firstItem="sy3-aQ-f2D" firstAttribute="top" secondItem="qyq-zK-pBy" secondAttribute="bottom" id="aQC-lp-1WM"/>
+                            <constraint firstItem="sy3-aQ-f2D" firstAttribute="leading" secondItem="50r-Uc-tX2" secondAttribute="leading" id="qwI-VW-XOM"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="影音" image="video" selectedImage="video-fill" id="02H-Jm-f2u"/>
+                    <navigationItem key="navigationItem" id="wDa-si-vrH"/>
+                    <connections>
+                        <outlet property="videoTableView" destination="sy3-aQ-f2D" id="n60-da-BQu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ljc-3c-WNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="753" y="2348"/>
+            <point key="canvasLocation" x="1692" y="2347.3763118440779"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -122,7 +137,7 @@
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="qxs-ee-fm5" kind="relationship" relationship="viewControllers" id="7fn-xe-oT6"/>
                         <segue destination="zlH-IO-f3i" kind="relationship" relationship="viewControllers" id="2Fw-4N-5an"/>
-                        <segue destination="1l8-se-7xg" kind="relationship" relationship="viewControllers" id="wQD-8T-ipY"/>
+                        <segue destination="GgG-HH-Fon" kind="relationship" relationship="viewControllers" id="wQD-8T-ipY"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -258,6 +273,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eNT-GV-qhF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="774" y="-978"/>
+        </scene>
+        <!--影音-->
+        <scene sceneID="rnQ-jj-oeH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GgG-HH-Fon" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="影音" image="video" selectedImage="video-fill" id="02H-Jm-f2u"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="L0g-zK-8wX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1l8-se-7xg" kind="relationship" relationship="rootViewController" id="ULQ-vF-NgS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NnW-bI-Zuv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="752.79999999999995" y="2347.3763118440779"/>
         </scene>
     </scenes>
     <resources>

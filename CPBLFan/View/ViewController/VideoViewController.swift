@@ -1,8 +1,8 @@
 //
-//  NewsViewController.swift
+//  VideoViewController.swift
 //  CPBLFan
 //
-//  Created by Yang Tun-Kai on 2016/12/23.
+//  Created by Yang Tun-Kai on 2016/12/29.
 //  Copyright © 2016年 Sparkr. All rights reserved.
 //
 
@@ -11,30 +11,30 @@ import Kingfisher
 import PKHUD
 import DynamicColor
 
-class NewsViewController: UIViewController {
+class VideoViewController: UIViewController {
     
-    @IBOutlet weak var newsTableView: UITableView!
-    var page: Int = 0
+    @IBOutlet weak var videoTableView: UITableView!
+    var nextPageToken: String = ""
     
     var tableViewHelper: TableViewHelper?
     
-    lazy var newsViewModel = {
-        return NewsViewModel()
+    lazy var videoViewModel = {
+        return VideoViewModel()
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         //show loading activity view
         HUD.show(.progress)
         
         //set navigation bar title
-        self.navigationItem.title = "CPBL Fans"
+        self.navigationItem.title = "影音"
         
         //set tableview layout
-        self.newsTableView.separatorStyle = .none
-        self.newsTableView.estimatedRowHeight = 200
-        self.newsTableView.rowHeight = UITableViewAutomaticDimension
+        self.videoTableView.separatorStyle = .none
+        self.videoTableView.estimatedRowHeight = 200
+        self.videoTableView.rowHeight = UITableViewAutomaticDimension
         
         //set activity indicator in foot view
         let footerView = UIView(frame: CGRect(x: 0, y: 5, width: self.view.bounds.size.width, height: 50))
@@ -43,36 +43,34 @@ class NewsViewController: UIViewController {
         activity.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
         footerView.addSubview(activity)
         footerView.isHidden = true
-        self.newsTableView.tableFooterView = footerView
+        self.videoTableView.tableFooterView = footerView
         activity.startAnimating()
         
-        //load and show news from cpbl website
-        self.newsViewModel.fetchNews(from: page, handler: { [unowned self] data in
-            
-            var source: [NewsViewModel] = data.map{ value -> NewsViewModel in
-                return NewsViewModel(data: value)
+        self.videoViewModel.fetchVideos(handler: { [unowned self] (video,nextPageToken) in
+            var source: [VideoViewModel] = video.map{ value -> VideoViewModel in
+                return VideoViewModel(data: value)
             }
             
+            //token for load next page
+            self.nextPageToken = nextPageToken!
             //use tableview helper class to seperate uitableview delegate and datasource for reuse
             self.tableViewHelper = TableViewHelper(
-                tableView: self.newsTableView,
-                nibName: "NewsCell",
+                tableView: self.videoTableView,
+                nibName: "VideoCell",
                 source: source as [AnyObject],
                 selectAction:{ [unowned self] num in
                     //closure for tableview cell tapping
-                    let destion: NewsContentViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsContentViewController") as! NewsContentViewController
-                    destion.newsUrl = data[num].newsUrl
-                    destion.newsTitle = data[num].title
-                    destion.newsDate = data[num].date
-                    destion.newsImageUrl = data[num].imageUrl
-                    self.navigationController?.pushViewController(destion, animated: true)
+//                    let destion: NewsContentViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsContentViewController") as! NewsContentViewController
+                    print(video[num].videoId)
+                    
                 },
                 refreshAction:{ page in
-//                  closure for refresh(load more)data
-                    self.newsViewModel.fetchNews(from: (page - 1), handler: { [unowned self] data in
-                        let moreSource: [NewsViewModel] = data.map{ value -> NewsViewModel in
-                            return NewsViewModel(data: value)
+                    //closure for refresh(load more)data
+                    self.videoViewModel.fetchVideos(from: self.nextPageToken, handler: { [unowned self] (video,nextPageToken) in
+                        let moreSource: [VideoViewModel] = video.map{ value -> VideoViewModel in
+                            return VideoViewModel(data: value)
                         }
+                        self.nextPageToken = nextPageToken!
                         source.append(contentsOf: moreSource)
                         self.tableViewHelper?.savedData = source
                     })
@@ -82,14 +80,16 @@ class NewsViewController: UIViewController {
             
             HUD.hide(animated: true)
         })
+        
     }
-    
+
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
         // Tab bar height + Navigation bar height
         let adjustForTabbarInsets = UIEdgeInsets(top: -5, left: 0, bottom: 0, right: 0)
-        self.newsTableView.contentInset = adjustForTabbarInsets
-        self.newsTableView.scrollIndicatorInsets = adjustForTabbarInsets
+        self.videoTableView.contentInset = adjustForTabbarInsets
+        self.videoTableView.scrollIndicatorInsets = adjustForTabbarInsets
     }
+
 }

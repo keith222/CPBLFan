@@ -29,7 +29,7 @@ class NewsViewModel{
     }
     
     func fetchNews(from page: Int, handler: @escaping (([News])->())){
-        let route = "/news/lists/news_lits.html?per_page=\(page)"
+        let route = "\(APIService.CPBLSourceURL)/news/lists/news_lits.html?per_page=\(page)"
         APIService.request(.get, route: route, completionHandler: { text in
             var news: [News]? = []
             

@@ -35,7 +35,8 @@ class NewsContentViewController: UIViewController {
         
         HUD.show(.progress)
         
-        self.newsViewModel.fetchNewsContent(from: newsUrl, handler: { [weak self] content in
+        let route = "\(APIService.CPBLSourceURL)\(newsUrl)"
+        self.newsViewModel.fetchNewsContent(from: route, handler: { [weak self] content in
             let attributedString = NSMutableAttributedString(string: content)
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.lineSpacing = 5
@@ -74,7 +75,7 @@ class NewsContentViewController: UIViewController {
     }
     
     func shareNews(){
-        let news = "\(APIService.CPBLsourceURL)\(self.newsUrl)"
+        let news = "\(APIService.CPBLSourceURL)\(self.newsUrl)"
         let activity: UIActivityViewController = UIActivityViewController(activityItems: [news], applicationActivities: nil)
         self.present(activity, animated: true, completion: nil)
     }

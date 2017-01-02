@@ -20,7 +20,6 @@ class NewsCell: UITableViewCell, BindView {
         super.awakeFromNib()
         // Initialization code
         self.setUp()
-        
     }
     
     func setUp(){
@@ -36,6 +35,7 @@ class NewsCell: UITableViewCell, BindView {
     func bindViewModel(_ viewModel: Any) {
 
         if let newsViewModel = viewModel as? NewsViewModel{
+            //cell content
             self.newsImage.kf.setImage(with: URL(string: newsViewModel.imageURL!))
             self.newsTitleLabel.text = newsViewModel.title!
             self.newsDateLabel.text = newsViewModel.date!

@@ -14,14 +14,14 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="199"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Di2-yS-OvK">
-                        <rect key="frame" x="0.0" y="5" width="320" height="195"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Di2-yS-OvK">
+                        <rect key="frame" x="0.0" y="5" width="320" height="194"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y8i-5f-1dw">
-                        <rect key="frame" x="0.0" y="155.5" width="320" height="44.5"/>
+                        <rect key="frame" x="0.0" y="154" width="320" height="45"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中華職棒影片" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDa-Qe-4sX">
                                 <rect key="frame" x="8" y="5" width="304" height="21"/>
@@ -30,13 +30,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="2016.01.01" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3JX-po-oeb">
-                                <rect key="frame" x="10" y="26" width="252.5" height="14"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99:59:59" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rz9-8X-pTj">
-                                <rect key="frame" x="262.5" y="26" width="49.5" height="14"/>
+                                <rect key="frame" x="10" y="26" width="56" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -47,12 +41,9 @@
                             <constraint firstItem="GDa-Qe-4sX" firstAttribute="top" secondItem="Y8i-5f-1dw" secondAttribute="top" constant="5" id="6Ip-yZ-HHP"/>
                             <constraint firstAttribute="trailing" secondItem="GDa-Qe-4sX" secondAttribute="trailing" constant="8" id="EjF-io-yvC"/>
                             <constraint firstItem="3JX-po-oeb" firstAttribute="top" secondItem="GDa-Qe-4sX" secondAttribute="bottom" id="Jrd-7d-ShG"/>
-                            <constraint firstAttribute="trailing" secondItem="rz9-8X-pTj" secondAttribute="trailing" constant="8" id="ORO-SI-fpu"/>
                             <constraint firstItem="3JX-po-oeb" firstAttribute="leading" secondItem="Y8i-5f-1dw" secondAttribute="leading" constant="10" id="TsI-R1-w53"/>
-                            <constraint firstItem="rz9-8X-pTj" firstAttribute="leading" secondItem="3JX-po-oeb" secondAttribute="trailing" id="aUQ-Kx-epM"/>
                             <constraint firstItem="GDa-Qe-4sX" firstAttribute="leading" secondItem="Y8i-5f-1dw" secondAttribute="leading" constant="8" id="hr1-IG-gSS"/>
                             <constraint firstAttribute="bottom" secondItem="3JX-po-oeb" secondAttribute="bottom" constant="5" id="hrW-3T-8Sd"/>
-                            <constraint firstItem="rz9-8X-pTj" firstAttribute="centerY" secondItem="3JX-po-oeb" secondAttribute="centerY" id="qvU-3F-ftF"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -67,12 +58,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="dateLabel" destination="3JX-po-oeb" id="84h-5H-4p8"/>
-                <outlet property="title" destination="GDa-Qe-4sX" id="yOe-KP-Bt0"/>
-                <outlet property="titleLabel" destination="GDa-Qe-4sX" id="Fqp-Lq-bsH"/>
                 <outlet property="videoDateLabel" destination="3JX-po-oeb" id="IU2-b9-Dgq"/>
-                <outlet property="videoDurationLabel" destination="rz9-8X-pTj" id="WLD-Yb-po8"/>
-                <outlet property="videoImage" destination="Di2-yS-OvK" id="b3A-Rr-9if"/>
                 <outlet property="videoImageView" destination="Di2-yS-OvK" id="Ece-V2-wHA"/>
                 <outlet property="videoTitleLabel" destination="GDa-Qe-4sX" id="R8Q-FP-qns"/>
             </connections>

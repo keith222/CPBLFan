@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4942F1D4C2E6FAA4B2E0917F /* Pods_CPBLFan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DA969A0B0630BE49B2AF90 /* Pods_CPBLFan.framework */; };
 		53215D191E12B3EF00A878B3 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53215D181E12B3EF00A878B3 /* Video.swift */; };
+		534B157A1E16CE6B009EA85C /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B15791E16CE6B009EA85C /* VideoViewModel.swift */; };
+		5354ABE41E1553320034D9E2 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5354ABE31E1553320034D9E2 /* VideoViewController.swift */; };
 		53788A211E10070F00C3F04B /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53788A201E10070F00C3F04B /* News.swift */; };
 		53A6FE2F1E13F72700B68243 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A6FE2D1E13F72700B68243 /* VideoCell.swift */; };
 		53A6FE301E13F72700B68243 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53A6FE2E1E13F72700B68243 /* VideoCell.xib */; };
@@ -65,6 +67,8 @@
 		317D3554E844AE677F4D245D /* Pods-CPBLFanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPBLFanUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CPBLFanUITests/Pods-CPBLFanUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		33A63E445BD3C441C933A21C /* Pods-CPBLFan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPBLFan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CPBLFan/Pods-CPBLFan.debug.xcconfig"; sourceTree = "<group>"; };
 		53215D181E12B3EF00A878B3 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Video.swift; path = Model/Video.swift; sourceTree = "<group>"; };
+		534B15791E16CE6B009EA85C /* VideoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoViewModel.swift; path = ViewModel/VideoViewModel.swift; sourceTree = "<group>"; };
+		5354ABE31E1553320034D9E2 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoViewController.swift; path = View/ViewController/VideoViewController.swift; sourceTree = "<group>"; };
 		53788A201E10070F00C3F04B /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = News.swift; path = Model/News.swift; sourceTree = "<group>"; };
 		53A6FE2D1E13F72700B68243 /* VideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoCell.swift; path = View/VideoCell.swift; sourceTree = "<group>"; };
 		53A6FE2E1E13F72700B68243 /* VideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VideoCell.xib; path = View/VideoCell.xib; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 			children = (
 				53CBA2E21E0D80BD0012FFFB /* NewsViewController.swift */,
 				53CBA2EB1E0ECC1E0012FFFB /* NewsContentViewController.swift */,
+				5354ABE31E1553320034D9E2 /* VideoViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				53CBA2E91E0D96670012FFFB /* NewsViewModel.swift */,
+				534B15791E16CE6B009EA85C /* VideoViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -546,9 +552,11 @@
 				53CBA2A51E0D5F5F0012FFFB /* AppDelegate.swift in Sources */,
 				53215D191E12B3EF00A878B3 /* Video.swift in Sources */,
 				53A6FE2F1E13F72700B68243 /* VideoCell.swift in Sources */,
+				5354ABE41E1553320034D9E2 /* VideoViewController.swift in Sources */,
 				53CBA2DE1E0D7DAC0012FFFB /* NewsCell.swift in Sources */,
 				53CBA2EC1E0ECC1E0012FFFB /* NewsContentViewController.swift in Sources */,
 				53CBA2E71E0D920D0012FFFB /* TableViewHelper.swift in Sources */,
+				534B157A1E16CE6B009EA85C /* VideoViewModel.swift in Sources */,
 				53CBA2E31E0D80BD0012FFFB /* NewsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
