@@ -21,7 +21,8 @@ target 'CPBLFan' do
   pod 'DynamicColor', '~> 3.1.0'
   pod 'PKHUD', '~> 4.0'
   
-  #Google APIS
+  #Google APIs
+  pod 'youtube-ios-player-helper', '~> 0.1.4'
 
   target 'CPBLFanTests' do
     inherit! :search_paths

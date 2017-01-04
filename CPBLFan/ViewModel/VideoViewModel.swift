@@ -28,7 +28,7 @@ class VideoViewModel{
     }
     
     func fetchVideos(from pageToken: String = "", handler: @escaping (([Video],String?)->())){
-        let route = "\(APIService.YoutubeAPIURL)search?part=snippet&channelId=UCDt9GAqyRzc2e5BNxPrwZrw&maxResults=15&pageToken=\(pageToken)&key=\(APIService.YoutubeAPIKey)"
+        let route = "\(APIService.YoutubeAPIURL)search?part=snippet&channelId=UCDt9GAqyRzc2e5BNxPrwZrw&maxResults=15&order=date&pageToken=\(pageToken)&key=\(APIService.YoutubeAPIKey)"
         APIService.request(.get, route: route, completionHandler: { text in
             if let dataFromString = text.data(using: .utf8, allowLossyConversion: false){
                 let json = JSON(data: dataFromString)

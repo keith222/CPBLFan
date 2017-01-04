@@ -25,18 +25,18 @@ class VideoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //show loading activity view
+        // show loading activity view
         HUD.show(.progress)
         
-        //set navigation bar title
+        // set navigation bar title
         self.navigationItem.title = "影音"
         
-        //set tableview layout
+        // set tableview layout
         self.videoTableView.separatorStyle = .none
         self.videoTableView.estimatedRowHeight = 200
         self.videoTableView.rowHeight = UITableViewAutomaticDimension
         
-        //set activity indicator in foot view
+        // set activity indicator in foot view
         let footerView = UIView(frame: CGRect(x: 0, y: 5, width: self.view.bounds.size.width, height: 50))
         let activity: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         activity.frame = CGRect(x: (self.view.bounds.size.width - 44) / 2, y: 5, width: 44, height: 44)
@@ -53,19 +53,19 @@ class VideoViewController: UIViewController {
             
             //token for load next page
             self.nextPageToken = nextPageToken!
-            //use tableview helper class to seperate uitableview delegate and datasource for reuse
+            // use tableview helper class to seperate uitableview delegate and datasource for reuse
             self.tableViewHelper = TableViewHelper(
                 tableView: self.videoTableView,
                 nibName: "VideoCell",
                 source: source as [AnyObject],
                 selectAction:{ [unowned self] num in
-                    //closure for tableview cell tapping
-//                    let destion: NewsContentViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsContentViewController") as! NewsContentViewController
-                    print(video[num].videoId)
-                    
+                    // closure for tableview cell tapping
+                    let destination: VideoPlayerViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "VideoPlayerViewController") as! VideoPlayerViewController
+                    destination.videoId = video[num].videoId
+                    self.present(destination, animated: true, completion: nil)
                 },
                 refreshAction:{ page in
-                    //closure for refresh(load more)data
+                    // closure for refresh(load more)data
                     self.videoViewModel.fetchVideos(from: self.nextPageToken, handler: { [unowned self] (video,nextPageToken) in
                         let moreSource: [VideoViewModel] = video.map{ value -> VideoViewModel in
                             return VideoViewModel(data: value)

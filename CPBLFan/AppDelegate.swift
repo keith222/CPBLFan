@@ -45,6 +45,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        if self.window?.rootViewController?.presentedViewController is VideoPlayerViewController{
+            let videoPlayer = self.window?.rootViewController?.presentedViewController as! VideoPlayerViewController
+            return (videoPlayer.isPresented) ? .all : .portrait
+        }else{
+            return .portrait
+        }
+    }
 }
 

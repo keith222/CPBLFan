@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,7 +13,7 @@
         <!--賽程-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="CPBLFan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -22,14 +23,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="83" y="313" width="210" height="42"/>
+                                <rect key="frame" x="82.5" y="312.5" width="210" height="42"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="81" y="363" width="215" height="17"/>
+                                <rect key="frame" x="80.5" y="362.5" width="215" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -66,7 +67,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tgH-Qn-B9Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="914" y="832"/>
+            <point key="canvasLocation" x="774" y="444"/>
         </scene>
         <!--聯盟排名-->
         <scene sceneID="pPE-7s-WHg">
@@ -85,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t9U-UZ-sVJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="754" y="1588"/>
+            <point key="canvasLocation" x="774" y="1164"/>
         </scene>
         <!--Video View Controller-->
         <scene sceneID="2yJ-8p-zof">
@@ -115,11 +116,76 @@
                     <navigationItem key="navigationItem" id="wDa-si-vrH"/>
                     <connections>
                         <outlet property="videoTableView" destination="sy3-aQ-f2D" id="n60-da-BQu"/>
+                        <segue destination="2Pf-tX-yeC" kind="presentation" identifier="modalToVideo" id="ZaF-oz-jiP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ljc-3c-WNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1692" y="2347.3763118440779"/>
+            <point key="canvasLocation" x="1628" y="1966"/>
+        </scene>
+        <!--Video Player View Controller-->
+        <scene sceneID="gF5-SV-uH6">
+            <objects>
+                <viewController storyboardIdentifier="VideoPlayerViewController" id="2Pf-tX-yeC" customClass="VideoPlayerViewController" customModule="CPBLFan" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9i3-L7-PXv"/>
+                        <viewControllerLayoutGuide type="bottom" id="K1U-vC-owk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wVj-gn-cTs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cK8-Ql-tpm" customClass="YTPlayerView">
+                                <rect key="frame" x="0.0" y="216.5" width="375" height="234"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="234" id="E0n-L2-jR1"/>
+                                    <constraint firstAttribute="width" secondItem="cK8-Ql-tpm" secondAttribute="height" multiplier="125:78" id="rYS-57-E6M"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="E0n-L2-jR1"/>
+                                        <exclude reference="rYS-57-E6M"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="E0n-L2-jR1"/>
+                                        <include reference="rYS-57-E6M"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cK8-Ql-tpm" firstAttribute="centerY" secondItem="wVj-gn-cTs" secondAttribute="centerY" id="AQz-BX-8tV"/>
+                            <constraint firstAttribute="trailing" secondItem="cK8-Ql-tpm" secondAttribute="trailing" id="Qd6-dr-rxj"/>
+                            <constraint firstItem="K1U-vC-owk" firstAttribute="top" secondItem="cK8-Ql-tpm" secondAttribute="bottom" id="aqW-lB-h4t"/>
+                            <constraint firstItem="cK8-Ql-tpm" firstAttribute="leading" secondItem="wVj-gn-cTs" secondAttribute="leading" id="b8d-vb-NtF"/>
+                            <constraint firstItem="cK8-Ql-tpm" firstAttribute="centerX" secondItem="wVj-gn-cTs" secondAttribute="centerX" id="w1g-Dz-kda"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Qd6-dr-rxj"/>
+                                <exclude reference="b8d-vb-NtF"/>
+                                <exclude reference="aqW-lB-h4t"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="Qd6-dr-rxj"/>
+                                <include reference="b8d-vb-NtF"/>
+                                <include reference="aqW-lB-h4t"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="videoPlayView" destination="cK8-Ql-tpm" id="Rdj-wO-Hal"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bsr-eF-Fv2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2428" y="1965.0674662668666"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -211,7 +277,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新聞新聞新聞新聞新聞新聞新聞新聞新聞新聞新聞新聞" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dl-3u-23C">
-                                        <rect key="frame" x="15" y="278.5" width="345" height="41"/>
+                                        <rect key="frame" x="15" y="278.5" width="345" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -291,7 +357,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NnW-bI-Zuv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="752.79999999999995" y="2347.3763118440779"/>
+            <point key="canvasLocation" x="774" y="1966"/>
         </scene>
     </scenes>
     <resources>

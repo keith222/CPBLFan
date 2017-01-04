@@ -35,6 +35,7 @@ class NewsContentViewController: UIViewController {
         
         HUD.show(.progress)
         
+        // get news content
         let route = "\(APIService.CPBLSourceURL)\(newsUrl)"
         self.newsViewModel.fetchNewsContent(from: route, handler: { [weak self] content in
             let attributedString = NSMutableAttributedString(string: content)
@@ -53,8 +54,8 @@ class NewsContentViewController: UIViewController {
     }
     
     func setUp(){
-        let noTitleBackButton: UIBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = noTitleBackButton
+        
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem.noTitleBarButtonItem()
         
         let fontButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "font"), style: .plain, target: self, action: #selector(self.changeFontSize))
         let shareButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(self.shareNews))

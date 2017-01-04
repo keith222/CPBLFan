@@ -14,6 +14,8 @@
 		53788A211E10070F00C3F04B /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53788A201E10070F00C3F04B /* News.swift */; };
 		53A6FE2F1E13F72700B68243 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A6FE2D1E13F72700B68243 /* VideoCell.swift */; };
 		53A6FE301E13F72700B68243 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53A6FE2E1E13F72700B68243 /* VideoCell.xib */; };
+		53B396E11E1C02D00032D0DA /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B396E01E1C02D00032D0DA /* VideoPlayerViewController.swift */; };
+		53B396E51E1D37100032D0DA /* UIBarButtonItem+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B396E41E1D37100032D0DA /* UIBarButtonItem+Addition.swift */; };
 		53CBA2A51E0D5F5F0012FFFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2A41E0D5F5F0012FFFB /* AppDelegate.swift */; };
 		53CBA2AC1E0D5F5F0012FFFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CBA2AA1E0D5F5F0012FFFB /* Main.storyboard */; };
 		53CBA2AE1E0D5F5F0012FFFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53CBA2AD1E0D5F5F0012FFFB /* Assets.xcassets */; };
@@ -72,6 +74,9 @@
 		53788A201E10070F00C3F04B /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = News.swift; path = Model/News.swift; sourceTree = "<group>"; };
 		53A6FE2D1E13F72700B68243 /* VideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoCell.swift; path = View/VideoCell.swift; sourceTree = "<group>"; };
 		53A6FE2E1E13F72700B68243 /* VideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VideoCell.xib; path = View/VideoCell.xib; sourceTree = "<group>"; };
+		53B396E01E1C02D00032D0DA /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoPlayerViewController.swift; path = View/ViewController/VideoPlayerViewController.swift; sourceTree = "<group>"; };
+		53B396E21E1C04390032D0DA /* CPBLFan-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CPBLFan-Bridging-Header.h"; sourceTree = "<group>"; };
+		53B396E41E1D37100032D0DA /* UIBarButtonItem+Addition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIBarButtonItem+Addition.swift"; path = "Extension/UIBarButtonItem+Addition.swift"; sourceTree = "<group>"; };
 		53CBA2A11E0D5F5E0012FFFB /* CPBLFan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPBLFan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53CBA2A41E0D5F5F0012FFFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53CBA2AB1E0D5F5F0012FFFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -126,6 +131,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		53B396E31E1D36C20032D0DA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				53B396E41E1D37100032D0DA /* UIBarButtonItem+Addition.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
 		53CBA2981E0D5F5E0012FFFB = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +164,7 @@
 		53CBA2A31E0D5F5F0012FFFB /* CPBLFan */ = {
 			isa = PBXGroup;
 			children = (
+				53B396E31E1D36C20032D0DA /* Extension */,
 				53CBA2E81E0D964B0012FFFB /* ViewModel */,
 				53CBA2D81E0D667C0012FFFB /* View */,
 				53CBA2D71E0D66770012FFFB /* Model */,
@@ -160,6 +174,7 @@
 				53CBA2AD1E0D5F5F0012FFFB /* Assets.xcassets */,
 				53CBA2AF1E0D5F5F0012FFFB /* LaunchScreen.storyboard */,
 				53CBA2B21E0D5F5F0012FFFB /* Info.plist */,
+				53B396E21E1C04390032D0DA /* CPBLFan-Bridging-Header.h */,
 			);
 			path = CPBLFan;
 			sourceTree = "<group>";
@@ -218,6 +233,7 @@
 				53CBA2E21E0D80BD0012FFFB /* NewsViewController.swift */,
 				53CBA2EB1E0ECC1E0012FFFB /* NewsContentViewController.swift */,
 				5354ABE31E1553320034D9E2 /* VideoViewController.swift */,
+				53B396E01E1C02D00032D0DA /* VideoPlayerViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -546,8 +562,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53B396E51E1D37100032D0DA /* UIBarButtonItem+Addition.swift in Sources */,
 				53CBA2DB1E0D66AB0012FFFB /* APIService.swift in Sources */,
 				53CBA2EA1E0D96670012FFFB /* NewsViewModel.swift in Sources */,
+				53B396E11E1C02D00032D0DA /* VideoPlayerViewController.swift in Sources */,
 				53788A211E10070F00C3F04B /* News.swift in Sources */,
 				53CBA2A51E0D5F5F0012FFFB /* AppDelegate.swift in Sources */,
 				53215D191E12B3EF00A878B3 /* Video.swift in Sources */,
@@ -718,6 +736,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CPBLFan/CPBLFan-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -733,6 +752,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CPBLFan/CPBLFan-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
