@@ -23,6 +23,7 @@ class NewsCell: UITableViewCell, BindView {
     }
     
     func setUp(){
+        
         self.newsImage.contentMode = .scaleAspectFill
         self.newsImage.bounds = self.bounds
         

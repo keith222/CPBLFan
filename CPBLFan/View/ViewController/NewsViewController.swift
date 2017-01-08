@@ -34,7 +34,7 @@ class NewsViewController: UIViewController {
         // set tableview layout
         self.newsTableView.separatorStyle = .none
         self.newsTableView.estimatedRowHeight = 200
-        self.newsTableView.rowHeight = UITableViewAutomaticDimension
+        self.newsTableView.rowHeight = self.cellHeight()
         
         // set activity indicator in foot view
         let footerView = UIView(frame: CGRect(x: 0, y: 5, width: self.view.bounds.size.width, height: 50))
@@ -52,7 +52,7 @@ class NewsViewController: UIViewController {
             var source: [NewsViewModel] = data.map{ value -> NewsViewModel in
                 return NewsViewModel(data: value)
             }
-            
+            print(source)
             // use tableview helper class to seperate uitableview delegate and datasource for reuse
             self.tableViewHelper = TableViewHelper(
                 tableView: self.newsTableView,
@@ -82,6 +82,17 @@ class NewsViewController: UIViewController {
             
             HUD.hide(animated: true)
         })
+    }
+    
+    func cellHeight() -> CGFloat{
+        switch UIDevice.current.userInterfaceIdiom {
+        case .pad:
+            return (UIScreen.main.bounds.size.height / CGFloat(3))
+        case .phone:
+            return 200
+        default:
+            return 200
+        }
     }
     
     override func viewWillLayoutSubviews() {

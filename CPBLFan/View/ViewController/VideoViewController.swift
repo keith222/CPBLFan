@@ -34,7 +34,7 @@ class VideoViewController: UIViewController {
         // set tableview layout
         self.videoTableView.separatorStyle = .none
         self.videoTableView.estimatedRowHeight = 200
-        self.videoTableView.rowHeight = UITableViewAutomaticDimension
+        self.videoTableView.rowHeight = self.cellHeight()
         
         // set activity indicator in foot view
         let footerView = UIView(frame: CGRect(x: 0, y: 5, width: self.view.bounds.size.width, height: 50))
@@ -81,6 +81,17 @@ class VideoViewController: UIViewController {
             HUD.hide(animated: true)
         })
         
+    }
+    
+    func cellHeight() -> CGFloat{
+        switch UIDevice.current.userInterfaceIdiom {
+        case .pad:
+            return (UIScreen.main.bounds.size.height / CGFloat(3))
+        case .phone:
+            return 200
+        default:
+            return 200
+        }
     }
 
     override func viewWillLayoutSubviews() {

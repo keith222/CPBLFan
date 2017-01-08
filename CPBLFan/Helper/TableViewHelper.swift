@@ -27,7 +27,7 @@ class TableViewHelper: NSObject {
         }
     }
     
-    init(tableView: UITableView, nibName: String, source: [AnyObject], selectAction: ((Int)->())? = nil, refreshAction: ((Int)->())? = nil) {
+    init(tableView: UITableView, nibName: String, source: [AnyObject], sectionCount: Int = 1, sectionNib: String? = nil, selectAction: ((Int)->())? = nil, refreshAction: ((Int)->())? = nil) {
         self.tableView = tableView
         let nib = UINib(nibName: nibName, bundle: nil)
         templateCell = nib.instantiate(withOwner: nil, options: nil)[0] as! UITableViewCell
@@ -39,9 +39,15 @@ class TableViewHelper: NSObject {
         
         //set datasource variables
         dataSource.data = source
-        dataSource.selectAction = selectAction!
-        dataSource.refreshAction = refreshAction!
+        dataSource.selectAction = selectAction
+        dataSource.refreshAction = refreshAction
         dataSource.flag = true
+        dataSource.sectionCount = sectionCount
+        
+        if sectionNib != nil{
+            dataSource.templateHeader = UINib(nibName: sectionNib!, bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? UITableViewHeaderFooterView
+            tableView.register(UINib(nibName: sectionNib!, bundle: nil), forHeaderFooterViewReuseIdentifier: sectionNib!)
+        }
         
         self.tableView.dataSource = dataSource
         self.tableView.delegate = dataSource
@@ -52,45 +58,58 @@ class TableViewHelper: NSObject {
 class DataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     fileprivate let templateCell: UITableViewCell
+    var templateHeader: UITableViewHeaderFooterView?
+    var sectionCount: Int = 1
     var data: [AnyObject]
     var selectAction: ((Int)->())?
     var refreshAction: ((Int)->())?
     var flag: Bool = true
     
-    init(data: [AnyObject], templateCell: UITableViewCell, selectAction: ((Int)->())? = nil, refreshAction: ((Int)->())? = nil) {
+    init(data: [AnyObject], templateCell: UITableViewCell, selectAction: ((Int)->())? = nil) {
         self.data = data
         self.templateCell = templateCell
         self.selectAction = selectAction
-        self.refreshAction = refreshAction
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.sectionCount
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        if sectionCount > 1{
+            //if more than 1 section
+            return data[section].count
+        }else{
+            return data.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: templateCell.reuseIdentifier!)!
         if let reactiveView = cell as? BindView {
-            reactiveView.bindViewModel(data[indexPath.row])
+            if self.sectionCount > 1{
+                //if more than 1 section
+                reactiveView.bindViewModel(data[indexPath.section][indexPath.row])
+            }else{
+                reactiveView.bindViewModel(data[indexPath.row])
+            }
         }
         cell.selectionStyle = .none
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch UIDevice.current.userInterfaceIdiom {
-        case .pad:
-            return UIScreen.main.bounds.size.height / 3
-        case .phone:
-            return 200
-        default:
-            return 200
-        }
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectAction!(indexPath.row)
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: (templateHeader?.reuseIdentifier)!)
+        if let reactiveView = headerView as? BindView{
+            reactiveView.bindViewModel(section)
+        }
+        return headerView
     }
     
     var page = 1
