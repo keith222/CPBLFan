@@ -50,10 +50,10 @@
             </objects>
             <point key="canvasLocation" x="774" y="-292"/>
         </scene>
-        <!--個人成績-->
+        <!--Stats View Controller-->
         <scene sceneID="nQo-QH-d85">
             <objects>
-                <viewController id="zlH-IO-f3i" sceneMemberID="viewController">
+                <viewController id="zlH-IO-f3i" customClass="StatsViewController" customModule="CPBLFan" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hve-zb-cbG"/>
                         <viewControllerLayoutGuide type="bottom" id="Q3R-P0-I8I"/>
@@ -61,13 +61,52 @@
                     <view key="view" contentMode="scaleToFill" id="ogO-ET-0YC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XRP-Eg-qP8">
+                                <rect key="frame" x="94" y="84" width="187.5" height="29"/>
+                                <segments>
+                                    <segment title="打擊成績"/>
+                                    <segment title="投手成績"/>
+                                </segments>
+                                <color key="tintColor" red="0.12941176469999999" green="0.2274509804" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="indexChanged:" destination="zlH-IO-f3i" eventType="valueChanged" id="Fa2-5A-FnS"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oHM-On-f9N">
+                                <rect key="frame" x="0.0" y="132" width="375" height="535"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kKv-Ar-DDj">
+                                <rect key="frame" x="0.0" y="132" width="375" height="535"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Q3R-P0-I8I" firstAttribute="top" secondItem="oHM-On-f9N" secondAttribute="bottom" constant="-49" id="06n-rY-Plq"/>
+                            <constraint firstItem="XRP-Eg-qP8" firstAttribute="width" secondItem="ogO-ET-0YC" secondAttribute="width" multiplier="1:2" id="3vB-Nv-JWm"/>
+                            <constraint firstItem="kKv-Ar-DDj" firstAttribute="top" secondItem="XRP-Eg-qP8" secondAttribute="bottom" constant="20" id="ORp-zH-Xd3"/>
+                            <constraint firstItem="XRP-Eg-qP8" firstAttribute="centerX" secondItem="ogO-ET-0YC" secondAttribute="centerX" id="Rn8-pe-dVv"/>
+                            <constraint firstAttribute="trailing" secondItem="oHM-On-f9N" secondAttribute="trailing" id="aTD-lr-E5Z"/>
+                            <constraint firstAttribute="trailing" secondItem="kKv-Ar-DDj" secondAttribute="trailing" id="idm-yo-Zw2"/>
+                            <constraint firstItem="oHM-On-f9N" firstAttribute="leading" secondItem="ogO-ET-0YC" secondAttribute="leading" id="odK-kq-N99"/>
+                            <constraint firstItem="kKv-Ar-DDj" firstAttribute="leading" secondItem="ogO-ET-0YC" secondAttribute="leading" id="r4i-n9-7v1"/>
+                            <constraint firstItem="oHM-On-f9N" firstAttribute="top" secondItem="XRP-Eg-qP8" secondAttribute="bottom" constant="20" id="rvL-Ta-nke"/>
+                            <constraint firstItem="XRP-Eg-qP8" firstAttribute="top" secondItem="hve-zb-cbG" secondAttribute="bottom" constant="20" id="uJn-Qt-baj"/>
+                            <constraint firstItem="Q3R-P0-I8I" firstAttribute="top" secondItem="kKv-Ar-DDj" secondAttribute="bottom" constant="-49" id="ws6-Nf-Eu6"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="個人成績" image="statistics" selectedImage="statistics-fill" id="GS0-Rn-d1S"/>
+                    <navigationItem key="navigationItem" id="vJ0-7u-jDV"/>
+                    <connections>
+                        <outlet property="battingTableView" destination="oHM-On-f9N" id="BTT-zp-RPt"/>
+                        <outlet property="pitchingTableView" destination="kKv-Ar-DDj" id="6FH-sm-xeG"/>
+                        <outlet property="statsSegmentedControl" destination="XRP-Eg-qP8" id="Fwi-T8-bgX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tgH-Qn-B9Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="774" y="444"/>
+            <point key="canvasLocation" x="1712.8" y="443.92803598200902"/>
         </scene>
         <!--Rank View Controller-->
         <scene sceneID="pPE-7s-WHg">
@@ -217,7 +256,7 @@
                         <segue destination="Zev-r0-DUz" kind="relationship" relationship="viewControllers" id="fUf-r2-fH0"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="fM2-Yk-hAy" kind="relationship" relationship="viewControllers" id="7fn-xe-oT6"/>
-                        <segue destination="zlH-IO-f3i" kind="relationship" relationship="viewControllers" id="2Fw-4N-5an"/>
+                        <segue destination="lc5-ct-p02" kind="relationship" relationship="viewControllers" id="2Fw-4N-5an"/>
                         <segue destination="GgG-HH-Fon" kind="relationship" relationship="viewControllers" id="wQD-8T-ipY"/>
                     </connections>
                 </tabBarController>
@@ -392,6 +431,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4H3-j0-Aia" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="773.60000000000002" y="1163.568215892054"/>
+        </scene>
+        <!--個人成績-->
+        <scene sceneID="6jD-p9-qfD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lc5-ct-p02" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="個人成績" image="statistics" selectedImage="statistics-fill" id="GS0-Rn-d1S"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a1T-49-pIH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zlH-IO-f3i" kind="relationship" relationship="rootViewController" id="fkS-3Y-caq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Tc-Nm-bmJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="773.60000000000002" y="443.92803598200902"/>
         </scene>
     </scenes>
     <resources>

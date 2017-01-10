@@ -52,7 +52,7 @@ class NewsViewController: UIViewController {
             var source: [NewsViewModel] = data.map{ value -> NewsViewModel in
                 return NewsViewModel(data: value)
             }
-            print(source)
+
             // use tableview helper class to seperate uitableview delegate and datasource for reuse
             self.tableViewHelper = TableViewHelper(
                 tableView: self.newsTableView,

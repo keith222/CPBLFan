@@ -21,7 +21,7 @@ class VideoPlayerViewController: UIViewController, YTPlayerViewDelegate{
         
         // set custom navigation bar
         self.navigation = UINavigationBar(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 64))
-        navigation?.tintColor = UIColor(hexString: "#081B2F")
+        navigation?.tintColor = UIColor.darkBlue()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(dismiss(_:)))
         navigation?.items = [self.navigationItem]
         self.view.addSubview(navigation!)

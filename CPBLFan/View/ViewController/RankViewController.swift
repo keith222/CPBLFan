@@ -30,7 +30,6 @@ class RankViewController: UIViewController {
         
         // set tableview layout
         self.rankTableView.separatorStyle = .none
-        //self.rankTableView.estimatedRowHeight = 70
         self.rankTableView.rowHeight = 75
         self.rankTableView.sectionHeaderHeight = 70
         self.rankTableView.tableFooterView = UIView()
