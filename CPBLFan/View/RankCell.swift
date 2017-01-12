@@ -21,11 +21,13 @@ class RankCell: UITableViewCell, BindView {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.isUserInteractionEnabled = false
+        // set team logo image
         self.teamLogoImageView.contentMode = .scaleAspectFill
     }
 
     func bindViewModel(_ viewModel: Any) {
         if let rankViewModel = viewModel as? RankViewModel{
+            // cell content
             self.teamLogoImageView.image = UIImage.logoImage(team: rankViewModel.team)
             self.winLabel.text = rankViewModel.win
             self.tieLabel.text = rankViewModel.tie

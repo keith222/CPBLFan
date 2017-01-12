@@ -89,7 +89,9 @@ class DataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
         if let reactiveView = cell as? BindView {
             if self.sectionCount > 1{
                 //if more than 1 section
-                reactiveView.bindViewModel(data[indexPath.section][indexPath.row])
+                if let datas = data[indexPath.section] as? [AnyObject], !datas.isEmpty{
+                    reactiveView.bindViewModel(datas[indexPath.row])
+                }
             }else{
                 reactiveView.bindViewModel(data[indexPath.row])
             }
@@ -105,11 +107,15 @@ class DataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: (templateHeader?.reuseIdentifier)!)
-        if let reactiveView = headerView as? BindView{
-            reactiveView.bindViewModel(section)
+        if self.sectionCount > 1{
+            let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: (templateHeader?.reuseIdentifier)!)
+            if let reactiveView = headerView as? BindView{
+                reactiveView.bindViewModel(section)
+            }
+            return headerView
+        }else{
+            return nil
         }
-        return headerView
     }
     
     var page = 1

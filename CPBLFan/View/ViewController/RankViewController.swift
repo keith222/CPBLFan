@@ -34,6 +34,7 @@ class RankViewController: UIViewController {
         self.rankTableView.sectionHeaderHeight = 70
         self.rankTableView.tableFooterView = UIView()
         
+        // load and show rank info
         self.rankViewModel.fetchRank(from: "2016", handler: { data in
             let source: [[RankViewModel]] = data.map{ value -> [RankViewModel] in
                 return value.map{ rankValue -> RankViewModel in

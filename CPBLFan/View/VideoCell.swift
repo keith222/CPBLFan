@@ -25,10 +25,12 @@ class VideoCell: UITableViewCell, BindView {
     }
 
     func setUp(){
+        // set video image
         self.videoImageView.contentMode = .scaleAspectFill
         self.videoImageView.bounds = self.bounds
         self.videoImageView.clipsToBounds = true
         
+        // set fonsize if it is ipad
         if UIDevice.current.userInterfaceIdiom == .pad{
             self.videoTitleLabel.font = UIFont.systemFont(ofSize: 30)
             self.videoDateLabel.font = UIFont.systemFont(ofSize: 20)
@@ -38,12 +40,12 @@ class VideoCell: UITableViewCell, BindView {
     func bindViewModel(_ viewModel: Any) {
         
         if let videoViewModel = viewModel as? VideoViewModel{
-            //cell content
-            self.videoImageView.kf.setImage(with: URL(string: videoViewModel.imageUrl!))
+            // cell content
+            self.videoImageView.kf.setImage(with:  videoViewModel.imageUrl?.url!)
             
             self.videoTitleLabel.text = videoViewModel.title!
             
-            //dateformat iso 8601 to normal dateformat
+            // dateformat iso 8601 to normal dateformat
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "YYYY.MM.DD"
             let isoDate = Date(iso8601String: videoViewModel.date!)

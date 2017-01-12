@@ -37,7 +37,7 @@ class NewsCell: UITableViewCell, BindView {
 
         if let newsViewModel = viewModel as? NewsViewModel{
             //cell content
-            self.newsImage.kf.setImage(with: URL(string: newsViewModel.imageURL!))
+            self.newsImage.kf.setImage(with: newsViewModel.imageURL?.url!)
             self.newsTitleLabel.text = newsViewModel.title!
             self.newsDateLabel.text = newsViewModel.date!
         }

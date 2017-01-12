@@ -18,6 +18,7 @@ class StatsViewModel{
     var team: String!
     var stats: String!
     var category: String!
+    var moreUrl: String!
     
     init(){}
     
@@ -26,35 +27,32 @@ class StatsViewModel{
         self.team = data.team
         self.stats = data.stats
         self.category = data.category
+        self.moreUrl = data.moreUrl
     }
     
-    func fetchStats(handler: @escaping (([[Stats]]) -> ())){
+    func fetchStats(handler: @escaping (([Stats]) -> ())){
         let route = "\(APIService.CPBLSourceURL)/stats/toplist.html"
-        APIService.request(.get, route: route, completionHandler: { [unowned self] text in
-            var statsData: [[Stats]]? = []
+        APIService.request(.get, route: route, completionHandler: { [weak self] text in
+            var statsData: [Stats]? = []
             
             if let doc = HTML(html: text, encoding: .utf8){
                 for (index,node) in doc.css(".statstoplist_box").enumerated(){
-                    var stats: [Stats] = []
-                    let category = self.getCategory(from: index)
+                    let category = self?.getCategory(from: index)
                     
-                    for (index, tag) in node.css("table tr").enumerated(){
+                    let tag = node.css("table tr")[1]
+                    var statsElement: [String] = []
+                    for (index, element) in tag.css("td").enumerated(){
                         guard index > 0 else{continue}
-                        var statsElement: [String] = []
-                        for (index, element) in tag.css("td").enumerated(){
-                            guard index > 0 else{continue}
-                            statsElement.append(element.text!)
-                        }
-                        
-                        stats.append(Stats(JSON: ["category": category,"team": statsElement[0], "name": statsElement[1], "stats": statsElement[2]])!)
+                        statsElement.append(element.text!)
                     }
-                    statsData?.append(stats)
+                    let moreUrl = node.at_css(".more_row")?["href"]?.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
+            
+                    statsData?.append(Stats(JSON: ["category": category!,"team": statsElement[0], "name": statsElement[1], "stats": statsElement[2], "moreUrl": moreUrl!])!)
                 }
             }
             
             handler(statsData!)
         })
-    
     }
     
     func getCategory(from index:Int) -> String{

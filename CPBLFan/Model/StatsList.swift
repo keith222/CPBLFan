@@ -1,30 +1,30 @@
 //
-//  Stats.swift
+//  StatsList.swift
 //  CPBLFan
 //
-//  Created by Yang Tun-Kai on 2017/1/9.
+//  Created by Yang Tun-Kai on 2017/1/12.
 //  Copyright © 2017年 Sparkr. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-struct Stats: Mappable{
+struct StatsList: Mappable{
     
+    var num: String!
     var name: String!
     var team: String!
     var stats: String!
-    var category: String!
-    var moreUrl: String!
+    var playerUrl: String!
     
     init?(map: Map) {}
     
     mutating func mapping(map: Map) {
+        self.num <- map["num"]
         self.name <- map["name"]
         self.team <- map["team"]
         self.stats <- map["stats"]
-        self.category <- map["category"]
-        self.moreUrl <- map["moreUrl"]
+        self.playerUrl <- map["playerUrl"]
     }
     
 }

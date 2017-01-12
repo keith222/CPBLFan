@@ -18,6 +18,9 @@ class NewsViewController: UIViewController {
     
     var tableViewHelper: TableViewHelper?
     
+    var footerView: UIView!
+    var activity: UIActivityIndicatorView!
+    
     lazy var newsViewModel = {
         return NewsViewModel()
     }()
@@ -28,23 +31,7 @@ class NewsViewController: UIViewController {
         // show loading activity view
         HUD.show(.progress)
         
-        // set navigation bar title
-        self.navigationItem.title = "CPBL Fans"
-        
-        // set tableview layout
-        self.newsTableView.separatorStyle = .none
-        self.newsTableView.estimatedRowHeight = 200
-        self.newsTableView.rowHeight = self.cellHeight()
-        
-        // set activity indicator in foot view
-        let footerView = UIView(frame: CGRect(x: 0, y: 5, width: self.view.bounds.size.width, height: 50))
-        let activity: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
-        activity.frame = CGRect(x: (self.view.bounds.size.width - 44) / 2, y: 5, width: 44, height: 44)
-        activity.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
-        footerView.addSubview(activity)
-        footerView.isHidden = true
-        self.newsTableView.tableFooterView = footerView
-        activity.startAnimating()
+        self.setUp()
         
         // load and show news from cpbl website
         self.newsViewModel.fetchNews(from: page, handler: { [unowned self] data in
@@ -60,28 +47,50 @@ class NewsViewController: UIViewController {
                 source: source as [AnyObject],
                 selectAction:{ [unowned self] num in
                     // closure for tableview cell tapping
-                    let destion: NewsContentViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsContentViewController") as! NewsContentViewController
-                    destion.newsUrl = data[num].newsUrl
-                    destion.newsTitle = data[num].title
-                    destion.newsDate = data[num].date
-                    destion.newsImageUrl = data[num].imageUrl
-                    self.navigationController?.pushViewController(destion, animated: true)
+                    let destination: NewsContentViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsContentViewController") as! NewsContentViewController
+                    destination.newsUrl = data[num].newsUrl
+                    destination.newsTitle = data[num].title
+                    destination.newsDate = data[num].date
+                    destination.newsImageUrl = data[num].imageUrl
+                    self.navigationController?.pushViewController(destination, animated: true)
                 },
                 refreshAction:{ page in
                     // closure for refresh(load more)data
+                    self.activity.startAnimating()
                     self.newsViewModel.fetchNews(from: (page - 1), handler: { [unowned self] data in
                         let moreSource: [NewsViewModel] = data.map{ value -> NewsViewModel in
                             return NewsViewModel(data: value)
                         }
                         source.append(contentsOf: moreSource)
                         self.tableViewHelper?.savedData = source
+                        self.activity.stopAnimating()
                     })
                 }
             )
-            footerView.isHidden = false
+            self.footerView.isHidden = false
             
             HUD.hide(animated: true)
         })
+    }
+    
+    func setUp(){
+        // set navigation bar title
+        self.navigationItem.title = "CPBL Fans"
+        
+        // set tableview layout
+        self.newsTableView.separatorStyle = .none
+        self.newsTableView.estimatedRowHeight = 200
+        self.newsTableView.rowHeight = self.cellHeight()
+        
+        // set activity indicator in foot view
+        footerView = UIView(frame: CGRect(x: 0, y: 5, width: self.view.bounds.size.width, height: 50))
+        activity = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        activity.frame = CGRect(x: (self.view.bounds.size.width - 44) / 2, y: 5, width: 44, height: 44)
+        activity.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+        footerView.addSubview(activity)
+        footerView.isHidden = true
+        self.newsTableView.tableFooterView = footerView
+        
     }
     
     func cellHeight() -> CGFloat{

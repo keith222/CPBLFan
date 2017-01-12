@@ -18,6 +18,9 @@ class VideoViewController: UIViewController {
     
     var tableViewHelper: TableViewHelper?
     
+    var footerView: UIView!
+    var activity: UIActivityIndicatorView!
+    
     lazy var videoViewModel = {
         return VideoViewModel()
     }()
@@ -28,23 +31,7 @@ class VideoViewController: UIViewController {
         // show loading activity view
         HUD.show(.progress)
         
-        // set navigation bar title
-        self.navigationItem.title = "影音"
-        
-        // set tableview layout
-        self.videoTableView.separatorStyle = .none
-        self.videoTableView.estimatedRowHeight = 200
-        self.videoTableView.rowHeight = self.cellHeight()
-        
-        // set activity indicator in foot view
-        let footerView = UIView(frame: CGRect(x: 0, y: 5, width: self.view.bounds.size.width, height: 50))
-        let activity: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
-        activity.frame = CGRect(x: (self.view.bounds.size.width - 44) / 2, y: 5, width: 44, height: 44)
-        activity.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
-        footerView.addSubview(activity)
-        footerView.isHidden = true
-        self.videoTableView.tableFooterView = footerView
-        activity.startAnimating()
+        self.setUp()
         
         self.videoViewModel.fetchVideos(handler: { [unowned self] (video,nextPageToken) in
             var source: [VideoViewModel] = video.map{ value -> VideoViewModel in
@@ -66,6 +53,7 @@ class VideoViewController: UIViewController {
                 },
                 refreshAction:{ page in
                     // closure for refresh(load more)data
+                    self.activity.startAnimating()
                     self.videoViewModel.fetchVideos(from: self.nextPageToken, handler: { [unowned self] (video,nextPageToken) in
                         let moreSource: [VideoViewModel] = video.map{ value -> VideoViewModel in
                             return VideoViewModel(data: value)
@@ -73,13 +61,34 @@ class VideoViewController: UIViewController {
                         self.nextPageToken = nextPageToken!
                         source.append(contentsOf: moreSource)
                         self.tableViewHelper?.savedData = source
+                        self.activity.stopAnimating()
                     })
                 }
             )
-            footerView.isHidden = false
+            self.footerView.isHidden = false
             
             HUD.hide(animated: true)
         })
+        
+    }
+    
+    func setUp(){
+        // set navigation bar title
+        self.navigationItem.title = "影音"
+        
+        // set tableview layout
+        self.videoTableView.separatorStyle = .none
+        self.videoTableView.estimatedRowHeight = 200
+        self.videoTableView.rowHeight = self.cellHeight()
+        
+        // set activity indicator in foot view
+        footerView = UIView(frame: CGRect(x: 0, y: 5, width: self.view.bounds.size.width, height: 50))
+        activity = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        activity.frame = CGRect(x: (self.view.bounds.size.width - 44) / 2, y: 5, width: 44, height: 44)
+        activity.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+        footerView.addSubview(activity)
+        footerView.isHidden = true
+        self.videoTableView.tableFooterView = footerView
         
     }
     

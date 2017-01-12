@@ -63,12 +63,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XRP-Eg-qP8">
-                                <rect key="frame" x="94" y="84" width="187.5" height="29"/>
+                                <rect key="frame" x="94" y="84" width="188" height="29"/>
                                 <segments>
                                     <segment title="打擊成績"/>
                                     <segment title="投手成績"/>
                                 </segments>
-                                <color key="tintColor" red="0.12941176469999999" green="0.2274509804" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.031372549019607843" green="0.10588235294117647" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="indexChanged:" destination="zlH-IO-f3i" eventType="valueChanged" id="Fa2-5A-FnS"/>
                                 </connections>
@@ -81,14 +81,24 @@
                                 <rect key="frame" x="0.0" y="132" width="375" height="535"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wFo-vF-Taf">
+                                <rect key="frame" x="0.0" y="131" width="375" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="8sN-RQ-7Oe"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Q3R-P0-I8I" firstAttribute="top" secondItem="oHM-On-f9N" secondAttribute="bottom" constant="-49" id="06n-rY-Plq"/>
+                            <constraint firstItem="wFo-vF-Taf" firstAttribute="leading" secondItem="ogO-ET-0YC" secondAttribute="leading" id="345-jH-izW"/>
                             <constraint firstItem="XRP-Eg-qP8" firstAttribute="width" secondItem="ogO-ET-0YC" secondAttribute="width" multiplier="1:2" id="3vB-Nv-JWm"/>
+                            <constraint firstAttribute="trailing" secondItem="wFo-vF-Taf" secondAttribute="trailing" id="JtS-Io-Yxi"/>
                             <constraint firstItem="kKv-Ar-DDj" firstAttribute="top" secondItem="XRP-Eg-qP8" secondAttribute="bottom" constant="20" id="ORp-zH-Xd3"/>
                             <constraint firstItem="XRP-Eg-qP8" firstAttribute="centerX" secondItem="ogO-ET-0YC" secondAttribute="centerX" id="Rn8-pe-dVv"/>
                             <constraint firstAttribute="trailing" secondItem="oHM-On-f9N" secondAttribute="trailing" id="aTD-lr-E5Z"/>
+                            <constraint firstItem="kKv-Ar-DDj" firstAttribute="top" secondItem="wFo-vF-Taf" secondAttribute="bottom" id="eDv-og-7zM"/>
                             <constraint firstAttribute="trailing" secondItem="kKv-Ar-DDj" secondAttribute="trailing" id="idm-yo-Zw2"/>
                             <constraint firstItem="oHM-On-f9N" firstAttribute="leading" secondItem="ogO-ET-0YC" secondAttribute="leading" id="odK-kq-N99"/>
                             <constraint firstItem="kKv-Ar-DDj" firstAttribute="leading" secondItem="ogO-ET-0YC" secondAttribute="leading" id="r4i-n9-7v1"/>
@@ -102,11 +112,64 @@
                         <outlet property="battingTableView" destination="oHM-On-f9N" id="BTT-zp-RPt"/>
                         <outlet property="pitchingTableView" destination="kKv-Ar-DDj" id="6FH-sm-xeG"/>
                         <outlet property="statsSegmentedControl" destination="XRP-Eg-qP8" id="Fwi-T8-bgX"/>
+                        <segue destination="5ER-Fh-aU0" kind="show" identifier="pushToStatsList" id="xdl-KO-OM5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tgH-Qn-B9Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1712.8" y="443.92803598200902"/>
+        </scene>
+        <!--Stats List View Controller-->
+        <scene sceneID="CvH-0y-HSy">
+            <objects>
+                <viewController storyboardIdentifier="StatsListViewController" id="5ER-Fh-aU0" customClass="StatsListViewController" customModule="CPBLFan" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="97m-7H-Nwd"/>
+                        <viewControllerLayoutGuide type="bottom" id="0VC-fb-ZTg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="57K-Oo-smo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lPu-AW-7j1">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="lPu-AW-7j1" secondAttribute="trailing" id="Dfj-hZ-rCn"/>
+                            <constraint firstItem="0VC-fb-ZTg" firstAttribute="top" secondItem="lPu-AW-7j1" secondAttribute="bottom" constant="-49" id="Q6O-GW-2UM"/>
+                            <constraint firstItem="lPu-AW-7j1" firstAttribute="top" secondItem="97m-7H-Nwd" secondAttribute="bottom" constant="-64" id="p9R-Sy-0TR"/>
+                            <constraint firstItem="lPu-AW-7j1" firstAttribute="leading" secondItem="57K-Oo-smo" secondAttribute="leading" id="q47-V0-0hH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="statsListTableView" destination="lPu-AW-7j1" id="byl-Sr-na9"/>
+                        <segue destination="njI-mK-9mI" kind="show" identifier="pushToPlayer" id="Gsk-OB-sVh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6xg-ki-Jen" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2540" y="443.92803598200902"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="R9Z-gk-PzH">
+            <objects>
+                <viewController id="njI-mK-9mI" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OfK-eq-X1V"/>
+                        <viewControllerLayoutGuide type="bottom" id="jTS-4J-tuv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CKc-t0-w3N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RCk-DO-M0i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3359" y="444"/>
         </scene>
         <!--Rank View Controller-->
         <scene sceneID="pPE-7s-WHg">
@@ -320,12 +383,12 @@
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016.01.01" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07f-Vc-f81">
                                         <rect key="frame" x="10" y="225" width="365" height="15"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                         <color key="textColor" red="0.12941176470588234" green="0.22745098039215686" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中華職棒新聞" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tqI-Ng-E83">
-                                        <rect key="frame" x="8" y="245" width="367" height="24"/>
+                                        <rect key="frame" x="8" y="245" width="359" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" red="0.12941176469999999" green="0.2274509804" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -346,7 +409,7 @@
                                     <constraint firstItem="tqI-Ng-E83" firstAttribute="top" secondItem="07f-Vc-f81" secondAttribute="bottom" constant="5" id="M0Q-EZ-ot1"/>
                                     <constraint firstItem="tqI-Ng-E83" firstAttribute="leading" secondItem="Wvr-Wx-NYP" secondAttribute="leading" constant="8" id="MYx-yt-5Qb"/>
                                     <constraint firstItem="2dl-3u-23C" firstAttribute="top" secondItem="tqI-Ng-E83" secondAttribute="bottom" constant="10" id="Omi-JN-vy3"/>
-                                    <constraint firstAttribute="trailing" secondItem="tqI-Ng-E83" secondAttribute="trailing" id="Y42-An-i3X"/>
+                                    <constraint firstAttribute="trailing" secondItem="tqI-Ng-E83" secondAttribute="trailing" constant="8" id="Y42-An-i3X"/>
                                     <constraint firstAttribute="trailing" secondItem="SQG-JY-ThJ" secondAttribute="trailing" id="hBv-FM-Oaf"/>
                                     <constraint firstItem="07f-Vc-f81" firstAttribute="leading" secondItem="Wvr-Wx-NYP" secondAttribute="leading" constant="10" id="pTD-iR-vq8"/>
                                     <constraint firstAttribute="bottom" secondItem="2dl-3u-23C" secondAttribute="bottom" id="qBb-x6-UBZ"/>

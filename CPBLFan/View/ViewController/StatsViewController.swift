@@ -36,43 +36,58 @@ class StatsViewController: UIViewController {
         self.battingTableView.separatorStyle = .none
         self.battingTableView.tableFooterView = UIView()
         self.battingTableView.rowHeight = 55
+        
         self.pitchingTableView.separatorStyle = .none
         self.pitchingTableView.tableFooterView = UIView()
         self.pitchingTableView.rowHeight = 55
         
+        // load and show stats info
         self.statsViewModel.fetchStats(handler: { [unowned self] data in
-            let source: [[StatsViewModel]] = data.map{ value -> [StatsViewModel] in
-                return value.map{ statsValue -> StatsViewModel in
-                    return StatsViewModel(data: statsValue)
-                }
+            let source: [StatsViewModel] = data.map{ value -> StatsViewModel in
+                return StatsViewModel(data: value)
             }
-
+            
+            // filter batting data
             let battingSource = source.enumerated().filter({ index, _ in
-                return ((index < 3) || (index > 5 && index < 8))
+                return ((index < 3) || (index > 5 && index < 8) || (index == 10))
             }).map{$0.1}
             
+            // filter pitch data
             let pitchingSource = source.enumerated().filter({ index, _ in
-                return ((index > 2 && index < 6) || (index > 7))
+                return ((index > 2 && index < 6) || (index > 7 && index != 10))
             }).map{$0.1}
             
+            // batting table
             self.battingTableHelper = TableViewHelper(
                 tableView: self.battingTableView,
                 nibName: "StatsCell",
                 source: battingSource as [AnyObject],
-                selectAction: nil
+                selectAction: { [unowned self] num in
+                    // closure for tableview cell tapping
+                    let destination: StatsListViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "StatsListViewController") as! StatsListViewController
+                    destination.listUrl = battingSource[num].moreUrl
+                    destination.category = battingSource[num].category
+                    self.navigationController?.pushViewController(destination, animated: true)
+                }
             )
             
+            // pitching table
             self.pitchingTableHelper = TableViewHelper(
                 tableView: self.pitchingTableView,
                 nibName: "StatsCell",
                 source: pitchingSource as [AnyObject],
-                selectAction: nil
+                selectAction: { [unowned self] num in
+                    // closure for tableview cell tapping
+                    let destination: StatsListViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "StatsListViewController") as! StatsListViewController
+                    destination.listUrl = pitchingSource[num].moreUrl
+                    destination.category = pitchingSource[num].category
+                    self.navigationController?.pushViewController(destination, animated: true)
+                }
             )
             
             HUD.hide()
         })
     }
-
     
     @IBAction func indexChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
