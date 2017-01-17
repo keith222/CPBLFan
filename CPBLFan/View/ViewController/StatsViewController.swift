@@ -67,6 +67,7 @@ class StatsViewController: UIViewController {
                     let destination: StatsListViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "StatsListViewController") as! StatsListViewController
                     destination.listUrl = battingSource[num].moreUrl
                     destination.category = battingSource[num].category
+                    destination.type = "打擊成績"
                     self.navigationController?.pushViewController(destination, animated: true)
                 }
             )
@@ -81,6 +82,7 @@ class StatsViewController: UIViewController {
                     let destination: StatsListViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "StatsListViewController") as! StatsListViewController
                     destination.listUrl = pitchingSource[num].moreUrl
                     destination.category = pitchingSource[num].category
+                    destination.type = "投球成績"
                     self.navigationController?.pushViewController(destination, animated: true)
                 }
             )

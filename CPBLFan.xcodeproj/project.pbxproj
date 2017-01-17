@@ -11,6 +11,7 @@
 		5309A2011E227A8600FB0037 /* UIImage+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5309A2001E227A8600FB0037 /* UIImage+Addition.swift */; };
 		5309A2051E228E8A00FB0037 /* RankHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5309A2031E228E8A00FB0037 /* RankHeaderCell.xib */; };
 		5309A2071E22961400FB0037 /* RankHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5309A2061E22961400FB0037 /* RankHeaderCell.swift */; };
+		5315DA541E2A45A5002509AC /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5315DA531E2A45A5002509AC /* PlayerViewController.swift */; };
 		531BA2431E1EA7EF00B83B73 /* RankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531BA2411E1EA7EF00B83B73 /* RankCell.swift */; };
 		531BA2441E1EA7EF00B83B73 /* RankCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 531BA2421E1EA7EF00B83B73 /* RankCell.xib */; };
 		53215D191E12B3EF00A878B3 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53215D181E12B3EF00A878B3 /* Video.swift */; };
@@ -90,6 +91,7 @@
 		5309A2001E227A8600FB0037 /* UIImage+Addition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Addition.swift"; path = "Extension/UIImage+Addition.swift"; sourceTree = "<group>"; };
 		5309A2031E228E8A00FB0037 /* RankHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RankHeaderCell.xib; path = View/RankHeaderCell.xib; sourceTree = "<group>"; };
 		5309A2061E22961400FB0037 /* RankHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RankHeaderCell.swift; path = View/RankHeaderCell.swift; sourceTree = "<group>"; };
+		5315DA531E2A45A5002509AC /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerViewController.swift; path = View/ViewController/PlayerViewController.swift; sourceTree = "<group>"; };
 		531BA2411E1EA7EF00B83B73 /* RankCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RankCell.swift; path = View/RankCell.swift; sourceTree = "<group>"; };
 		531BA2421E1EA7EF00B83B73 /* RankCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RankCell.xib; path = View/RankCell.xib; sourceTree = "<group>"; };
 		53215D181E12B3EF00A878B3 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Video.swift; path = Model/Video.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				537CCF881E20BE7B00AFC864 /* RankViewController.swift */,
 				5353FB861E23CD4600BDE259 /* StatsViewController.swift */,
 				53359AAB1E27ADA500C29687 /* StatsListViewController.swift */,
+				5315DA531E2A45A5002509AC /* PlayerViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -652,6 +655,7 @@
 				534B157A1E16CE6B009EA85C /* VideoViewModel.swift in Sources */,
 				538F75EB1E20BACE001671EE /* Rank.swift in Sources */,
 				53CBA2E31E0D80BD0012FFFB /* NewsViewController.swift in Sources */,
+				5315DA541E2A45A5002509AC /* PlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

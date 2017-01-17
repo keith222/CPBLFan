@@ -55,10 +55,11 @@ class NewsContentViewController: UIViewController {
     
     func setUp(){
         
+        // set navigation bar style
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem.noTitleBarButtonItem()
         
         let fontButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "font"), style: .plain, target: self, action: #selector(self.changeFontSize))
-        let shareButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(self.shareNews))
+        let shareButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "share"), style: .plain, target: self, action: #selector(self.shareNews))
         self.navigationItem.rightBarButtonItems = [shareButton,fontButton]
 
         self.navigationItem.title = "新聞"

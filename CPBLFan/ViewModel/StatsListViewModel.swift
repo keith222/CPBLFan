@@ -27,7 +27,7 @@ class StatsListViewModel{
         self.name = data.name
         self.team = data.team
         self.stats = data.stats
-        self.playerUrl = data.stats
+        self.playerUrl = data.playerUrl
     }
     
     func fetchStatList(from category: String, route: String, page: Int = 1, handler: @escaping (([StatsList], Int?) -> ())){ 

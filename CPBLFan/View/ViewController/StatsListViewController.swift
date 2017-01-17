@@ -15,6 +15,7 @@ class StatsListViewController: UIViewController {
     
     var listUrl: String!
     var category: String!
+    var type: String!
     var footerView: UIView!
     var activity: UIActivityIndicatorView!
     var tableHelper: TableViewHelper?
@@ -40,7 +41,12 @@ class StatsListViewController: UIViewController {
                 tableView: (self?.statsListTableView)!,
                 nibName: "StatsListCell",
                 source: source,
-                selectAction: nil,
+                selectAction: { num in
+                    let destination: PlayerViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlayerViewController") as! PlayerViewController
+                    destination.playerUrl = source[num].playerUrl
+                    destination.type = self?.type
+                    self?.navigationController?.pushViewController(destination, animated: true)
+                },
                 refreshAction: { page in
                     // closure for refresh(load more)data
                     if page <= totalPage!{
