@@ -20,8 +20,10 @@ extension UIImage{
             filename = "2"
         case "Lamigo":
             filename = "3"
-        case "富邦悍將", "義大":
+        case "富邦悍將":
             filename = "4"
+        case "義大":
+            filename = "4-1"
         default:
             break
         }

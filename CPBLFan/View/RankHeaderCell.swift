@@ -15,9 +15,9 @@ class RankHeaderCell: UITableViewHeaderFooterView, BindView {
     func bindViewModel(_ viewModel: Any) {
         if let sectionNum = viewModel as? Int{
             switch sectionNum {
-            case 0:
-                self.yearLabel.text = "上半季"
             case 1:
+                self.yearLabel.text = "上半季"
+            case 2:
                 self.yearLabel.text = "下半季"
             default:
                 break

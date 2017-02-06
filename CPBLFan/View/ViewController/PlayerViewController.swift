@@ -11,6 +11,11 @@ import Alamofire
 import Kanna
 import PKHUD
 
+enum playerType: String {
+    case Hitter = "打擊成績"
+    case Pitcher = "投球成績"
+}
+
 class PlayerViewController: UIViewController, UIScrollViewDelegate, UIWebViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
@@ -33,7 +38,7 @@ class PlayerViewController: UIViewController, UIScrollViewDelegate, UIWebViewDel
     @IBOutlet weak var singleGameWebViewHeight: NSLayoutConstraint!
     
     var playerUrl: String!
-    var type: String!
+    var type: playerType!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,14 +48,15 @@ class PlayerViewController: UIViewController, UIScrollViewDelegate, UIWebViewDel
         self.setUp()
         
         // set css for source from web
-        let cssString = "<style>.std_tb{font-family: 微軟正黑體,Microsoft JhengHei,微軟正黑體,Arial,PMingLiU,新細明體,MingLiU,細明體,sans-serif;}.std_tb{color: #333;font-size: 13px;line-height: 2.2em;}table.std_tb tr{background-color: #f8f8f8;}table.mix_x tr:nth-child(2n+1), table.std_tb tr.change{background-color: #e6e6e6;}table.std_tb th {background-color: #545454;color: #fff;font-weight: normal;padding: 0 6px;}table.std_tb td{padding: 0 6px;}table.std_tb th a, table.std_tb th a:link, table.std_tb th a:visited, table.std_tb th a:active {color: #fff;}a, a:link, a:visited, a:active {text-decoration: none;}</style>"
+        let cssString = "<style>.std_tb{color: #333;font-size: 13px;line-height: 2.2em;}table.std_tb tr{background-color: #f8f8f8;}table.mix_x tr:nth-child(2n+1), table.std_tb tr.change{background-color: #e6e6e6;}table.std_tb th {background-color: #545454;color: #fff;font-weight: normal;padding: 0 6px;}table.std_tb td{padding: 0 6px;}table.std_tb th a, table.std_tb th a:link, table.std_tb th a:visited, table.std_tb th a:active {color: #fff;}a, a:link, a:visited, a:active {text-decoration: none;}table.std_tb td{width:100%;}</style>"
         
         // set navigation bar
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem.noTitleBarButtonItem()
+        self.navigationItem.title = "選手資訊"
         self.nameLabel.backgroundColor = UIColor.black.withAlphaComponent(0.3)
         self.dataLabel.backgroundColor = UIColor.black.withAlphaComponent(0.3)
         
-        self.statsLabel.text = type
+        self.statsLabel.text = type.rawValue
         
         let route = "\(APIService.CPBLSourceURL)\(playerUrl!)"
         APIService.request(.get, route: route, completionHandler: { text in
@@ -123,26 +129,16 @@ class PlayerViewController: UIViewController, UIScrollViewDelegate, UIWebViewDel
     }
     
     func setUp(){
-        self.statsWebView.delegate = self
-        self.statsWebView.scrollView.delegate = self
-        self.statsWebView.scrollView.showsVerticalScrollIndicator = false
-        self.statsWebView.scrollView.showsHorizontalScrollIndicator = false
-        self.statsWebView.scrollView.bounces = false
-        self.fieldingWebView.delegate = self
-        self.fieldingWebView.scrollView.delegate = self
-        self.fieldingWebView.scrollView.showsVerticalScrollIndicator = false
-        self.fieldingWebView.scrollView.showsHorizontalScrollIndicator = false
-        self.fieldingWebView.scrollView.bounces = false
-        self.teamStatsWebView.delegate = self
-        self.teamStatsWebView.scrollView.delegate = self
-        self.teamStatsWebView.scrollView.showsVerticalScrollIndicator = false
-        self.teamStatsWebView.scrollView.showsHorizontalScrollIndicator = false
-        self.teamStatsWebView.scrollView.bounces = false
-        self.singleGameWebView.delegate = self
-        self.singleGameWebView.scrollView.delegate = self
-        self.singleGameWebView.scrollView.showsVerticalScrollIndicator = false
-        self.singleGameWebView.scrollView.showsHorizontalScrollIndicator = false
-        self.singleGameWebView.scrollView.bounces = false
+    
+        for subviews in self.scrollView.subviews as [UIView]{
+            if let webview = subviews as? UIWebView{
+                webview.delegate = self
+                webview.scrollView.delegate = self
+                webview.scrollView.showsVerticalScrollIndicator = false
+                webview.scrollView.showsHorizontalScrollIndicator = false
+                webview.scrollView.bounces = false
+            }
+        }
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {

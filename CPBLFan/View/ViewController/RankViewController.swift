@@ -34,20 +34,33 @@ class RankViewController: UIViewController {
         self.rankTableView.sectionHeaderHeight = 70
         self.rankTableView.tableFooterView = UIView()
         
+        let date = Date()
+        let calendar = Calendar.current
+        
+        var year = calendar.component(.year, from: date)
+        let month = calendar.component(.month, from: date)
+        if month < 3{
+            year = year - 1
+        }
+        
+        
         // load and show rank info
-        self.rankViewModel.fetchRank(from: "2016", handler: { data in
+        self.rankViewModel.fetchRank(from: String(year) , handler: { [weak self] data in
             let source: [[RankViewModel]] = data.map{ value -> [RankViewModel] in
                 return value.map{ rankValue -> RankViewModel in
                     return RankViewModel(data: rankValue)
                 }
             }
             
-            self.tableHelper = TableViewHelper(
-                tableView: self.rankTableView,
+            let headerSource = [1,2]
+            
+            self?.tableHelper = TableViewHelper(
+                tableView: (self?.rankTableView)!,
                 nibName: "RankCell",
                 source: source as [AnyObject],
                 sectionCount: 3,
-                sectionNib: "RankHeaderCell"
+                sectionNib: "RankHeaderCell",
+                sectionSource: headerSource as [AnyObject]
             )
             
             HUD.hide(animated: true)

@@ -45,14 +45,14 @@ class NewsViewController: UIViewController {
                 tableView: self.newsTableView,
                 nibName: "NewsCell",
                 source: source as [AnyObject],
-                selectAction:{ [unowned self] num in
+                selectAction:{ [weak self] num in
                     // closure for tableview cell tapping
                     let destination: NewsContentViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsContentViewController") as! NewsContentViewController
                     destination.newsUrl = data[num].newsUrl
                     destination.newsTitle = data[num].title
                     destination.newsDate = data[num].date
                     destination.newsImageUrl = data[num].imageUrl
-                    self.navigationController?.pushViewController(destination, animated: true)
+                    self?.navigationController?.pushViewController(destination, animated: true)
                 },
                 refreshAction:{ page in
                     // closure for refresh(load more)data

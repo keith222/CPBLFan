@@ -15,7 +15,7 @@ class StatsListViewController: UIViewController {
     
     var listUrl: String!
     var category: String!
-    var type: String!
+    var type: playerType!
     var footerView: UIView!
     var activity: UIActivityIndicatorView!
     var tableHelper: TableViewHelper?

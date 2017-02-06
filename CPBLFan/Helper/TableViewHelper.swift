@@ -26,8 +26,15 @@ class TableViewHelper: NSObject {
             tableView.reloadData()
         }
     }
+    var headSavedData: [AnyObject] = [] {
+        didSet{
+            //this for refresh(load more)data
+            dataSource.headerData = headSavedData
+            dataSource.sectionCount = headSavedData.count
+        }
+    }
     
-    init(tableView: UITableView, nibName: String, source: [AnyObject], sectionCount: Int = 1, sectionNib: String? = nil, selectAction: ((Int)->())? = nil, refreshAction: ((Int)->())? = nil) {
+    init(tableView: UITableView, nibName: String, source: [AnyObject], sectionCount: Int = 1, sectionNib: String? = nil, sectionSource: [AnyObject]? = nil, selectAction: ((Int)->())? = nil, refreshAction: ((Int)->())? = nil) {
         self.tableView = tableView
         let nib = UINib(nibName: nibName, bundle: nil)
         templateCell = nib.instantiate(withOwner: nil, options: nil)[0] as! UITableViewCell
@@ -46,6 +53,7 @@ class TableViewHelper: NSObject {
         
         if sectionNib != nil{
             dataSource.templateHeader = UINib(nibName: sectionNib!, bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? UITableViewHeaderFooterView
+            dataSource.headerData = sectionSource
             tableView.register(UINib(nibName: sectionNib!, bundle: nil), forHeaderFooterViewReuseIdentifier: sectionNib!)
         }
         
@@ -61,6 +69,7 @@ class DataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     var templateHeader: UITableViewHeaderFooterView?
     var sectionCount: Int = 1
     var data: [AnyObject]
+    var headerData: [AnyObject]?
     var selectAction: ((Int)->())?
     var refreshAction: ((Int)->())?
     var flag: Bool = true
@@ -110,7 +119,7 @@ class DataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
         if self.sectionCount > 1{
             let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: (templateHeader?.reuseIdentifier)!)
             if let reactiveView = headerView as? BindView{
-                reactiveView.bindViewModel(section)
+                reactiveView.bindViewModel(headerData![section])
             }
             return headerView
         }else{
