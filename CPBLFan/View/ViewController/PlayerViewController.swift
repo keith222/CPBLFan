@@ -71,7 +71,8 @@ class PlayerViewController: UIViewController, UIScrollViewDelegate, UIWebViewDel
                     let imageData = try Data(contentsOf: URL(string: gameUrl!)!)
                     self.gameImageView.image = UIImage(data: imageData)
                 }catch{
-                    self.gameImageView.backgroundColor = UIColor(hexString: "#9b9b9b")
+                    self.gameImageView.image = UIImage(named: "logo")
+                    self.gameImageView.clipsToBounds = true
                 }
                 
 
