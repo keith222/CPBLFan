@@ -43,6 +43,8 @@ class PlayerViewController: UIViewController, UIScrollViewDelegate, UIWebViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.scrollView.isHidden = true
+        
         HUD.show(.progress)
         
         self.setUp()
@@ -142,7 +144,8 @@ class PlayerViewController: UIViewController, UIScrollViewDelegate, UIWebViewDel
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
-        HUD.hide()
+        HUD.hide(animated: true)
+        self.scrollView.isHidden = false
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

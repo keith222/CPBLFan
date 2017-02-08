@@ -54,7 +54,7 @@ class NewsContentViewController: UIViewController {
     }
     
     func setUp(){
-        
+                
         // set navigation bar style
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem.noTitleBarButtonItem()
         

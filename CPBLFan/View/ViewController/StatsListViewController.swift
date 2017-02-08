@@ -70,12 +70,15 @@ class StatsListViewController: UIViewController {
             self?.footerView.isHidden = false
             
             HUD.hide(animated: true)
-            
+            self?.statsListTableView.isHidden = false
         })
 
     }
     
     func setUp(){
+        // hide tableview
+        self.statsListTableView.isHidden = true
+        
         // set navigation bar
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem.noTitleBarButtonItem()
         

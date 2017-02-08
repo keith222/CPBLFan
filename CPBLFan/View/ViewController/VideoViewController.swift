@@ -68,11 +68,15 @@ class VideoViewController: UIViewController {
             self.footerView.isHidden = false
             
             HUD.hide(animated: true)
+            self.videoTableView.isHidden = false
         })
         
     }
     
     func setUp(){
+        // hide tableview
+        self.videoTableView.isHidden = true
+        
         // set navigation bar title
         self.navigationItem.title = "影音"
         

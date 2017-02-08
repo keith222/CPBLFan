@@ -70,10 +70,14 @@ class NewsViewController: UIViewController {
             self.footerView.isHidden = false
             
             HUD.hide(animated: true)
+            self.newsTableView.isHidden = false
         })
     }
     
     func setUp(){
+        // hide tableview
+        self.newsTableView.isHidden = true
+        
         // set navigation bar title
         self.navigationItem.title = "CPBL Fans"
         

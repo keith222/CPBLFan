@@ -87,7 +87,8 @@ class StatsViewController: UIViewController {
                 }
             )
             
-            HUD.hide()
+            HUD.hide(animated: true)
+
         })
     }
     

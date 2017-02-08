@@ -95,7 +95,7 @@ class GameScheduleViewController: UIViewController {
                 self?.gameTableView.isHidden = true
             }
             
-            HUD.hide()
+            HUD.hide(animated: true)
         })
     }
     
@@ -123,7 +123,7 @@ class GameScheduleViewController: UIViewController {
                 self?.gameTableView.isHidden = true
             }
             
-            HUD.hide()
+            HUD.hide(animated: true)
         })
     }
 

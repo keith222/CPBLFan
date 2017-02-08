@@ -22,6 +22,9 @@ class RankViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // hide tableview
+        self.rankTableView.isHidden = true
+        
         // show loading activity view
         HUD.show(.progress)
         
@@ -52,7 +55,7 @@ class RankViewController: UIViewController {
                 }
             }
             
-            let headerSource = [1,2]
+            let headerSource = [1,2,3]
             
             self?.tableHelper = TableViewHelper(
                 tableView: (self?.rankTableView)!,
@@ -64,6 +67,7 @@ class RankViewController: UIViewController {
             )
             
             HUD.hide(animated: true)
+            self?.rankTableView.isHidden = false
         })
     }
 
