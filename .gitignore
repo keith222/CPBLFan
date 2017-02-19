@@ -23,3 +23,5 @@ DerivedData
 Pods
 !Podfile
 !Podfile.lock
+
+*.plist

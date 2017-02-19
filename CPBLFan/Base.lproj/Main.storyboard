@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未有比賽資料" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yzp-vJ-2eB">
-                                <rect key="frame" x="96.666666666666686" y="316.33333333333331" width="182" height="36"/>
+                                <rect key="frame" x="96.666666666666686" y="315.66666666666669" width="182" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -55,7 +55,7 @@
                                         <rect key="frame" x="70" y="0.0" width="235" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--年--月" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTG-fU-zcb">
-                                                <rect key="frame" x="87" y="10.333333333333329" width="61.666666666666657" height="19.333333333333343"/>
+                                                <rect key="frame" x="87" y="10.666666666666671" width="62" height="19"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -244,7 +244,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="245.33333333333334"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="izq-GP-YBR">
-                                        <rect key="frame" x="15" y="116" width="91.666666666666671" height="122"/>
+                                        <rect key="frame" x="15" y="116" width="91.333333333333329" height="122"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="izq-GP-YBR" secondAttribute="height" multiplier="9:11" constant="-8.181818181818187" id="hKc-xE-KN4"/>
                                         </constraints>
@@ -261,13 +261,13 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---｜---｜---" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gq8-fe-NCp">
-                                        <rect key="frame" x="116.66666666666666" y="214.33333333333334" width="93.999999999999972" height="18"/>
+                                        <rect key="frame" x="116.33333333333334" y="214.33333333333334" width="94.000000000000028" height="18"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwf-lW-JYg">
-                                        <rect key="frame" x="116.66666666666669" y="182" width="31.333333333333314" height="27.333333333333343"/>
+                                        <rect key="frame" x="116.33333333333334" y="182" width="31.000000000000028" height="27.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -497,33 +497,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cK8-Ql-tpm" customClass="YTPlayerView">
-                                <rect key="frame" x="19.666666666666657" y="251" width="375" height="234"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="234" id="E0n-L2-jR1"/>
+                                    <constraint firstAttribute="width" secondItem="cK8-Ql-tpm" secondAttribute="height" multiplier="768:479" id="Yru-ic-PVy"/>
                                     <constraint firstAttribute="width" secondItem="cK8-Ql-tpm" secondAttribute="height" multiplier="125:78" id="rYS-57-E6M"/>
+                                    <constraint firstAttribute="height" constant="479" id="vDf-s3-rD3"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="E0n-L2-jR1"/>
+                                        <exclude reference="Yru-ic-PVy"/>
                                         <exclude reference="rYS-57-E6M"/>
+                                        <exclude reference="vDf-s3-rD3"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="E0n-L2-jR1"/>
-                                        <include reference="rYS-57-E6M"/>
+                                        <exclude reference="E0n-L2-jR1"/>
+                                        <exclude reference="rYS-57-E6M"/>
                                     </mask>
                                 </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cK8-Ql-tpm" firstAttribute="centerY" secondItem="wVj-gn-cTs" secondAttribute="centerY" id="AQz-BX-8tV"/>
+                            <constraint firstItem="cK8-Ql-tpm" firstAttribute="top" secondItem="9i3-L7-PXv" secondAttribute="bottom" id="8JM-MC-GLw"/>
                             <constraint firstAttribute="trailing" secondItem="cK8-Ql-tpm" secondAttribute="trailing" id="Qd6-dr-rxj"/>
                             <constraint firstItem="K1U-vC-owk" firstAttribute="top" secondItem="cK8-Ql-tpm" secondAttribute="bottom" id="aqW-lB-h4t"/>
                             <constraint firstItem="cK8-Ql-tpm" firstAttribute="leading" secondItem="wVj-gn-cTs" secondAttribute="leading" id="b8d-vb-NtF"/>
-                            <constraint firstItem="cK8-Ql-tpm" firstAttribute="centerX" secondItem="wVj-gn-cTs" secondAttribute="centerX" id="w1g-Dz-kda"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -539,6 +542,20 @@
                                 <include reference="aqW-lB-h4t"/>
                             </mask>
                         </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="Qd6-dr-rxj"/>
+                                <include reference="b8d-vb-NtF"/>
+                                <include reference="aqW-lB-h4t"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="Qd6-dr-rxj"/>
+                                <include reference="b8d-vb-NtF"/>
+                                <include reference="aqW-lB-h4t"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="videoPlayView" destination="cK8-Ql-tpm" id="Rdj-wO-Hal"/>
@@ -546,7 +563,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bsr-eF-Fv2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2428" y="1965.0674662668666"/>
+            <point key="canvasLocation" x="2427.34375" y="1964.6484374999998"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -638,7 +655,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新聞新聞新聞新聞新聞新聞新聞新聞新聞新聞新聞新聞" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dl-3u-23C">
-                                        <rect key="frame" x="15" y="302" width="384" height="40.666666666666686"/>
+                                        <rect key="frame" x="15" y="302" width="384" height="20.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>

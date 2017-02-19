@@ -23,7 +23,6 @@ class GameCell: UITableViewCell, BindView{
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     func bindViewModel(_ viewModel: Any) {

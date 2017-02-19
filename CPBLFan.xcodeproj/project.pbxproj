@@ -42,6 +42,7 @@
 		538F75ED1E20BBBF001671EE /* RankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538F75EC1E20BBBF001671EE /* RankViewModel.swift */; };
 		53A6FE2F1E13F72700B68243 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A6FE2D1E13F72700B68243 /* VideoCell.swift */; };
 		53A6FE301E13F72700B68243 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53A6FE2E1E13F72700B68243 /* VideoCell.xib */; };
+		53B1F10F1E58869E0035DEDA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53B1F10E1E58869E0035DEDA /* GoogleService-Info.plist */; };
 		53B396E11E1C02D00032D0DA /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B396E01E1C02D00032D0DA /* VideoPlayerViewController.swift */; };
 		53B396E51E1D37100032D0DA /* UIBarButtonItem+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B396E41E1D37100032D0DA /* UIBarButtonItem+Addition.swift */; };
 		53CBA2A51E0D5F5F0012FFFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2A41E0D5F5F0012FFFB /* AppDelegate.swift */; };
@@ -130,6 +131,7 @@
 		538F75EC1E20BBBF001671EE /* RankViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RankViewModel.swift; path = ViewModel/RankViewModel.swift; sourceTree = "<group>"; };
 		53A6FE2D1E13F72700B68243 /* VideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoCell.swift; path = View/VideoCell.swift; sourceTree = "<group>"; };
 		53A6FE2E1E13F72700B68243 /* VideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VideoCell.xib; path = View/VideoCell.xib; sourceTree = "<group>"; };
+		53B1F10E1E58869E0035DEDA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		53B396E01E1C02D00032D0DA /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoPlayerViewController.swift; path = View/ViewController/VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		53B396E21E1C04390032D0DA /* CPBLFan-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CPBLFan-Bridging-Header.h"; sourceTree = "<group>"; };
 		53B396E41E1D37100032D0DA /* UIBarButtonItem+Addition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIBarButtonItem+Addition.swift"; path = "Extension/UIBarButtonItem+Addition.swift"; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				53CBA2AF1E0D5F5F0012FFFB /* LaunchScreen.storyboard */,
 				53CBA2B21E0D5F5F0012FFFB /* Info.plist */,
 				53B396E21E1C04390032D0DA /* CPBLFan-Bridging-Header.h */,
+				53B1F10E1E58869E0035DEDA /* GoogleService-Info.plist */,
 				53764B4C1E2FAA3D00FFE77E /* GameSchedule.json */,
 			);
 			path = CPBLFan;
@@ -479,6 +482,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53B1F10F1E58869E0035DEDA /* GoogleService-Info.plist in Resources */,
 				53A6FE301E13F72700B68243 /* VideoCell.xib in Resources */,
 				53CBA2B11E0D5F5F0012FFFB /* LaunchScreen.storyboard in Resources */,
 				53CBA2AE1E0D5F5F0012FFFB /* Assets.xcassets in Resources */,

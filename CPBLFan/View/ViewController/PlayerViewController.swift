@@ -50,7 +50,7 @@ class PlayerViewController: UIViewController, UIScrollViewDelegate, UIWebViewDel
         self.setUp()
         
         // set css for source from web
-        let cssString = "<style>.std_tb{color: #333;font-size: 13px;line-height: 2.2em;}table.std_tb tr{background-color: #f8f8f8;}table.mix_x tr:nth-child(2n+1), table.std_tb tr.change{background-color: #e6e6e6;}table.std_tb th {background-color: #545454;color: #fff;font-weight: normal;padding: 0 6px;}table.std_tb td{padding: 0 6px;}table.std_tb th a, table.std_tb th a:link, table.std_tb th a:visited, table.std_tb th a:active {color: #fff;}a, a:link, a:visited, a:active {text-decoration: none;}table.std_tb td{width:100%;}</style>"
+        let cssString = "<style>.std_tb{color: #333;font-size: 13px;line-height: 2.2em;}table.std_tb tr{background-color: #f8f8f8;}table.mix_x tr:nth-child(2n+1), table.std_tb tr.change{background-color: #e6e6e6;}table.std_tb th {background-color: #545454;color: #fff;font-weight: normal;padding: 0 6px;}table.std_tb td{padding: 0 6px;}table.std_tb th a, table.std_tb th a:link, table.std_tb th a:visited, table.std_tb th a:active {color: #fff;}a, a:link, a:visited, a:active {text-decoration: none;}</style>"
         
         // set navigation bar
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem.noTitleBarButtonItem()
@@ -72,7 +72,6 @@ class PlayerViewController: UIViewController, UIScrollViewDelegate, UIWebViewDel
                     self.gameImageView.image = UIImage(data: imageData)
                 }catch{
                     self.gameImageView.image = UIImage(named: "logo")
-                    self.gameImageView.clipsToBounds = true
                 }
                 
 
@@ -142,6 +141,8 @@ class PlayerViewController: UIViewController, UIScrollViewDelegate, UIWebViewDel
                 webview.scrollView.bounces = false
             }
         }
+        
+        self.gameImageView.clipsToBounds = true
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {

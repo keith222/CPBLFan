@@ -23,6 +23,9 @@ target 'CPBLFan' do
   
   #Google APIs
   pod 'youtube-ios-player-helper', '~> 0.1.4'
+  
+  #Google Firebase
+  pod 'Firebase/Core'
 
   target 'CPBLFanTests' do
     inherit! :search_paths
