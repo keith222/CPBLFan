@@ -27,6 +27,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.isHidden = true
+        
         // set tableview layout
         let rowHeight: CGFloat = 45.0
         let sectionHeight: CGFloat = 30.0
@@ -37,13 +39,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         self.secondSeasonTableView.rowHeight = rowHeight
         self.secondSeasonTableView.sectionHeaderHeight = sectionHeight
         
+        
         // add tap gesture to tableview
-        let seasonTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tableViewTapped(tapGestureRecognizer:)))
-        let firstTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tableViewTapped(tapGestureRecognizer:)))
-        let secondTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tableViewTapped(tapGestureRecognizer:)))
-        self.seasonTableView.addGestureRecognizer(seasonTapGesture)
-        self.firstSeeasonTableView.addGestureRecognizer(firstTapGesture)
-        self.secondSeasonTableView.addGestureRecognizer(secondTapGesture)
+        for view in self.view.subviews{
+            if view is UITableView{
+                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tableViewTapped(tapGestureRecognizer:)))
+                view.addGestureRecognizer(tapGesture)
+            }
+        }
         
         // extension view for ios 10 and old version
         if #available(iOS 10, *) {
@@ -98,6 +101,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 sectionNib: "WidgetHeaderCell",
                 sectionSource: nil
             )
+            
+            self?.view.isHidden = false
         })
     }
     

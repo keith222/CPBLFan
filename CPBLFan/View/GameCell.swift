@@ -33,7 +33,7 @@ class GameCell: UITableViewCell, BindView{
             switch gameViewModel.game {
             case 0:
                 numString = "All Stars Game"
-            case _ where gameViewModel.game > 1:
+            case _ where gameViewModel.game > 0:
                 numString = "Game: \(gameViewModel.game!)"
             case _ where gameViewModel.game < 0:
                 numString = "Taiwan Series: G\(-gameViewModel.game!)"

@@ -15,6 +15,9 @@ target 'CPBLFan' do
   pod 'AlamofireObjectMapper', '~> 4.0'
   pod 'SwiftyJSON'
   pod 'Kanna', '~> 2.1.0'
+  
+  #Pods for detect net connection
+  pod 'ReachabilitySwift'
 
   #Pods about UI
   pod 'Kingfisher'
@@ -26,6 +29,7 @@ target 'CPBLFan' do
   
   #Google Firebase
   pod 'Firebase/Core'
+  pod 'Firebase/Database'
   
   target 'CPBLFanTests' do
     inherit! :search_paths
@@ -41,10 +45,14 @@ end
 
 target 'Rank-Widget' do
    use_frameworks!
-   # Pods for today widget
+   #Pods for today widget
    #Pods about internet request/response/parse
    pod 'Alamofire'
    pod 'AlamofireObjectMapper', '~> 4.0'
    pod 'SwiftyJSON'
    pod 'Kanna', '~> 2.1.0'
+   
+   #Google Firebase
+   pod 'Firebase/Core'
+   pod 'Firebase/Database'
  end

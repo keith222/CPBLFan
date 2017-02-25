@@ -10,6 +10,7 @@ import Foundation
 import SwiftyJSON
 import Alamofire
 import ObjectMapper
+import Firebase
 
 class GameViewModel{
     
@@ -38,33 +39,36 @@ class GameViewModel{
     }
     
     func fetchGame(at year:String, month: String, handler: @escaping (([(String,[Game])]?) -> ())){
-        //let route = ""
         
-        if source == JSON.null{
-            let path:String = Bundle.main.path(forResource: "GameSchedule", ofType: "json")! as String
-        
-            let data: Data = try! Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
-            source = JSON(data: data)
-        }
+        let ref: FIRDatabaseReference! = FIRDatabase.database().reference()
+        ref.child(year).child(month).observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            // check data if existed
+            if let data = snapshot.value{
+            
+                // data jsonalize
+                let jsonData = JSON(data)
+                // data map to array
+                let game = jsonData.map({ (game: (String, value: SwiftyJSON.JSON)) -> [Game] in
+                    return game.value.map({ (data:(String, value: SwiftyJSON.JSON)) -> Game in
+                        return Mapper<Game>().map(JSONObject: data.value.dictionaryObject)!
+                    })
+                })
+                
+                // make a dictionary
+                var gameData: [String: [Game]] = [:]
+                for (index, data) in jsonData.enumerated(){
+                    if !data.1.isEmpty{
+                        gameData[data.0] = game[index]
+                    }
+                }
+                let sortedData = gameData.sorted(by: {Int($0.0.key)! < Int($0.1.key)!})
+                handler(sortedData)
+            }else{
+                handler(nil)
+            }
 
-        guard source[year][month].exists() else {
-            handler(nil)
-            return
-        }
-        
-        let game = source[year][month].map({ (game: (String, value: SwiftyJSON.JSON)) -> [Game] in
-            return game.value.map({ (data:(String, value: SwiftyJSON.JSON)) -> Game in
-                return Mapper<Game>().map(JSONObject: data.value.dictionaryObject)!
-            })
         })
-        
-        var gameData: [String: [Game]] = [:]
-        for (index, data) in source[year][month].enumerated(){
-            gameData[data.0] = game[index]
-        }
-
-        let sortedData = gameData.sorted(by: {Int($0.0.key)! < Int($0.1.key)!})
-        handler(sortedData)
     }
 }
 
