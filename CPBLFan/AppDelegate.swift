@@ -23,6 +23,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabController: UITabBarController = storyboard.instantiateInitialViewController() as! UITabBarController
+        var tabIndex = 0
+        
+        switch (url.query!.removingPercentEncoding)! {
+        case "rank":
+            tabIndex = 2
+        case "game":
+            tabIndex = 1
+            break
+        default:
+            break
+        }
+        
+        tabController.selectedIndex = tabIndex
+        self.window?.rootViewController = tabController
+        
+        return true
+    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

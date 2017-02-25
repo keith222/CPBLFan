@@ -42,8 +42,8 @@ class GameCell: UITableViewCell, BindView{
             }
             
             self.gameNumLabel.text = numString
-            self.guestScoreLabel.text = gameViewModel.g_score
-            self.homeScoreLabel.text = gameViewModel.h_score
+            self.guestScoreLabel.text = (gameViewModel.g_score.isEmpty) ? "--" : gameViewModel.g_score
+            self.homeScoreLabel.text = (gameViewModel.h_score.isEmpty) ? "--" : gameViewModel.h_score
             self.placeLabel.text = gameViewModel.place
             self.homeImageView.image = UIImage(named: gameViewModel.home)
             self.guestImageView.image = UIImage(named: gameViewModel.guest)

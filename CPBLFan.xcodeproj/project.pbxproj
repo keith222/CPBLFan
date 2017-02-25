@@ -58,7 +58,22 @@
 		53CBA2E71E0D920D0012FFFB /* TableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2E61E0D920D0012FFFB /* TableViewHelper.swift */; };
 		53CBA2EA1E0D96670012FFFB /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2E91E0D96670012FFFB /* NewsViewModel.swift */; };
 		53CBA2EC1E0ECC1E0012FFFB /* NewsContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2EB1E0ECC1E0012FFFB /* NewsContentViewController.swift */; };
+		53CE89CB1E61532E00C528BC /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53CE89CA1E61532E00C528BC /* NotificationCenter.framework */; };
+		53CE89CE1E61532E00C528BC /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CE89CD1E61532E00C528BC /* TodayViewController.swift */; };
+		53CE89D11E61532E00C528BC /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CE89CF1E61532E00C528BC /* MainInterface.storyboard */; };
+		53CE89D51E61532E00C528BC /* Rank-Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 53CE89C91E61532E00C528BC /* Rank-Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		53CE89DB1E6155B600C528BC /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2DA1E0D66AB0012FFFB /* APIService.swift */; };
+		53CE89DC1E6155B600C528BC /* TableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2E61E0D920D0012FFFB /* TableViewHelper.swift */; };
+		53CE89DD1E6155F000C528BC /* RankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538F75EC1E20BBBF001671EE /* RankViewModel.swift */; };
+		53CE89E01E615C4D00C528BC /* UIImage+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5309A2001E227A8600FB0037 /* UIImage+Addition.swift */; };
+		53CE89E21E615C6E00C528BC /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538F75EA1E20BACE001671EE /* Rank.swift */; };
+		53CE89E51E6160A900C528BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53CBA2AD1E0D5F5F0012FFFB /* Assets.xcassets */; };
+		53CE89E91E6164DD00C528BC /* WidgetHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53CE89E71E6164DD00C528BC /* WidgetHeaderCell.xib */; };
+		53CE89EB1E6164F200C528BC /* WidgetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CE89EA1E6164F200C528BC /* WidgetCell.swift */; };
+		53CE89ED1E61653500C528BC /* WidgetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53CE89EC1E61653500C528BC /* WidgetCell.xib */; };
+		53CE89EF1E61716500C528BC /* WidgetHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CE89EE1E61716500C528BC /* WidgetHeaderCell.swift */; };
 		98576FFE086CBF2D2AAECAC2 /* Pods_CPBLFanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9800F6C1BFD0DC46FE73BFFA /* Pods_CPBLFanTests.framework */; };
+		E372B36DD4EA6CD97FAD642B /* Pods_Rank_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64CF72F3CFE322AC61FED4B /* Pods_Rank_Widget.framework */; };
 		E585054292EA96FC3BAE7457 /* Pods_CPBLFanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 031AC937497451A2DE3EDB61 /* Pods_CPBLFanUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +92,13 @@
 			remoteGlobalIDString = 53CBA2A01E0D5F5E0012FFFB;
 			remoteInfo = CPBLFan;
 		};
+		53CE89D31E61532E00C528BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53CBA2991E0D5F5E0012FFFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53CE89C81E61532E00C528BC;
+			remoteInfo = "Rank-Widget";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -86,6 +108,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				53CE89D51E61532E00C528BC /* Rank-Widget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,9 +177,21 @@
 		53CBA2E61E0D920D0012FFFB /* TableViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewHelper.swift; path = Helper/TableViewHelper.swift; sourceTree = "<group>"; };
 		53CBA2E91E0D96670012FFFB /* NewsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsViewModel.swift; path = ViewModel/NewsViewModel.swift; sourceTree = "<group>"; };
 		53CBA2EB1E0ECC1E0012FFFB /* NewsContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsContentViewController.swift; path = View/ViewController/NewsContentViewController.swift; sourceTree = "<group>"; };
+		53CE89C91E61532E00C528BC /* Rank-Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Rank-Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		53CE89CA1E61532E00C528BC /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		53CE89CD1E61532E00C528BC /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		53CE89D01E61532E00C528BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		53CE89D21E61532E00C528BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53CE89E71E6164DD00C528BC /* WidgetHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WidgetHeaderCell.xib; sourceTree = "<group>"; };
+		53CE89EA1E6164F200C528BC /* WidgetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetCell.swift; sourceTree = "<group>"; };
+		53CE89EC1E61653500C528BC /* WidgetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WidgetCell.xib; sourceTree = "<group>"; };
+		53CE89EE1E61716500C528BC /* WidgetHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetHeaderCell.swift; sourceTree = "<group>"; };
 		5B0090C7CC4830DD1B064E54 /* Pods-CPBLFanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPBLFanTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CPBLFanTests/Pods-CPBLFanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9800F6C1BFD0DC46FE73BFFA /* Pods_CPBLFanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPBLFanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B97B8B3BD2182D65A2A4F0CC /* Pods-Rank-Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rank-Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rank-Widget/Pods-Rank-Widget.debug.xcconfig"; sourceTree = "<group>"; };
+		BB6E4D973F11C15A80172EAE /* Pods-Rank-Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rank-Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rank-Widget/Pods-Rank-Widget.release.xcconfig"; sourceTree = "<group>"; };
 		C2DA969A0B0630BE49B2AF90 /* Pods_CPBLFan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPBLFan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D64CF72F3CFE322AC61FED4B /* Pods_Rank_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rank_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3FC4FF9ECC545551F027CFE /* Pods-CPBLFan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPBLFan.release.xcconfig"; path = "Pods/Target Support Files/Pods-CPBLFan/Pods-CPBLFan.release.xcconfig"; sourceTree = "<group>"; };
 		F766D370503CE15EE8B674EA /* Pods-CPBLFanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPBLFanTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CPBLFanTests/Pods-CPBLFanTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,6 +221,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		53CE89C61E61532E00C528BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53CE89CB1E61532E00C528BC /* NotificationCenter.framework in Frameworks */,
+				E372B36DD4EA6CD97FAD642B /* Pods_Rank_Widget.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -205,6 +249,7 @@
 				53CBA2A31E0D5F5F0012FFFB /* CPBLFan */,
 				53CBA2BA1E0D5F5F0012FFFB /* CPBLFanTests */,
 				53CBA2C51E0D5F5F0012FFFB /* CPBLFanUITests */,
+				53CE89CC1E61532E00C528BC /* Rank-Widget */,
 				53CBA2A21E0D5F5F0012FFFB /* Products */,
 				97A7D9A1F9BF4BA2F55CB60C /* Pods */,
 				66FD5EA4EBFE2AD74F66A754 /* Frameworks */,
@@ -217,6 +262,7 @@
 				53CBA2A11E0D5F5E0012FFFB /* CPBLFan.app */,
 				53CBA2B71E0D5F5F0012FFFB /* CPBLFanTests.xctest */,
 				53CBA2C21E0D5F5F0012FFFB /* CPBLFanUITests.xctest */,
+				53CE89C91E61532E00C528BC /* Rank-Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -334,12 +380,28 @@
 			name = ViewModel;
 			sourceTree = "<group>";
 		};
+		53CE89CC1E61532E00C528BC /* Rank-Widget */ = {
+			isa = PBXGroup;
+			children = (
+				53CE89CD1E61532E00C528BC /* TodayViewController.swift */,
+				53CE89CF1E61532E00C528BC /* MainInterface.storyboard */,
+				53CE89D21E61532E00C528BC /* Info.plist */,
+				53CE89EE1E61716500C528BC /* WidgetHeaderCell.swift */,
+				53CE89E71E6164DD00C528BC /* WidgetHeaderCell.xib */,
+				53CE89EA1E6164F200C528BC /* WidgetCell.swift */,
+				53CE89EC1E61653500C528BC /* WidgetCell.xib */,
+			);
+			path = "Rank-Widget";
+			sourceTree = "<group>";
+		};
 		66FD5EA4EBFE2AD74F66A754 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				C2DA969A0B0630BE49B2AF90 /* Pods_CPBLFan.framework */,
 				9800F6C1BFD0DC46FE73BFFA /* Pods_CPBLFanTests.framework */,
 				031AC937497451A2DE3EDB61 /* Pods_CPBLFanUITests.framework */,
+				53CE89CA1E61532E00C528BC /* NotificationCenter.framework */,
+				D64CF72F3CFE322AC61FED4B /* Pods_Rank_Widget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -353,6 +415,8 @@
 				F766D370503CE15EE8B674EA /* Pods-CPBLFanTests.release.xcconfig */,
 				317D3554E844AE677F4D245D /* Pods-CPBLFanUITests.debug.xcconfig */,
 				0214F9294E9FC1F421BE8D43 /* Pods-CPBLFanUITests.release.xcconfig */,
+				B97B8B3BD2182D65A2A4F0CC /* Pods-Rank-Widget.debug.xcconfig */,
+				BB6E4D973F11C15A80172EAE /* Pods-Rank-Widget.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -375,6 +439,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				53CE89D41E61532E00C528BC /* PBXTargetDependency */,
 			);
 			name = CPBLFan;
 			productName = CPBLFan;
@@ -423,6 +488,25 @@
 			productReference = 53CBA2C21E0D5F5F0012FFFB /* CPBLFanUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		53CE89C81E61532E00C528BC /* Rank-Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53CE89D81E61532E00C528BC /* Build configuration list for PBXNativeTarget "Rank-Widget" */;
+			buildPhases = (
+				A92D439B20574D03C2EE9CB6 /* [CP] Check Pods Manifest.lock */,
+				53CE89C51E61532E00C528BC /* Sources */,
+				53CE89C61E61532E00C528BC /* Frameworks */,
+				53CE89C71E61532E00C528BC /* Resources */,
+				9A1DC672BD1E4CEC1AC0A484 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Rank-Widget";
+			productName = "Rank-Widget";
+			productReference = 53CE89C91E61532E00C528BC /* Rank-Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -455,6 +539,11 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 53CBA2A01E0D5F5E0012FFFB;
 					};
+					53CE89C81E61532E00C528BC = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8MREJM6257;
+						ProvisioningStyle = Manual;
+					};
 				};
 			};
 			buildConfigurationList = 53CBA29C1E0D5F5E0012FFFB /* Build configuration list for PBXProject "CPBLFan" */;
@@ -473,6 +562,7 @@
 				53CBA2A01E0D5F5E0012FFFB /* CPBLFan */,
 				53CBA2B61E0D5F5F0012FFFB /* CPBLFanTests */,
 				53CBA2C11E0D5F5F0012FFFB /* CPBLFanUITests */,
+				53CE89C81E61532E00C528BC /* Rank-Widget */,
 			);
 		};
 /* End PBXProject section */
@@ -509,6 +599,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53CE89C71E61532E00C528BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53CE89E91E6164DD00C528BC /* WidgetHeaderCell.xib in Resources */,
+				53CE89D11E61532E00C528BC /* MainInterface.storyboard in Resources */,
+				53CE89ED1E61653500C528BC /* WidgetCell.xib in Resources */,
+				53CE89E51E6160A900C528BC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,6 +721,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CPBLFan/Pods-CPBLFan-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9A1DC672BD1E4CEC1AC0A484 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rank-Widget/Pods-Rank-Widget-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A92D439B20574D03C2EE9CB6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		EE76B49BB691036C6373D61E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -711,6 +842,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		53CE89C51E61532E00C528BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53CE89CE1E61532E00C528BC /* TodayViewController.swift in Sources */,
+				53CE89EB1E6164F200C528BC /* WidgetCell.swift in Sources */,
+				53CE89E21E615C6E00C528BC /* Rank.swift in Sources */,
+				53CE89E01E615C4D00C528BC /* UIImage+Addition.swift in Sources */,
+				53CE89DB1E6155B600C528BC /* APIService.swift in Sources */,
+				53CE89DD1E6155F000C528BC /* RankViewModel.swift in Sources */,
+				53CE89EF1E61716500C528BC /* WidgetHeaderCell.swift in Sources */,
+				53CE89DC1E6155B600C528BC /* TableViewHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -723,6 +869,11 @@
 			isa = PBXTargetDependency;
 			target = 53CBA2A01E0D5F5E0012FFFB /* CPBLFan */;
 			targetProxy = 53CBA2C31E0D5F5F0012FFFB /* PBXContainerItemProxy */;
+		};
+		53CE89D41E61532E00C528BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53CE89C81E61532E00C528BC /* Rank-Widget */;
+			targetProxy = 53CE89D31E61532E00C528BC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -741,6 +892,14 @@
 				53CBA2B01E0D5F5F0012FFFB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		53CE89CF1E61532E00C528BC /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53CE89D01E61532E00C528BC /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -935,6 +1094,42 @@
 			};
 			name = Release;
 		};
+		53CE89D61E61532E00C528BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B97B8B3BD2182D65A2A4F0CC /* Pods-Rank-Widget.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 8MREJM6257;
+				INFOPLIST_FILE = "Rank-Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Rank-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b259db02-3e52-444f-9cd0-c096a549d989";
+				PROVISIONING_PROFILE_SPECIFIER = "CPBLFan-Rank-Widget";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		53CE89D71E61532E00C528BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB6E4D973F11C15A80172EAE /* Pods-Rank-Widget.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 8MREJM6257;
+				INFOPLIST_FILE = "Rank-Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Rank-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b259db02-3e52-444f-9cd0-c096a549d989";
+				PROVISIONING_PROFILE_SPECIFIER = "CPBLFan-Rank-Widget";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -970,6 +1165,15 @@
 			buildConfigurations = (
 				53CBA2D21E0D5F5F0012FFFB /* Debug */,
 				53CBA2D31E0D5F5F0012FFFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53CE89D81E61532E00C528BC /* Build configuration list for PBXNativeTarget "Rank-Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53CE89D61E61532E00C528BC /* Debug */,
+				53CE89D71E61532E00C528BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

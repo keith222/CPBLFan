@@ -26,7 +26,7 @@ target 'CPBLFan' do
   
   #Google Firebase
   pod 'Firebase/Core'
-
+  
   target 'CPBLFanTests' do
     inherit! :search_paths
     # Pods for testing
@@ -38,3 +38,13 @@ target 'CPBLFan' do
   end
 
 end
+
+target 'Rank-Widget' do
+   use_frameworks!
+   # Pods for today widget
+   #Pods about internet request/response/parse
+   pod 'Alamofire'
+   pod 'AlamofireObjectMapper', '~> 4.0'
+   pod 'SwiftyJSON'
+   pod 'Kanna', '~> 2.1.0'
+ end

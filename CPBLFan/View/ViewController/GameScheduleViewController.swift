@@ -149,6 +149,8 @@ class GameScheduleViewController: UIViewController {
     }
     
     func swipeGestureAction(gesture: UISwipeGestureRecognizer){
+        HUD.show(.progress)
+        
         switch gesture.direction {
         case UISwipeGestureRecognizerDirection.right:
             month -= 1

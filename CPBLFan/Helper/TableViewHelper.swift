@@ -116,10 +116,10 @@ class DataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if self.sectionCount > 1{
+        if self.templateHeader != nil{
             let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: (templateHeader?.reuseIdentifier)!)
-            if let reactiveView = headerView as? BindView{
-                reactiveView.bindViewModel(headerData![section])
+            if let reactiveView = headerView as? BindView, headerData != nil{
+                    reactiveView.bindViewModel(headerData![section])
             }
             return headerView
         }else{
