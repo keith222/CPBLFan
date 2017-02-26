@@ -11,6 +11,7 @@ import NotificationCenter
 
 class TodayViewController: UIViewController, NCWidgetProviding {
     
+    @IBOutlet weak var alertLabel: UILabel!
     @IBOutlet weak var seasonTableView: UITableView!
     @IBOutlet weak var firstSeeasonTableView: UITableView!
     @IBOutlet weak var secondSeasonTableView: UITableView!
@@ -66,7 +67,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         if month < 3{
             year = year - 1
         }
-        
         // load and show rank info
         self.rankViewModel.fetchRank(from: String(year) , handler: { [weak self] data in
             let source: [[RankViewModel]] = data.map{ value -> [RankViewModel] in

@@ -10,6 +10,7 @@ import UIKit
 import Kingfisher
 import PKHUD
 import DynamicColor
+import ReachabilitySwift
 
 class NewsViewController: UIViewController {
     
@@ -27,6 +28,15 @@ class NewsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // check net connection
+        let reachability = Reachability()
+        guard (reachability?.isReachable)! else {
+            let alert = UIAlertController(title: "提示", message: "網路連線異常。", preferredStyle: .alert)
+            alert.show()
+            return
+        }
+        
         
         // show loading activity view
         HUD.show(.progress)

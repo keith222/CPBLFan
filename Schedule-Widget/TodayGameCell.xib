@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodayGameCell" rowHeight="50" id="KGk-i7-Jjw" customClass="TodayGameCell" customModule="Schedule_Widget" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oSb-jy-KlD">
+                        <rect key="frame" x="15" y="4" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="FQc-oG-5S3"/>
+                            <constraint firstAttribute="width" secondItem="oSb-jy-KlD" secondAttribute="height" multiplier="1:1" id="PlL-Yc-3NB"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OI1-EJ-i1u">
+                        <rect key="frame" x="265" y="4" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="aDb-A1-biv"/>
+                            <constraint firstAttribute="width" secondItem="OI1-EJ-i1u" secondAttribute="height" multiplier="1:1" id="sLf-fK-YDg"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game：001" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0O-ZH-KDF">
+                        <rect key="frame" x="126.5" y="5" width="67.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="桃園國際棒球場" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o46-fr-Kbj">
+                        <rect key="frame" x="106.5" y="26.5" width="107.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="OI1-EJ-i1u" secondAttribute="trailing" constant="15" id="FUO-q6-GLn"/>
+                    <constraint firstItem="OI1-EJ-i1u" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="GiQ-tw-pwV"/>
+                    <constraint firstItem="o46-fr-Kbj" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="VHU-1y-gnk"/>
+                    <constraint firstItem="oSb-jy-KlD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="VQ9-3y-MYS"/>
+                    <constraint firstAttribute="bottom" secondItem="o46-fr-Kbj" secondAttribute="bottom" constant="5" id="a7L-mT-Thd"/>
+                    <constraint firstItem="p0O-ZH-KDF" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="bFb-1E-GZ0"/>
+                    <constraint firstItem="p0O-ZH-KDF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="iur-BZ-g5m"/>
+                    <constraint firstItem="oSb-jy-KlD" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="wjf-8F-5oz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="gameNumLabel" destination="p0O-ZH-KDF" id="CNv-Ab-Y5o"/>
+                <outlet property="guestImageView" destination="oSb-jy-KlD" id="NQg-0x-9FH"/>
+                <outlet property="homeImageView" destination="OI1-EJ-i1u" id="pGS-Kt-h5I"/>
+                <outlet property="placeLabel" destination="o46-fr-Kbj" id="kOh-K0-Qyl"/>
+            </connections>
+            <point key="canvasLocation" x="40" y="49"/>
+        </tableViewCell>
+    </objects>
+</document>

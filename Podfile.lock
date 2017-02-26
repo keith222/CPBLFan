@@ -10,6 +10,9 @@ PODS:
   - Firebase/Database (3.14.0):
     - Firebase/Core
     - FirebaseDatabase (= 3.1.2)
+  - Firebase/Messaging (3.14.0):
+    - Firebase/Core
+    - FirebaseMessaging (= 1.2.2)
   - FirebaseAnalytics (3.7.0):
     - FirebaseCore (~> 3.5)
     - FirebaseInstanceID (~> 1.0)
@@ -19,13 +22,22 @@ PODS:
   - FirebaseDatabase (3.1.2):
     - FirebaseAnalytics (~> 3.7)
   - FirebaseInstanceID (1.0.9)
+  - FirebaseMessaging (1.2.2):
+    - FirebaseAnalytics (~> 3.7)
+    - FirebaseInstanceID (~> 1.0)
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - Protobuf (~> 3.1)
   - GoogleToolboxForMac/Defines (2.1.1)
+  - GoogleToolboxForMac/Logger (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - Kanna (2.1.1)
   - Kingfisher (3.5.0)
-  - ObjectMapper (2.2.3)
+  - ObjectMapper (2.2.4)
   - PKHUD (4.2.0)
+  - Protobuf (3.2.0)
+  - ReachabilitySwift (3)
   - SwifterSwift (1.6.2)
   - SwiftyJSON (3.1.4)
   - youtube-ios-player-helper (0.1.6)
@@ -36,9 +48,11 @@ DEPENDENCIES:
   - DynamicColor (~> 3.1.0)
   - Firebase/Core
   - Firebase/Database
+  - Firebase/Messaging
   - Kanna (~> 2.1.0)
   - Kingfisher
   - PKHUD (~> 4.0)
+  - ReachabilitySwift
   - SwifterSwift
   - SwiftyJSON
   - youtube-ios-player-helper (~> 0.1.4)
@@ -52,15 +66,18 @@ SPEC CHECKSUMS:
   FirebaseCore: 225d40532489835a034b8f4e2c9c87fbf4f615a2
   FirebaseDatabase: 05c96d7b43a7368dc91c07791adb49683e1738d1
   FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
+  FirebaseMessaging: df8267f378580a24174ce7861233aa11d5c90109
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   Kanna: 9b4b086c218703f2b94f5b21a466217dd2f9332e
   Kingfisher: 7c62087039d93d26c54c8dd9b0b588d2ce55cef6
-  ObjectMapper: d3b3de11267f5d971f390eb8d63dd509116a4329
+  ObjectMapper: 81d0e5d7c57129e3e93f29a04bdf9669542b37d2
   PKHUD: 48af884cf00c2213b0313b739d914e6cab1c0f5e
+  Protobuf: 745f59e122e5de98d4d7ef291e264a0eef80f58e
+  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
   SwifterSwift: 48a48a193b47e0d577359c75570e5291dd2f460a
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
 
-PODFILE CHECKSUM: 662be8a493e52c2e47a978fc17539251fe18fc14
+PODFILE CHECKSUM: 0cffc65f657e1977be9890a1dc9e63d08901a660
 
 COCOAPODS: 1.1.1

@@ -9,6 +9,8 @@
 import UIKit
 import Alamofire
 import PKHUD
+import ReachabilitySwift
+import SwifterSwift
 
 class StatsViewController: UIViewController {
 
@@ -25,6 +27,14 @@ class StatsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // check net connection
+        let reachability = Reachability()
+        guard (reachability?.isReachable)! else {
+            let alert = UIAlertController(title: "提示", message: "網路連線異常。", preferredStyle: .alert)
+            alert.show()
+            return
+        }
         
         // show loading activity
         HUD.show(.progress)

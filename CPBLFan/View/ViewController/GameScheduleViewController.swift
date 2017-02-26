@@ -8,6 +8,8 @@
 
 import UIKit
 import PKHUD
+import ReachabilitySwift
+import SwifterSwift
 
 class GameScheduleViewController: UIViewController {
     
@@ -26,6 +28,14 @@ class GameScheduleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // check net connection
+        let reachability = Reachability()
+        guard (reachability?.isReachable)! else {
+            let alert = UIAlertController(title: "提示", message: "網路連線異常。", preferredStyle: .alert)
+            alert.show()
+            return
+        }
         
         // add left and right swipe gesture
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeGestureAction(gesture:)))
@@ -52,6 +62,7 @@ class GameScheduleViewController: UIViewController {
         let calendar = Calendar.current
         year = calendar.component(.year, from: date)
         month = calendar.component(.month, from: date)
+        let day = calendar.component(.day, from: date)
         // because of baseball season is from 3 to 10
         if month < 3{
             year -= 1
@@ -90,6 +101,11 @@ class GameScheduleViewController: UIViewController {
                     sectionNib: "GameHeaderCell",
                     sectionSource: headSource as [AnyObject]
                 )
+                
+                if let sectionIndex = headSource.index(where: {return $0[1] == String(day)}){
+                    let indexPath = IndexPath(row: 0, section: sectionIndex)
+                    self?.gameTableView.scrollToRow(at: indexPath, at: .top, animated: false)
+                }
             }else{
                 print("無資料")
                 self?.gameTableView.isHidden = true

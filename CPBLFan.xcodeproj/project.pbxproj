@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4942F1D4C2E6FAA4B2E0917F /* Pods_CPBLFan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DA969A0B0630BE49B2AF90 /* Pods_CPBLFan.framework */; };
+		4A3AAF08335D2A49C9FD9F79 /* Pods_Schedule_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F61F5EF3C9A039649C1B27 /* Pods_Schedule_Widget.framework */; };
 		5309A2011E227A8600FB0037 /* UIImage+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5309A2001E227A8600FB0037 /* UIImage+Addition.swift */; };
 		5309A2051E228E8A00FB0037 /* RankHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5309A2031E228E8A00FB0037 /* RankHeaderCell.xib */; };
 		5309A2071E22961400FB0037 /* RankHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5309A2061E22961400FB0037 /* RankHeaderCell.swift */; };
@@ -35,6 +36,19 @@
 		536238011E44C5440091DA9C /* GameScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536238001E44C5440091DA9C /* GameScheduleViewController.swift */; };
 		536238031E44CAA20091DA9C /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536238021E44CAA20091DA9C /* GameViewModel.swift */; };
 		536238051E44CAE20091DA9C /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536238041E44CAE20091DA9C /* Game.swift */; };
+		536B606E1E62A92D0027C796 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53CE89CA1E61532E00C528BC /* NotificationCenter.framework */; };
+		536B60711E62A92D0027C796 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536B60701E62A92D0027C796 /* TodayViewController.swift */; };
+		536B60741E62A92D0027C796 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 536B60721E62A92D0027C796 /* MainInterface.storyboard */; };
+		536B60781E62A92D0027C796 /* Schedule-Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 536B606D1E62A92C0027C796 /* Schedule-Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		536B607C1E62B53A0027C796 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2DA1E0D66AB0012FFFB /* APIService.swift */; };
+		536B607D1E62B53A0027C796 /* TableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2E61E0D920D0012FFFB /* TableViewHelper.swift */; };
+		536B607E1E62B5420027C796 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536238021E44CAA20091DA9C /* GameViewModel.swift */; };
+		536B60811E62B5740027C796 /* TodayGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536B607F1E62B5740027C796 /* TodayGameCell.swift */; };
+		536B60821E62B5740027C796 /* TodayGameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 536B60801E62B5740027C796 /* TodayGameCell.xib */; };
+		536B60831E62B77E0027C796 /* UIImage+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5309A2001E227A8600FB0037 /* UIImage+Addition.swift */; };
+		536B60841E62C8E40027C796 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536238041E44CAE20091DA9C /* Game.swift */; };
+		536B60851E62CEA70027C796 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53B1F10E1E58869E0035DEDA /* GoogleService-Info.plist */; };
+		536B60861E62DEC10027C796 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53CBA2AD1E0D5F5F0012FFFB /* Assets.xcassets */; };
 		53764B4D1E2FAA3D00FFE77E /* GameSchedule.json in Resources */ = {isa = PBXBuildFile; fileRef = 53764B4C1E2FAA3D00FFE77E /* GameSchedule.json */; };
 		53788A211E10070F00C3F04B /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53788A201E10070F00C3F04B /* News.swift */; };
 		537CCF891E20BE7B00AFC864 /* RankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537CCF881E20BE7B00AFC864 /* RankViewController.swift */; };
@@ -78,6 +92,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		536B60761E62A92D0027C796 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53CBA2991E0D5F5E0012FFFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 536B606C1E62A92C0027C796;
+			remoteInfo = "Schedule-Widget";
+		};
 		53CBA2B81E0D5F5F0012FFFB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 53CBA2991E0D5F5E0012FFFB /* Project object */;
@@ -109,6 +130,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				53CE89D51E61532E00C528BC /* Rank-Widget.appex in Embed App Extensions */,
+				536B60781E62A92D0027C796 /* Schedule-Widget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,6 +142,7 @@
 		031AC937497451A2DE3EDB61 /* Pods_CPBLFanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPBLFanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		317D3554E844AE677F4D245D /* Pods-CPBLFanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPBLFanUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CPBLFanUITests/Pods-CPBLFanUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		33A63E445BD3C441C933A21C /* Pods-CPBLFan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPBLFan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CPBLFan/Pods-CPBLFan.debug.xcconfig"; sourceTree = "<group>"; };
+		44F61F5EF3C9A039649C1B27 /* Pods_Schedule_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Schedule_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5309A2001E227A8600FB0037 /* UIImage+Addition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Addition.swift"; path = "Extension/UIImage+Addition.swift"; sourceTree = "<group>"; };
 		5309A2031E228E8A00FB0037 /* RankHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RankHeaderCell.xib; path = View/RankHeaderCell.xib; sourceTree = "<group>"; };
 		5309A2061E22961400FB0037 /* RankHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RankHeaderCell.swift; path = View/RankHeaderCell.swift; sourceTree = "<group>"; };
@@ -147,6 +170,13 @@
 		536238001E44C5440091DA9C /* GameScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScheduleViewController.swift; path = View/ViewController/GameScheduleViewController.swift; sourceTree = "<group>"; };
 		536238021E44CAA20091DA9C /* GameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewModel.swift; path = ViewModel/GameViewModel.swift; sourceTree = "<group>"; };
 		536238041E44CAE20091DA9C /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Game.swift; path = Model/Game.swift; sourceTree = "<group>"; };
+		536B606D1E62A92C0027C796 /* Schedule-Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Schedule-Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		536B60701E62A92D0027C796 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		536B60731E62A92D0027C796 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		536B60751E62A92D0027C796 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		536B607F1E62B5740027C796 /* TodayGameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayGameCell.swift; sourceTree = "<group>"; };
+		536B60801E62B5740027C796 /* TodayGameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TodayGameCell.xib; sourceTree = "<group>"; };
+		536B60871E6334DB0027C796 /* CPBLFan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CPBLFan.entitlements; sourceTree = "<group>"; };
 		53764B4C1E2FAA3D00FFE77E /* GameSchedule.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GameSchedule.json; sourceTree = "<group>"; };
 		53788A201E10070F00C3F04B /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = News.swift; path = Model/News.swift; sourceTree = "<group>"; };
 		537CCF881E20BE7B00AFC864 /* RankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RankViewController.swift; path = View/ViewController/RankViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +217,8 @@
 		53CE89EC1E61653500C528BC /* WidgetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WidgetCell.xib; sourceTree = "<group>"; };
 		53CE89EE1E61716500C528BC /* WidgetHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetHeaderCell.swift; sourceTree = "<group>"; };
 		5B0090C7CC4830DD1B064E54 /* Pods-CPBLFanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPBLFanTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CPBLFanTests/Pods-CPBLFanTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8CB900F5DEFEBAA58E8EBD95 /* Pods-Schedule-Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schedule-Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Schedule-Widget/Pods-Schedule-Widget.debug.xcconfig"; sourceTree = "<group>"; };
+		943B49B7EBD897BE0277A819 /* Pods-Schedule-Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schedule-Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Schedule-Widget/Pods-Schedule-Widget.release.xcconfig"; sourceTree = "<group>"; };
 		9800F6C1BFD0DC46FE73BFFA /* Pods_CPBLFanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPBLFanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B97B8B3BD2182D65A2A4F0CC /* Pods-Rank-Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rank-Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rank-Widget/Pods-Rank-Widget.debug.xcconfig"; sourceTree = "<group>"; };
 		BB6E4D973F11C15A80172EAE /* Pods-Rank-Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rank-Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rank-Widget/Pods-Rank-Widget.release.xcconfig"; sourceTree = "<group>"; };
@@ -197,6 +229,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		536B606A1E62A92C0027C796 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				536B606E1E62A92D0027C796 /* NotificationCenter.framework in Frameworks */,
+				4A3AAF08335D2A49C9FD9F79 /* Pods_Schedule_Widget.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		53CBA29E1E0D5F5E0012FFFB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -233,6 +274,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		536B606F1E62A92D0027C796 /* Schedule-Widget */ = {
+			isa = PBXGroup;
+			children = (
+				536B60701E62A92D0027C796 /* TodayViewController.swift */,
+				536B60721E62A92D0027C796 /* MainInterface.storyboard */,
+				536B60751E62A92D0027C796 /* Info.plist */,
+				536B607F1E62B5740027C796 /* TodayGameCell.swift */,
+				536B60801E62B5740027C796 /* TodayGameCell.xib */,
+			);
+			path = "Schedule-Widget";
+			sourceTree = "<group>";
+		};
 		53B396E31E1D36C20032D0DA /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +303,7 @@
 				53CBA2BA1E0D5F5F0012FFFB /* CPBLFanTests */,
 				53CBA2C51E0D5F5F0012FFFB /* CPBLFanUITests */,
 				53CE89CC1E61532E00C528BC /* Rank-Widget */,
+				536B606F1E62A92D0027C796 /* Schedule-Widget */,
 				53CBA2A21E0D5F5F0012FFFB /* Products */,
 				97A7D9A1F9BF4BA2F55CB60C /* Pods */,
 				66FD5EA4EBFE2AD74F66A754 /* Frameworks */,
@@ -263,6 +317,7 @@
 				53CBA2B71E0D5F5F0012FFFB /* CPBLFanTests.xctest */,
 				53CBA2C21E0D5F5F0012FFFB /* CPBLFanUITests.xctest */,
 				53CE89C91E61532E00C528BC /* Rank-Widget.appex */,
+				536B606D1E62A92C0027C796 /* Schedule-Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -270,6 +325,7 @@
 		53CBA2A31E0D5F5F0012FFFB /* CPBLFan */ = {
 			isa = PBXGroup;
 			children = (
+				536B60871E6334DB0027C796 /* CPBLFan.entitlements */,
 				53B396E31E1D36C20032D0DA /* Extension */,
 				53CBA2D71E0D66770012FFFB /* Model */,
 				53CBA2E81E0D964B0012FFFB /* ViewModel */,
@@ -402,6 +458,7 @@
 				031AC937497451A2DE3EDB61 /* Pods_CPBLFanUITests.framework */,
 				53CE89CA1E61532E00C528BC /* NotificationCenter.framework */,
 				D64CF72F3CFE322AC61FED4B /* Pods_Rank_Widget.framework */,
+				44F61F5EF3C9A039649C1B27 /* Pods_Schedule_Widget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -417,6 +474,8 @@
 				0214F9294E9FC1F421BE8D43 /* Pods-CPBLFanUITests.release.xcconfig */,
 				B97B8B3BD2182D65A2A4F0CC /* Pods-Rank-Widget.debug.xcconfig */,
 				BB6E4D973F11C15A80172EAE /* Pods-Rank-Widget.release.xcconfig */,
+				8CB900F5DEFEBAA58E8EBD95 /* Pods-Schedule-Widget.debug.xcconfig */,
+				943B49B7EBD897BE0277A819 /* Pods-Schedule-Widget.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -424,6 +483,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		536B606C1E62A92C0027C796 /* Schedule-Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 536B607B1E62A92D0027C796 /* Build configuration list for PBXNativeTarget "Schedule-Widget" */;
+			buildPhases = (
+				53F7FE80F7F411C654366A2D /* [CP] Check Pods Manifest.lock */,
+				536B60691E62A92C0027C796 /* Sources */,
+				536B606A1E62A92C0027C796 /* Frameworks */,
+				536B606B1E62A92C0027C796 /* Resources */,
+				F5FD9051CAF9C2B11188E007 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Schedule-Widget";
+			productName = "Schedule-Widget";
+			productReference = 536B606D1E62A92C0027C796 /* Schedule-Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		53CBA2A01E0D5F5E0012FFFB /* CPBLFan */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53CBA2CB1E0D5F5F0012FFFB /* Build configuration list for PBXNativeTarget "CPBLFan" */;
@@ -440,6 +518,7 @@
 			);
 			dependencies = (
 				53CE89D41E61532E00C528BC /* PBXTargetDependency */,
+				536B60771E62A92D0027C796 /* PBXTargetDependency */,
 			);
 			name = CPBLFan;
 			productName = CPBLFan;
@@ -517,6 +596,11 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Sparkr;
 				TargetAttributes = {
+					536B606C1E62A92C0027C796 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8MREJM6257;
+						ProvisioningStyle = Automatic;
+					};
 					53CBA2A01E0D5F5E0012FFFB = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 8MREJM6257;
@@ -524,6 +608,12 @@
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
+							};
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
 							};
 						};
 					};
@@ -542,7 +632,7 @@
 					53CE89C81E61532E00C528BC = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 8MREJM6257;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -563,11 +653,23 @@
 				53CBA2B61E0D5F5F0012FFFB /* CPBLFanTests */,
 				53CBA2C11E0D5F5F0012FFFB /* CPBLFanUITests */,
 				53CE89C81E61532E00C528BC /* Rank-Widget */,
+				536B606C1E62A92C0027C796 /* Schedule-Widget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		536B606B1E62A92C0027C796 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				536B60741E62A92D0027C796 /* MainInterface.storyboard in Resources */,
+				536B60821E62B5740027C796 /* TodayGameCell.xib in Resources */,
+				536B60861E62DEC10027C796 /* Assets.xcassets in Resources */,
+				536B60851E62CEA70027C796 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		53CBA29F1E0D5F5E0012FFFB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -691,6 +793,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		53F7FE80F7F411C654366A2D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		6E1F6CC89FDBFE856ED47CEE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -766,6 +883,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CPBLFanTests/Pods-CPBLFanTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F5FD9051CAF9C2B11188E007 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Schedule-Widget/Pods-Schedule-Widget-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FE943A1C9D99A2F89B907D09 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -784,6 +916,20 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		536B60691E62A92C0027C796 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				536B60811E62B5740027C796 /* TodayGameCell.swift in Sources */,
+				536B60831E62B77E0027C796 /* UIImage+Addition.swift in Sources */,
+				536B60841E62C8E40027C796 /* Game.swift in Sources */,
+				536B607E1E62B5420027C796 /* GameViewModel.swift in Sources */,
+				536B607C1E62B53A0027C796 /* APIService.swift in Sources */,
+				536B607D1E62B53A0027C796 /* TableViewHelper.swift in Sources */,
+				536B60711E62A92D0027C796 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		53CBA29D1E0D5F5E0012FFFB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -860,6 +1006,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		536B60771E62A92D0027C796 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 536B606C1E62A92C0027C796 /* Schedule-Widget */;
+			targetProxy = 536B60761E62A92D0027C796 /* PBXContainerItemProxy */;
+		};
 		53CBA2B91E0D5F5F0012FFFB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 53CBA2A01E0D5F5E0012FFFB /* CPBLFan */;
@@ -878,6 +1029,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		536B60721E62A92D0027C796 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				536B60731E62A92D0027C796 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		53CBA2AA1E0D5F5F0012FFFB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -905,6 +1064,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		536B60791E62A92D0027C796 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CB900F5DEFEBAA58E8EBD95 /* Pods-Schedule-Widget.debug.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 8MREJM6257;
+				INFOPLIST_FILE = "Schedule-Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Schedule-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		536B607A1E62A92D0027C796 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 943B49B7EBD897BE0277A819 /* Pods-Schedule-Widget.release.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 8MREJM6257;
+				INFOPLIST_FILE = "Schedule-Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Schedule-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		53CBA2C91E0D5F5F0012FFFB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1006,11 +1195,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CPBLFan/CPBLFan.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8MREJM6257;
 				INFOPLIST_FILE = CPBLFan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CPBLFan/CPBLFan-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1022,6 +1215,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CPBLFan/CPBLFan.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8MREJM6257;
 				INFOPLIST_FILE = CPBLFan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1098,15 +1293,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B97B8B3BD2182D65A2A4F0CC /* Pods-Rank-Widget.debug.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = 8MREJM6257;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Rank-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Rank-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b259db02-3e52-444f-9cd0-c096a549d989";
-				PROVISIONING_PROFILE_SPECIFIER = "CPBLFan-Rank-Widget";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -1116,15 +1311,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BB6E4D973F11C15A80172EAE /* Pods-Rank-Widget.release.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = 8MREJM6257;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Rank-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Rank-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b259db02-3e52-444f-9cd0-c096a549d989";
-				PROVISIONING_PROFILE_SPECIFIER = "CPBLFan-Rank-Widget";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -1133,6 +1328,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		536B607B1E62A92D0027C796 /* Build configuration list for PBXNativeTarget "Schedule-Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				536B60791E62A92D0027C796 /* Debug */,
+				536B607A1E62A92D0027C796 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		53CBA29C1E0D5F5E0012FFFB /* Build configuration list for PBXProject "CPBLFan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

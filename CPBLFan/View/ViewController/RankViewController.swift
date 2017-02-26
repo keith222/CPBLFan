@@ -8,6 +8,8 @@
 
 import UIKit
 import PKHUD
+import ReachabilitySwift
+import SwifterSwift
 
 class RankViewController: UIViewController {
     
@@ -21,6 +23,14 @@ class RankViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // check net connection
+        let reachability = Reachability()
+        guard (reachability?.isReachable)! else {
+            let alert = UIAlertController(title: "提示", message: "網路連線異常。", preferredStyle: .alert)
+            alert.show()
+            return
+        }
         
         // hide tableview
         self.rankTableView.isHidden = true
