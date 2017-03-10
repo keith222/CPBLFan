@@ -36,13 +36,16 @@ class NewsViewModel{
             if let doc = HTML(html: text, encoding: .utf8){
                 let topNewsTitle = doc.at_css(".news_head_title > a")?.text
                 let topNewsDate = doc.at_css(".news_head_date")?.text
-                let topNewsImageUrl = doc.at_css(".games_news_pic > a > img")?["src"]?.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
+                let topNewsImageUrl = doc.at_css(".games_news_pic > a > img")?["src"]?.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? ""
                 let topNewsUrl = doc.at_css(".games_news_pic > a")?["href"]?.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
-                let topNewsElemet: News = News(JSON: ["title": topNewsTitle!, "date": topNewsDate!, "imageUrl": topNewsImageUrl!, "newsUrl": topNewsUrl!])!
-                news?.append(topNewsElemet)
+
+                if topNewsTitle != nil{
+                    let topNewsElemet: News = News(JSON: ["title": topNewsTitle!, "date": topNewsDate!, "imageUrl": topNewsImageUrl, "newsUrl": topNewsUrl!])!
+                    news?.append(topNewsElemet)
+                }
                 
-                for (index,node) in doc.css(".news_row").enumerated(){
-                    guard index != 1 else{continue}
+                for (_,node) in doc.css(".news_row").enumerated(){
+                    guard node.at_css(".news_row_date")?.text! != nil else{continue}
                     
                     let newsTitle = node.at_css(".news_row_cont > div > a.news_row_title")?.text!.trimmingCharacters(in: .whitespacesAndNewlines)
                     
@@ -52,9 +55,9 @@ class NewsViewModel{
                     tempDate = tempDate?.substring(with: (startIndex!..<endIndex!))
                     let newsDate = tempDate?.trimmingCharacters(in: .whitespacesAndNewlines)
                     
-                    let newsImageUrl = node.at_css(".news_row_pic > img")?["src"]!.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
+                    let newsImageUrl = node.at_css(".news_row_pic > img")?["src"]!.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? ""
                     let newsUrl = node.at_css(".news_row_cont > div > a")?["href"]!.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
-                    let newsElement:News = News(JSON: ["title": newsTitle!, "date": newsDate!, "imageUrl": newsImageUrl!, "newsUrl": newsUrl!])!
+                    let newsElement:News = News(JSON: ["title": newsTitle!, "date": newsDate!, "imageUrl": newsImageUrl, "newsUrl": newsUrl!])!
                     news?.append(newsElement)
                 }
                 

@@ -95,8 +95,7 @@ class PlayerViewController: UIViewController, UIScrollViewDelegate, UIWebViewDel
                 self.singleGameWebViewHeight.constant = CGFloat(30 * doc.css(".std_tb")[doc.css(".std_tb").count - 1 ].css("tr").count + 10)
                 
                 var playerInfo = (doc.at_css(".player_info_name")?.text) ?? (doc.at_css(".player_info3_name")?.text)
-                let sIndex = playerInfo?.range(of: "球")?.lowerBound
-                playerInfo = playerInfo?.replacingCharacters(in: (sIndex!..<(playerInfo?.endIndex)!), with: "")
+                playerInfo = playerInfo?.replacing("球隊:", with: "｜")
                 self.nameLabel.text = playerInfo
                 
                 var position = ""

@@ -27,7 +27,7 @@ class RankViewController: UIViewController {
         // check net connection
         let reachability = Reachability()
         guard (reachability?.isReachable)! else {
-            let alert = UIAlertController(title: "提示", message: "網路連線異常。", preferredStyle: .alert)
+            let alert = UIAlertController(title: "提示", message: "網路連線異常")
             alert.show()
             return
         }
@@ -59,7 +59,17 @@ class RankViewController: UIViewController {
         
         // load and show rank info
         self.rankViewModel.fetchRank(from: String(year) , handler: { [weak self] data in
-            let source: [[RankViewModel]] = data.map{ value -> [RankViewModel] in
+
+            guard data != nil && (data?[0].count)! > 0 else{
+                HUD.hide(animated: true, completion: { finished in
+                    let alert = UIAlertController(title: "提示", message: "暫無資料。")
+                    alert.show()
+                })
+                
+                return
+            }
+            
+            let source: [[RankViewModel]] = data!.map{ value -> [RankViewModel] in
                 return value.map{ rankValue -> RankViewModel in
                     return RankViewModel(data: rankValue)
                 }

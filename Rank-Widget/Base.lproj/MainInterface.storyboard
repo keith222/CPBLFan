@@ -20,6 +20,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暫無資料。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIs-e2-VCp">
+                                <rect key="frame" x="116.66666666666666" y="139.33333333333334" width="86.666666666666657" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6za-2H-6fE">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
                                 <subviews>
@@ -73,6 +79,7 @@
                             </tableView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="BIs-e2-VCp" firstAttribute="centerY" secondItem="02m-a6-ex0" secondAttribute="centerY" id="06R-Eu-Ino"/>
                             <constraint firstItem="En9-sh-tm4" firstAttribute="leading" secondItem="02m-a6-ex0" secondAttribute="leading" id="88g-DL-Jhk"/>
                             <constraint firstItem="FZL-Sb-RIO" firstAttribute="top" secondItem="6za-2H-6fE" secondAttribute="bottom" id="8GN-47-b64"/>
                             <constraint firstItem="NZq-b5-eIB" firstAttribute="top" secondItem="FZL-Sb-RIO" secondAttribute="bottom" id="BLu-ck-Sua"/>
@@ -83,6 +90,7 @@
                             <constraint firstAttribute="trailing" secondItem="En9-sh-tm4" secondAttribute="trailing" id="PJS-mi-nvp"/>
                             <constraint firstItem="6za-2H-6fE" firstAttribute="leading" secondItem="02m-a6-ex0" secondAttribute="leading" id="Z7q-lX-rp3"/>
                             <constraint firstAttribute="trailing" secondItem="6za-2H-6fE" secondAttribute="trailing" id="dXH-ef-XMo"/>
+                            <constraint firstItem="BIs-e2-VCp" firstAttribute="centerX" secondItem="02m-a6-ex0" secondAttribute="centerX" id="dae-7O-8zl"/>
                             <constraint firstItem="En9-sh-tm4" firstAttribute="top" secondItem="6za-2H-6fE" secondAttribute="bottom" id="e6m-wH-UOL"/>
                             <constraint firstItem="quq-3I-3zC" firstAttribute="top" secondItem="6za-2H-6fE" secondAttribute="bottom" id="gh5-yy-enD"/>
                             <constraint firstItem="FZL-Sb-RIO" firstAttribute="leading" secondItem="02m-a6-ex0" secondAttribute="leading" id="hWF-Tu-z7X"/>
@@ -97,6 +105,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="300"/>
                     <connections>
+                        <outlet property="alertLabel" destination="BIs-e2-VCp" id="lrd-gb-WFg"/>
                         <outlet property="firstSeeasonTableView" destination="En9-sh-tm4" id="czy-kD-IHT"/>
                         <outlet property="seasonTableView" destination="FZL-Sb-RIO" id="GIs-5m-Mct"/>
                         <outlet property="secondSeasonTableView" destination="quq-3I-3zC" id="aNd-gN-VPU"/>

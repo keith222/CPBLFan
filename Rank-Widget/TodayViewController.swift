@@ -68,8 +68,15 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             year = year - 1
         }
         // load and show rank info
-        self.rankViewModel.fetchRank(from: String(year) , handler: { [weak self] data in
-            let source: [[RankViewModel]] = data.map{ value -> [RankViewModel] in
+        self.rankViewModel.fetchRank(from: String(2016) , handler: { [weak self] data in
+            
+            guard data != nil && (data?[0].count)! > 0 else{
+                self?.alertLabel.isHidden = false
+                self?.view.isHidden = false
+                return
+            }
+            
+            let source: [[RankViewModel]] = data!.map{ value -> [RankViewModel] in
                 return value.map{ rankValue -> RankViewModel in
                     return RankViewModel(data: rankValue)
                 }
@@ -101,7 +108,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 sectionNib: "WidgetHeaderCell",
                 sectionSource: nil
             )
-            
+
             self?.view.isHidden = false
         })
     }

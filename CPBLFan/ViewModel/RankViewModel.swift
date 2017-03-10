@@ -32,7 +32,7 @@ class RankViewModel{
         self.gamebehind = data.gamebehind
     }
     
-    func fetchRank(from year:String, handler: @escaping (([[Rank]]) -> ())){
+    func fetchRank(from year:String, handler: @escaping (([[Rank]]?) -> ())){
         let route = "\(APIService.CPBLSourceURL)/standing/year/\(year).html"
         APIService.request(.get, route: route, completionHandler: { text in
             var ranks: [[Rank]]? = []
@@ -56,7 +56,6 @@ class RankViewModel{
                     ranks?.append(rank)
                 }
             }
-            
             handler(ranks!)
         })
     }

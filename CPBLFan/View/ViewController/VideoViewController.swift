@@ -32,7 +32,7 @@ class VideoViewController: UIViewController {
         // check net connection
         let reachability = Reachability()
         guard (reachability?.isReachable)! else {
-            let alert = UIAlertController(title: "提示", message: "網路連線異常。", preferredStyle: .alert)
+            let alert = UIAlertController(title: "提示", message: "網路連線異常。")
             alert.show()
             return
         }

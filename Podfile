@@ -31,6 +31,7 @@ target 'CPBLFan' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Messaging'
+  pod 'Firebase/Crash'
   
   target 'CPBLFanTests' do
     inherit! :search_paths

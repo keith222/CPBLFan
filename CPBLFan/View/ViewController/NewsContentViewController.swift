@@ -47,7 +47,11 @@ class NewsContentViewController: UIViewController {
             HUD.hide(animated: true)
         })
 
-        self.newsImage.kf.setImage(with: self.newsImageUrl.url!)
+        if !self.newsImageUrl.isEmpty{
+            self.newsImage.kf.setImage(with: self.newsImageUrl.url!)
+        }else{
+            self.newsImage.image = UIImage(named: "logo")
+        }
         self.newsTitleLabel.text = self.newsTitle
         self.newsDateLabel.text = self.newsDate
         
