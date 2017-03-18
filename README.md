@@ -10,9 +10,9 @@
 - 職棒影音：提供中華職棒官方影音連結。
 - Today Widget：提供球迷中華職棒例行賽事日程以及戰績排名。
 
-** 資料來源：
+**資料來源：**
 - [中華職棒大聯盟官方網站](http://www.cpbl.com.tw)
-- [台灣棒球維基館](http://twbsball.dils.tku.edu.tw/wiki/index.php)**
+- [台灣棒球維基館](http://twbsball.dils.tku.edu.tw/wiki/index.php)
 
 ## 程式語言
 - [Swift](https://developer.apple.com/swift/)
