@@ -39,7 +39,7 @@ class RankViewController: UIViewController {
         HUD.show(.progress)
         
         // set navigation bar title
-        self.navigationItem.title = "聯盟排名"
+        self.navigationBar?.topItem?.title = "聯盟排名"
         
         // set tableview layout
         self.rankTableView.separatorStyle = .none
@@ -58,7 +58,7 @@ class RankViewController: UIViewController {
         
         
         // load and show rank info
-        self.rankViewModel.fetchRank(from: String(year) , handler: { [weak self] data in
+        self.rankViewModel.fetchRank(from: String(2016) , handler: { [weak self] data in
 
             guard data != nil && (data?[0].count)! > 0 else{
                 HUD.hide(animated: true, completion: { finished in

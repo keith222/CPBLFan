@@ -40,7 +40,7 @@ class StatsViewController: UIViewController {
         HUD.show(.progress)
         
         // set navigator title
-        self.navigationItem.title = "個人成績"
+        self.navigationBar?.topItem?.title = "個人成績"
         
         // set tableview
         self.battingTableView.separatorStyle = .none

@@ -66,7 +66,7 @@ class NewsContentViewController: UIViewController {
         let shareButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "share"), style: .plain, target: self, action: #selector(self.shareNews))
         self.navigationItem.rightBarButtonItems = [shareButton,fontButton]
 
-        self.navigationItem.title = "新聞"
+        self.navigationBar?.topItem?.title = "職棒新聞"
         
     }
     

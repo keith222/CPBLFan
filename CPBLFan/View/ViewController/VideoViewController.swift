@@ -87,7 +87,7 @@ class VideoViewController: UIViewController {
         self.videoTableView.isHidden = true
         
         // set navigation bar title
-        self.navigationItem.title = "影音"
+        self.navigationBar?.topItem?.title = "職棒影音"
         
         // set tableview layout
         self.videoTableView.separatorStyle = .none

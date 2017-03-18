@@ -54,7 +54,7 @@ class PlayerViewController: UIViewController, UIScrollViewDelegate, UIWebViewDel
         
         // set navigation bar
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem.noTitleBarButtonItem()
-        self.navigationItem.title = "選手資訊"
+        self.title = "選手資訊"
         self.nameLabel.backgroundColor = UIColor.black.withAlphaComponent(0.3)
         self.dataLabel.backgroundColor = UIColor.black.withAlphaComponent(0.3)
         

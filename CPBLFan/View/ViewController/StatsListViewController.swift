@@ -82,7 +82,7 @@ class StatsListViewController: UIViewController {
         // set navigation bar
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem.noTitleBarButtonItem()
         
-        self.navigationItem.title = self.category
+        self.title = self.category
         
         // set tableview layout
         self.statsListTableView.separatorStyle = .none

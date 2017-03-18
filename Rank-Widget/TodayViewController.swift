@@ -68,10 +68,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             year = year - 1
         }
         // load and show rank info
-        self.rankViewModel.fetchRank(from: String(2016) , handler: { [weak self] data in
+        self.rankViewModel.fetchRank(from: String(year) , handler: { [weak self] data in
             
             guard data != nil && (data?[0].count)! > 0 else{
                 self?.alertLabel.isHidden = false
+                self?.seasonTableView.isHidden = true
+                self?.firstSeeasonTableView.isHidden = true
+                self?.secondSeasonTableView.isHidden = true
+                
                 self?.view.isHidden = false
                 return
             }

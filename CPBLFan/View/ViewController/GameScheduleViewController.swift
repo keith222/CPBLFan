@@ -49,7 +49,7 @@ class GameScheduleViewController: UIViewController {
         HUD.show(.progress)
         
         // set navigation bar title
-        self.navigationItem.title = "賽程"
+        self.navigationBar?.topItem?.title = "職棒賽程"
         
         // set tableview
         self.gameTableView.rowHeight = 100

@@ -89,7 +89,7 @@ class NewsViewController: UIViewController {
         self.newsTableView.isHidden = true
         
         // set navigation bar title
-        self.navigationItem.title = "CPBL Fans"
+        self.navigationBar?.topItem?.title = "TAIWAN BASEBALL"
         
         // set tableview layout
         self.newsTableView.separatorStyle = .none

@@ -150,7 +150,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kKv-Ar-DDj">
-                                <rect key="frame" x="0.0" y="132" width="414" height="604"/>
+                                <rect key="frame" x="0.0" y="132" width="414" height="555"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wFo-vF-Taf">
@@ -176,7 +176,7 @@
                             <constraint firstItem="kKv-Ar-DDj" firstAttribute="leading" secondItem="ogO-ET-0YC" secondAttribute="leading" id="r4i-n9-7v1"/>
                             <constraint firstItem="oHM-On-f9N" firstAttribute="top" secondItem="XRP-Eg-qP8" secondAttribute="bottom" constant="20" id="rvL-Ta-nke"/>
                             <constraint firstItem="XRP-Eg-qP8" firstAttribute="top" secondItem="hve-zb-cbG" secondAttribute="bottom" constant="20" id="uJn-Qt-baj"/>
-                            <constraint firstItem="Q3R-P0-I8I" firstAttribute="top" secondItem="kKv-Ar-DDj" secondAttribute="bottom" constant="-49" id="ws6-Nf-Eu6"/>
+                            <constraint firstItem="Q3R-P0-I8I" firstAttribute="top" secondItem="kKv-Ar-DDj" secondAttribute="bottom" id="ws6-Nf-Eu6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vJ0-7u-jDV"/>
@@ -194,7 +194,7 @@
         <!--Stats List View Controller-->
         <scene sceneID="CvH-0y-HSy">
             <objects>
-                <viewController storyboardIdentifier="StatsListViewController" id="5ER-Fh-aU0" customClass="StatsListViewController" customModule="CPBLFan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StatsListViewController" automaticallyAdjustsScrollViewInsets="NO" id="5ER-Fh-aU0" customClass="StatsListViewController" customModule="CPBLFan" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="97m-7H-Nwd"/>
                         <viewControllerLayoutGuide type="bottom" id="0VC-fb-ZTg"/>
@@ -204,15 +204,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lPu-AW-7j1">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="lPu-AW-7j1" secondAttribute="trailing" id="Dfj-hZ-rCn"/>
-                            <constraint firstItem="0VC-fb-ZTg" firstAttribute="top" secondItem="lPu-AW-7j1" secondAttribute="bottom" constant="-49" id="Q6O-GW-2UM"/>
-                            <constraint firstItem="lPu-AW-7j1" firstAttribute="top" secondItem="97m-7H-Nwd" secondAttribute="bottom" constant="-64" id="p9R-Sy-0TR"/>
+                            <constraint firstItem="0VC-fb-ZTg" firstAttribute="top" secondItem="lPu-AW-7j1" secondAttribute="bottom" id="Q6O-GW-2UM"/>
+                            <constraint firstItem="lPu-AW-7j1" firstAttribute="top" secondItem="97m-7H-Nwd" secondAttribute="bottom" id="p9R-Sy-0TR"/>
                             <constraint firstItem="lPu-AW-7j1" firstAttribute="leading" secondItem="57K-Oo-smo" secondAttribute="leading" id="q47-V0-0hH"/>
                         </constraints>
                     </view>
@@ -228,7 +228,7 @@
         <!--Player View Controller-->
         <scene sceneID="R9Z-gk-PzH">
             <objects>
-                <viewController storyboardIdentifier="PlayerViewController" id="njI-mK-9mI" customClass="PlayerViewController" customModule="CPBLFan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlayerViewController" automaticallyAdjustsScrollViewInsets="NO" id="njI-mK-9mI" customClass="PlayerViewController" customModule="CPBLFan" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OfK-eq-X1V"/>
                         <viewControllerLayoutGuide type="bottom" id="jTS-4J-tuv"/>
@@ -238,10 +238,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D2k-cV-8Ag">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sdg-6j-yVP">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="245.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="245.33333333333331"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="izq-GP-YBR">
                                         <rect key="frame" x="15" y="116" width="91.333333333333329" height="122"/>
@@ -261,13 +261,13 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---｜---｜---" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gq8-fe-NCp">
-                                        <rect key="frame" x="116.33333333333334" y="214.33333333333334" width="94.000000000000028" height="18"/>
+                                        <rect key="frame" x="116.33333333333334" y="214.33333333333331" width="94.000000000000028" height="18"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwf-lW-JYg">
-                                        <rect key="frame" x="116.33333333333334" y="182" width="31.000000000000028" height="27.333333333333343"/>
+                                        <rect key="frame" x="116.33333333333334" y="182" width="31.000000000000028" height="27.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -350,7 +350,6 @@
                                     <constraint firstItem="PuJ-4y-AQf" firstAttribute="top" secondItem="A74-Y2-Lph" secondAttribute="bottom" constant="5" id="0WH-7W-wJB"/>
                                     <constraint firstAttribute="trailing" secondItem="sdg-6j-yVP" secondAttribute="trailing" id="10L-91-pFn"/>
                                     <constraint firstItem="izq-GP-YBR" firstAttribute="width" secondItem="sdg-6j-yVP" secondAttribute="height" multiplier="99:215" constant="-21.45348837209302" id="17f-iJ-KHe"/>
-                                    <constraint firstItem="sdg-6j-yVP" firstAttribute="top" secondItem="D2k-cV-8Ag" secondAttribute="top" id="6IS-Oo-Iiy"/>
                                     <constraint firstItem="A74-Y2-Lph" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" constant="15" id="8No-Ns-GCQ"/>
                                     <constraint firstItem="PuJ-4y-AQf" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" constant="15" id="9Ns-qj-g8w"/>
                                     <constraint firstAttribute="trailing" secondItem="9Pz-Yw-ZoH" secondAttribute="trailing" constant="15" id="A2k-am-KH7"/>
@@ -363,6 +362,7 @@
                                     <constraint firstItem="A74-Y2-Lph" firstAttribute="top" secondItem="Mlh-kt-ng0" secondAttribute="bottom" constant="15" id="HMX-sl-VAZ"/>
                                     <constraint firstItem="9Pz-Yw-ZoH" firstAttribute="top" secondItem="sdg-6j-yVP" secondAttribute="bottom" constant="15" id="HoQ-Cz-gj4"/>
                                     <constraint firstAttribute="trailing" secondItem="rUG-l8-J9f" secondAttribute="trailing" constant="15" id="Ieq-Kp-5F6"/>
+                                    <constraint firstItem="sdg-6j-yVP" firstAttribute="top" secondItem="D2k-cV-8Ag" secondAttribute="top" id="Jmo-v0-JCM"/>
                                     <constraint firstItem="gk4-dN-oes" firstAttribute="top" secondItem="oq1-kO-lU0" secondAttribute="bottom" constant="15" id="M3C-pe-9pq"/>
                                     <constraint firstItem="Gq8-fe-NCp" firstAttribute="top" secondItem="pwf-lW-JYg" secondAttribute="bottom" constant="5" id="Pd1-LE-hbG"/>
                                     <constraint firstItem="oq1-kO-lU0" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" constant="15" id="Qnk-jx-zIO"/>
@@ -388,9 +388,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="sdg-6j-yVP" firstAttribute="height" secondItem="CKc-t0-w3N" secondAttribute="height" multiplier="1:3" id="7TZ-qu-vxa"/>
-                            <constraint firstItem="D2k-cV-8Ag" firstAttribute="top" secondItem="OfK-eq-X1V" secondAttribute="bottom" constant="-64" id="SgG-Rd-93B"/>
+                            <constraint firstItem="D2k-cV-8Ag" firstAttribute="top" secondItem="OfK-eq-X1V" secondAttribute="bottom" id="SgG-Rd-93B"/>
                             <constraint firstItem="D2k-cV-8Ag" firstAttribute="leading" secondItem="CKc-t0-w3N" secondAttribute="leading" id="aQW-4Q-qKP"/>
-                            <constraint firstItem="jTS-4J-tuv" firstAttribute="top" secondItem="D2k-cV-8Ag" secondAttribute="bottom" constant="-49" id="cJ7-QS-IeW"/>
+                            <constraint firstItem="jTS-4J-tuv" firstAttribute="top" secondItem="D2k-cV-8Ag" secondAttribute="bottom" id="cJ7-QS-IeW"/>
                             <constraint firstAttribute="trailing" secondItem="D2k-cV-8Ag" secondAttribute="trailing" id="lSn-Op-ZuG"/>
                         </constraints>
                     </view>
@@ -418,7 +418,7 @@
         <!--Rank View Controller-->
         <scene sceneID="pPE-7s-WHg">
             <objects>
-                <viewController id="qxs-ee-fm5" customClass="RankViewController" customModule="CPBLFan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="qxs-ee-fm5" customClass="RankViewController" customModule="CPBLFan" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xZP-wK-cSi"/>
                         <viewControllerLayoutGuide type="bottom" id="oJF-3y-Wqa"/>
@@ -428,15 +428,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aoJ-av-KTe">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="aoJ-av-KTe" firstAttribute="leading" secondItem="Wbo-Qq-ysz" secondAttribute="leading" id="6IQ-9f-hwO"/>
-                            <constraint firstItem="aoJ-av-KTe" firstAttribute="top" secondItem="xZP-wK-cSi" secondAttribute="bottom" constant="-64" id="DFp-Ix-Bcn"/>
-                            <constraint firstItem="oJF-3y-Wqa" firstAttribute="top" secondItem="aoJ-av-KTe" secondAttribute="bottom" constant="-49" id="Ze5-ed-yuS"/>
+                            <constraint firstItem="aoJ-av-KTe" firstAttribute="top" secondItem="xZP-wK-cSi" secondAttribute="bottom" id="DFp-Ix-Bcn"/>
+                            <constraint firstItem="oJF-3y-Wqa" firstAttribute="top" secondItem="aoJ-av-KTe" secondAttribute="bottom" id="Ze5-ed-yuS"/>
                             <constraint firstAttribute="trailing" secondItem="aoJ-av-KTe" secondAttribute="trailing" id="cwq-pH-le1"/>
                         </constraints>
                     </view>
@@ -627,7 +627,7 @@
         <!--News Content View Controller-->
         <scene sceneID="ccg-Wn-cK8">
             <objects>
-                <viewController storyboardIdentifier="NewsContentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Z5b-90-V5n" customClass="NewsContentViewController" customModule="CPBLFan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewsContentViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Z5b-90-V5n" customClass="NewsContentViewController" customModule="CPBLFan" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2bL-VN-FAt"/>
                         <viewControllerLayoutGuide type="bottom" id="dMy-qn-WKu"/>
@@ -637,7 +637,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wvr-Wx-NYP">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SQG-JY-ThJ">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="243"/>
@@ -664,9 +664,9 @@
                                 <constraints>
                                     <constraint firstItem="SQG-JY-ThJ" firstAttribute="leading" secondItem="Wvr-Wx-NYP" secondAttribute="leading" id="2d5-cB-oFZ"/>
                                     <constraint firstItem="2dl-3u-23C" firstAttribute="leading" secondItem="Wvr-Wx-NYP" secondAttribute="leading" constant="15" id="2oC-9q-Zxy"/>
+                                    <constraint firstItem="SQG-JY-ThJ" firstAttribute="top" secondItem="Wvr-Wx-NYP" secondAttribute="top" id="3y7-AS-lyH"/>
                                     <constraint firstAttribute="trailing" secondItem="07f-Vc-f81" secondAttribute="trailing" id="9Mt-9P-pTN"/>
                                     <constraint firstAttribute="trailing" secondItem="2dl-3u-23C" secondAttribute="trailing" constant="15" id="Ey6-Oc-teo"/>
-                                    <constraint firstItem="SQG-JY-ThJ" firstAttribute="top" secondItem="Wvr-Wx-NYP" secondAttribute="top" id="ICB-HD-igj"/>
                                     <constraint firstItem="tqI-Ng-E83" firstAttribute="top" secondItem="07f-Vc-f81" secondAttribute="bottom" constant="5" id="M0Q-EZ-ot1"/>
                                     <constraint firstItem="tqI-Ng-E83" firstAttribute="leading" secondItem="Wvr-Wx-NYP" secondAttribute="leading" constant="8" id="MYx-yt-5Qb"/>
                                     <constraint firstItem="2dl-3u-23C" firstAttribute="top" secondItem="tqI-Ng-E83" secondAttribute="bottom" constant="10" id="Omi-JN-vy3"/>
@@ -681,10 +681,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Wvr-Wx-NYP" firstAttribute="top" secondItem="2bL-VN-FAt" secondAttribute="bottom" constant="-64" id="Bdy-tf-Xob"/>
+                            <constraint firstItem="Wvr-Wx-NYP" firstAttribute="top" secondItem="2bL-VN-FAt" secondAttribute="bottom" id="Bdy-tf-Xob"/>
                             <constraint firstAttribute="trailing" secondItem="Wvr-Wx-NYP" secondAttribute="trailing" id="JAo-bX-5Oa"/>
                             <constraint firstItem="Wvr-Wx-NYP" firstAttribute="leading" secondItem="NpQ-y7-OtK" secondAttribute="leading" id="LN2-gG-Uf8"/>
-                            <constraint firstItem="dMy-qn-WKu" firstAttribute="top" secondItem="Wvr-Wx-NYP" secondAttribute="bottom" constant="-49" id="Y5h-nM-A6d"/>
+                            <constraint firstItem="dMy-qn-WKu" firstAttribute="top" secondItem="Wvr-Wx-NYP" secondAttribute="bottom" id="Y5h-nM-A6d"/>
                             <constraint firstItem="SQG-JY-ThJ" firstAttribute="height" secondItem="NpQ-y7-OtK" secondAttribute="height" multiplier="0.33" id="m6W-I8-Wic"/>
                         </constraints>
                     </view>
@@ -699,11 +699,11 @@
             </objects>
             <point key="canvasLocation" x="2429.5999999999999" y="-978.26086956521749"/>
         </scene>
-        <!--新聞-->
+        <!--職棒新聞-->
         <scene sceneID="e4K-np-eQ3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zev-r0-DUz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="新聞" image="news" selectedImage="news-fill" id="5Wz-dZ-b8c"/>
+                    <tabBarItem key="tabBarItem" title="職棒新聞" image="news" selectedImage="news-fill" id="5Wz-dZ-b8c"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="P2H-Gj-n71">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -718,11 +718,11 @@
             </objects>
             <point key="canvasLocation" x="774" y="-978"/>
         </scene>
-        <!--影音-->
+        <!--職棒影音-->
         <scene sceneID="rnQ-jj-oeH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GgG-HH-Fon" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="影音" image="video" selectedImage="video-fill" id="02H-Jm-f2u"/>
+                    <tabBarItem key="tabBarItem" title="職棒影音" image="video" selectedImage="video-fill" id="02H-Jm-f2u"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="L0g-zK-8wX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -775,11 +775,11 @@
             </objects>
             <point key="canvasLocation" x="773.60000000000002" y="443.92803598200902"/>
         </scene>
-        <!--賽程-->
+        <!--職棒賽程-->
         <scene sceneID="Xjx-HC-iQy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="w4p-tS-s7Q" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="賽程" image="calendar" selectedImage="calendar-fill" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="職棒賽程" image="calendar" selectedImage="calendar-fill" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ani-jM-s9V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
