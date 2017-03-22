@@ -58,10 +58,10 @@ class NewsViewController: UIViewController {
                 selectAction:{ [weak self] num in
                     // closure for tableview cell tapping
                     let destination: NewsContentViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsContentViewController") as! NewsContentViewController
-                    destination.newsUrl = data[num].newsUrl
-                    destination.newsTitle = data[num].title
-                    destination.newsDate = data[num].date
-                    destination.newsImageUrl = data[num].imageUrl
+                    destination.newsUrl = source[num].newsUrl!
+                    destination.newsTitle = source[num].title!
+                    destination.newsDate = source[num].date!
+                    destination.newsImageUrl = source[num].imageURL!
                     self?.navigationController?.pushViewController(destination, animated: true)
                 },
                 refreshAction:{ page in
@@ -87,9 +87,8 @@ class NewsViewController: UIViewController {
     func setUp(){
         // hide tableview
         self.newsTableView.isHidden = true
-        
         // set navigation bar title
-        self.navigationBar?.topItem?.title = "TAIWAN BASEBALL"
+        self.navigationBar?.topItem?.title = "職棒新聞"
         
         // set tableview layout
         self.newsTableView.separatorStyle = .none

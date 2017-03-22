@@ -16,6 +16,7 @@ class NewsContentViewController: UIViewController {
     @IBOutlet weak var newsDateLabel: UILabel!
     @IBOutlet weak var newsTitleLabel: UILabel!
     @IBOutlet weak var newsContentLabel: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var newsUrl: String = ""
     var newsImageUrl: String = ""
@@ -43,7 +44,7 @@ class NewsContentViewController: UIViewController {
             paragraphStyle.lineSpacing = 5
             attributedString.addAttribute(NSParagraphStyleAttributeName, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
             self?.newsContentLabel.attributedText = attributedString
-            
+            self?.scrollView.isHidden = false
             HUD.hide(animated: true)
         })
 
@@ -61,6 +62,7 @@ class NewsContentViewController: UIViewController {
                 
         // set navigation bar style
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem.noTitleBarButtonItem()
+        self.scrollView.isHidden = true
         
         let fontButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "font"), style: .plain, target: self, action: #selector(self.changeFontSize))
         let shareButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "share"), style: .plain, target: self, action: #selector(self.shareNews))
@@ -84,12 +86,6 @@ class NewsContentViewController: UIViewController {
         let news = "\(APIService.CPBLSourceURL)\(self.newsUrl)"
         let activity: UIActivityViewController = UIActivityViewController(activityItems: [news], applicationActivities: nil)
         self.present(activity, animated: true, completion: nil)
-    }
-
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }

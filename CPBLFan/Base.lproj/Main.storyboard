@@ -654,7 +654,7 @@
                                         <color key="textColor" red="0.12941176469999999" green="0.2274509804" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新聞新聞新聞新聞新聞新聞新聞新聞新聞新聞新聞新聞" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dl-3u-23C">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新聞" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dl-3u-23C">
                                         <rect key="frame" x="15" y="302" width="384" height="20.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -693,6 +693,7 @@
                         <outlet property="newsDateLabel" destination="07f-Vc-f81" id="w0L-Mq-DT9"/>
                         <outlet property="newsImage" destination="SQG-JY-ThJ" id="oDK-C2-3dj"/>
                         <outlet property="newsTitleLabel" destination="tqI-Ng-E83" id="hzl-jd-qqy"/>
+                        <outlet property="scrollView" destination="Wvr-Wx-NYP" id="SVa-25-TY0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Eu-hd-AvL" userLabel="First Responder" sceneMemberID="firstResponder"/>
