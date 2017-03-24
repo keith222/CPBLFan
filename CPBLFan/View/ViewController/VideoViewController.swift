@@ -57,7 +57,7 @@ class VideoViewController: UIViewController {
                 selectAction:{ [unowned self] num in
                     // closure for tableview cell tapping
                     let destination: VideoPlayerViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "VideoPlayerViewController") as! VideoPlayerViewController
-                    destination.videoId = video[num].videoId
+                    destination.videoId = source[num].videoId
                     self.present(destination, animated: true, completion: nil)
                 },
                 refreshAction:{ page in
