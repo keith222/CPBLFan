@@ -85,11 +85,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                     return RankViewModel(data: rankValue)
                 }
             }
+            
+            let season = (source.count == 3) ? source[2] : source[1]
+            let second = (source.count == 3) ? source[1] : []
 
             self?.seasontableHelper = TableViewHelper(
                 tableView: (self?.seasonTableView)!,
                 nibName: "WidgetCell",
-                source: source[2] as [AnyObject],
+                source: season as [AnyObject],
                 sectionCount: 1,
                 sectionNib: "WidgetHeaderCell",
                 sectionSource: nil
@@ -107,7 +110,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             self?.secondSeasontableHelper = TableViewHelper(
                 tableView: (self?.secondSeasonTableView)!,
                 nibName: "WidgetCell",
-                source: source[1] as [AnyObject],
+                source: second as [AnyObject],
                 sectionCount: 1,
                 sectionNib: "WidgetHeaderCell",
                 sectionSource: nil

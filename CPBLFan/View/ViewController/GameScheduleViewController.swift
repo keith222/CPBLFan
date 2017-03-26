@@ -74,8 +74,6 @@ class GameScheduleViewController: UIViewController {
         let yearString = String(year)
         let monthString = String(month)
         
-        self.dateLabel.text = "\(yearString) 年 \(monthString) 月"
-        
         self.gameViewModel.fetchGame(at: yearString, month: monthString, handler: { [weak self] data in
             
             if data != nil{
@@ -86,18 +84,22 @@ class GameScheduleViewController: UIViewController {
                     }
                 }
                 
+                //for child change
+                self?.dateLabel.text = "\(yearString) 年 \(monthString) 月"
+                self?.month = Int(monthString)!
+                
                 // map head soruce
                 let headSource: [[String]] = (data! as [(String,[Game])]).map{ value -> [String] in
                     return [monthString ,value.0]
                 }
-                
+
                 self?.gameTableView.isHidden = false
                 
                 self?.tableHelper = TableViewHelper(
                     tableView: (self?.gameTableView)!,
                     nibName: "GameCell",
                     source: source as [AnyObject],
-                    sectionCount: (data?.count)!,
+                    sectionCount: source.count,
                     sectionNib: "GameHeaderCell",
                     sectionSource: headSource as [AnyObject]
                 )
@@ -131,7 +133,7 @@ class GameScheduleViewController: UIViewController {
                 }
                 
                 self?.gameTableView.isHidden = false
-                
+
                 self?.tableHelper?.headSavedData = headSource as [AnyObject]
                 self?.tableHelper?.savedData = source as [AnyObject]
                 

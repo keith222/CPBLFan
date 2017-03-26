@@ -40,6 +40,9 @@ class GameViewModel{
     
     func fetchGame(at year:String, month: String, handler: @escaping (([(String,[Game])]?) -> ())){
         
+        // for child change using
+        var tempData: [(key: String, value: [Game])] = []
+        
         let ref: FIRDatabaseReference! = FIRDatabase.database().reference()
         ref.child(year).child(month).observeSingleEvent(of: .value, with: { (snapshot) in
             
@@ -48,6 +51,7 @@ class GameViewModel{
             
                 // data jsonalize
                 let jsonData = JSON(data)
+                //print(jsonData)
                 // data map to array
                 let game = jsonData.map({ (game: (String, value: SwiftyJSON.JSON)) -> [Game] in
                     return game.value.map({ (data:(String, value: SwiftyJSON.JSON)) -> Game in
@@ -63,11 +67,36 @@ class GameViewModel{
                     }
                 }
                 let sortedData = gameData.sorted(by: {Int($0.0.key)! < Int($0.1.key)!})
+                tempData = sortedData
                 handler(sortedData)
             }else{
                 handler(nil)
             }
 
+        })
+        
+        ref.child(year).child(month).observe(.childChanged, with: { (snapshot) in
+            // check data if existed
+            if let data = snapshot.value{
+                
+                // data jsonalize
+                let jsonData = JSON(data)
+                
+                // get index
+                let index = tempData.index(where: {
+                    return $0.key == snapshot.key
+                })
+                
+                // data map to array
+                let game = jsonData.map({(game: (String, value: SwiftyJSON.JSON)) -> Game in
+                    return Mapper<Game>().map(JSONObject: game.value.dictionaryObject)!
+                })
+                
+                tempData[index!].value = game
+                handler(tempData)
+            }else{
+                handler(nil)
+            }
         })
     }
 }

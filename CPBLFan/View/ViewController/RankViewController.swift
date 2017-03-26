@@ -58,7 +58,7 @@ class RankViewController: UIViewController {
         
         
         // load and show rank info
-        self.rankViewModel.fetchRank(from: String(2016) , handler: { [weak self] data in
+        self.rankViewModel.fetchRank(from: String(year) , handler: { [weak self] data in
 
             guard data != nil && (data?[0].count)! > 0 else{
                 HUD.hide(animated: true, completion: { finished in
@@ -75,13 +75,14 @@ class RankViewController: UIViewController {
                 }
             }
             
-            let headerSource = [1,2,3]
+            let headerSource: [String] = (source.count == 3) ? ["上半季","下半季","全年度"] : ["上半季","全年度"]
+            
             
             self?.tableHelper = TableViewHelper(
                 tableView: (self?.rankTableView)!,
                 nibName: "RankCell",
                 source: source as [AnyObject],
-                sectionCount: 3,
+                sectionCount: source.count,
                 sectionNib: "RankHeaderCell",
                 sectionSource: headerSource as [AnyObject]
             )

@@ -67,6 +67,8 @@ class StatsListViewModel{
             return "中信兄弟"
         }else if fileName.contain("L01"){
             return "統一7-ELEVEn"
+        }else if fileName.contain("B04"){
+            return "富邦"
         }
         return "無"
     }
