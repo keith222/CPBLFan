@@ -134,6 +134,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         }
     }
     
+    // for ios9
+    func widgetMarginInsets(forProposedMarginInsets defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
+        return UIEdgeInsets.zero
+    }
+    
     @IBAction func seasonSelectionAction(_ sender: UIButton) {
         // hide tableview
         let isHidden = true

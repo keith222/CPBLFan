@@ -95,7 +95,7 @@ class PlayerViewController: UIViewController, UIScrollViewDelegate, UIWebViewDel
                 self.singleGameWebViewHeight.constant = CGFloat(30 * doc.css(".std_tb")[doc.css(".std_tb").count - 1 ].css("tr").count + 10)
                 
                 var playerInfo = (doc.at_css(".player_info_name")?.text) ?? (doc.at_css(".player_info3_name")?.text)
-                playerInfo = playerInfo?.replacing("球隊:", with: "｜")
+                playerInfo = playerInfo?.replacing(" ", with: "").replacing("球隊:", with: "｜")
                 self.nameLabel.text = playerInfo
                 
                 var position = ""
@@ -123,6 +123,12 @@ class PlayerViewController: UIViewController, UIScrollViewDelegate, UIWebViewDel
                 
                 let infoString = "\(position)｜\(batpitch)｜\(height)/\(weight)"
                 self.dataLabel.text = infoString
+                
+                // change font size for screen size
+                if UIScreen.main.nativeBounds.height <= 1136{
+                    self.nameLabel.font = UIFont.systemFont(ofSize: 18)
+                    self.dataLabel.font = UIFont.systemFont(ofSize: 12)
+                }
 
             }
         })

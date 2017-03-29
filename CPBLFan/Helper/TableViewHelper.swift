@@ -55,6 +55,11 @@ class TableViewHelper: NSObject {
             dataSource.templateHeader = UINib(nibName: sectionNib!, bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? UITableViewHeaderFooterView
             dataSource.headerData = sectionSource
             tableView.register(UINib(nibName: sectionNib!, bundle: nil), forHeaderFooterViewReuseIdentifier: sectionNib!)
+
+            if dataSource.templateHeader?.reuseIdentifier == nil{
+                dataSource.templateHelderReuseId = sectionNib!
+            }
+
         }
         
         self.tableView.dataSource = dataSource
@@ -73,6 +78,9 @@ class DataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     var selectAction: ((Int)->())?
     var refreshAction: ((Int)->())?
     var flag: Bool = true
+    
+    //for ios 9 below
+    var templateHelderReuseId: String?
     
     init(data: [AnyObject], templateCell: UITableViewCell, selectAction: ((Int)->())? = nil) {
         self.data = data
@@ -117,7 +125,8 @@ class DataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if self.templateHeader != nil{
-            let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: (templateHeader?.reuseIdentifier)!)
+            let reuseIdentifier = templateHeader?.reuseIdentifier ?? templateHelderReuseId
+            let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: (reuseIdentifier)!)
             if let reactiveView = headerView as? BindView, headerData != nil{
                     reactiveView.bindViewModel(headerData![section])
             }

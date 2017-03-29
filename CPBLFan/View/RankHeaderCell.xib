@@ -11,11 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RankHeaderCell" rowHeight="65" id="KGk-i7-Jjw" customClass="RankHeaderCell" customModule="CPBLFan" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="RankHeaderCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="RankHeaderCell" rowHeight="65" id="KGk-i7-Jjw" customClass="RankHeaderCell" customModule="CPBLFan" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="全年度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQJ-Lp-AYc">
@@ -31,7 +31,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="勝差" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mat-SY-bfC">
-                        <rect key="frame" x="270" y="41" width="35" height="21"/>
+                        <rect key="frame" x="364" y="41" width="35" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="35" id="ref-lp-YWS"/>
                         </constraints>
@@ -40,7 +40,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="勝率" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bME-6a-MCf">
-                        <rect key="frame" x="205" y="41" width="50" height="21"/>
+                        <rect key="frame" x="299" y="41" width="50" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="0LI-hn-eKf"/>
                         </constraints>
@@ -49,7 +49,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="和" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="piM-ii-kzG">
-                        <rect key="frame" x="119" y="41" width="28" height="21"/>
+                        <rect key="frame" x="213" y="41" width="28" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="28" id="ybK-4r-bUR"/>
                         </constraints>
@@ -58,7 +58,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="敗" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nsu-yS-KIc">
-                        <rect key="frame" x="162" y="41" width="28" height="21"/>
+                        <rect key="frame" x="256" y="41" width="28" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="28" id="eTy-go-aen"/>
                         </constraints>
@@ -67,7 +67,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="勝" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJu-DU-vkE">
-                        <rect key="frame" x="76" y="41" width="28" height="21"/>
+                        <rect key="frame" x="170" y="41" width="28" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="28" id="BRW-el-VZe"/>
                         </constraints>

@@ -93,4 +93,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             self.preferredContentSize = maxSize
         }
     }
+    
+    // for ios9
+    func widgetMarginInsets(forProposedMarginInsets defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
+        return UIEdgeInsets.zero
+    }
 }

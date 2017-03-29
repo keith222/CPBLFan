@@ -244,7 +244,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="245.33333333333331"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="izq-GP-YBR">
-                                        <rect key="frame" x="15" y="116" width="91.333333333333329" height="122"/>
+                                        <rect key="frame" x="15" y="116" width="91" height="122"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="izq-GP-YBR" secondAttribute="height" multiplier="9:11" constant="-8.181818181818187" id="hKc-xE-KN4"/>
                                         </constraints>
@@ -261,14 +261,14 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---｜---｜---" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gq8-fe-NCp">
-                                        <rect key="frame" x="116.33333333333334" y="214.33333333333331" width="94.000000000000028" height="18"/>
+                                        <rect key="frame" x="116" y="214.33333333333331" width="94" height="18"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwf-lW-JYg">
-                                        <rect key="frame" x="116.33333333333334" y="182" width="31.000000000000028" height="27.333333333333314"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="史博威74 | 統一7-ELEVEn" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwf-lW-JYg">
+                                        <rect key="frame" x="116" y="184" width="244" height="25.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>

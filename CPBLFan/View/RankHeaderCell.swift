@@ -17,5 +17,9 @@ class RankHeaderCell: UITableViewHeaderFooterView, BindView {
             self.yearLabel.text = sectionString
         }
     }
+    
+    override func awakeFromNib() {
+        self.subviews[0].size.width = UIScreen.main.bounds.width
+    }
 
 }

@@ -17,5 +17,10 @@ class GameHeaderCell: UITableViewHeaderFooterView, BindView {
             self.dateLabel.text = "\(data[0])月\(data[1])日"
         }
     }
+    
+    override func awakeFromNib() {
+        // for ios9 below
+        self.subviews[0].size.width = UIScreen.main.bounds.width
+    }
 
 }

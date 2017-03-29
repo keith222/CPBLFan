@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,15 +10,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="GameHeaderCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameHeaderCell" rowHeight="30" id="bmf-nb-p7F" customClass="GameHeaderCell" customModule="CPBLFan" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="GameHeaderCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameHeaderCell" rowHeight="30" id="bmf-nb-p7F" customClass="GameHeaderCell" customModule="CPBLFan">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bmf-nb-p7F" id="eV4-zW-nbb">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="29"/>
+                <rect key="frame" x="0.0" y="0.0" width="414" height="29"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 月 20 日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zL-Dq-FWX">
-                        <rect key="frame" x="15" y="6" width="352" height="17"/>
+                        <rect key="frame" x="15" y="6" width="391" height="17"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>

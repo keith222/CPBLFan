@@ -18,6 +18,15 @@ class TodayGameCell: UITableViewCell, BindView {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        // for ios9
+        if #available(iOS 10, *) {}else{
+            for views in self.subviews[0].subviews as [UIView]{
+                if let label = views as? UILabel{
+                    label.textColor = .white
+                }
+            }
+        }
     }
 
     func bindViewModel(_ viewModel: Any) {

@@ -26,6 +26,14 @@ class WidgetCell: UITableViewCell, BindView{
         self.isUserInteractionEnabled = false
         // set team logo image
         self.teamLogoImageView.contentMode = .scaleAspectFill
+        
+        if #available(iOS 10, *) {}else{
+            for views in self.subviews[0].subviews as [UIView]{
+                if let label = views as? UILabel{
+                    label.textColor = .white
+                }
+            }
+        }
     }
 
     func bindViewModel(_ viewModel: Any) {
