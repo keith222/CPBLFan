@@ -78,7 +78,7 @@ class GameViewModel{
         ref.child(year).child(month).observe(.childChanged, with: { (snapshot) in
             // check data if existed
             if let data = snapshot.value{
-                
+
                 // data jsonalize
                 let jsonData = JSON(data)
                 

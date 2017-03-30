@@ -59,15 +59,15 @@ class StatsListViewModel{
     }
     
     func getTeam(fileName: String) -> String{
-        if fileName.contain("B03"){
+        if fileName.contains("B03"){
             return "義大犀牛"
-        }else if fileName.contain("A02"){
+        }else if fileName.contains("A02"){
             return "Lamigo"
-        }else if fileName.contain("E02"){
+        }else if fileName.contains("E02"){
             return "中信兄弟"
-        }else if fileName.contain("L01"){
+        }else if fileName.contains("L01"){
             return "統一獅"
-        }else if fileName.contain("B04"){
+        }else if fileName.contains("B04"){
             return "富邦"
         }
         return "無"
