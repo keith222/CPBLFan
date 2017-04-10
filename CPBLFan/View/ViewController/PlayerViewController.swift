@@ -63,10 +63,12 @@ class PlayerViewController: UIViewController, UIScrollViewDelegate, UIWebViewDel
         let route = "\(APIService.CPBLSourceURL)\(playerUrl!)"
         APIService.request(.get, route: route, completionHandler: { text in
             if let doc = HTML(html: text, encoding: .utf8){
-                let headUrl = doc.at_css(".player_info div img")?["src"]
-                let gameUrl = headUrl?.replacing("head", with: "game")
+                var headUrl = doc.at_css(".player_info div img")?["src"]
+                headUrl = ((headUrl?.hasSuffix(".jpg"))! || (headUrl?.hasSuffix(".png"))!) ? headUrl : headUrl?.appending("/phone/images/playerhead.png")
                 
+                let gameUrl = headUrl?.replacing("head", with: "game")
                 self.headImageView.kf.setImage(with: URL(string: headUrl!))
+                
                 do{
                     let imageData = try Data(contentsOf: URL(string: gameUrl!)!)
                     self.gameImageView.image = UIImage(data: imageData)

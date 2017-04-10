@@ -808,7 +808,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Replace this with the GOOGLE_APP_ID from your GoogleService-Info.plist file\nGOOGLE_APP_ID=1:4885271827:ios:d9648250693bc047\n\n# Replace the /Path/To/ServiceAccount.json with the path to the key you just downloaded\n\"${PODS_ROOT}\"/FirebaseCrash/upload-sym \"${PODS_ROOT}\"/FirebaseCrash/\"cpbl-fans-firebase-crashreporting-q84tj-70e5726ba1.json\"";
+			shellScript = "# Replace this with the GOOGLE_APP_ID from your GoogleService-Info.plist file\nGOOGLE_APP_ID=1:4885271827:ios:d9648250693bc047\n\n# Replace the /Path/To/ServiceAccount.json with the path to the key you just downloaded\n\"${PODS_ROOT}\"/FirebaseCrash/upload-sym \"${PODS_ROOT}\"/FirebaseCrash/\"cpbl-fans-firebase-crashreporting-q84tj-50897277fc.json\"";
 		};
 		53F7FE80F7F411C654366A2D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
