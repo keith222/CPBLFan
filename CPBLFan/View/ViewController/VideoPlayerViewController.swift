@@ -28,8 +28,14 @@ class VideoPlayerViewController: UIViewController, YTPlayerViewDelegate{
         self.view.addSubview(navigation!)
         
         // play video with youtube iframe player
-        self.videoPlayView.load(withVideoId: self.videoId)
+        let playerVars: [String: Any] = ["rel": 0]
+        self.videoPlayView.delegate = self
+        self.videoPlayView.load(withVideoId: self.videoId, playerVars: playerVars)
         self.videoPlayView.setPlaybackQuality(.HD1080)
+    }
+    
+    func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
+        playerView.playVideo()
     }
     
     override func viewDidLayoutSubviews() {
