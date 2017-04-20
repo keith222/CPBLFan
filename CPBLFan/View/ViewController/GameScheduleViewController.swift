@@ -37,6 +37,9 @@ class GameScheduleViewController: UIViewController {
             return
         }
         
+        // set table hide
+        self.gameTableView.alpha = 0
+        
         // add left and right swipe gesture
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeGestureAction(gesture:)))
         rightSwipe.direction = .right
@@ -92,8 +95,6 @@ class GameScheduleViewController: UIViewController {
                 let headSource: [[String]] = (data! as [(String,[Game])]).map{ value -> [String] in
                     return [monthString ,value.0]
                 }
-
-                self?.gameTableView.isHidden = false
                 
                 self?.tableHelper = TableViewHelper(
                     tableView: (self?.gameTableView)!,
@@ -104,16 +105,22 @@ class GameScheduleViewController: UIViewController {
                     sectionSource: headSource as [AnyObject]
                 )
                 
+                HUD.hide(animated: true, completion: {finished in
+                    UIView.animate(withDuration: 0.1, animations: {
+                        self?.gameTableView.alpha = 1
+                    })
+                })
+                
                 if let sectionIndex = headSource.index(where: {return $0[1] == String(day)}){
                     let indexPath = IndexPath(row: 0, section: sectionIndex)
                     self?.gameTableView.scrollToRow(at: indexPath, at: .top, animated: false)
                 }
+                
             }else{
                 print("無資料")
-                self?.gameTableView.isHidden = true
+                self?.gameTableView.alpha = 0
+                HUD.hide(animated: true)
             }
-            
-            HUD.hide(animated: true)
         })
     }
     
@@ -131,17 +138,20 @@ class GameScheduleViewController: UIViewController {
                 let headSource: [[String]] = (data! as [(String,[Game])]).map{ value -> [String] in
                     return [month ,value.0]
                 }
-                
-                self?.gameTableView.isHidden = false
-
+        
                 self?.tableHelper?.headSavedData = headSource as [AnyObject]
                 self?.tableHelper?.savedData = source as [AnyObject]
                 
+                HUD.hide(animated: true, completion: {finished in
+                    UIView.animate(withDuration: 0.2, animations: {
+                        self?.gameTableView.alpha = 1
+                    })
+                })
+                
             }else{
-                self?.gameTableView.isHidden = true
+                self?.gameTableView.alpha = 0
+                HUD.hide(animated: true)
             }
-            
-            HUD.hide(animated: true)
         })
     }
 

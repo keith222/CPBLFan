@@ -44,8 +44,13 @@ class NewsContentViewController: UIViewController {
             paragraphStyle.lineSpacing = 5
             attributedString.addAttribute(NSParagraphStyleAttributeName, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
             self?.newsContentLabel.attributedText = attributedString
-            self?.scrollView.isHidden = false
-            HUD.hide(animated: true)
+
+            HUD.hide(animated: true, completion: { finished in
+                UIView.animate(withDuration: 0.3, animations: {
+                    self?.scrollView.alpha = 1
+                })
+    
+            })
         })
 
         if !self.newsImageUrl.isEmpty{
@@ -62,7 +67,7 @@ class NewsContentViewController: UIViewController {
                 
         // set navigation bar style
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem.noTitleBarButtonItem()
-        self.scrollView.isHidden = true
+        self.scrollView.alpha = 0
         
         let fontButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "font"), style: .plain, target: self, action: #selector(self.changeFontSize))
         let shareButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "share"), style: .plain, target: self, action: #selector(self.shareNews))

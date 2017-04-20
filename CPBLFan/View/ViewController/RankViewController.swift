@@ -33,7 +33,7 @@ class RankViewController: UIViewController {
         }
         
         // hide tableview
-        self.rankTableView.isHidden = true
+        self.rankTableView.alpha = 0
         
         // show loading activity view
         HUD.show(.progress)
@@ -87,8 +87,12 @@ class RankViewController: UIViewController {
                 sectionSource: headerSource as [AnyObject]
             )
             
-            HUD.hide(animated: true)
-            self?.rankTableView.isHidden = false
+            HUD.hide(animated: true, completion: {finished in
+                UIView.animate(withDuration: 0.3, animations: {
+                    self?.rankTableView.alpha = 1
+                })
+            })
+            
         })
     }
 

@@ -74,17 +74,21 @@ class VideoViewController: UIViewController {
                     })
                 }
             )
+            
             self.footerView.isHidden = false
             
-            HUD.hide(animated: true)
-            self.videoTableView.isHidden = false
+            HUD.hide(animated: true, completion: {finished in
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.videoTableView.alpha = 1
+                })
+            })
         })
         
     }
     
     func setUp(){
         // hide tableview
-        self.videoTableView.isHidden = true
+        self.videoTableView.alpha = 0
         
         // set navigation bar title
         self.navigationBar?.topItem?.title = "職棒影音"

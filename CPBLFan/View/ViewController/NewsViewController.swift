@@ -79,14 +79,17 @@ class NewsViewController: UIViewController {
             )
             self.footerView.isHidden = false
             
-            HUD.hide(animated: true)
-            self.newsTableView.isHidden = false
+            HUD.hide(animated: true, completion: { finished in
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.newsTableView.alpha = 1
+                })
+            })
         })
     }
     
     func setUp(){
         // hide tableview
-        self.newsTableView.isHidden = true
+        self.newsTableView.alpha = 0
         // set navigation bar title
         self.navigationBar?.topItem?.title = "職棒新聞"
         

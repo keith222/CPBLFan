@@ -36,6 +36,8 @@ class StatsViewController: UIViewController {
             return
         }
         
+        self.battingTableView.alpha = 0
+        
         // show loading activity
         HUD.show(.progress)
         
@@ -97,7 +99,12 @@ class StatsViewController: UIViewController {
                 }
             )
             
-            HUD.hide(animated: true)
+            HUD.hide(animated: true, completion: {finished in
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.battingTableView.alpha = 1
+                })
+            })
+            
 
         })
     }
