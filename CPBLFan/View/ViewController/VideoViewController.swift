@@ -54,7 +54,7 @@ class VideoViewController: UIViewController {
                 tableView: self.videoTableView,
                 nibName: "VideoCell",
                 source: source as [AnyObject],
-                selectAction:{ [unowned self] num in
+                selectAction:{ [unowned self] (num,_) in
                     // closure for tableview cell tapping
                     let destination: VideoPlayerViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "VideoPlayerViewController") as! VideoPlayerViewController
                     destination.videoId = source[num].videoId

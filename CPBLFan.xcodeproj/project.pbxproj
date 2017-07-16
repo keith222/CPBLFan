@@ -53,6 +53,7 @@
 		53764B4D1E2FAA3D00FFE77E /* GameSchedule.json in Resources */ = {isa = PBXBuildFile; fileRef = 53764B4C1E2FAA3D00FFE77E /* GameSchedule.json */; };
 		53788A211E10070F00C3F04B /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53788A201E10070F00C3F04B /* News.swift */; };
 		537CCF891E20BE7B00AFC864 /* RankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537CCF881E20BE7B00AFC864 /* RankViewController.swift */; };
+		537DB6541F151661008B7648 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537DB6531F151661008B7648 /* GameViewController.swift */; };
 		538F75EB1E20BACE001671EE /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538F75EA1E20BACE001671EE /* Rank.swift */; };
 		538F75ED1E20BBBF001671EE /* RankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538F75EC1E20BBBF001671EE /* RankViewModel.swift */; };
 		53A6FE2F1E13F72700B68243 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A6FE2D1E13F72700B68243 /* VideoCell.swift */; };
@@ -181,6 +182,7 @@
 		53764B4C1E2FAA3D00FFE77E /* GameSchedule.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GameSchedule.json; sourceTree = "<group>"; };
 		53788A201E10070F00C3F04B /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = News.swift; path = Model/News.swift; sourceTree = "<group>"; };
 		537CCF881E20BE7B00AFC864 /* RankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RankViewController.swift; path = View/ViewController/RankViewController.swift; sourceTree = "<group>"; };
+		537DB6531F151661008B7648 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = View/ViewController/GameViewController.swift; sourceTree = "<group>"; };
 		538F75EA1E20BACE001671EE /* Rank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Rank.swift; path = Model/Rank.swift; sourceTree = "<group>"; };
 		538F75EC1E20BBBF001671EE /* RankViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RankViewModel.swift; path = ViewModel/RankViewModel.swift; sourceTree = "<group>"; };
 		53A6FE2D1E13F72700B68243 /* VideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoCell.swift; path = View/VideoCell.swift; sourceTree = "<group>"; };
@@ -419,6 +421,7 @@
 				53359AAB1E27ADA500C29687 /* StatsListViewController.swift */,
 				5315DA531E2A45A5002509AC /* PlayerViewController.swift */,
 				536238001E44C5440091DA9C /* GameScheduleViewController.swift */,
+				537DB6531F151661008B7648 /* GameViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -955,6 +958,7 @@
 				535272071E26740D00E1FFC7 /* StatsListCell.swift in Sources */,
 				53B396E51E1D37100032D0DA /* UIBarButtonItem+Addition.swift in Sources */,
 				53CBA2DB1E0D66AB0012FFFB /* APIService.swift in Sources */,
+				537DB6541F151661008B7648 /* GameViewController.swift in Sources */,
 				531BA2431E1EA7EF00B83B73 /* RankCell.swift in Sources */,
 				53CBA2EA1E0D96670012FFFB /* NewsViewModel.swift in Sources */,
 				5353FB871E23CD4600BDE259 /* StatsViewController.swift in Sources */,

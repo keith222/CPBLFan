@@ -57,7 +57,6 @@ class GameScheduleViewController: UIViewController {
         // set tableview
         self.gameTableView.rowHeight = 100
         self.gameTableView.sectionHeaderHeight = 30
-        self.gameTableView.allowsSelection = false
         self.gameTableView.tableFooterView = UIView()
         
         // set schedule year and month
@@ -102,9 +101,15 @@ class GameScheduleViewController: UIViewController {
                     source: source as [AnyObject],
                     sectionCount: source.count,
                     sectionNib: "GameHeaderCell",
-                    sectionSource: headSource as [AnyObject]
+                    sectionSource: headSource as [AnyObject],
+                    selectAction: { [weak self] (num,section) in
+                        // closure for tableview cell tapping
+                        let destination: GameViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
+                        destination.gameViewModel = source[section][num]
+                        self?.navigationController?.pushViewController(destination, animated: true)
+                    }
                 )
-                
+  
                 HUD.hide(animated: true, completion: {finished in
                     UIView.animate(withDuration: 0.1, animations: {
                         self?.gameTableView.alpha = 1

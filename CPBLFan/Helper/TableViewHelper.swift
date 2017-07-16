@@ -34,7 +34,7 @@ class TableViewHelper: NSObject {
         }
     }
     
-    init(tableView: UITableView, nibName: String, source: [AnyObject], sectionCount: Int = 1, sectionNib: String? = nil, sectionSource: [AnyObject]? = nil, selectAction: ((Int)->())? = nil, refreshAction: ((Int)->())? = nil) {
+    init(tableView: UITableView, nibName: String, source: [AnyObject], sectionCount: Int = 1, sectionNib: String? = nil, sectionSource: [AnyObject]? = nil, selectAction: ((Int,Int)->())? = nil, refreshAction: ((Int)->())? = nil) {
         self.tableView = tableView
         let nib = UINib(nibName: nibName, bundle: nil)
         templateCell = nib.instantiate(withOwner: nil, options: nil)[0] as! UITableViewCell
@@ -75,14 +75,14 @@ class DataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     var sectionCount: Int = 1
     var data: [AnyObject]
     var headerData: [AnyObject]?
-    var selectAction: ((Int)->())?
+    var selectAction: ((Int,Int)->())?
     var refreshAction: ((Int)->())?
     var flag: Bool = true
     
     //for ios 9 below
     var templateHelderReuseId: String?
     
-    init(data: [AnyObject], templateCell: UITableViewCell, selectAction: ((Int)->())? = nil) {
+    init(data: [AnyObject], templateCell: UITableViewCell, selectAction: ((Int,Int)->())? = nil) {
         self.data = data
         self.templateCell = templateCell
         self.selectAction = selectAction
@@ -118,7 +118,7 @@ class DataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.selectAction!(indexPath.row)
+        self.selectAction!(indexPath.row,indexPath.section)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

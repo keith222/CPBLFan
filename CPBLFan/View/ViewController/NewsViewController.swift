@@ -37,7 +37,6 @@ class NewsViewController: UIViewController {
             return
         }
         
-        
         // show loading activity view
         HUD.show(.progress)
         
@@ -55,7 +54,7 @@ class NewsViewController: UIViewController {
                 tableView: self.newsTableView,
                 nibName: "NewsCell",
                 source: source as [AnyObject],
-                selectAction:{ [weak self] num in
+                selectAction:{ [weak self] (num,_) in
                     // closure for tableview cell tapping
                     let destination: NewsContentViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsContentViewController") as! NewsContentViewController
                     destination.newsUrl = source[num].newsUrl!

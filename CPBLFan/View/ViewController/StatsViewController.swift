@@ -74,7 +74,7 @@ class StatsViewController: UIViewController {
                 tableView: self.battingTableView,
                 nibName: "StatsCell",
                 source: battingSource as [AnyObject],
-                selectAction: { [unowned self] num in
+                selectAction: { [unowned self] (num,_) in
                     // closure for tableview cell tapping
                     let destination: StatsListViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "StatsListViewController") as! StatsListViewController
                     destination.listUrl = battingSource[num].moreUrl
@@ -89,7 +89,7 @@ class StatsViewController: UIViewController {
                 tableView: self.pitchingTableView,
                 nibName: "StatsCell",
                 source: pitchingSource as [AnyObject],
-                selectAction: { [unowned self] num in
+                selectAction: { [unowned self] (num,_) in
                     // closure for tableview cell tapping
                     let destination: StatsListViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "StatsListViewController") as! StatsListViewController
                     destination.listUrl = pitchingSource[num].moreUrl

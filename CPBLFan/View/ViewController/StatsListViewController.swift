@@ -41,7 +41,7 @@ class StatsListViewController: UIViewController {
                 tableView: (self?.statsListTableView)!,
                 nibName: "StatsListCell",
                 source: source,
-                selectAction: { num in
+                selectAction: { (num,_) in
                     let destination: PlayerViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlayerViewController") as! PlayerViewController
                     destination.playerUrl = source[num].playerUrl
                     destination.type = self?.type
