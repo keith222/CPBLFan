@@ -16,6 +16,7 @@ class NewsContentViewController: UIViewController {
     @IBOutlet weak var newsDateLabel: UILabel!
     @IBOutlet weak var newsTitleLabel: UILabel!
     @IBOutlet weak var newsContentLabel: UILabel!
+    @IBOutlet weak var linkLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     
     var newsUrl: String = ""
@@ -60,7 +61,7 @@ class NewsContentViewController: UIViewController {
         }
         self.newsTitleLabel.text = self.newsTitle
         self.newsDateLabel.text = self.newsDate
-        
+        self.linkLabel.text = route
     }
     
     func setUp(){
@@ -73,8 +74,10 @@ class NewsContentViewController: UIViewController {
         let shareButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "share"), style: .plain, target: self, action: #selector(self.shareNews))
         self.navigationItem.rightBarButtonItems = [shareButton,fontButton]
 
-        self.navigationBar?.topItem?.title = "職棒新聞"
+        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.openLink(recognizer:)))
+        self.linkLabel.addGestureRecognizer(tapGesture)
         
+        self.navigationBar?.topItem?.title = "職棒新聞"
     }
     
     func changeFontSize(){
@@ -93,4 +96,8 @@ class NewsContentViewController: UIViewController {
         self.present(activity, animated: true, completion: nil)
     }
 
+    func openLink(recognizer: UITapGestureRecognizer) {
+        let url = (recognizer.view as! UILabel).text
+        UIApplication.shared.openURL(URL(string: url!)!)
+    }
 }

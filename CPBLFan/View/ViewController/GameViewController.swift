@@ -74,8 +74,8 @@ class GameViewController: UIViewController, UIWebViewDelegate {
         self.gameNumLabel.text = self.setGameString((self.gameViewModel?.game)!)
         self.guestImageView.image = UIImage(named: (self.gameViewModel?.guest)!)
         self.homeImageView.image = UIImage(named: (self.gameViewModel?.home)!)
-        self.guestScoreLabel.text = self.gameViewModel?.g_score
-        self.homeScoreLabel.text = self.gameViewModel?.h_score
+        self.guestScoreLabel.text = (self.gameViewModel?.g_score.isEmpty)! ? "--" : self.gameViewModel?.g_score
+        self.homeScoreLabel.text = (self.gameViewModel?.h_score.isEmpty)! ? "--" : self.gameViewModel?.h_score
         self.placeLabel.text = self.gameViewModel?.place
         self.streamUrl = self.gameViewModel?.stream
         
@@ -150,10 +150,10 @@ class GameViewController: UIViewController, UIWebViewDelegate {
     }
     
     @IBAction func streamAction(_ sender: UIButton) {
-        if let url = self.streamUrl{
+        if let url = self.streamUrl, !url.isEmpty{
             UIApplication.shared.openURL(URL(string: url)!)
         }else{
-            UIAlertController(title: "提示", message: "目前尚無串流位址。", preferredStyle: .alert).show()
+            UIAlertController(title: "提示", message: "目前尚無串流位址。", defaultActionButtonTitle: "確定", tintColor: nil).show()
         }
     }
 
