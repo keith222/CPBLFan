@@ -56,9 +56,14 @@ class VideoViewController: UIViewController {
                 source: source as [AnyObject],
                 selectAction:{ [unowned self] (num,_) in
                     // closure for tableview cell tapping
-                    let destination: VideoPlayerViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "VideoPlayerViewController") as! VideoPlayerViewController
-                    destination.videoId = source[num].videoId
-                    self.present(destination, animated: true, completion: nil)
+                    
+                    let videoURL: String = "https://www.youtube.com/watch?v=\(source[num].videoId!)"
+                    UIApplication.shared.openURL(URL(string: videoURL)!)
+                    
+                    // temporarily comment
+//                    let destination: VideoPlayerViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "VideoPlayerViewController") as! VideoPlayerViewController
+//                    destination.videoId = source[num].videoId
+//                    self.present(destination, animated: true, completion: nil)
                 },
                 refreshAction:{ page in
                     // closure for refresh(load more)data

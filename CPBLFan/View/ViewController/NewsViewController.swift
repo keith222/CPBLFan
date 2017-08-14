@@ -56,12 +56,16 @@ class NewsViewController: UIViewController {
                 source: source as [AnyObject],
                 selectAction:{ [weak self] (num,_) in
                     // closure for tableview cell tapping
-                    let destination: NewsContentViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsContentViewController") as! NewsContentViewController
-                    destination.newsUrl = source[num].newsUrl!
-                    destination.newsTitle = source[num].title!
-                    destination.newsDate = source[num].date!
-                    destination.newsImageUrl = source[num].imageURL!
-                    self?.navigationController?.pushViewController(destination, animated: true)
+                    let newsURL: String = "\(APIService.CPBLSourceURL)/\(source[num].newsUrl!)"
+                    UIApplication.shared.openURL(URL(string: newsURL)!)
+                    
+                    //temporarily comment
+//                    let destination: NewsContentViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsContentViewController") as! NewsContentViewController
+//                    destination.newsUrl = source[num].newsUrl!
+//                    destination.newsTitle = source[num].title!
+//                    destination.newsDate = source[num].date!
+//                    destination.newsImageUrl = source[num].imageURL!
+//                    self?.navigationController?.pushViewController(destination, animated: true)
                 },
                 refreshAction:{ page in
                     // closure for refresh(load more)data
