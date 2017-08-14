@@ -25,7 +25,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         super.viewDidLoad()
         
         // Use Firebase library to configure APIs
-        FIRApp.configure()
+        FirebaseApp.configure()
         
         // set table view
         self.todayGameTableView.allowsSelection = false

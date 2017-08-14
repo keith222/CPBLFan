@@ -33,6 +33,10 @@ target 'CPBLFan' do
   pod 'Firebase/Messaging'
   pod 'Firebase/Crash'
   
+  #Fabric
+  pod 'Fabric'
+  pod 'Crashlytics'
+  
   target 'CPBLFanTests' do
     inherit! :search_paths
     # Pods for testing
@@ -53,7 +57,7 @@ target 'Rank-Widget' do
    pod 'AlamofireObjectMapper', '~> 4.0'
    pod 'SwiftyJSON'
    pod 'Kanna', '~> 2.1.0'
- end
+end
 
 target 'Schedule-Widget' do
     use_frameworks!

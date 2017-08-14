@@ -18,7 +18,7 @@ class GameScheduleViewController: UIViewController {
     @IBOutlet weak var gameTableView: UITableView!
     
     var tableHelper: TableViewHelper?
-    
+    var gameSource: [[GameViewModel]]?
     var year: Int = 0
     var month: Int = 0
 
@@ -80,7 +80,7 @@ class GameScheduleViewController: UIViewController {
             
             if data != nil{
                 // map cell source
-                let source: [[GameViewModel]] = (data! as [(String,[Game])]).map{ value -> [GameViewModel] in
+                self?.gameSource = (data! as [(String,[Game])]).map{ value -> [GameViewModel] in
                     return value.1.map{ gameValue -> GameViewModel in
                         return GameViewModel(data: gameValue)
                     }
@@ -98,14 +98,14 @@ class GameScheduleViewController: UIViewController {
                 self?.tableHelper = TableViewHelper(
                     tableView: (self?.gameTableView)!,
                     nibName: "GameCell",
-                    source: source as [AnyObject],
-                    sectionCount: source.count,
+                    source: self!.gameSource! as [AnyObject],
+                    sectionCount: (self?.gameSource?.count)!,
                     sectionNib: "GameHeaderCell",
                     sectionSource: headSource as [AnyObject],
                     selectAction: { [weak self] (num,section) in
                         // closure for tableview cell tapping
                         let destination: GameViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
-                        destination.gameViewModel = source[section][num]
+                        destination.gameViewModel = self?.gameSource?[section][num]
                         self?.navigationController?.pushViewController(destination, animated: true)
                     }
                 )
@@ -134,7 +134,7 @@ class GameScheduleViewController: UIViewController {
         
         self.gameViewModel.fetchGame(at: year, month: month, handler: { [weak self] data in
             if data != nil{
-                let source: [[GameViewModel]] = (data! as [(String,[Game])]).map{ value -> [GameViewModel] in
+                self?.gameSource = (data! as [(String,[Game])]).map{ value -> [GameViewModel] in
                     return value.1.map{ gameValue -> GameViewModel in
                         return GameViewModel(data: gameValue)
                     }
@@ -145,7 +145,7 @@ class GameScheduleViewController: UIViewController {
                 }
         
                 self?.tableHelper?.headSavedData = headSource as [AnyObject]
-                self?.tableHelper?.savedData = source as [AnyObject]
+                self?.tableHelper?.savedData = self!.gameSource! as [AnyObject]
                 
                 HUD.hide(animated: true, completion: {finished in
                     UIView.animate(withDuration: 0.2, animations: {

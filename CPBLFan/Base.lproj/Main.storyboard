@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -791,20 +791,38 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新聞連結：" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ppn-zu-Vzd">
+                                        <rect key="frame" x="15" y="322" width="384" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" contentMode="bottomLeft" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="http://www.cpbl.com.tw" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44B-Zq-BJj">
+                                        <rect key="frame" x="16" y="343" width="383" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.23945538865277782" blue="0.79473198784722221" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="44B-Zq-BJj" firstAttribute="leading" secondItem="2dl-3u-23C" secondAttribute="leading" constant="1" id="1Hc-AM-C7g"/>
                                     <constraint firstItem="SQG-JY-ThJ" firstAttribute="leading" secondItem="Wvr-Wx-NYP" secondAttribute="leading" id="2d5-cB-oFZ"/>
                                     <constraint firstItem="2dl-3u-23C" firstAttribute="leading" secondItem="Wvr-Wx-NYP" secondAttribute="leading" constant="15" id="2oC-9q-Zxy"/>
                                     <constraint firstItem="SQG-JY-ThJ" firstAttribute="top" secondItem="Wvr-Wx-NYP" secondAttribute="top" id="3y7-AS-lyH"/>
+                                    <constraint firstItem="Ppn-zu-Vzd" firstAttribute="trailing" secondItem="2dl-3u-23C" secondAttribute="trailing" id="5g2-ny-qc7"/>
                                     <constraint firstAttribute="trailing" secondItem="07f-Vc-f81" secondAttribute="trailing" id="9Mt-9P-pTN"/>
+                                    <constraint firstItem="Ppn-zu-Vzd" firstAttribute="leading" secondItem="2dl-3u-23C" secondAttribute="leading" id="BY6-7c-gps"/>
                                     <constraint firstAttribute="trailing" secondItem="2dl-3u-23C" secondAttribute="trailing" constant="15" id="Ey6-Oc-teo"/>
+                                    <constraint firstItem="44B-Zq-BJj" firstAttribute="trailing" secondItem="2dl-3u-23C" secondAttribute="trailing" id="FLL-GX-bNJ"/>
+                                    <constraint firstItem="Ppn-zu-Vzd" firstAttribute="top" secondItem="2dl-3u-23C" secondAttribute="bottom" id="L7I-NC-7oz"/>
                                     <constraint firstItem="tqI-Ng-E83" firstAttribute="top" secondItem="07f-Vc-f81" secondAttribute="bottom" constant="5" id="M0Q-EZ-ot1"/>
                                     <constraint firstItem="tqI-Ng-E83" firstAttribute="leading" secondItem="Wvr-Wx-NYP" secondAttribute="leading" constant="8" id="MYx-yt-5Qb"/>
                                     <constraint firstItem="2dl-3u-23C" firstAttribute="top" secondItem="tqI-Ng-E83" secondAttribute="bottom" constant="10" id="Omi-JN-vy3"/>
+                                    <constraint firstAttribute="bottom" secondItem="44B-Zq-BJj" secondAttribute="bottom" id="Rhr-3l-9d6"/>
                                     <constraint firstAttribute="trailing" secondItem="tqI-Ng-E83" secondAttribute="trailing" constant="8" id="Y42-An-i3X"/>
                                     <constraint firstAttribute="trailing" secondItem="SQG-JY-ThJ" secondAttribute="trailing" id="hBv-FM-Oaf"/>
                                     <constraint firstItem="07f-Vc-f81" firstAttribute="leading" secondItem="Wvr-Wx-NYP" secondAttribute="leading" constant="10" id="pTD-iR-vq8"/>
-                                    <constraint firstAttribute="bottom" secondItem="2dl-3u-23C" secondAttribute="bottom" id="qBb-x6-UBZ"/>
+                                    <constraint firstItem="44B-Zq-BJj" firstAttribute="top" secondItem="Ppn-zu-Vzd" secondAttribute="bottom" id="wQr-WY-2Gp"/>
                                     <constraint firstItem="07f-Vc-f81" firstAttribute="top" secondItem="SQG-JY-ThJ" secondAttribute="bottom" constant="5" id="wVy-9A-gBe"/>
                                     <constraint firstItem="SQG-JY-ThJ" firstAttribute="centerX" secondItem="Wvr-Wx-NYP" secondAttribute="centerX" id="wbK-XL-DsY"/>
                                 </constraints>
@@ -820,6 +838,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="linkLabel" destination="44B-Zq-BJj" id="rQS-XY-0ir"/>
                         <outlet property="newsContentLabel" destination="2dl-3u-23C" id="9KI-T4-Xq9"/>
                         <outlet property="newsDateLabel" destination="07f-Vc-f81" id="w0L-Mq-DT9"/>
                         <outlet property="newsImage" destination="SQG-JY-ThJ" id="oDK-C2-3dj"/>
@@ -829,7 +848,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Eu-hd-AvL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2429.5999999999999" y="-978.26086956521749"/>
+            <point key="canvasLocation" x="2428.985507246377" y="-978.26086956521749"/>
         </scene>
         <!--職棒新聞-->
         <scene sceneID="e4K-np-eQ3">

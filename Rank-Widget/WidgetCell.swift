@@ -17,8 +17,6 @@ class WidgetCell: UITableViewCell, BindView{
     @IBOutlet weak var percentageLabel: UILabel!
     @IBOutlet weak var gamebehindLabel: UILabel!
     
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -43,7 +43,7 @@ class GameViewModel{
         // for child change using
         var tempData: [(key: String, value: [Game])] = []
         
-        let ref: FIRDatabaseReference! = FIRDatabase.database().reference()
+        let ref: DatabaseReference! = Database.database().reference()
         ref.child(year).child(month).observeSingleEvent(of: .value, with: { (snapshot) in
             
             // check data if existed
