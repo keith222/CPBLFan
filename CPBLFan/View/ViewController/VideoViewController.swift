@@ -91,6 +91,12 @@ class VideoViewController: UIViewController {
         
     }
     
+    deinit {
+        print("============")
+        print("VideoViewController Deinit")
+        print("============")
+    }
+    
     func setUp(){
         // hide tableview
         self.videoTableView.alpha = 0
