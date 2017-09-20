@@ -1,8 +1,5 @@
 PODS:
   - Alamofire (4.5.0)
-  - AlamofireObjectMapper (4.1.0):
-    - Alamofire (~> 4.1)
-    - ObjectMapper (~> 2.0)
   - Crashlytics (3.8.5):
     - Fabric (~> 1.6.3)
   - DynamicColor (3.1.0)
@@ -42,35 +39,35 @@ PODS:
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/Logger (~> 2.1)
     - Protobuf (~> 3.1)
+  - FSCalendar (2.7.9)
   - GoogleToolboxForMac/Defines (2.1.1)
   - GoogleToolboxForMac/Logger (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
-  - Kanna (2.1.1)
-  - Kingfisher (3.10.3)
+  - Kanna (2.2.1)
+  - Kingfisher (4.0.1)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
-  - ObjectMapper (2.2.8)
+  - ObjectMapper (2.3.0)
   - PKHUD (4.2.3)
   - Protobuf (3.3.0)
   - ReachabilitySwift (3)
-  - SwifterSwift (3.0.0):
-    - SwifterSwift/Cocoa (= 3.0.0)
-    - SwifterSwift/Foundation (= 3.0.0)
-    - SwifterSwift/UIKit (= 3.0.0)
-  - SwifterSwift/Cocoa (3.0.0)
-  - SwifterSwift/Foundation (3.0.0)
-  - SwifterSwift/UIKit (3.0.0)
+  - SwifterSwift (4.0.0):
+    - SwifterSwift/Cocoa (= 4.0.0)
+    - SwifterSwift/Foundation (= 4.0.0)
+    - SwifterSwift/UIKit (= 4.0.0)
+  - SwifterSwift/Cocoa (4.0.0)
+  - SwifterSwift/Foundation (4.0.0)
+  - SwifterSwift/UIKit (4.0.0)
   - SwiftyJSON (3.1.4)
   - youtube-ios-player-helper (0.1.6)
 
 DEPENDENCIES:
-  - Alamofire
-  - AlamofireObjectMapper (~> 4.0)
+  - Alamofire (~> 4.5)
   - Crashlytics
   - DynamicColor (~> 3.1.0)
   - Fabric
@@ -78,17 +75,46 @@ DEPENDENCIES:
   - Firebase/Crash
   - Firebase/Database
   - Firebase/Messaging
-  - Kanna (~> 2.1.0)
-  - Kingfisher
-  - PKHUD (~> 4.0)
+  - FSCalendar
+  - Kanna (from `https://github.com/tid-kijyun/Kanna.git`, branch `feature/v4.0.0`)
+  - Kingfisher (~> 4.0.0)
+  - ObjectMapper (from `https://github.com/Hearst-DD/ObjectMapper.git`, branch `swift-4`)
+  - PKHUD (from `https://github.com/pkluz/PKHUD.git`, branch `release/swift4`)
   - ReachabilitySwift
-  - SwifterSwift
+  - SwifterSwift (from `https://github.com/SwifterSwift/SwifterSwift.git`, branch `swift-4`)
   - SwiftyJSON
   - youtube-ios-player-helper (~> 0.1.4)
 
+EXTERNAL SOURCES:
+  Kanna:
+    :branch: feature/v4.0.0
+    :git: https://github.com/tid-kijyun/Kanna.git
+  ObjectMapper:
+    :branch: swift-4
+    :git: https://github.com/Hearst-DD/ObjectMapper.git
+  PKHUD:
+    :branch: release/swift4
+    :git: https://github.com/pkluz/PKHUD.git
+  SwifterSwift:
+    :branch: swift-4
+    :git: https://github.com/SwifterSwift/SwifterSwift.git
+
+CHECKOUT OPTIONS:
+  Kanna:
+    :commit: 86f7f25e6eeeb21288e4477dbbf91ec894a5dad3
+    :git: https://github.com/tid-kijyun/Kanna.git
+  ObjectMapper:
+    :commit: 0fac1f2b3cf26acd0dd8e605b67fdc3c292fb74c
+    :git: https://github.com/Hearst-DD/ObjectMapper.git
+  PKHUD:
+    :commit: 4d8fbf70ae912dd72280cde0a5c1440ada9a7306
+    :git: https://github.com/pkluz/PKHUD.git
+  SwifterSwift:
+    :commit: 685388cbc2d06e151f8ae3a9bbf99b3ba2b675c2
+    :git: https://github.com/SwifterSwift/SwifterSwift.git
+
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  AlamofireObjectMapper: 435adc82f5b367679bd9e71c4974a54efd0b2521
   Crashlytics: dfbae35ef22ca189240d230ad501feea4ee85d2d
   DynamicColor: 4dec283a881f7f9d9f3bc88fb5f306724242575f
   Fabric: f050464eac45a2ce5a8e6e6a07e977c0df32fe28
@@ -99,18 +125,19 @@ SPEC CHECKSUMS:
   FirebaseDatabase: d829b3a8c3e2ac7a16773c5df226966b0805dfc2
   FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
   FirebaseMessaging: 227406c05b0dc9290702d2e9f18ab5528f0c2cf2
+  FSCalendar: a04b09f16f811bc92e82f3cf852a15225233b9d5
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
-  Kanna: 9b4b086c218703f2b94f5b21a466217dd2f9332e
-  Kingfisher: a0ac82dc5bcf0388dd74b294cf2cc13730c63436
-  nanopb: 22bc080fa3955e2116b6ff3ee6c2cb3c15ab97cb
-  ObjectMapper: 3d571bb5af471c779e1160828cd9ad5c4ef90958
-  PKHUD: c7692163a09875cbf15827dc581df3c5cf7f1015
+  Kanna: 9d03f5e7aba03906fbb764eef5a83dbfb5c98fb5
+  Kingfisher: b771785e9461ed4b8686d40e7145f9e58100cb24
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  ObjectMapper: 071f9e47ae0ac75e3b445a4f3510b6a94afef52d
+  PKHUD: 351011b853e6b942e7ee8ad335864cc84c787241
   Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
-  SwifterSwift: b35d1fee5352da68878f6321b245d3d99c1af32f
+  SwifterSwift: aac4b62483c5b394346f78a5d484472d23670b97
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
 
-PODFILE CHECKSUM: 2f78d5edced64d73b294d17936479b44e6abcef3
+PODFILE CHECKSUM: 40ae48d0160655efea004530913cd92c82708b02
 
 COCOAPODS: 1.1.1

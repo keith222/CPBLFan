@@ -75,7 +75,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
     }
     
-    func tableViewTapped(tapGesture: UITapGestureRecognizer){
+    @objc func tableViewTapped(tapGesture: UITapGestureRecognizer){
         let url: URL = URL(string: "CPBLFan://?game")!
         self.extensionContext?.open(url, completionHandler: nil)
     }

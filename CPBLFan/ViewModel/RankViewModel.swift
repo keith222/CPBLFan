@@ -37,10 +37,12 @@ class RankViewModel{
         APIService.request(.get, route: route, completionHandler: { text in
             var ranks: [[Rank]]? = []
             
-            if let doc  = HTML(html: text, encoding: .utf8){
+            do {
+                let doc = try HTML(html: text, encoding: .utf8)
+                
                 for (_,node) in doc.css(".std_tb").enumerated(){
                     var rank: [Rank] = []
-            
+
                     for (index,tag) in node.css("tr").enumerated(){
                         guard index != 0 else{continue}
                         var rankElement: [String] = []
@@ -49,12 +51,14 @@ class RankViewModel{
                             guard index > 0 && index != 2 else{continue}
                             rankElement.append(element.text!)
                         }
-                    
+
                         let winLose = rankElement[1].components(separatedBy: "-")
                         rank.append(Rank(JSON: ["team":rankElement[0], "win":winLose[0], "tie":winLose[1], "lose":winLose[2], "percentage":rankElement[2], "gamebehind":rankElement[3]])!)
                     }
                     ranks?.append(rank)
                 }
+            } catch {
+                print("error")
             }
             handler(ranks!)
         })

@@ -66,7 +66,8 @@ class GameViewModel{
                         gameData[data.0] = game[index]
                     }
                 }
-                let sortedData = gameData.sorted(by: {Int($0.0.key)! < Int($0.1.key)!})
+                //let sortedData = gameData.sorted(by: {Int($0.0.key)! < Int($0.1.key)!})
+                let sortedData = gameData.sorted(by: { Int($0.key)! < Int($1.key)!})
                 tempData = sortedData
                 handler(sortedData)
             }else{

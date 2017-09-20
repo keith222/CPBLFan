@@ -123,7 +123,7 @@ class GameViewController: UIViewController, UIWebViewDelegate {
         return numString
     }
 
-    func loadHTML() {
+    @objc func loadHTML() {
         var gameID = self.gameViewModel!.game
         let gameDate = self.gameViewModel!.date
         let year = self.gameViewModel!.date.components(separatedBy: "-")[0]
@@ -144,16 +144,18 @@ class GameViewController: UIViewController, UIWebViewDelegate {
         
         let route = "\(APIService.CPBLSourceURL)/games/play_by_play.html?&game_type=\(gameType)&game_id=\(gameID!)&game_date=\(gameDate!)&pbyear=\(year)"
         APIService.request(.get, route: route, completionHandler: { text in
-            if let doc = HTML(html: text, encoding: .utf8){
+            do {
+                let doc = try HTML(html: text, encoding: .utf8)
+                
                 var gameHtml = cssString
                 
                 if let gameTable = doc.at_css(".std_tb:first-child") {
                     gameHtml = gameHtml + gameTable.toHTML!
-                    gameHtml = gameHtml.replacing("display:none;", with: "")
+                    gameHtml = gameHtml.replacingOccurrences(of: "display:none;", with: "")
                     self.gameWebView.loadHTMLString(gameHtml, baseURL: nil)
                     
                 }else{
-                   self.gameWebView.loadHTMLString(gameHtml, baseURL: nil)
+                    self.gameWebView.loadHTMLString(gameHtml, baseURL: nil)
                 }
                 
                 if let scoreBoard = doc.at_css(".score_board") {
@@ -162,7 +164,11 @@ class GameViewController: UIViewController, UIWebViewDelegate {
                     let scoreboardHTML = boardCss + scoreBoard.toHTML!
                     self.scoreboardWebView.loadHTMLString(scoreboardHTML, baseURL: nil)
                 }
+                
+            } catch let error as NSError{
+                print(error.localizedDescription)
             }
+        
         })
         
         // check if game day is earlier than today
@@ -174,7 +180,9 @@ class GameViewController: UIViewController, UIWebViewDelegate {
         let boxRoute = "\(APIService.CPBLSourceURL)/games/box.html?&game_type=\(gameType)&game_id=\(gameID!)&game_date=\(gameDate!)&pbyear=\(year)"
         
         APIService.request(.get, route: boxRoute, completionHandler: {text in
-            if let doc = HTML(html: text, encoding: .utf8){
+            do {
+                let doc = try HTML(html: text, encoding: .utf8)
+                
                 // batting box
                 var battingHtml = cssString + "<h3 style='color:#081B2F;margin:20px 0 10px 10px;'>打擊成績</h3>"
                 battingHtml += doc.css(".half_block.left > table")[0].toHTML!
@@ -193,6 +201,8 @@ class GameViewController: UIViewController, UIWebViewDelegate {
                 
                 let boxHtml = battingHtml + pitchingHtml
                 self.boxWebView.loadHTMLString(boxHtml, baseURL: nil)
+            } catch let error as NSError{
+                print(error.localizedDescription)
             }
         })
     }
@@ -203,11 +213,11 @@ class GameViewController: UIViewController, UIWebViewDelegate {
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
         HUD.hide(animated: true, completion: {finished in
-            UIView.animate(withDuration: 0.5, animations: { [weak self] _ in
+            UIView.animate(withDuration: 0.5, animations: {
                 webView.alpha = 1
-                self?.gameView.alpha = 1
-                self?.scoreView.alpha = 1
-                self?.segmentView.alpha = 1
+                self.gameView.alpha = 1
+                self.scoreView.alpha = 1
+                self.segmentView.alpha = 1
             })
         })
     }

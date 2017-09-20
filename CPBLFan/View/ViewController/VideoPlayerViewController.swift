@@ -57,7 +57,7 @@ class VideoPlayerViewController: UIViewController, YTPlayerViewDelegate{
     }
     
 
-    func dismiss(_ sender: AnyObject? = nil) {
+    @objc func dismiss(_ sender: AnyObject? = nil) {
         self.isPresented = false
         self.dismiss(animated: true) {}
     }

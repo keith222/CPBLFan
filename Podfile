@@ -8,21 +8,22 @@ target 'CPBLFan' do
   # Pods for CPBLFan
 
   #Pods about Swift Language
-  pod 'SwifterSwift'
+  pod 'SwifterSwift', :git => 'https://github.com/SwifterSwift/SwifterSwift.git', :branch => 'swift-4'
 
   #Pods about internet request/response/parse
-  pod 'Alamofire'
-  pod 'AlamofireObjectMapper', '~> 4.0'
+  pod 'Alamofire', '~> 4.5'
+  pod 'ObjectMapper', :git => 'https://github.com/Hearst-DD/ObjectMapper.git', :branch => 'swift-4'
   pod 'SwiftyJSON'
-  pod 'Kanna', '~> 2.1.0'
+  pod 'Kanna', :git => 'https://github.com/tid-kijyun/Kanna.git', :branch => 'feature/v4.0.0'
   
   #Pods for detect net connection
   pod 'ReachabilitySwift'
 
   #Pods about UI
-  pod 'Kingfisher'
+  pod 'Kingfisher', '~> 4.0.0'
+  pod 'FSCalendar'
   pod 'DynamicColor', '~> 3.1.0'
-  pod 'PKHUD', '~> 4.0'
+  pod 'PKHUD', :git => 'https://github.com/pkluz/PKHUD.git', :branch => 'release/swift4'
   
   #Google APIs
   pod 'youtube-ios-player-helper', '~> 0.1.4'
@@ -53,18 +54,18 @@ target 'Rank-Widget' do
    use_frameworks!
    #Pods for today widget
    #Pods about internet request/response/parse
-   pod 'Alamofire'
-   pod 'AlamofireObjectMapper', '~> 4.0'
+   pod 'Alamofire', '~> 4.5'
+   pod 'ObjectMapper', :git => 'https://github.com/Hearst-DD/ObjectMapper.git', :branch => 'swift-4'
    pod 'SwiftyJSON'
-   pod 'Kanna', '~> 2.1.0'
+   pod 'Kanna', :git => 'https://github.com/tid-kijyun/Kanna.git', :branch => 'feature/v4.0.0'
 end
 
 target 'Schedule-Widget' do
     use_frameworks!
     #Pods for today widget
     #Pods about internet request/response/parse
-    pod 'Alamofire'
-    pod 'AlamofireObjectMapper', '~> 4.0'
+    pod 'Alamofire', '~> 4.5'
+    pod 'ObjectMapper', :git => 'https://github.com/Hearst-DD/ObjectMapper.git', :branch => 'swift-4'
     pod 'SwiftyJSON'
     
     #Google Firebase

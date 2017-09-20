@@ -33,12 +33,14 @@ class NewsViewModel{
         APIService.request(.get, route: route, completionHandler: { text in
             var news: [News]? = []
             
-            if let doc = HTML(html: text, encoding: .utf8){
+            do {
+                let doc = try HTML(html: text, encoding: .utf8)
+                
                 let topNewsTitle = doc.at_css(".news_head_title > a")?.text
                 let topNewsDate = doc.at_css(".news_head_date")?.text
                 let topNewsImageUrl = doc.at_css(".games_news_pic > a > img")?["src"]?.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? ""
                 let topNewsUrl = doc.at_css(".games_news_pic > a")?["href"]?.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
-
+                
                 if topNewsTitle != nil{
                     let topNewsElemet: News = News(JSON: ["title": topNewsTitle!, "date": topNewsDate!, "imageUrl": topNewsImageUrl, "newsUrl": topNewsUrl!])!
                     news?.append(topNewsElemet)
@@ -52,7 +54,7 @@ class NewsViewModel{
                     var tempDate = node.at_css(".news_row_date")?.text!
                     let startIndex = tempDate?.index((tempDate?.startIndex)!, offsetBy: 6)
                     let endIndex = tempDate?.index((tempDate?.endIndex)!, offsetBy: -17)
-                    tempDate = tempDate?.substring(with: (startIndex!..<endIndex!))
+                    tempDate = String(tempDate![startIndex!..<endIndex!])
                     let newsDate = tempDate?.trimmingCharacters(in: .whitespacesAndNewlines)
                     
                     let newsImageUrl = node.at_css(".news_row_pic > img")?["src"]!.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? ""
@@ -61,17 +63,24 @@ class NewsViewModel{
                     news?.append(newsElement)
                 }
                 
-                handler(news!)
+            } catch let error as NSError{
+                print(error.localizedDescription)
             }
+            handler(news!)
         })
     }
     
     func fetchNewsContent(from route:String, handler: @escaping ((String)->())){
         APIService.request(.get, route: route, completionHandler: { text in
-            if let doc = HTML(html: text, encoding: .utf8){
+            do {
+                let doc = try HTML(html: text, encoding: .utf8)
+                
                 var content = doc.at_css(".cont_txt_line_height")?.text!
                 content = content?.replacingOccurrences(of: "\r\n\t\t\t\t", with: "")
                 handler(content!)
+                
+            } catch let error as NSError{
+                print(error.localizedDescription)
             }
         })
     }

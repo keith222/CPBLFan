@@ -39,7 +39,7 @@ class RankViewController: UIViewController {
         HUD.show(.progress)
         
         // set navigation bar title
-        self.navigationBar?.topItem?.title = "聯盟排名"
+        self.navigationItem.title = "聯盟排名"
         
         // set tableview layout
         self.rankTableView.separatorStyle = .none

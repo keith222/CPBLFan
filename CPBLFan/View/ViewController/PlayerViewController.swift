@@ -62,11 +62,13 @@ class PlayerViewController: UIViewController, UIScrollViewDelegate, UIWebViewDel
         
         let route = "\(APIService.CPBLSourceURL)\(playerUrl!)"
         APIService.request(.get, route: route, completionHandler: { text in
-            if let doc = HTML(html: text, encoding: .utf8){
+            do {
+                let doc = try HTML(html: text, encoding: .utf8)
+                
                 var headUrl = doc.at_css(".player_info div img")?["src"]
                 headUrl = ((headUrl?.hasSuffix(".jpg"))! || (headUrl?.hasSuffix(".png"))!) ? headUrl : headUrl?.appending("/phone/images/playerhead.png")
                 
-                let gameUrl = headUrl?.replacing("head", with: "game")
+                let gameUrl = headUrl?.replacingOccurrences(of: "head", with: "game")
                 self.headImageView.kf.setImage(with: URL(string: headUrl!))
                 
                 do{
@@ -76,19 +78,19 @@ class PlayerViewController: UIViewController, UIScrollViewDelegate, UIWebViewDel
                     self.gameImageView.image = UIImage(named: "logo")
                 }
                 
-
+                
                 var statsHtml = cssString + doc.css(".std_tb")[0].toHTML!
-                statsHtml = statsHtml.replacing("display:none;", with: "")
+                statsHtml = statsHtml.replacingOccurrences(of: "display:none;", with: "")
                 self.statsWebView.loadHTMLString(statsHtml, baseURL: nil)
                 self.statsWebViewHeight.constant = CGFloat(30 * doc.css(".std_tb")[0].css("tr").count + 10)
-
+                
                 var fieldHtml = cssString + doc.css(".std_tb")[1].toHTML!
-                fieldHtml = fieldHtml.replacing("詳細", with: "")
+                fieldHtml = fieldHtml.replacingOccurrences(of: "詳細", with: "")
                 self.fieldingWebView.loadHTMLString(fieldHtml, baseURL: nil)
                 self.fieldingWebViewHeight.constant = CGFloat(30 * doc.css(".std_tb")[1].css("tr").count + 10)
                 
                 var teamHtml = cssString + doc.css(".std_tb")[doc.css(".std_tb").count - 2 ].toHTML!
-                teamHtml = teamHtml.replacing("display:none;", with: "")
+                teamHtml = teamHtml.replacingOccurrences(of: "display:none;", with: "")
                 self.teamStatsWebView.loadHTMLString(teamHtml, baseURL: nil)
                 self.teamStatsWebViewHeight.constant = CGFloat(30 * (doc.css(".std_tb")[doc.css(".std_tb").count - 2 ].css("tr").count + 2) + 10)
                 
@@ -97,7 +99,7 @@ class PlayerViewController: UIViewController, UIScrollViewDelegate, UIWebViewDel
                 self.singleGameWebViewHeight.constant = CGFloat(30 * doc.css(".std_tb")[doc.css(".std_tb").count - 1 ].css("tr").count + 10)
                 
                 var playerInfo = (doc.at_css(".player_info_name")?.text) ?? (doc.at_css(".player_info3_name")?.text)
-                playerInfo = playerInfo?.replacing(" ", with: "").replacing("球隊:", with: "｜")
+                playerInfo = playerInfo?.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "球隊:", with: "｜")
                 self.nameLabel.text = playerInfo
                 
                 var position = ""
@@ -131,10 +133,11 @@ class PlayerViewController: UIViewController, UIScrollViewDelegate, UIWebViewDel
                     self.nameLabel.font = UIFont.systemFont(ofSize: 18)
                     self.dataLabel.font = UIFont.systemFont(ofSize: 12)
                 }
-
+                
+            } catch let error as NSError{
+                print(error.localizedDescription)
             }
         })
-
     }
     
     deinit {

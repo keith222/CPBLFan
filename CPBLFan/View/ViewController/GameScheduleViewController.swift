@@ -52,7 +52,7 @@ class GameScheduleViewController: UIViewController {
         HUD.show(.progress)
         
         // set navigation bar title
-        self.navigationBar?.topItem?.title = "職棒賽程"
+        self.navigationItem.title = "職棒賽程"
         
         // set tableview
         self.gameTableView.rowHeight = 100
@@ -181,7 +181,7 @@ class GameScheduleViewController: UIViewController {
         self.loadData("\(year)", month: "\(month)")
     }
     
-    func swipeGestureAction(gesture: UISwipeGestureRecognizer){
+    @objc func swipeGestureAction(gesture: UISwipeGestureRecognizer){
         HUD.show(.progress)
         
         switch gesture.direction {
@@ -192,12 +192,12 @@ class GameScheduleViewController: UIViewController {
                 month = 10
             }
             
-            UIView.animate(withDuration: 0.2, animations: { [weak self] _ in
-                self?.dateLabel.transform = CGAffineTransform(translationX: ((self?.dateLabel.superview?.frame.width)! / 2), y: 0)
-                self?.dateLabel.fadeOut()
+            UIView.animate(withDuration: 0.2, animations: {
+                self.dateLabel.transform = CGAffineTransform(translationX: ((self.dateLabel.superview?.frame.width)! / 2), y: 0)
+                self.dateLabel.fadeOut()
             }, completion: { [weak self] _ in
                 self?.dateLabel.transform = CGAffineTransform(translationX: -((self?.dateLabel.frame.width)!), y: 0)
-                UIView.animate(withDuration: 0.2, animations: { [weak self] _ in
+                UIView.animate(withDuration: 0.2, animations: {
                     self?.dateLabel.transform = CGAffineTransform(translationX: 0, y: 0)
                     self?.dateLabel.fadeIn()
                     self?.loadData(String(self!.year), month: String(self!.month))
@@ -212,12 +212,13 @@ class GameScheduleViewController: UIViewController {
                 month = 3
             }
             
-            UIView.animate(withDuration: 0.2, animations: { [weak self] _ in
-                self?.dateLabel.transform = CGAffineTransform(translationX: -((self?.dateLabel.superview?.frame.width)! / 2), y: 0)
-                self?.dateLabel.fadeOut()
-            }, completion: { [weak self] _ in
+            UIView.animate(withDuration: 0.2, animations: {
+                self.dateLabel.transform = CGAffineTransform(translationX: -((self.dateLabel.superview?.frame.width)! / 2), y: 0)
+                self.dateLabel.fadeOut()
+                
+            }, completion: { [weak self] finished in
                 self?.dateLabel.transform = CGAffineTransform(translationX: ((self?.dateLabel.superview?.frame.width)! / 2), y: 0)
-                UIView.animate(withDuration: 0.2, animations: { [weak self] _ in
+                UIView.animate(withDuration: 0.2, animations: {
                     self?.dateLabel.transform = CGAffineTransform(translationX: 0, y: 0)
                     self?.dateLabel.fadeIn()
                     self?.loadData(String(self!.year), month: String(self!.month))

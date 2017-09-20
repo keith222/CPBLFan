@@ -37,12 +37,14 @@ class StatsListViewModel{
             var statsList: [StatsList]? = []
             var totalPage = page
             
-            if let doc = HTML(html: text, encoding: .utf8){
+            do {
+                let doc = try HTML(html: text, encoding: .utf8)
+                
                 for (index,node) in doc.css(".std_tb tr").enumerated(){
                     guard index > 0 else{continue}
                     let categoryIndex = self.getCategoryIndex(category: category)
                     let numData = node.css("td")[0].text
-                    let nameData = node.css("td")[1].text?.replacing("*", with: "").trimmed
+                    let nameData = node.css("td")[1].text?.replacingOccurrences(of: "*", with: "").trimmed
                     let teamData = self.getTeam(fileName: (node.css("td")[1].at_css("img")?["src"])!)
                     let statsData = node.css("td")[categoryIndex].text
                     let playerUrlData = node.css("td")[1].at_css("a")?["href"]
@@ -52,7 +54,9 @@ class StatsListViewModel{
                 if let page = (doc.at_css("a.page:nth-last-child(2)")?.text)?.int{
                     totalPage = page
                 }
-
+                
+            } catch let error as NSError{
+                print(error.localizedDescription)
             }
             handler(statsList!,totalPage)
         })

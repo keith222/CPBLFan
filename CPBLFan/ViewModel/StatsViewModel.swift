@@ -35,7 +35,9 @@ class StatsViewModel{
         APIService.request(.get, route: route, completionHandler: { [weak self] text in
             var statsData: [Stats]? = []
             
-            if let doc = HTML(html: text, encoding: .utf8){
+            do {
+                let doc = try HTML(html: text, encoding: .utf8)
+                
                 for (index,node) in doc.css(".statstoplist_box").enumerated(){
                     let category = self?.getCategory(from: index)
                     
@@ -46,11 +48,13 @@ class StatsViewModel{
                         statsElement.append(element.text!)
                     }
                     let moreUrl = node.at_css(".more_row")?["href"]?.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
-            
+                    
                     statsData?.append(Stats(JSON: ["category": category!,"team": statsElement[0], "name": statsElement[1], "stats": statsElement[2], "moreUrl": moreUrl!])!)
                 }
+                
+            } catch let error as NSError{
+                print(error.localizedDescription)
             }
-            
             handler(statsData!)
         })
     }

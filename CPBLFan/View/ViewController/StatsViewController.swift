@@ -42,7 +42,7 @@ class StatsViewController: UIViewController {
         HUD.show(.progress)
         
         // set navigator title
-        self.navigationBar?.topItem?.title = "個人成績"
+        self.navigationItem.title = "個人成績"
         
         // set tableview
         self.battingTableView.separatorStyle = .none
@@ -60,14 +60,11 @@ class StatsViewController: UIViewController {
             }
             
             // filter batting data
-            let battingSource = source.enumerated().filter({ index, _ in
-                return ((index < 3) || (index > 5 && index < 8) || (index == 10))
-            }).map{$0.1}
+            let battingSource = source.enumerated().filter({ return (($0.offset < 3) || ($0.offset > 5 && $0.offset < 8) || ($0.offset == 10))
+            }).map{$0.element}
             
             // filter pitch data
-            let pitchingSource = source.enumerated().filter({ index, _ in
-                return ((index > 2 && index < 6) || (index > 7 && index != 10))
-            }).map{$0.1}
+            let pitchingSource = source.enumerated().filter{ return (($0.offset > 2 && $0.offset < 6) || ($0.offset > 7 && $0.offset != 10)) }.map{$0.element}
             
             // batting table
             self.battingTableHelper = TableViewHelper(

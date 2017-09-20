@@ -94,7 +94,7 @@ class NewsViewController: UIViewController {
         // hide tableview
         self.newsTableView.alpha = 0
         // set navigation bar title
-        self.navigationBar?.topItem?.title = "職棒新聞"
+        self.navigationItem.title = "職棒新聞"
         
         // set tableview layout
         self.newsTableView.separatorStyle = .none

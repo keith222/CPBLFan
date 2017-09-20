@@ -43,7 +43,7 @@ class NewsContentViewController: UIViewController {
             let attributedString = NSMutableAttributedString(string: content)
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.lineSpacing = 5
-            attributedString.addAttribute(NSParagraphStyleAttributeName, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
+            attributedString.addAttribute(NSAttributedStringKey.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
             self?.newsContentLabel.attributedText = attributedString
 
             HUD.hide(animated: true, completion: { finished in
@@ -77,10 +77,10 @@ class NewsContentViewController: UIViewController {
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.openLink(recognizer:)))
         self.linkLabel.addGestureRecognizer(tapGesture)
         
-        self.navigationBar?.topItem?.title = "職棒新聞"
+        self.navigationItem.title = "職棒新聞"
     }
     
-    func changeFontSize(){
+    @objc func changeFontSize(){
         let size = self.newsContentLabel.font.pointSize
         if !self.fontChanged{
             self.newsContentLabel.font = UIFont.systemFont(ofSize: size * 2)
@@ -90,13 +90,13 @@ class NewsContentViewController: UIViewController {
         self.fontChanged = !self.fontChanged
     }
     
-    func shareNews(){
+    @objc func shareNews(){
         let news = "\(APIService.CPBLSourceURL)\(self.newsUrl)"
         let activity: UIActivityViewController = UIActivityViewController(activityItems: [news], applicationActivities: nil)
         self.present(activity, animated: true, completion: nil)
     }
 
-    func openLink(recognizer: UITapGestureRecognizer) {
+    @objc func openLink(recognizer: UITapGestureRecognizer) {
         let url = (recognizer.view as! UILabel).text
         UIApplication.shared.openURL(URL(string: url!)!)
     }

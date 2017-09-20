@@ -102,7 +102,7 @@ class VideoViewController: UIViewController {
         self.videoTableView.alpha = 0
         
         // set navigation bar title
-        self.navigationBar?.topItem?.title = "職棒影音"
+        self.navigationItem.title = "職棒影音"
         
         // set tableview layout
         self.videoTableView.separatorStyle = .none
