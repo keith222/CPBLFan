@@ -92,7 +92,7 @@ class GameScheduleViewController: UIViewController {
                 
                 // map head soruce
                 let headSource: [[String]] = (data! as [(String,[Game])]).map{ value -> [String] in
-                    return [monthString ,value.0]
+                    return [yearString, monthString ,value.0]
                 }
                 
                 self?.tableHelper = TableViewHelper(
@@ -116,7 +116,7 @@ class GameScheduleViewController: UIViewController {
                     })
                 })
                 
-                if let sectionIndex = headSource.index(where: {return $0[1] == String(day)}){
+                if let sectionIndex = headSource.index(where: { return $0[2] == day.string}){
                     let indexPath = IndexPath(row: 0, section: sectionIndex)
                     self?.gameTableView.scrollToRow(at: indexPath, at: .top, animated: false)
                 }
@@ -141,7 +141,7 @@ class GameScheduleViewController: UIViewController {
                 }
                 
                 let headSource: [[String]] = (data! as [(String,[Game])]).map{ value -> [String] in
-                    return [month ,value.0]
+                    return [year, month ,value.0]
                 }
         
                 self?.tableHelper?.headSavedData = headSource as [AnyObject]

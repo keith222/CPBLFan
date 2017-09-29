@@ -108,6 +108,7 @@ class VideoViewController: UIViewController {
         self.videoTableView.separatorStyle = .none
         self.videoTableView.estimatedRowHeight = 200
         self.videoTableView.rowHeight = self.cellHeight()
+        self.videoTableView.sectionHeaderHeight = UITableViewAutomaticDimension
         
         // set activity indicator in foot view
         footerView = UIView(frame: CGRect(x: 0, y: 5, width: self.view.bounds.size.width, height: 50))

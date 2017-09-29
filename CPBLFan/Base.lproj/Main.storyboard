@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -55,7 +56,7 @@
                                         <rect key="frame" x="70" y="0.0" width="274" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--年--月" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTG-fU-zcb">
-                                                <rect key="frame" x="106.66666666666666" y="10.666666666666671" width="62" height="19"/>
+                                                <rect key="frame" x="106.99999999999999" y="10.666666666666671" width="61.666666666666643" height="19.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -95,18 +96,19 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="haI-PH-2O5">
                                 <rect key="frame" x="0.0" y="104" width="414" height="583"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="64" maxX="0.0" maxY="0.0"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fw9-e1-zet" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="3Vp-Bj-HTt"/>
+                            <constraint firstItem="fw9-e1-zet" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="4x4-I9-Wrx"/>
                             <constraint firstItem="Yzp-vJ-2eB" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="53c-EF-pM5"/>
                             <constraint firstItem="haI-PH-2O5" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="8Aj-x9-QgL"/>
+                            <constraint firstItem="haI-PH-2O5" firstAttribute="top" secondItem="fw9-e1-zet" secondAttribute="bottom" id="Ces-sC-tXa"/>
                             <constraint firstAttribute="trailing" secondItem="haI-PH-2O5" secondAttribute="trailing" id="IjR-ry-0Ft"/>
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="haI-PH-2O5" secondAttribute="bottom" id="UDq-yJ-RlW"/>
                             <constraint firstItem="Yzp-vJ-2eB" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="ZZm-eG-dbb"/>
-                            <constraint firstItem="haI-PH-2O5" firstAttribute="top" secondItem="fw9-e1-zet" secondAttribute="bottom" id="d2w-Vx-qXr"/>
-                            <constraint firstItem="fw9-e1-zet" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="hgC-Yg-Q4o"/>
                             <constraint firstAttribute="trailing" secondItem="fw9-e1-zet" secondAttribute="trailing" id="qMv-RU-T2R"/>
                         </constraints>
                     </view>
@@ -119,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1670" y="-293"/>
+            <point key="canvasLocation" x="1669.5652173913045" y="-293.47826086956525"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="OTX-4X-2sW">
@@ -172,7 +174,7 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="100"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qc8-1X-FRg">
-                                        <rect key="frame" x="15" y="24.666666666666671" width="50" height="50.999999999999986"/>
+                                        <rect key="frame" x="15" y="25.333333333333329" width="50" height="50.000000000000014"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="qc8-1X-FRg" secondAttribute="height" multiplier="50:50" id="SqG-G0-zSq"/>
                                         </constraints>
@@ -298,7 +300,6 @@
                             <constraint firstItem="t71-h1-rcw" firstAttribute="leading" secondItem="Hyo-Nb-leO" secondAttribute="leading" constant="-10" id="EwP-a5-NYg"/>
                             <constraint firstAttribute="trailing" secondItem="ngT-WO-4YI" secondAttribute="trailing" id="Hlj-zk-WWg"/>
                             <constraint firstItem="6db-aU-frm" firstAttribute="top" secondItem="t71-h1-rcw" secondAttribute="bottom" id="I56-AR-0ko"/>
-                            <constraint firstItem="vQ4-QX-E8c" firstAttribute="top" secondItem="GZ2-SX-JuA" secondAttribute="bottom" id="J9l-8i-Huo"/>
                             <constraint firstAttribute="trailing" secondItem="t71-h1-rcw" secondAttribute="trailing" constant="-10" id="Np9-ci-YnR"/>
                             <constraint firstItem="ngT-WO-4YI" firstAttribute="top" secondItem="AuY-fe-QbK" secondAttribute="bottom" id="ViE-N3-tCj"/>
                             <constraint firstItem="uoM-Lb-vU6" firstAttribute="top" secondItem="ngT-WO-4YI" secondAttribute="bottom" constant="-10" id="VpK-us-UTu"/>
@@ -307,6 +308,7 @@
                             <constraint firstItem="vQ4-QX-E8c" firstAttribute="leading" secondItem="Hyo-Nb-leO" secondAttribute="leading" id="k3Z-mq-Rgm"/>
                             <constraint firstItem="uoM-Lb-vU6" firstAttribute="leading" secondItem="Hyo-Nb-leO" secondAttribute="leading" constant="-10" id="lYX-Pu-XYI"/>
                             <constraint firstAttribute="trailing" secondItem="AuY-fe-QbK" secondAttribute="trailing" id="lwI-6a-sHZ"/>
+                            <constraint firstItem="vQ4-QX-E8c" firstAttribute="top" secondItem="GZ2-SX-JuA" secondAttribute="bottom" id="rzg-4E-uVi"/>
                             <constraint firstItem="AuY-fe-QbK" firstAttribute="leading" secondItem="Hyo-Nb-leO" secondAttribute="leading" id="xrK-9q-tNj"/>
                         </constraints>
                     </view>
@@ -470,13 +472,13 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---｜---｜---" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gq8-fe-NCp">
-                                        <rect key="frame" x="116.66666666666666" y="214.33333333333331" width="93.999999999999972" height="18"/>
+                                        <rect key="frame" x="116.66666666666666" y="214.33333333333331" width="279.33333333333337" height="18"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="選手 00 | 球隊" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwf-lW-JYg">
-                                        <rect key="frame" x="116.66666666666669" y="184" width="134" height="25.333333333333314"/>
+                                        <rect key="frame" x="116.66666666666666" y="184" width="279.33333333333337" height="25.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -566,6 +568,7 @@
                                     <constraint firstItem="rUG-l8-J9f" firstAttribute="top" secondItem="PuJ-4y-AQf" secondAttribute="bottom" constant="15" id="BaT-r4-ko1"/>
                                     <constraint firstAttribute="trailing" secondItem="PuJ-4y-AQf" secondAttribute="trailing" constant="15" id="BsA-zh-d7f"/>
                                     <constraint firstItem="Gq8-fe-NCp" firstAttribute="bottom" secondItem="izq-GP-YBR" secondAttribute="bottom" constant="-5" id="DTz-Jj-9oo"/>
+                                    <constraint firstItem="Gq8-fe-NCp" firstAttribute="trailing" secondItem="pwf-lW-JYg" secondAttribute="trailing" id="DiU-oe-hC0"/>
                                     <constraint firstItem="dFN-V8-J2e" firstAttribute="top" secondItem="rUG-l8-J9f" secondAttribute="bottom" constant="5" id="EGa-ru-5OD"/>
                                     <constraint firstAttribute="trailing" secondItem="oq1-kO-lU0" secondAttribute="trailing" constant="15" id="Gf8-Uk-vuB"/>
                                     <constraint firstItem="A74-Y2-Lph" firstAttribute="top" secondItem="Mlh-kt-ng0" secondAttribute="bottom" constant="15" id="HMX-sl-VAZ"/>
@@ -573,6 +576,7 @@
                                     <constraint firstAttribute="trailing" secondItem="rUG-l8-J9f" secondAttribute="trailing" constant="15" id="Ieq-Kp-5F6"/>
                                     <constraint firstItem="sdg-6j-yVP" firstAttribute="top" secondItem="D2k-cV-8Ag" secondAttribute="top" id="Jmo-v0-JCM"/>
                                     <constraint firstItem="gk4-dN-oes" firstAttribute="top" secondItem="oq1-kO-lU0" secondAttribute="bottom" constant="15" id="M3C-pe-9pq"/>
+                                    <constraint firstAttribute="trailing" secondItem="pwf-lW-JYg" secondAttribute="trailing" constant="18" id="NIX-A6-WCb"/>
                                     <constraint firstItem="Gq8-fe-NCp" firstAttribute="top" secondItem="pwf-lW-JYg" secondAttribute="bottom" constant="5" id="Pd1-LE-hbG"/>
                                     <constraint firstItem="oq1-kO-lU0" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" constant="15" id="Qnk-jx-zIO"/>
                                     <constraint firstItem="sdg-6j-yVP" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" id="VL2-A2-LXE"/>
@@ -818,7 +822,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Ux1-Wr-Orx" firstAttribute="leading" secondItem="8cv-qN-7vh" secondAttribute="leading" id="A8y-39-lX0"/>
-                            <constraint firstItem="Ux1-Wr-Orx" firstAttribute="top" secondItem="yYn-jk-Dpv" secondAttribute="bottom" id="bRh-Kn-cLc"/>
+                            <constraint firstItem="Ux1-Wr-Orx" firstAttribute="top" secondItem="yYn-jk-Dpv" secondAttribute="bottom" id="ohe-rL-F9C"/>
                             <constraint firstItem="Ug0-wc-65c" firstAttribute="top" secondItem="Ux1-Wr-Orx" secondAttribute="bottom" id="x2W-J1-Y2f"/>
                             <constraint firstAttribute="trailing" secondItem="Ux1-Wr-Orx" secondAttribute="trailing" id="zFw-Ug-Plw"/>
                         </constraints>
@@ -831,7 +835,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nH9-ot-09f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1670" y="-978"/>
+            <point key="canvasLocation" x="1669.5652173913045" y="-978.26086956521749"/>
         </scene>
         <!--News Content View Controller-->
         <scene sceneID="ccg-Wn-cK8">
@@ -935,7 +939,6 @@
                     <tabBarItem key="tabBarItem" title="職棒新聞" image="news" selectedImage="news-fill" id="5Wz-dZ-b8c"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="P2H-Gj-n71">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -954,7 +957,6 @@
                     <tabBarItem key="tabBarItem" title="職棒影音" image="video" selectedImage="video-fill" id="02H-Jm-f2u"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="L0g-zK-8wX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -973,7 +975,6 @@
                     <tabBarItem key="tabBarItem" title="聯盟排名" image="rank" selectedImage="rank-fill" id="5oG-hN-c4u"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fdn-ta-fnp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -992,7 +993,6 @@
                     <tabBarItem key="tabBarItem" title="個人成績" image="statistics" selectedImage="statistics-fill" id="GS0-Rn-d1S"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="a1T-49-pIH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1011,7 +1011,6 @@
                     <tabBarItem key="tabBarItem" title="職棒賽程" image="calendar" selectedImage="calendar-fill" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ani-jM-s9V">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

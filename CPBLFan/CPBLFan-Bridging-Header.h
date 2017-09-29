@@ -9,5 +9,4 @@
 #ifndef CPBLFan_Bridging_Header_h
 #define CPBLFan_Bridging_Header_h
 
-
 #endif /* CPBLFan_Bridging_Header_h */

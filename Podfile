@@ -8,11 +8,11 @@ target 'CPBLFan' do
   # Pods for CPBLFan
 
   #Pods about Swift Language
-  pod 'SwifterSwift', :git => 'https://github.com/SwifterSwift/SwifterSwift.git', :branch => 'swift-4'
+  pod 'SwifterSwift'
 
   #Pods about internet request/response/parse
   pod 'Alamofire', '~> 4.5'
-  pod 'ObjectMapper', :git => 'https://github.com/Hearst-DD/ObjectMapper.git', :branch => 'swift-4'
+  pod 'ObjectMapper'
   pod 'SwiftyJSON'
   pod 'Kanna', :git => 'https://github.com/tid-kijyun/Kanna.git', :branch => 'feature/v4.0.0'
   
@@ -21,7 +21,6 @@ target 'CPBLFan' do
 
   #Pods about UI
   pod 'Kingfisher', '~> 4.0.0'
-  pod 'FSCalendar'
   pod 'DynamicColor', '~> 3.1.0'
   pod 'PKHUD', :git => 'https://github.com/pkluz/PKHUD.git', :branch => 'release/swift4'
   
@@ -55,7 +54,7 @@ target 'Rank-Widget' do
    #Pods for today widget
    #Pods about internet request/response/parse
    pod 'Alamofire', '~> 4.5'
-   pod 'ObjectMapper', :git => 'https://github.com/Hearst-DD/ObjectMapper.git', :branch => 'swift-4'
+   pod 'ObjectMapper'
    pod 'SwiftyJSON'
    pod 'Kanna', :git => 'https://github.com/tid-kijyun/Kanna.git', :branch => 'feature/v4.0.0'
 end
@@ -65,7 +64,7 @@ target 'Schedule-Widget' do
     #Pods for today widget
     #Pods about internet request/response/parse
     pod 'Alamofire', '~> 4.5'
-    pod 'ObjectMapper', :git => 'https://github.com/Hearst-DD/ObjectMapper.git', :branch => 'swift-4'
+    pod 'ObjectMapper'
     pod 'SwiftyJSON'
     
     #Google Firebase

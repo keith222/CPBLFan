@@ -90,6 +90,7 @@ class StatsListViewController: UIViewController {
         // set tableview layout
         self.statsListTableView.separatorStyle = .none
         self.statsListTableView.rowHeight = 55
+        self.statsListTableView.sectionHeaderHeight = UITableViewAutomaticDimension
         
         // set activity indicator in foot view
         footerView = UIView(frame: CGRect(x: 0, y: 5, width: self.view.bounds.size.width, height: 50))

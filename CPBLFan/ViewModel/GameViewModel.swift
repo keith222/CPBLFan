@@ -51,7 +51,7 @@ class GameViewModel{
             
                 // data jsonalize
                 let jsonData = JSON(data)
-                //print(jsonData)
+
                 // data map to array
                 let game = jsonData.map({ (game: (String, value: SwiftyJSON.JSON)) -> [Game] in
                     return game.value.map({ (data:(String, value: SwiftyJSON.JSON)) -> Game in
@@ -66,10 +66,10 @@ class GameViewModel{
                         gameData[data.0] = game[index]
                     }
                 }
-                //let sortedData = gameData.sorted(by: {Int($0.0.key)! < Int($0.1.key)!})
                 let sortedData = gameData.sorted(by: { Int($0.key)! < Int($1.key)!})
                 tempData = sortedData
                 handler(sortedData)
+                
             }else{
                 handler(nil)
             }
