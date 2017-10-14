@@ -22,7 +22,7 @@ target 'CPBLFan' do
   #Pods about UI
   pod 'Kingfisher', '~> 4.0.0'
   pod 'DynamicColor', '~> 3.1.0'
-  pod 'PKHUD', :git => 'https://github.com/pkluz/PKHUD.git', :branch => 'release/swift4'
+  pod 'PKHUD'
   
   #Google APIs
   pod 'youtube-ios-player-helper', '~> 0.1.4'

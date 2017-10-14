@@ -32,6 +32,8 @@ class GameCell: UITableViewCell, BindView{
                 numString = "All Stars Game"
             case _ where gameViewModel.game > 0:
                 numString = "Game: \(gameViewModel.game!)"
+            case _ where gameViewModel.game < -10:
+                numString = "季後挑戰賽: G\(-(gameViewModel.game! % 10))"
             case _ where gameViewModel.game < 0:
                 numString = "Taiwan Series: G\(-gameViewModel.game!)"
             default:
