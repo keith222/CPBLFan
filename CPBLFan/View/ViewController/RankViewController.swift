@@ -88,7 +88,7 @@ class RankViewController: UIViewController {
             )
             
             HUD.hide(animated: true, completion: {finished in
-                UIView.animate(withDuration: 0.3, animations: {
+                UIView.animate(withDuration: 0.3, animations: { [weak self] in
                     self?.rankTableView.alpha = 1
                 })
             })

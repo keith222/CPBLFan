@@ -83,8 +83,8 @@ class VideoViewController: UIViewController {
             self.footerView.isHidden = false
             
             HUD.hide(animated: true, completion: {finished in
-                UIView.animate(withDuration: 0.3, animations: {
-                    self.videoTableView.alpha = 1
+                UIView.animate(withDuration: 0.3, animations: { [weak self] in
+                    self?.videoTableView.alpha = 1
                 })
             })
         })

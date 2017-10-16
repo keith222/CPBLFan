@@ -213,11 +213,11 @@ class GameViewController: UIViewController, UIWebViewDelegate {
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
         HUD.hide(animated: true, completion: {finished in
-            UIView.animate(withDuration: 0.5, animations: {
+            UIView.animate(withDuration: 0.5, animations: { [weak self] in
                 webView.alpha = 1
-                self.gameView.alpha = 1
-                self.scoreView.alpha = 1
-                self.segmentView.alpha = 1
+                self?.gameView.alpha = 1
+                self?.scoreView.alpha = 1
+                self?.segmentView.alpha = 1
             })
         })
     }

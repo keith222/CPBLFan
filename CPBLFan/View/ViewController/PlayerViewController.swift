@@ -163,8 +163,8 @@ class PlayerViewController: UIViewController, UIScrollViewDelegate, UIWebViewDel
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
         HUD.hide(animated: true, completion: {finished in
-            UIView.animate(withDuration: 0.5, animations: {
-                self.scrollView.alpha = 1
+            UIView.animate(withDuration: 0.5, animations: { [weak self] in
+                self?.scrollView.alpha = 1
             })
         })
     }

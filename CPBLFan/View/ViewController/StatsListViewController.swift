@@ -70,7 +70,7 @@ class StatsListViewController: UIViewController {
             self?.footerView.isHidden = false
             
             HUD.hide(animated: true, completion: {finished in
-                UIView.animate(withDuration: 0.3, animations: {
+                UIView.animate(withDuration: 0.3, animations: { [weak self] in
                     self?.statsListTableView.alpha = 1
                 })
             })

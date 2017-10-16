@@ -83,8 +83,8 @@ class NewsViewController: UIViewController {
             self.footerView.isHidden = false
             
             HUD.hide(animated: true, completion: { finished in
-                UIView.animate(withDuration: 0.3, animations: {
-                    self.newsTableView.alpha = 1
+                UIView.animate(withDuration: 0.3, animations: { [weak self] in
+                    self?.newsTableView.alpha = 1
                 })
             })
         })

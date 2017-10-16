@@ -47,7 +47,7 @@ class NewsContentViewController: UIViewController {
             self?.newsContentLabel.attributedText = attributedString
 
             HUD.hide(animated: true, completion: { finished in
-                UIView.animate(withDuration: 0.3, animations: {
+                UIView.animate(withDuration: 0.3, animations: { [weak self] in
                     self?.scrollView.alpha = 1
                 })
     

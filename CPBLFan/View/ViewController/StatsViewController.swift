@@ -99,8 +99,8 @@ class StatsViewController: UIViewController {
             )
             
             HUD.hide(animated: true, completion: {finished in
-                UIView.animate(withDuration: 0.3, animations: {
-                    self.battingTableView.alpha = 1
+                UIView.animate(withDuration: 0.3, animations: { [weak self] in
+                    self?.battingTableView.alpha = 1
                 })
             })
             
