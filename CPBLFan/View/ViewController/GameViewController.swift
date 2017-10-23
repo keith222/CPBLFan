@@ -134,9 +134,12 @@ class GameViewController: UIViewController, UIWebViewDelegate {
         }else if gameID! == 0 {
             gameType = "02"
             gameID = 1
-        }else {
+        }else if gameID! > -10 {
             gameType = "03"
             gameID = -gameID!
+        }else {
+            gameType = "05"
+            gameID = (-gameID!) % 10
         }
         
         let cssString = "<style>.std_tb{color: #333;font-size: 13px;line-height: 2.2em;}table.std_tb tr{background-color: #f8f8f8;}table.mix_x tr:nth-child(2n+1), table.std_tb tr.change{background-color: #e6e6e6;}table.std_tb th {background-color: #081B2F;color: #fff;font-weight: normal;padding: 0 6px;}table.std_tb td{padding: 0 6px;}table.std_tb th a, table.std_tb th a:link, table.std_tb th a:visited, table.std_tb th a:active {color: #fff;}a, a:link, a:visited, a:active {text-decoration: none;color: #333}table.std_tb td.sub {padding-left: 1.2em;}.box_note{font-size: 13px;color:#081B2F;padding-left:15px;}</style>"
