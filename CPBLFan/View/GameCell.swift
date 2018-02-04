@@ -25,7 +25,7 @@ class GameCell: UITableViewCell, BindView{
     func bindViewModel(_ viewModel: Any) {
         if let gameViewModel = viewModel as? GameViewModel{
             //cell content
-            
+
             var numString = ""
             switch gameViewModel.game {
             case 0:
@@ -39,7 +39,7 @@ class GameCell: UITableViewCell, BindView{
             default:
                 break
             }
-            
+
             self.gameNumLabel.text = numString
             self.guestScoreLabel.text = (gameViewModel.g_score.isEmpty) ? "--" : gameViewModel.g_score
             self.homeScoreLabel.text = (gameViewModel.h_score.isEmpty) ? "--" : gameViewModel.h_score

@@ -58,7 +58,7 @@ class GameViewModel{
                         return Mapper<Game>().map(JSONObject: data.value.dictionaryObject)!
                     })
                 })
-                
+
                 // make a dictionary
                 var gameData: [String: [Game]] = [:]
                 for (index, data) in jsonData.enumerated(){

@@ -104,12 +104,9 @@ class DataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: templateCell.reuseIdentifier!)!
         if let reactiveView = cell as? BindView {
-            if self.sectionCount > 1{
-                //if more than 1 section
-                if let datas = data[indexPath.section] as? [AnyObject], !datas.isEmpty{
-                    reactiveView.bindViewModel(datas[indexPath.row])
-                }
-            }else{
+            if let datas = data[indexPath.section] as? [AnyObject], !datas.isEmpty{
+                reactiveView.bindViewModel(datas[indexPath.row])
+            } else {
                 reactiveView.bindViewModel(data[indexPath.row])
             }
         }

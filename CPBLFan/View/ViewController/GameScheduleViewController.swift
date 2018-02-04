@@ -65,27 +65,26 @@ class GameScheduleViewController: UIViewController {
         year = calendar.component(.year, from: date)
         month = calendar.component(.month, from: date)
         let day = calendar.component(.day, from: date)
-        // because of baseball season is from 3 to 10
+        // because of baseball season is from 3 to 11
         if month < 3{
             year -= 1
-            month = 10
-        }else if month > 10{
-            month = 10
+            month = 11
+        }else if month > 11{
+            month = 11
         }
         
         let yearString = String(year)
         let monthString = String(month)
         
         self.gameViewModel.fetchGame(at: yearString, month: monthString, handler: { [weak self] data in
-            
-            if data != nil{
+            if data != nil, data!.count > 0{
                 // map cell source
                 self?.gameSource = (data! as [(String,[Game])]).map{ value -> [GameViewModel] in
                     return value.1.map{ gameValue -> GameViewModel in
                         return GameViewModel(data: gameValue)
                     }
                 }
-                
+
                 //for child change
                 self?.dateLabel.text = "\(yearString) 年 \(monthString) 月"
                 self?.month = Int(monthString)!
@@ -133,7 +132,7 @@ class GameScheduleViewController: UIViewController {
         self.dateLabel.text = "\(year) 年 \(month) 月"
         
         self.gameViewModel.fetchGame(at: year, month: month, handler: { [weak self] data in
-            if data != nil{
+            if data != nil, data!.count > 0{
                 self?.gameSource = (data! as [(String,[Game])]).map{ value -> [GameViewModel] in
                     return value.1.map{ gameValue -> GameViewModel in
                         return GameViewModel(data: gameValue)
@@ -155,6 +154,7 @@ class GameScheduleViewController: UIViewController {
                 
             }else{
                 self?.gameTableView.alpha = 0
+                
                 HUD.hide(animated: true)
             }
         })
@@ -168,11 +168,11 @@ class GameScheduleViewController: UIViewController {
             month -= 1
             if month < 3{
                 year -= 1
-                month = 10
+                month = 11
             }
         }else{
             month += 1
-            if month > 10{
+            if month > 11{
                 year += 1
                 month = 3
             }
@@ -189,7 +189,7 @@ class GameScheduleViewController: UIViewController {
             month -= 1
             if month < 3{
                 year -= 1
-                month = 10
+                month = 11
             }
             
             UIView.animate(withDuration: 0.2, animations: { [weak self] in
@@ -207,7 +207,7 @@ class GameScheduleViewController: UIViewController {
 
         case UISwipeGestureRecognizerDirection.left:
             month += 1
-            if month > 10{
+            if month > 11{
                 year += 1
                 month = 3
             }
