@@ -1,6 +1,7 @@
 # TAIWAN BASEBALL
 - TAIWAN BASEBALL 是一個關於中華職棒的非官方 App。提供球迷中華職棒賽事、球隊、球員最新資訊。
 - TAIWAN BASEBALL 粉絲專頁：https://www.facebook.com/taiwanbaseballapp/
+- App Store：https://itunes.apple.com/tw/app/taiwan-baseball/id1210264188?mt=8
 
 ## TAIWAN BASEBALL 提供中華職棒多項資訊查詢：
 - 職棒新聞：提供中華職棒聯盟最新新聞。
