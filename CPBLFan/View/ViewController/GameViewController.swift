@@ -97,9 +97,10 @@ class GameViewController: UIViewController, UIWebViewDelegate {
         
         self.boxWebView.delegate = self
         self.boxWebView.scrollView.showsVerticalScrollIndicator = false
-        //self.boxWebView.alpha = 0
         
         self.scoreboardWebView.delegate = self
+        self.scoreboardWebView.scrollView.delegate = self
+        self.scoreboardWebView.scrollView.showsVerticalScrollIndicator = false
         
         self.gameView.alpha = 0
         self.scoreView.alpha = 0
@@ -129,18 +130,34 @@ class GameViewController: UIViewController, UIWebViewDelegate {
         let year = self.gameViewModel!.date.components(separatedBy: "-")[0]
         
         var gameType = ""
-        if gameID! > 0 {
+        switch gameID! {
+        case _ where gameID! > 0:
             gameType = "01"
-        }else if gameID! == 0 {
+            
+        case 0:
             gameType = "02"
             gameID = 1
-        }else if gameID! > -10 {
+            
+        case _ where gameID! > -10:
             gameType = "03"
             gameID = -gameID!
-        }else {
+        
+        default:
             gameType = "05"
             gameID = (-gameID!) % 10
         }
+//        if gameID! > 0 {
+//            gameType = "01"
+//        }else if gameID! == 0 {
+//            gameType = "02"
+//            gameID = 1
+//        }else if gameID! > -10 {
+//            gameType = "03"
+//            gameID = -gameID!
+//        }else {
+//            gameType = "05"
+//            gameID = (-gameID!) % 10
+//        }
         
         let cssString = "<style>.std_tb{color: #333;font-size: 13px;line-height: 2.2em;}table.std_tb tr{background-color: #f8f8f8;}table.mix_x tr:nth-child(2n+1), table.std_tb tr.change{background-color: #e6e6e6;}table.std_tb th {background-color: #081B2F;color: #fff;font-weight: normal;padding: 0 6px;}table.std_tb td{padding: 0 6px;}table.std_tb th a, table.std_tb th a:link, table.std_tb th a:visited, table.std_tb th a:active {color: #fff;}a, a:link, a:visited, a:active {text-decoration: none;color: #333}table.std_tb td.sub {padding-left: 1.2em;}.box_note{font-size: 13px;color:#081B2F;padding-left:15px;}</style>"
         
@@ -155,14 +172,12 @@ class GameViewController: UIViewController, UIWebViewDelegate {
                 if let gameTable = doc.at_css(".std_tb:first-child") {
                     gameHtml = gameHtml + gameTable.toHTML!
                     gameHtml = gameHtml.replacingOccurrences(of: "display:none;", with: "")
-                    self.gameWebView.loadHTMLString(gameHtml, baseURL: nil)
-                    
-                }else{
-                    self.gameWebView.loadHTMLString(gameHtml, baseURL: nil)
                 }
+           
+                self.gameWebView.loadHTMLString(gameHtml, baseURL: nil)
                 
                 if let scoreBoard = doc.at_css(".score_board") {
-                    let boardCss = "<style>table{width:100%;}.score_board{background-color: #081B2F;overflow:hidden;}.gap_l20{margin-left:10px;}.score_board_side,.score_board_main{float:left;}table.score_table th{color:#b2b1b1}table.score_table th, table.score_table td{height:34px;padding:0 3px;}table.score_table tr:nth-child(2) td{border-bottom:1px solid #0d0d0d;}table.score_table td{color:#fff;}table.score_table td span {margin: 0 2px;padding: 1px 3px;width: 20px;}table.score_table tr:nth-child(3) td {border-top: 1px solid #575757;}</style>"
+                    let boardCss = "<style>table{width:100%;}.score_board{background-color: #081B2F;overflow:hidden;width:480px;}.gap_l20{margin-left:10px;}.score_board_side,.score_board_main{float:left;}table.score_table th{color:#b2b1b1}table.score_table th, table.score_table td{height:34px;padding:0 3px;}table.score_table tr:nth-child(2) td{border-bottom:1px solid #0d0d0d;}table.score_table td{color:#fff;}table.score_table td span {margin: 0 2px;padding: 1px 3px;width: 20px;}table.score_table tr:nth-child(3) td {border-top: 1px solid #575757;}</style>"
                     
                     let scoreboardHTML = boardCss + scoreBoard.toHTML!
                     self.scoreboardWebView.loadHTMLString(scoreboardHTML, baseURL: nil)
@@ -246,7 +261,13 @@ class GameViewController: UIViewController, UIWebViewDelegate {
             break
         }
     }
+}
+
+extension GameViewController: UIScrollViewDelegate {
     
-
-
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (scrollView.contentOffset.y > 0  ||  scrollView.contentOffset.y < 0 ) {
+            scrollView.contentOffset = CGPoint(x: scrollView.contentOffset.x, y: 0.0)
+        }
+    }
 }

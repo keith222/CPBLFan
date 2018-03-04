@@ -35,7 +35,7 @@ target 'CPBLFan' do
   
   #Fabric
   pod 'Fabric'
-  pod 'Crashlytics'
+  pod 'Crashlytics', '~> 3.10'
   
   target 'CPBLFanTests' do
     inherit! :search_paths
