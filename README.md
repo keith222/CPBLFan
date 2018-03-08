@@ -28,6 +28,7 @@
 - [Kingfisher](https://github.com/onevcat/Kingfisher)
 - [DynamicColor](https://github.com/yannickl/DynamicColor)
 - [Firebase](https://firebase.google.com/)
+- [Fabric](https://fabric.io/)
 - [youtube-ios-player-helper](https://github.com/youtube/youtube-ios-player-helper)
 
 ## 安裝
