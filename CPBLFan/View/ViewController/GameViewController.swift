@@ -214,7 +214,7 @@ class GameViewController: UIViewController, UIWebViewDelegate {
                 pitchingHtml += doc.css(".half_block.left > table")[1].toHTML!
                 pitchingHtml += "<p></p>"
                 pitchingHtml += doc.css(".half_block.right > table")[1].toHTML!
-                pitchingHtml += "<h3 style='color:#081B2F;margin:20px 0 10px 10px;'>賽後簡報成績</h3>"
+                pitchingHtml += "<h3 style='color:#081B2F;margin:20px 0 10px 10px;'>賽後簡報</h3>"
                 pitchingHtml += doc.css(".half_block.right > p.box_note")[2].toHTML!
                 
                 let boxHtml = battingHtml + pitchingHtml
