@@ -93,10 +93,18 @@ class DataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if sectionCount > 1{
-            //if more than 1 section
-            return data[section].count
-        }else{
+//        if sectionCount > 1{
+//            //if more than 1 section
+//            return data[section].count
+//        }else{
+//            print(data.count)
+//            return data.count
+//        }
+        
+        if let datas = data[section] as? [AnyObject], !datas.isEmpty {
+            return datas.count
+            
+        } else {
             return data.count
         }
     }

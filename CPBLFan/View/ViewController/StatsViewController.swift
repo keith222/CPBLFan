@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 import PKHUD
-import ReachabilitySwift
+import Reachability
 import SwifterSwift
 
 class StatsViewController: UIViewController {
@@ -30,7 +30,7 @@ class StatsViewController: UIViewController {
         
         // check net connection
         let reachability = Reachability()
-        guard (reachability?.isReachable)! else {
+        guard reachability?.connection != .none else {
             let alert = UIAlertController(title: "提示", message: "網路連線異常。")
             alert.show()
             return

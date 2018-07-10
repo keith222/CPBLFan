@@ -8,7 +8,7 @@
 
 import UIKit
 import PKHUD
-import ReachabilitySwift
+import Reachability
 import SwifterSwift
 
 class GameScheduleViewController: UIViewController {
@@ -31,7 +31,7 @@ class GameScheduleViewController: UIViewController {
         
         // check net connection
         let reachability = Reachability()
-        guard (reachability?.isReachable)! else {
+        guard reachability?.connection != .none else {
             let alert = UIAlertController(title: "提示", message: "網路連線異常。")
             alert.show()
             return
@@ -84,7 +84,7 @@ class GameScheduleViewController: UIViewController {
                         return GameViewModel(data: gameValue)
                     }
                 }
-
+                
                 //for child change
                 self?.dateLabel.text = "\(yearString) 年 \(monthString) 月"
                 self?.month = Int(monthString)!
@@ -142,7 +142,7 @@ class GameScheduleViewController: UIViewController {
                 let headSource: [[String]] = (data! as [(String,[Game])]).map{ value -> [String] in
                     return [year, month ,value.0]
                 }
-        
+                
                 self?.tableHelper?.headSavedData = headSource as [AnyObject]
                 self?.tableHelper?.savedData = self!.gameSource! as [AnyObject]
                 

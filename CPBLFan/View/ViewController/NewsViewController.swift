@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 import PKHUD
 import DynamicColor
-import ReachabilitySwift
+import Reachability
 
 class NewsViewController: UIViewController {
     
@@ -31,7 +31,7 @@ class NewsViewController: UIViewController {
         
         // check net connection
         let reachability = Reachability()
-        guard (reachability?.isReachable)! else {
+        guard reachability?.connection != .none else {
             let alert = UIAlertController(title: "提示", message: "網路連線異常。")
             alert.show()
             return

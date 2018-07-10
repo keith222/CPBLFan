@@ -8,7 +8,7 @@
 
 import UIKit
 import PKHUD
-import ReachabilitySwift
+import Reachability
 import SwifterSwift
 
 class RankViewController: UIViewController {
@@ -26,7 +26,7 @@ class RankViewController: UIViewController {
         
         // check net connection
         let reachability = Reachability()
-        guard (reachability?.isReachable)! else {
+        guard reachability?.connection != .none else {
             let alert = UIAlertController(title: "提示", message: "網路連線異常")
             alert.show()
             return
