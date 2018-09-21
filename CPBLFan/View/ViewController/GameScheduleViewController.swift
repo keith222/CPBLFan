@@ -185,7 +185,7 @@ class GameScheduleViewController: UIViewController {
         HUD.show(.progress)
         
         switch gesture.direction {
-        case UISwipeGestureRecognizerDirection.right:
+        case UISwipeGestureRecognizer.Direction.right:
             month -= 1
             if month < 3{
                 year -= 1
@@ -205,7 +205,7 @@ class GameScheduleViewController: UIViewController {
             })
             
 
-        case UISwipeGestureRecognizerDirection.left:
+        case UISwipeGestureRecognizer.Direction.left:
             month += 1
             if month > 11{
                 year += 1

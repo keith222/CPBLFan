@@ -48,12 +48,12 @@ class StatsViewController: UIViewController {
         self.battingTableView.separatorStyle = .none
         self.battingTableView.tableFooterView = UIView()
         self.battingTableView.rowHeight = 55
-        self.battingTableView.sectionHeaderHeight = UITableViewAutomaticDimension
+        self.battingTableView.sectionHeaderHeight = UITableView.automaticDimension
         
         self.pitchingTableView.separatorStyle = .none
         self.pitchingTableView.tableFooterView = UIView()
         self.pitchingTableView.rowHeight = 55
-        self.pitchingTableView.sectionHeaderHeight = UITableViewAutomaticDimension
+        self.pitchingTableView.sectionHeaderHeight = UITableView.automaticDimension
         
         // load and show stats info
         self.statsViewModel.fetchStats(handler: { [unowned self] data in

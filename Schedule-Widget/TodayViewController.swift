@@ -30,7 +30,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // set table view
         self.todayGameTableView.allowsSelection = false
         self.todayGameTableView.rowHeight = 50
-        self.todayGameTableView.sectionHeaderHeight = UITableViewAutomaticDimension
+        self.todayGameTableView.sectionHeaderHeight = UITableView.automaticDimension
         // add a gesture on table view
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tableViewTapped(tapGesture:)))
         self.todayGameTableView.addGestureRecognizer(tapGesture)

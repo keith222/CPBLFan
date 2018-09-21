@@ -35,13 +35,13 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         let sectionHeight: CGFloat = 30.0
         self.seasonTableView.rowHeight = rowHeight
         self.seasonTableView.sectionHeaderHeight = sectionHeight
-        self.seasonTableView.sectionHeaderHeight = UITableViewAutomaticDimension
+        self.seasonTableView.sectionHeaderHeight = UITableView.automaticDimension
         self.firstSeeasonTableView.rowHeight = rowHeight
         self.firstSeeasonTableView.sectionHeaderHeight = sectionHeight
-        self.firstSeeasonTableView.sectionHeaderHeight = UITableViewAutomaticDimension
+        self.firstSeeasonTableView.sectionHeaderHeight = UITableView.automaticDimension
         self.secondSeasonTableView.rowHeight = rowHeight
         self.secondSeasonTableView.sectionHeaderHeight = sectionHeight
-        self.secondSeasonTableView.sectionHeaderHeight = UITableViewAutomaticDimension
+        self.secondSeasonTableView.sectionHeaderHeight = UITableView.automaticDimension
         
         // add tap gesture to tableview
         for view in self.view.subviews{

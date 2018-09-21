@@ -43,7 +43,7 @@ class NewsContentViewController: UIViewController {
             let attributedString = NSMutableAttributedString(string: content)
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.lineSpacing = 5
-            attributedString.addAttribute(NSAttributedStringKey.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
+            attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
             self?.newsContentLabel.attributedText = attributedString
 
             HUD.hide(animated: true, completion: { finished in

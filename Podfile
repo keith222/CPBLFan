@@ -11,16 +11,16 @@ target 'CPBLFan' do
   pod 'SwifterSwift'
 
   #Pods about internet request/response/parse
-  pod 'Alamofire', '~> 4.5'
+  pod 'Alamofire', '~> 4.7'
   pod 'ObjectMapper'
   pod 'SwiftyJSON'
-  pod 'Kanna', :git => 'https://github.com/tid-kijyun/Kanna.git', :branch => 'feature/v4.0.0'
+  pod 'Kanna', '~> 4.0.0'
   
   #Pods for detect net connection
   pod 'ReachabilitySwift'
 
   #Pods about UI
-  pod 'Kingfisher', '~> 4.0.0'
+  pod 'Kingfisher'
   pod 'DynamicColor', '~> 3.1.0'
   pod 'PKHUD'
   
@@ -53,17 +53,17 @@ target 'Rank-Widget' do
    use_frameworks!
    #Pods for today widget
    #Pods about internet request/response/parse
-   pod 'Alamofire', '~> 4.5'
+   pod 'Alamofire', '~> 4.7'
    pod 'ObjectMapper'
    pod 'SwiftyJSON'
-   pod 'Kanna', :git => 'https://github.com/tid-kijyun/Kanna.git', :branch => 'feature/v4.0.0'
+   pod 'Kanna', '~> 4.0.0'
 end
 
 target 'Schedule-Widget' do
     use_frameworks!
     #Pods for today widget
     #Pods about internet request/response/parse
-    pod 'Alamofire', '~> 4.5'
+    pod 'Alamofire', '~> 4.7'
     pod 'ObjectMapper'
     pod 'SwiftyJSON'
     

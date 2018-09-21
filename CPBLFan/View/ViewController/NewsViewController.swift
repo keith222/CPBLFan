@@ -100,11 +100,11 @@ class NewsViewController: UIViewController {
         self.newsTableView.separatorStyle = .none
         self.newsTableView.estimatedRowHeight = 200
         self.newsTableView.rowHeight = self.cellHeight()
-        self.newsTableView.sectionHeaderHeight = UITableViewAutomaticDimension
+        self.newsTableView.sectionHeaderHeight = UITableView.automaticDimension
         
         // set activity indicator in foot view
         footerView = UIView(frame: CGRect(x: 0, y: 5, width: self.view.bounds.size.width, height: 50))
-        activity = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        activity = UIActivityIndicatorView(style: .gray)
         activity.frame = CGRect(x: (self.view.bounds.size.width - 44) / 2, y: 5, width: 44, height: 44)
         activity.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
         footerView.addSubview(activity)
