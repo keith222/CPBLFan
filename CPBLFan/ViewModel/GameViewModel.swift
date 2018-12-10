@@ -75,30 +75,6 @@ class GameViewModel{
             }
 
         })
-        
-        ref.child(year).child(month).observe(.childChanged, with: { (snapshot) in
-            // check data if existed
-            if let data = snapshot.value{
-
-                // data jsonalize
-                let jsonData = JSON(data)
-                
-                // get index
-                let index = tempData.index(where: {
-                    return $0.key == snapshot.key
-                })
-                
-                // data map to array
-                let game = jsonData.map({(game: (String, value: SwiftyJSON.JSON)) -> Game in
-                    return Mapper<Game>().map(JSONObject: game.value.dictionaryObject)!
-                })
-                
-                tempData[index!].value = game
-                handler(tempData)
-            }else{
-                handler(nil)
-            }
-        })
     }
 }
 
