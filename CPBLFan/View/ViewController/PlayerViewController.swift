@@ -63,6 +63,8 @@ class PlayerViewController: UIViewController, UIScrollViewDelegate, UIWebViewDel
         
         let route = "\(APIService.CPBLSourceURL)\(playerUrl!)"
         APIService.request(.get, route: route, completionHandler: { text in
+            guard let text = text else { return }
+            
             do {
                 let doc = try HTML(html: text, encoding: .utf8)
                 

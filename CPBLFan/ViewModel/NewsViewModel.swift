@@ -33,6 +33,11 @@ class NewsViewModel{
         APIService.request(.get, route: route, completionHandler: { text in
             var news: [News]? = []
             
+            guard let text = text else{
+                handler(news!)
+                return
+            }
+            
             do {
                 let doc = try HTML(html: text, encoding: .utf8)
                 
@@ -72,6 +77,11 @@ class NewsViewModel{
     
     func fetchNewsContent(from route:String, handler: @escaping ((String)->())){
         APIService.request(.get, route: route, completionHandler: { text in
+            guard let text = text else {
+                handler("")
+                return
+            }
+            
             do {
                 let doc = try HTML(html: text, encoding: .utf8)
                 

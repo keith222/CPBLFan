@@ -22,6 +22,8 @@ class GameScheduleViewController: UIViewController {
     var year: Int = 0
     var month: Int = 0
 
+    weak var dateSelectDelegate: DateSelectDelegate?
+    
     lazy var gameViewModel = {
         return GameViewModel()
     }()
@@ -37,6 +39,10 @@ class GameScheduleViewController: UIViewController {
             return
         }
         
+        dateSelectDelegate = self
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "calendar"), style: .plain, target: self, action: #selector(self.presentToDateSelect))
+
         // set table hide
         self.gameTableView.alpha = 0
         
@@ -65,8 +71,8 @@ class GameScheduleViewController: UIViewController {
         year = calendar.component(.year, from: date)
         month = calendar.component(.month, from: date)
         let day = calendar.component(.day, from: date)
-        // because of baseball season is from 3 to 11
-        if month < 3{
+        // because of baseball season is from 2 to 11
+        if month < 2{
             year -= 1
             month = 11
         }else if month > 11{
@@ -160,13 +166,20 @@ class GameScheduleViewController: UIViewController {
         })
     }
 
+    @objc private func presentToDateSelect() {
+        let destination: DateSelectCollectionViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DateSelectCollectionViewController") as! DateSelectCollectionViewController
+        destination.dateSelectDelegate = self
+        let navigationController = UINavigationController(rootViewController: destination)
+        self.present(navigationController, animated: true, completion: nil)
+    }
+    
     @IBAction func loadDataAction(_ sender: UIButton) {
         
         HUD.show(.progress)
         
         if sender.tag == 0{
             month -= 1
-            if month < 3{
+            if month < 2{
                 year -= 1
                 month = 11
             }
@@ -187,7 +200,7 @@ class GameScheduleViewController: UIViewController {
         switch gesture.direction {
         case UISwipeGestureRecognizer.Direction.right:
             month -= 1
-            if month < 3{
+            if month < 2{
                 year -= 1
                 month = 11
             }
@@ -229,5 +242,12 @@ class GameScheduleViewController: UIViewController {
         default:
             break
         }
+    }
+}
+
+extension GameScheduleViewController: DateSelectDelegate {
+    
+    func dateSelected(with year: Int, and month: Int) {
+        self.loadData("\(year)", month: "\(month)")
     }
 }

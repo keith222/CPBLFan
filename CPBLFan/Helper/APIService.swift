@@ -22,13 +22,13 @@ class APIService{
     static func request(_
         method: Alamofire.HTTPMethod,
         route: String,
-        completionHandler: @escaping(String)->()
+        completionHandler: @escaping(String?)->()
     ){
         Alamofire.request(
             route,
             method: .get
             ).responseString(completionHandler: { response in
-                completionHandler(response.result.value!)
+                completionHandler(response.result.value)
             })
     }
 }

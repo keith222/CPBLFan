@@ -37,6 +37,11 @@ class StatsListViewModel{
             var statsList: [StatsList]? = []
             var totalPage = page
             
+            guard let text = text else {
+                handler(statsList!, totalPage - 1)
+                return
+            }
+            
             do {
                 let doc = try HTML(html: text, encoding: .utf8)
                 

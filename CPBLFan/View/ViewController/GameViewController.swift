@@ -146,45 +146,36 @@ class GameViewController: UIViewController, UIWebViewDelegate {
             gameType = "05"
             gameID = (-gameID!) % 10
         }
-//        if gameID! > 0 {
-//            gameType = "01"
-//        }else if gameID! == 0 {
-//            gameType = "02"
-//            gameID = 1
-//        }else if gameID! > -10 {
-//            gameType = "03"
-//            gameID = -gameID!
-//        }else {
-//            gameType = "05"
-//            gameID = (-gameID!) % 10
-//        }
         
         let cssString = "<style>.std_tb{color: #333;font-size: 13px;line-height: 2.2em;}table.std_tb tr{background-color: #f8f8f8;}table.mix_x tr:nth-child(2n+1), table.std_tb tr.change{background-color: #e6e6e6;}table.std_tb th {background-color: #081B2F;color: #fff;font-weight: normal;padding: 0 6px;}table.std_tb td{padding: 0 6px;}table.std_tb th a, table.std_tb th a:link, table.std_tb th a:visited, table.std_tb th a:active {color: #fff;}a, a:link, a:visited, a:active {text-decoration: none;color: #333}table.std_tb td.sub {padding-left: 1.2em;}.box_note{font-size: 13px;color:#081B2F;padding-left:15px;}</style>"
         
         
         let route = "\(APIService.CPBLSourceURL)/games/play_by_play.html?&game_type=\(gameType)&game_id=\(gameID!)&game_date=\(gameDate!)&pbyear=\(year)"
         APIService.request(.get, route: route, completionHandler: { text in
-            do {
-                let doc = try HTML(html: text, encoding: .utf8)
-                
-                var gameHtml = cssString
-                
-                if let gameTable = doc.at_css(".std_tb:first-child") {
-                    gameHtml = gameHtml + gameTable.toHTML!
-                    gameHtml = gameHtml.replacingOccurrences(of: "display:none;", with: "")
-                }
-           
-                self.gameWebView.loadHTMLString(gameHtml, baseURL: nil)
-                
-                if let scoreBoard = doc.at_css(".score_board") {
-                    let boardCss = "<style>table{width:100%;}.score_board{background-color: #081B2F;overflow:hidden;width:480px;}.gap_l20{margin-left:10px;}.score_board_side,.score_board_main{float:left;}table.score_table th{color:#b2b1b1}table.score_table th, table.score_table td{height:34px;padding:0 3px;}table.score_table tr:nth-child(2) td{border-bottom:1px solid #0d0d0d;}table.score_table td{color:#fff;}table.score_table td span {margin: 0 2px;padding: 1px 3px;width: 20px;}table.score_table tr:nth-child(3) td {border-top: 1px solid #575757;}</style>"
+            
+            if let text = text {
+                do {
+                    let doc = try HTML(html: text, encoding: .utf8)
                     
-                    let scoreboardHTML = boardCss + scoreBoard.toHTML!
-                    self.scoreboardWebView.loadHTMLString(scoreboardHTML, baseURL: nil)
+                    var gameHtml = cssString
+                    
+                    if let gameTable = doc.at_css(".std_tb:first-child") {
+                        gameHtml = gameHtml + gameTable.toHTML!
+                        gameHtml = gameHtml.replacingOccurrences(of: "display:none;", with: "")
+                    }
+                    
+                    self.gameWebView.loadHTMLString(gameHtml, baseURL: nil)
+                    
+                    if let scoreBoard = doc.at_css(".score_board") {
+                        let boardCss = "<style>table{width:100%;}.score_board{background-color: #081B2F;overflow:hidden;width:480px;}.gap_l20{margin-left:10px;}.score_board_side,.score_board_main{float:left;}table.score_table th{color:#b2b1b1}table.score_table th, table.score_table td{height:34px;padding:0 3px;}table.score_table tr:nth-child(2) td{border-bottom:1px solid #0d0d0d;}table.score_table td{color:#fff;}table.score_table td span {margin: 0 2px;padding: 1px 3px;width: 20px;}table.score_table tr:nth-child(3) td {border-top: 1px solid #575757;}</style>"
+                        
+                        let scoreboardHTML = boardCss + scoreBoard.toHTML!
+                        self.scoreboardWebView.loadHTMLString(scoreboardHTML, baseURL: nil)
+                    }
+                    
+                } catch let error as NSError{
+                    print(error.localizedDescription)
                 }
-                
-            } catch let error as NSError{
-                print(error.localizedDescription)
             }
         
         })
@@ -198,29 +189,31 @@ class GameViewController: UIViewController, UIWebViewDelegate {
         let boxRoute = "\(APIService.CPBLSourceURL)/games/box.html?&game_type=\(gameType)&game_id=\(gameID!)&game_date=\(gameDate!)&pbyear=\(year)"
         
         APIService.request(.get, route: boxRoute, completionHandler: {text in
-            do {
-                let doc = try HTML(html: text, encoding: .utf8)
-                
-                // batting box
-                var battingHtml = cssString + "<h3 style='color:#081B2F;margin:20px 0 10px 10px;'>打擊成績</h3>"
-                battingHtml += doc.css(".half_block.left > table")[0].toHTML!
-                battingHtml += doc.css(".half_block.left > p.box_note")[0].toHTML!
-                battingHtml += "<p></p>"
-                battingHtml += doc.css(".half_block.right > table")[0].toHTML!
-                battingHtml += doc.css(".half_block.right > p.box_note")[0].toHTML!
-                
-                //pitching box
-                var pitchingHtml = "<h3 style='color:#081B2F;margin:20px 0 10px 10px;'>投手成績</h3>"
-                pitchingHtml += doc.css(".half_block.left > table")[1].toHTML!
-                pitchingHtml += "<p></p>"
-                pitchingHtml += doc.css(".half_block.right > table")[1].toHTML!
-                pitchingHtml += "<h3 style='color:#081B2F;margin:20px 0 10px 10px;'>賽後簡報</h3>"
-                pitchingHtml += doc.css(".half_block.right > p.box_note")[2].toHTML!
-                
-                let boxHtml = battingHtml + pitchingHtml
-                self.boxWebView.loadHTMLString(boxHtml, baseURL: nil)
-            } catch let error as NSError{
-                print(error.localizedDescription)
+            if let text = text {
+                do {
+                    let doc = try HTML(html: text, encoding: .utf8)
+                    
+                    // batting box
+                    var battingHtml = cssString + "<h3 style='color:#081B2F;margin:20px 0 10px 10px;'>打擊成績</h3>"
+                    battingHtml += doc.css(".half_block.left > table")[0].toHTML!
+                    battingHtml += doc.css(".half_block.left > p.box_note")[0].toHTML!
+                    battingHtml += "<p></p>"
+                    battingHtml += doc.css(".half_block.right > table")[0].toHTML!
+                    battingHtml += doc.css(".half_block.right > p.box_note")[0].toHTML!
+                    
+                    //pitching box
+                    var pitchingHtml = "<h3 style='color:#081B2F;margin:20px 0 10px 10px;'>投手成績</h3>"
+                    pitchingHtml += doc.css(".half_block.left > table")[1].toHTML!
+                    pitchingHtml += "<p></p>"
+                    pitchingHtml += doc.css(".half_block.right > table")[1].toHTML!
+                    pitchingHtml += "<h3 style='color:#081B2F;margin:20px 0 10px 10px;'>賽後簡報</h3>"
+                    pitchingHtml += doc.css(".half_block.right > p.box_note")[2].toHTML!
+                    
+                    let boxHtml = battingHtml + pitchingHtml
+                    self.boxWebView.loadHTMLString(boxHtml, baseURL: nil)
+                } catch let error as NSError{
+                    print(error.localizedDescription)
+                }
             }
         })
     }

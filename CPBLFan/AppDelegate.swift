@@ -26,11 +26,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = UIColor.darkBlue()
         UINavigationBar.appearance().barTintColor = .white
         
+        // Use Firebase library to configure APIs
+        FirebaseApp.configure()
+        
         // Fabric
         Fabric.with([Crashlytics.self])
         
-        // Use Firebase library to configure APIs
-        FirebaseApp.configure()
         Messaging.messaging().delegate = self
         
         if #available(iOS 10.0, *) {

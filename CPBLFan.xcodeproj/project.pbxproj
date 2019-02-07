@@ -25,6 +25,7 @@
 		5336D25D1E4368A300CAF66A /* GameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5336D25B1E4368A300CAF66A /* GameCell.xib */; };
 		5336D25F1E437A0400CAF66A /* GameHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5336D25E1E437A0400CAF66A /* GameHeaderCell.swift */; };
 		5336D2611E437A2700CAF66A /* GameHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5336D2601E437A2700CAF66A /* GameHeaderCell.xib */; };
+		533F89EB220816230000F440 /* DateSelectCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533F89EA2208161B0000F440 /* DateSelectCollectionViewController.swift */; };
 		534B157A1E16CE6B009EA85C /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B15791E16CE6B009EA85C /* VideoViewModel.swift */; };
 		535272071E26740D00E1FFC7 /* StatsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535272051E26740D00E1FFC7 /* StatsListCell.swift */; };
 		535272081E26740D00E1FFC7 /* StatsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 535272061E26740D00E1FFC7 /* StatsListCell.xib */; };
@@ -159,6 +160,7 @@
 		5336D25B1E4368A300CAF66A /* GameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GameCell.xib; path = View/GameCell.xib; sourceTree = "<group>"; };
 		5336D25E1E437A0400CAF66A /* GameHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameHeaderCell.swift; path = View/GameHeaderCell.swift; sourceTree = "<group>"; };
 		5336D2601E437A2700CAF66A /* GameHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GameHeaderCell.xib; path = View/GameHeaderCell.xib; sourceTree = "<group>"; };
+		533F89EA2208161B0000F440 /* DateSelectCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateSelectCollectionViewController.swift; path = View/ViewController/DateSelectCollectionViewController.swift; sourceTree = "<group>"; };
 		534B15791E16CE6B009EA85C /* VideoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoViewModel.swift; path = ViewModel/VideoViewModel.swift; sourceTree = "<group>"; };
 		535272051E26740D00E1FFC7 /* StatsListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatsListCell.swift; path = View/StatsListCell.swift; sourceTree = "<group>"; };
 		535272061E26740D00E1FFC7 /* StatsListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StatsListCell.xib; path = View/StatsListCell.xib; sourceTree = "<group>"; };
@@ -422,6 +424,7 @@
 				5315DA531E2A45A5002509AC /* PlayerViewController.swift */,
 				536238001E44C5440091DA9C /* GameScheduleViewController.swift */,
 				537DB6531F151661008B7648 /* GameViewController.swift */,
+				533F89EA2208161B0000F440 /* DateSelectCollectionViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -1032,6 +1035,7 @@
 				537CCF891E20BE7B00AFC864 /* RankViewController.swift in Sources */,
 				53CBA2A51E0D5F5F0012FFFB /* AppDelegate.swift in Sources */,
 				53215D191E12B3EF00A878B3 /* Video.swift in Sources */,
+				533F89EB220816230000F440 /* DateSelectCollectionViewController.swift in Sources */,
 				53A6FE2F1E13F72700B68243 /* VideoCell.swift in Sources */,
 				5354ABE41E1553320034D9E2 /* VideoViewController.swift in Sources */,
 				536238051E44CAE20091DA9C /* Game.swift in Sources */,
@@ -1152,7 +1156,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8CB900F5DEFEBAA58E8EBD95 /* Pods-Schedule-Widget.debug.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8MREJM6257;
 				INFOPLIST_FILE = "Schedule-Widget/Info.plist";
@@ -1161,7 +1165,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Schedule-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8a276960-7ae1-4aa0-b1e4-f569745c93d8";
-				PROVISIONING_PROFILE_SPECIFIER = "CPBLFan-Schedule-Widget";
+				PROVISIONING_PROFILE_SPECIFIER = "Development-CPBLFan-Schedule-Widget";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 			};
@@ -1308,7 +1312,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CPBLFan/CPBLFan.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 8MREJM6257;
@@ -1317,7 +1322,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "539e0c24-b0d2-40f0-8851-4a7d3a418cb9";
-				PROVISIONING_PROFILE_SPECIFIER = "CPBL Fan";
+				PROVISIONING_PROFILE_SPECIFIER = "Development-CPBLFan";
 				SWIFT_OBJC_BRIDGING_HEADER = "CPBLFan/CPBLFan-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 			};
@@ -1330,6 +1335,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CPBLFan/CPBLFan.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8MREJM6257;
@@ -1426,7 +1432,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B97B8B3BD2182D65A2A4F0CC /* Pods-Rank-Widget.debug.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8MREJM6257;
 				INFOPLIST_FILE = "Rank-Widget/Info.plist";
@@ -1435,7 +1441,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Rank-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b259db02-3e52-444f-9cd0-c096a549d989";
-				PROVISIONING_PROFILE_SPECIFIER = "CPBLFan-Rank-Widget";
+				PROVISIONING_PROFILE_SPECIFIER = "Development-CPBLFan-Rank-Widget";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 			};
@@ -1470,7 +1476,7 @@
 				536B607A1E62A92D0027C796 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		53CBA29C1E0D5F5E0012FFFB /* Build configuration list for PBXProject "CPBLFan" */ = {
 			isa = XCConfigurationList;
@@ -1479,7 +1485,7 @@
 				53CBA2CA1E0D5F5F0012FFFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		53CBA2CB1E0D5F5F0012FFFB /* Build configuration list for PBXNativeTarget "CPBLFan" */ = {
 			isa = XCConfigurationList;
@@ -1488,7 +1494,7 @@
 				53CBA2CD1E0D5F5F0012FFFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		53CBA2CE1E0D5F5F0012FFFB /* Build configuration list for PBXNativeTarget "CPBLFanTests" */ = {
 			isa = XCConfigurationList;
@@ -1497,7 +1503,7 @@
 				53CBA2D01E0D5F5F0012FFFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		53CBA2D11E0D5F5F0012FFFB /* Build configuration list for PBXNativeTarget "CPBLFanUITests" */ = {
 			isa = XCConfigurationList;
@@ -1506,7 +1512,7 @@
 				53CBA2D31E0D5F5F0012FFFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		53CE89D81E61532E00C528BC /* Build configuration list for PBXNativeTarget "Rank-Widget" */ = {
 			isa = XCConfigurationList;
@@ -1515,7 +1521,7 @@
 				53CE89D71E61532E00C528BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

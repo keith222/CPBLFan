@@ -35,6 +35,11 @@ class StatsViewModel{
         APIService.request(.get, route: route, completionHandler: { [weak self] text in
             var statsData: [Stats]? = []
             
+            guard let text = text else {
+                handler(statsData!)
+                return
+            }
+            
             do {
                 let doc = try HTML(html: text, encoding: .utf8)
                 

@@ -30,6 +30,12 @@ class VideoViewModel{
     func fetchVideos(from pageToken: String = "", handler: @escaping (([Video],String?)->())){
         let route = "\(APIService.YoutubeAPIURL)search?part=snippet&channelId=UCDt9GAqyRzc2e5BNxPrwZrw&maxResults=15&order=date&pageToken=\(pageToken)&key=\(APIService.YoutubeAPIKey)"
         APIService.request(.get, route: route, completionHandler: { text in
+            
+            guard let text = text else {
+                handler([], "")
+                return
+            }
+            
             if let dataFromString = text.data(using: .utf8, allowLossyConversion: false){
                 do {
                     let json = try JSON(data: dataFromString)
@@ -43,7 +49,6 @@ class VideoViewModel{
                     print(error)
                 }
             }
-            
         })
     }
 }

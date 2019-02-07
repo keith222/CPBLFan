@@ -40,9 +40,6 @@ class GameViewModel{
     
     func fetchGame(at year:String, month: String, handler: @escaping (([(String,[Game])]?) -> ())){
         
-        // for child change using
-        var tempData: [(key: String, value: [Game])] = []
-        
         let ref: DatabaseReference! = Database.database().reference()
         ref.child(year).child(month).observeSingleEvent(of: .value, with: { (snapshot) in
             
@@ -67,7 +64,6 @@ class GameViewModel{
                     }
                 }
                 let sortedData = gameData.sorted(by: { Int($0.key)! < Int($1.key)!})
-                tempData = sortedData
                 handler(sortedData)
                 
             }else{

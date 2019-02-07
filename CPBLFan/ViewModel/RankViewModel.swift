@@ -37,6 +37,11 @@ class RankViewModel{
         APIService.request(.get, route: route, completionHandler: { text in
             var ranks: [[Rank]]? = []
             
+            guard let text = text else {
+                handler(ranks)
+                return
+            }
+            
             do {
                 let doc = try HTML(html: text, encoding: .utf8)
                 
@@ -60,7 +65,7 @@ class RankViewModel{
             } catch {
                 print("error")
             }
-            handler(ranks!)
+            handler(ranks)
         })
     }
     
