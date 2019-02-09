@@ -24,11 +24,20 @@ class APIService{
         route: String,
         completionHandler: @escaping(String?)->()
     ){
-        Alamofire.request(
+        let manager = Alamofire.SessionManager.default
+        manager.session.configuration.timeoutIntervalForRequest = 5
+        manager.session.configuration.timeoutIntervalForResource = 5
+        manager.request(
             route,
             method: .get
             ).responseString(completionHandler: { response in
-                completionHandler(response.result.value)
+                switch response.result {
+                case .success:
+                    completionHandler(response.result.value)
+
+                case .failure:
+                    completionHandler(nil)
+                }
             })
     }
 }

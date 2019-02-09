@@ -70,7 +70,10 @@ class NewsViewController: UIViewController {
                 refreshAction:{ page in
                     // closure for refresh(load more)data
                     self.activity.startAnimating()
-                    self.newsViewModel.fetchNews(from: (page - 1), handler: { [unowned self] data in
+                    
+                    let newPage = (source.count == 0 && page == 2) ? 0 : page - 1
+                    
+                    self.newsViewModel.fetchNews(from: newPage, handler: { [unowned self] data in
                         let moreSource: [NewsViewModel] = data.map{ value -> NewsViewModel in
                             return NewsViewModel(data: value)
                         }

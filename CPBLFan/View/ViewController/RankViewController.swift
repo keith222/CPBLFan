@@ -56,7 +56,6 @@ class RankViewController: UIViewController {
             year = year - 1
         }
         
-        
         // load and show rank info
         self.rankViewModel.fetchRank(from: String(year) , handler: { [weak self] data in
 

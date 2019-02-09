@@ -83,9 +83,9 @@ class GameScheduleViewController: UIViewController {
         let monthString = String(month)
         
         self.gameViewModel.fetchGame(at: yearString, month: monthString, handler: { [weak self] data in
-            if data != nil, data!.count > 0{
+            if let data = data {
                 // map cell source
-                self?.gameSource = (data! as [(String,[Game])]).map{ value -> [GameViewModel] in
+                self?.gameSource = (data as [(String,[Game])]).map{ value -> [GameViewModel] in
                     return value.1.map{ gameValue -> GameViewModel in
                         return GameViewModel(data: gameValue)
                     }
@@ -96,7 +96,7 @@ class GameScheduleViewController: UIViewController {
                 self?.month = Int(monthString)!
                 
                 // map head soruce
-                let headSource: [[String]] = (data! as [(String,[Game])]).map{ value -> [String] in
+                let headSource: [[String]] = (data as [(String,[Game])]).map{ value -> [String] in
                     return [yearString, monthString ,value.0]
                 }
                 
@@ -114,12 +114,18 @@ class GameScheduleViewController: UIViewController {
                         self?.navigationController?.pushViewController(destination, animated: true)
                     }
                 )
-  
-                HUD.hide(animated: true, completion: {finished in
-                    UIView.animate(withDuration: 0.1, animations: { [weak self] in
-                        self?.gameTableView.alpha = 1
+                
+                if data.count > 0 {
+                    HUD.hide(animated: true, completion: {finished in
+                        UIView.animate(withDuration: 0.1, animations: { [weak self] in
+                            self?.gameTableView.alpha = 1
+                        })
                     })
-                })
+                    
+                } else {
+                    self?.gameTableView.alpha = 0
+                    HUD.hide(animated: true)
+                }
                 
                 if let sectionIndex = headSource.index(where: { return $0[2] == day.string}){
                     let indexPath = IndexPath(row: 0, section: sectionIndex)
@@ -148,7 +154,7 @@ class GameScheduleViewController: UIViewController {
                 let headSource: [[String]] = (data! as [(String,[Game])]).map{ value -> [String] in
                     return [year, month ,value.0]
                 }
-                
+
                 self?.tableHelper?.headSavedData = headSource as [AnyObject]
                 self?.tableHelper?.savedData = self!.gameSource! as [AnyObject]
                 
@@ -160,7 +166,6 @@ class GameScheduleViewController: UIViewController {
                 
             }else{
                 self?.gameTableView.alpha = 0
-                
                 HUD.hide(animated: true)
             }
         })
@@ -187,7 +192,7 @@ class GameScheduleViewController: UIViewController {
             month += 1
             if month > 11{
                 year += 1
-                month = 3
+                month = 2
             }
         }
         
@@ -222,7 +227,7 @@ class GameScheduleViewController: UIViewController {
             month += 1
             if month > 11{
                 year += 1
-                month = 3
+                month = 2
             }
             
             UIView.animate(withDuration: 0.2, animations: { [weak self] in
@@ -248,6 +253,9 @@ class GameScheduleViewController: UIViewController {
 extension GameScheduleViewController: DateSelectDelegate {
     
     func dateSelected(with year: Int, and month: Int) {
+        self.year = year
+        self.month = month
+        HUD.show(.progress)
         self.loadData("\(year)", month: "\(month)")
     }
 }

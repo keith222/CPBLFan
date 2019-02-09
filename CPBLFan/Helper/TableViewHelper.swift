@@ -100,6 +100,7 @@ class DataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
 //            print(data.count)
 //            return data.count
 //        }
+        if data.count == 0 { return 0 }
         
         if let datas = data[section] as? [AnyObject], !datas.isEmpty {
             return datas.count

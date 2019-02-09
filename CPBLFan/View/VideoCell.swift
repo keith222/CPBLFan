@@ -47,7 +47,7 @@ class VideoCell: UITableViewCell, BindView {
             
             // dateformat iso 8601 to normal dateformat
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "YYYY.MM.DD"
+            dateFormatter.dateFormat = "yyyy.MM.dd"
             let isoDate = Date(iso8601String: videoViewModel.date!)
             let dateString = dateFormatter.string(from: isoDate!)
             self.videoDateLabel.text = dateString
