@@ -607,13 +607,13 @@
 					536B606C1E62A92C0027C796 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 8MREJM6257;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1030;
 						ProvisioningStyle = Manual;
 					};
 					53CBA2A01E0D5F5E0012FFFB = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 8MREJM6257;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1030;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -632,31 +632,32 @@
 					};
 					53CBA2B61E0D5F5F0012FFFB = {
 						CreatedOnToolsVersion = 8.2.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1030;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 53CBA2A01E0D5F5E0012FFFB;
 					};
 					53CBA2C11E0D5F5F0012FFFB = {
 						CreatedOnToolsVersion = 8.2.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1030;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 53CBA2A01E0D5F5E0012FFFB;
 					};
 					53CE89C81E61532E00C528BC = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 8MREJM6257;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1030;
 						ProvisioningStyle = Manual;
 					};
 				};
 			};
 			buildConfigurationList = 53CBA29C1E0D5F5E0012FFFB /* Build configuration list for PBXProject "CPBLFan" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
 				"zh-Hant",
+				en,
 			);
 			mainGroup = 53CBA2981E0D5F5E0012FFFB;
 			productRefGroup = 53CBA2A21E0D5F5F0012FFFB /* Products */;
@@ -1167,7 +1168,7 @@
 				PROVISIONING_PROFILE = "8a276960-7ae1-4aa0-b1e4-f569745c93d8";
 				PROVISIONING_PROFILE_SPECIFIER = "Development-CPBLFan-Schedule-Widget";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1186,7 +1187,7 @@
 				PROVISIONING_PROFILE = "8a276960-7ae1-4aa0-b1e4-f569745c93d8";
 				PROVISIONING_PROFILE_SPECIFIER = "CPBLFan-Schedule-Widget";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1324,7 +1325,7 @@
 				PROVISIONING_PROFILE = "539e0c24-b0d2-40f0-8851-4a7d3a418cb9";
 				PROVISIONING_PROFILE_SPECIFIER = "Development-CPBLFan";
 				SWIFT_OBJC_BRIDGING_HEADER = "CPBLFan/CPBLFan-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1346,7 +1347,7 @@
 				PROVISIONING_PROFILE = "2214cd66-8fb7-4bc8-b27e-cbe7f1bd991a";
 				PROVISIONING_PROFILE_SPECIFIER = "CPBL Fan";
 				SWIFT_OBJC_BRIDGING_HEADER = "CPBLFan/CPBLFan-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1364,8 +1365,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFanTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CPBLFan.app/CPBLFan";
 			};
 			name = Debug;
@@ -1384,8 +1384,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFanTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CPBLFan.app/CPBLFan";
 			};
 			name = Release;
@@ -1403,8 +1402,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFanUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = CPBLFan;
 			};
 			name = Debug;
@@ -1422,8 +1420,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFanUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = CPBLFan;
 			};
 			name = Release;
@@ -1443,7 +1440,7 @@
 				PROVISIONING_PROFILE = "b259db02-3e52-444f-9cd0-c096a549d989";
 				PROVISIONING_PROFILE_SPECIFIER = "Development-CPBLFan-Rank-Widget";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1462,7 +1459,7 @@
 				PROVISIONING_PROFILE = "b259db02-3e52-444f-9cd0-c096a549d989";
 				PROVISIONING_PROFILE_SPECIFIER = "CPBLFan-Rank-Widget";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

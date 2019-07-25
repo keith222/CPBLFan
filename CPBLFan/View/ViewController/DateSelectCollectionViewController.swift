@@ -41,9 +41,9 @@ class DateSelectCollectionViewController: UICollectionViewController {
         layout.sectionInset = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
         layout.minimumLineSpacing = 1
         layout.minimumInteritemSpacing = 0
-        let itemWidth = (SwifterSwift.screenWidth / 4) - 2
+        let itemWidth = (UIScreen.main.bounds.width / 4) - 2
         layout.itemSize = CGSize(width: itemWidth, height: itemWidth)
-        layout.headerReferenceSize = CGSize(width: SwifterSwift.screenWidth, height: 30)
+        layout.headerReferenceSize = CGSize(width: UIScreen.main.bounds.width, height: 30)
         self.collectionView.collectionViewLayout = layout
     }
 

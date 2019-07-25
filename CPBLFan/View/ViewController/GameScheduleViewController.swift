@@ -127,7 +127,7 @@ class GameScheduleViewController: UIViewController {
                     HUD.hide(animated: true)
                 }
                 
-                if let sectionIndex = headSource.index(where: { return $0[2] == day.string}){
+                if let sectionIndex = headSource.firstIndex(where: { return $0[2] == day.string}){
                     let indexPath = IndexPath(row: 0, section: sectionIndex)
                     self?.gameTableView.scrollToRow(at: indexPath, at: .top, animated: false)
                 }

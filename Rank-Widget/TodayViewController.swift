@@ -133,6 +133,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             self.preferredContentSize = currentSize
         case .compact:
             self.preferredContentSize = maxSize
+        @unknown default:
+            currentSize.height = 248
+            self.preferredContentSize = currentSize
         }
     }
     
