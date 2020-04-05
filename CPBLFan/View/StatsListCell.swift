@@ -21,29 +21,21 @@ class StatsListCell: UITableViewCell,BindView {
     }
 
     func bindViewModel(_ viewModel: Any) {
-        if let statsListViewModel = viewModel as? StatsListViewModel{
-            self.numLabel.text = statsListViewModel.num
-            self.nameLabel.text = statsListViewModel.name
-            self.teamLabel.text = statsListViewModel.team
-            self.statsLabel.text = statsListViewModel.stats
+        if let statsListCellViewModel = viewModel as? StatsListCellViewModel{
+            self.numLabel.text = statsListCellViewModel.num
+            self.nameLabel.text = statsListCellViewModel.name
+            self.teamLabel.text = statsListCellViewModel.team
+            self.statsLabel.text = statsListCellViewModel.stats
         }
     }
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
-        if highlighted{
-            self.numLabel.textColor = .white
-            self.nameLabel.textColor = .white
-            self.teamLabel.textColor = .white
-            self.statsLabel.textColor = .white
-            self.backgroundColor = UIColor.darkBlue()
-        }else{
-            self.numLabel.textColor = .black
-            self.nameLabel.textColor = .black
-            self.teamLabel.textColor = UIColor(hexString: "#9b9b9b")
-            self.statsLabel.textColor = .black
-            self.backgroundColor = .white
-        }
+        self.numLabel.textColor = highlighted ? .white : UIColor.CompromisedColors.label
+        self.nameLabel.textColor = highlighted ? .white : UIColor.CompromisedColors.label
+        self.teamLabel.textColor = highlighted ? .white : UIColor(hex: 0x9b9b9b)
+        self.statsLabel.textColor = highlighted ? .white : UIColor.CompromisedColors.label
+        self.backgroundColor = highlighted ? .darkBlue : UIColor.CompromisedColors.background
     }
     
 }

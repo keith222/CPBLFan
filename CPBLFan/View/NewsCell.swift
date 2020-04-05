@@ -7,12 +7,13 @@
 //
 
 import UIKit
-import DynamicColor
 import Kingfisher
 
 class NewsCell: UITableViewCell, BindView {
 
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var newsImage: UIImageView!
+    @IBOutlet weak var newsContainerView: UIView!
     @IBOutlet weak var newsTitleLabel: UILabel!
     @IBOutlet weak var newsDateLabel: UILabel!
         
@@ -22,11 +23,15 @@ class NewsCell: UITableViewCell, BindView {
         self.setUp()
     }
     
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        
+        self.newsImage.roundCorners([.topLeft, .topRight], radius: 20)
+        self.newsContainerView.roundCorners([.bottomLeft, .bottomRight], radius: 20)
+        self.containerView.addShadow(ofColor: .black, radius: 10, offset: .zero, opacity: 0.4)
+    }
+    
     func setUp(){
-        
-        self.newsImage.contentMode = .scaleAspectFill
-        self.newsImage.bounds = self.bounds
-        
         if UIDevice.current.userInterfaceIdiom == .pad{
             self.newsTitleLabel.font = UIFont.systemFont(ofSize: 30)
             self.newsDateLabel.font = UIFont.systemFont(ofSize: 20)
@@ -35,15 +40,15 @@ class NewsCell: UITableViewCell, BindView {
     
     func bindViewModel(_ viewModel: Any) {
 
-        if let newsViewModel = viewModel as? NewsViewModel{
+        if let newsCellViewModel = viewModel as? NewsCellViewModel{
             //cell content
-            if !(newsViewModel.imageURL?.isEmpty)!{
-                self.newsImage.kf.setImage(with: newsViewModel.imageURL?.url!)
+            if !(newsCellViewModel.imageURL?.isEmpty)!{
+                self.newsImage.kf.setImage(with: newsCellViewModel.imageURL?.url!)
             }else{
                 self.newsImage.image = UIImage(named: "logo")
             }
-            self.newsTitleLabel.text = newsViewModel.title!
-            self.newsDateLabel.text = newsViewModel.date!
+            self.newsTitleLabel.text = newsCellViewModel.title!
+            self.newsDateLabel.text = newsCellViewModel.date!
         }
     }
 }

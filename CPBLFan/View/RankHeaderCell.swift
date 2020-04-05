@@ -20,6 +20,7 @@ class RankHeaderCell: UITableViewHeaderFooterView, BindView {
     
     override func awakeFromNib() {
         self.subviews[0].size.width = UIScreen.main.bounds.width
+        self.contentView.backgroundColor = .darkBlue
     }
 
 }

@@ -23,30 +23,22 @@ class StatsCell: UITableViewCell, BindView {
     }
 
     func bindViewModel(_ viewModel: Any) {
-        if let viewModelArray = viewModel as? StatsViewModel{
-            self.nameLabel.text = viewModelArray.name
-            self.teamLabel.text = viewModelArray.team
-            self.statsLabel.text = viewModelArray.stats
-            self.categoryLabel.text = viewModelArray.category
+        if let statsCellViewModel = viewModel as? StatsCellViewModel{
+            self.nameLabel.text = statsCellViewModel.name
+            self.teamLabel.text = statsCellViewModel.team
+            self.statsLabel.text = statsCellViewModel.stats
+            self.categoryLabel.text = statsCellViewModel.category
         }
     }
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
-        if highlighted{
-            self.categoryLabel.textColor = UIColor.darkBlue()
-            self.categoryLabel.backgroundColor = .white
-            self.nameLabel.textColor = .white
-            self.teamLabel.textColor = .white
-            self.statsLabel.textColor = .white
-            self.backgroundColor = UIColor.darkBlue()
-        }else{
-            self.categoryLabel.textColor = .white
-            self.categoryLabel.backgroundColor = UIColor.darkBlue()
-            self.nameLabel.textColor = .black
-            self.teamLabel.textColor = UIColor(hexString: "#9b9b9b")
-            self.statsLabel.textColor = .black
-            self.backgroundColor = .white
-        }
+        
+        self.categoryLabel.textColor = highlighted ? .darkBlue : .white
+        self.categoryLabel.backgroundColor = highlighted ? .white : .darkBlue
+        self.nameLabel.textColor = highlighted ? .white : UIColor.CompromisedColors.label
+        self.teamLabel.textColor = highlighted ? .white : UIColor(hex: 0x9b9b9b)
+        self.statsLabel.textColor = highlighted ? .white : UIColor.CompromisedColors.label
+        self.backgroundColor = highlighted ? .darkBlue : UIColor.CompromisedColors.background
     }
 }

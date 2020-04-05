@@ -10,7 +10,9 @@ import UIKit
 
 class RankCell: UITableViewCell, BindView {
     
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var teamLogoImageView: UIImageView!
+    @IBOutlet weak var rankLabel: UILabel!
     @IBOutlet weak var winLabel: UILabel!
     @IBOutlet weak var tieLabel: UILabel!
     @IBOutlet weak var loseLabel: UILabel!
@@ -26,14 +28,15 @@ class RankCell: UITableViewCell, BindView {
     }
 
     func bindViewModel(_ viewModel: Any) {
-        if let rankViewModel = viewModel as? RankViewModel{
+        if let rankCellViewModel = viewModel as? RankCellViewModel{
             // cell content
-            self.teamLogoImageView.image = UIImage.logoImage(team: rankViewModel.team)
-            self.winLabel.text = rankViewModel.win
-            self.tieLabel.text = rankViewModel.tie
-            self.loseLabel.text = rankViewModel.lose
-            self.percentageLabel.text = rankViewModel.percentage
-            self.gamebehindLabel.text = rankViewModel.gamebehind
+            self.teamLogoImageView.image = UIImage.logoImage(team: rankCellViewModel.team)
+            self.rankLabel.text = rankCellViewModel.rank?.string
+            self.winLabel.text = rankCellViewModel.win
+            self.tieLabel.text = rankCellViewModel.tie
+            self.loseLabel.text = rankCellViewModel.lose
+            self.percentageLabel.text = rankCellViewModel.percentage
+            self.gamebehindLabel.text = rankCellViewModel.gamebehind
         }
     }
 }

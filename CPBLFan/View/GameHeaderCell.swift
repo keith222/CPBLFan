@@ -7,36 +7,40 @@
 //
 
 import UIKit
-import SwifterSwift
 
 class GameHeaderCell: UITableViewHeaderFooterView, BindView {
 
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var weekDayLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
     
     func bindViewModel(_ viewModel: Any) {
-        if let data = viewModel as? [String]{
-            let week = Date(year: data[0].int, month: data[1].int, day: data[2].int)?.weekday
-            let chineseWeekDay = self.numberToChineseWeekDay(week!)
-            self.dateLabel.text = "\(data[1])月\(data[2])日 \(chineseWeekDay)"
+        if let data = viewModel as? GameHeaderCellViewModel{
+            let week = Date(year: data.year, month: data.month, day: data.day)?.weekday ?? 0
+            let chineseWeekDay = self.numberToChineseWeekDay(week)
+            self.monthLabel.text = data.month?.string
+            self.dayLabel.text = data.day?.string
+            self.weekDayLabel.text = chineseWeekDay
         }
     }
     
     private func numberToChineseWeekDay(_ weekday: Int) -> String {
         switch weekday {
-        case 1: return "週日"
-        case 2: return "週一"
-        case 3: return "週二"
-        case 4: return "週三"
-        case 5: return "週四"
-        case 6: return "週五"
-        case 7: return "週六"
+        case 1: return "星期日"
+        case 2: return "星期一"
+        case 3: return "星期二"
+        case 4: return "星期三"
+        case 5: return "星期四"
+        case 6: return "星期五"
+        case 7: return "星期六"
         default: return ""
         }
     }
     
-    override func awakeFromNib() {
-        // for ios9 below
-        self.subviews[0].size.width = UIScreen.main.bounds.width
-    }
+    
 
 }

@@ -7,29 +7,32 @@
 //
 
 import UIKit
-import DynamicColor
 import Kingfisher
 import SwifterSwift
 
 class VideoCell: UITableViewCell, BindView {
 
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var videoImageView: UIImageView!
     @IBOutlet weak var videoTitleLabel: UILabel!
     @IBOutlet weak var videoDateLabel: UILabel!
-    var videoId: String!
+    @IBOutlet weak var videoContainerView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         self.setUp()
     }
-
-    func setUp(){
-        // set video image
-        self.videoImageView.contentMode = .scaleAspectFill
-        self.videoImageView.bounds = self.bounds
-        self.videoImageView.clipsToBounds = true
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
         
+        self.videoImageView.roundCorners([.topLeft, .topRight], radius: 20)
+        self.videoContainerView.roundCorners([.bottomLeft, .bottomRight], radius: 20)
+        self.containerView.addShadow(ofColor: .black, radius: 10, offset: .zero, opacity: 0.4)
+    }
+
+    func setUp(){        
         // set fonsize if it is ipad
         if UIDevice.current.userInterfaceIdiom == .pad{
             self.videoTitleLabel.font = UIFont.systemFont(ofSize: 30)
@@ -39,20 +42,20 @@ class VideoCell: UITableViewCell, BindView {
     
     func bindViewModel(_ viewModel: Any) {
         
-        if let videoViewModel = viewModel as? VideoViewModel{
+        if let videoCellViewModel = viewModel as? VideoCellViewModel{
             // cell content
-            self.videoImageView.kf.setImage(with:  videoViewModel.imageUrl?.url!)
             
-            self.videoTitleLabel.text = videoViewModel.title!
+            let maxResDefault = videoCellViewModel.imageUrl?.replacingOccurrences(of: "hqdefault", with: "maxresdefault")
+            self.videoImageView.kf.setImage(with: maxResDefault?.url)
+            
+            self.videoTitleLabel.text = videoCellViewModel.title
             
             // dateformat iso 8601 to normal dateformat
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy.MM.dd"
-            let isoDate = Date(iso8601String: videoViewModel.date!)
+            let isoDate = Date(iso8601String: videoCellViewModel.date ?? "")
             let dateString = dateFormatter.string(from: isoDate!)
             self.videoDateLabel.text = dateString
-            
-            self.videoId = videoViewModel.videoId!
         }
     }
     
