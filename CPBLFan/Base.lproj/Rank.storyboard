@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fM2-Yk-hAy">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment version="4352" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--聯盟排名-->
+        <scene sceneID="pPE-7s-WHg">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="qxs-ee-fm5" customClass="RankViewController" customModule="CPBLFan" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xZP-wK-cSi"/>
+                        <viewControllerLayoutGuide type="bottom" id="oJF-3y-Wqa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Wbo-Qq-ysz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未有排名資料" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ip2-o6-aXH">
+                                <rect key="frame" x="96.5" y="315.5" width="182" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aoJ-av-KTe">
+                                <rect key="frame" x="0.0" y="104.5" width="375" height="562.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="aoJ-av-KTe" firstAttribute="leading" secondItem="Wbo-Qq-ysz" secondAttribute="leading" id="6IQ-9f-hwO"/>
+                            <constraint firstItem="aoJ-av-KTe" firstAttribute="top" secondItem="xZP-wK-cSi" secondAttribute="bottom" id="DFp-Ix-Bcn"/>
+                            <constraint firstItem="Ip2-o6-aXH" firstAttribute="centerX" secondItem="Wbo-Qq-ysz" secondAttribute="centerX" id="OKD-4I-9rM"/>
+                            <constraint firstItem="Ip2-o6-aXH" firstAttribute="centerY" secondItem="Wbo-Qq-ysz" secondAttribute="centerY" id="T6Z-YJ-8da"/>
+                            <constraint firstItem="oJF-3y-Wqa" firstAttribute="top" secondItem="aoJ-av-KTe" secondAttribute="bottom" id="Ze5-ed-yuS"/>
+                            <constraint firstAttribute="trailing" secondItem="aoJ-av-KTe" secondAttribute="trailing" id="cwq-pH-le1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="聯盟排名" id="4fJ-bB-PFa"/>
+                    <connections>
+                        <outlet property="rankTableView" destination="aoJ-av-KTe" id="Edd-Z7-VhY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t9U-UZ-sVJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1712.8" y="1163.568215892054"/>
+        </scene>
+        <!--聯盟排名-->
+        <scene sceneID="QML-hB-w9N">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fM2-Yk-hAy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="聯盟排名" image="rank" selectedImage="rank-fill" id="5oG-hN-c4u"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="fdn-ta-fnp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="104.5"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qxs-ee-fm5" kind="relationship" relationship="rootViewController" id="KKF-ER-A8d"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4H3-j0-Aia" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="773.60000000000002" y="1163.568215892054"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="rank" width="22" height="22"/>
+        <image name="rank-fill" width="22" height="22"/>
+    </resources>
+</document>

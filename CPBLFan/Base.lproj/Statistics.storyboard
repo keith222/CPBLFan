@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lc5-ct-p02">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment version="4352" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--個人成績-->
+        <scene sceneID="nQo-QH-d85">
+            <objects>
+                <viewController id="zlH-IO-f3i" customClass="StatsViewController" customModule="CPBLFan" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hve-zb-cbG"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q3R-P0-I8I"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ogO-ET-0YC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Itz-g9-ndO">
+                                <rect key="frame" x="0.0" y="104.5" width="375" height="0.5"/>
+                                <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.29999999999999999" id="KXE-gt-1dd"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ni0-ix-fVv">
+                                <rect key="frame" x="0.0" y="105" width="375" height="71"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XRP-Eg-qP8">
+                                        <rect key="frame" x="94" y="20" width="187.5" height="32"/>
+                                        <segments>
+                                            <segment title="打擊成績"/>
+                                            <segment title="投手成績"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.031372549019607843" green="0.10588235294117647" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="indexChanged:" destination="zlH-IO-f3i" eventType="valueChanged" id="Fa2-5A-FnS"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="XRP-Eg-qP8" firstAttribute="centerX" secondItem="ni0-ix-fVv" secondAttribute="centerX" id="1EK-oB-aM6"/>
+                                    <constraint firstItem="XRP-Eg-qP8" firstAttribute="top" secondItem="ni0-ix-fVv" secondAttribute="top" constant="20" id="5zU-4t-QlJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="XRP-Eg-qP8" secondAttribute="bottom" constant="20" id="Raq-u2-dbB"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wFo-vF-Taf">
+                                <rect key="frame" x="0.0" y="176" width="375" height="0.5"/>
+                                <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="8sN-RQ-7Oe"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未有選手資料" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvr-nk-HRi">
+                                <rect key="frame" x="96.5" y="403.5" width="182" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oHM-On-f9N">
+                                <rect key="frame" x="0.0" y="176.5" width="375" height="490.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Q3R-P0-I8I" firstAttribute="top" secondItem="oHM-On-f9N" secondAttribute="bottom" id="06n-rY-Plq"/>
+                            <constraint firstItem="wFo-vF-Taf" firstAttribute="leading" secondItem="ogO-ET-0YC" secondAttribute="leading" id="345-jH-izW"/>
+                            <constraint firstAttribute="trailing" secondItem="ni0-ix-fVv" secondAttribute="trailing" id="60v-1Q-DQY"/>
+                            <constraint firstAttribute="trailing" secondItem="Itz-g9-ndO" secondAttribute="trailing" id="9aI-xX-b0Q"/>
+                            <constraint firstItem="Itz-g9-ndO" firstAttribute="leading" secondItem="ogO-ET-0YC" secondAttribute="leading" id="Dp6-tc-QXK"/>
+                            <constraint firstAttribute="trailing" secondItem="wFo-vF-Taf" secondAttribute="trailing" id="JtS-Io-Yxi"/>
+                            <constraint firstItem="lvr-nk-HRi" firstAttribute="centerX" secondItem="oHM-On-f9N" secondAttribute="centerX" id="Ryt-i4-YH3"/>
+                            <constraint firstItem="Itz-g9-ndO" firstAttribute="top" secondItem="hve-zb-cbG" secondAttribute="bottom" id="WZK-Kv-4ci"/>
+                            <constraint firstItem="wFo-vF-Taf" firstAttribute="top" secondItem="ni0-ix-fVv" secondAttribute="bottom" id="Y5f-f9-1Pw"/>
+                            <constraint firstItem="ni0-ix-fVv" firstAttribute="leading" secondItem="ogO-ET-0YC" secondAttribute="leading" id="Y9z-G1-V7K"/>
+                            <constraint firstAttribute="trailing" secondItem="oHM-On-f9N" secondAttribute="trailing" id="aTD-lr-E5Z"/>
+                            <constraint firstItem="lvr-nk-HRi" firstAttribute="centerY" secondItem="oHM-On-f9N" secondAttribute="centerY" id="b1w-1n-4ow"/>
+                            <constraint firstItem="ni0-ix-fVv" firstAttribute="top" secondItem="Itz-g9-ndO" secondAttribute="bottom" id="bsk-Ar-1ZD"/>
+                            <constraint firstItem="oHM-On-f9N" firstAttribute="top" secondItem="wFo-vF-Taf" secondAttribute="bottom" id="dgb-Cv-ENz"/>
+                            <constraint firstItem="oHM-On-f9N" firstAttribute="leading" secondItem="ogO-ET-0YC" secondAttribute="leading" id="odK-kq-N99"/>
+                            <constraint firstItem="XRP-Eg-qP8" firstAttribute="width" secondItem="ogO-ET-0YC" secondAttribute="width" multiplier="1:2" id="rgS-eG-w6h"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="個人成績" largeTitleDisplayMode="always" id="vJ0-7u-jDV"/>
+                    <connections>
+                        <outlet property="batterPitcherTableView" destination="oHM-On-f9N" id="vnI-Ra-GBl"/>
+                        <outlet property="statsSegmentedControl" destination="XRP-Eg-qP8" id="Fwi-T8-bgX"/>
+                        <segue destination="5ER-Fh-aU0" kind="show" identifier="pushToStatsList" id="xdl-KO-OM5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tgH-Qn-B9Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1669.5999999999999" y="442.12893553223392"/>
+        </scene>
+        <!--Stats List View Controller-->
+        <scene sceneID="CvH-0y-HSy">
+            <objects>
+                <viewController storyboardIdentifier="StatsListViewController" automaticallyAdjustsScrollViewInsets="NO" id="5ER-Fh-aU0" customClass="StatsListViewController" customModule="CPBLFan" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="97m-7H-Nwd"/>
+                        <viewControllerLayoutGuide type="bottom" id="0VC-fb-ZTg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="57K-Oo-smo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未有選手資料" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="res-pH-sM0">
+                                <rect key="frame" x="96.5" y="315.5" width="182" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lPu-AW-7j1">
+                                <rect key="frame" x="0.0" y="104.5" width="375" height="562.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="lPu-AW-7j1" secondAttribute="trailing" id="Dfj-hZ-rCn"/>
+                            <constraint firstItem="res-pH-sM0" firstAttribute="centerX" secondItem="57K-Oo-smo" secondAttribute="centerX" id="JJP-wq-Dff"/>
+                            <constraint firstItem="res-pH-sM0" firstAttribute="centerY" secondItem="57K-Oo-smo" secondAttribute="centerY" id="Kop-BE-ctY"/>
+                            <constraint firstItem="0VC-fb-ZTg" firstAttribute="top" secondItem="lPu-AW-7j1" secondAttribute="bottom" id="Q6O-GW-2UM"/>
+                            <constraint firstItem="lPu-AW-7j1" firstAttribute="top" secondItem="97m-7H-Nwd" secondAttribute="bottom" id="p9R-Sy-0TR"/>
+                            <constraint firstItem="lPu-AW-7j1" firstAttribute="leading" secondItem="57K-Oo-smo" secondAttribute="leading" id="q47-V0-0hH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="statsListTableView" destination="lPu-AW-7j1" id="byl-Sr-na9"/>
+                        <segue destination="njI-mK-9mI" kind="show" identifier="pushToPlayer" id="pCN-do-G99"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6xg-ki-Jen" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2429" y="443"/>
+        </scene>
+        <!--Player View Controller-->
+        <scene sceneID="R9Z-gk-PzH">
+            <objects>
+                <viewController storyboardIdentifier="PlayerViewController" automaticallyAdjustsScrollViewInsets="NO" id="njI-mK-9mI" customClass="PlayerViewController" customModule="CPBLFan" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OfK-eq-X1V"/>
+                        <viewControllerLayoutGuide type="bottom" id="jTS-4J-tuv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CKc-t0-w3N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D2k-cV-8Ag">
+                                <rect key="frame" x="0.0" y="104.5" width="375" height="562.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sdg-6j-yVP">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="222.5"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="izq-GP-YBR">
+                                        <rect key="frame" x="15" y="105.5" width="81" height="109"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="izq-GP-YBR" secondAttribute="height" multiplier="9:11" constant="-8.181818181818187" id="hKc-xE-KN4"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---｜---｜---" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gq8-fe-NCp">
+                                        <rect key="frame" x="106" y="191.5" width="251" height="18"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="選手 00 | 球隊" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwf-lW-JYg">
+                                        <rect key="frame" x="106" y="161.5" width="251" height="25"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="打擊成績" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Pz-Yw-ZoH">
+                                        <rect key="frame" x="15" y="237.5" width="345" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <color key="textColor" red="0.40784313725490196" green="0.40784313725490196" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u3H-cG-zIM">
+                                        <rect key="frame" x="15" y="263.5" width="345" height="1"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="cDH-3q-z9w"/>
+                                        </constraints>
+                                        <wkWebViewConfiguration key="configuration" allowsAirPlayForMediaPlayback="NO" allowsPictureInPictureMediaPlayback="NO">
+                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                            <wkPreferences key="preferences"/>
+                                        </wkWebViewConfiguration>
+                                    </wkWebView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="守備成績" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gk4-dN-oes">
+                                        <rect key="frame" x="15" y="279.5" width="345" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ii-EF-0T8">
+                                        <rect key="frame" x="15" y="305.5" width="345" height="1"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="aqL-kb-1H8"/>
+                                        </constraints>
+                                        <wkWebViewConfiguration key="configuration">
+                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                            <wkPreferences key="preferences"/>
+                                        </wkWebViewConfiguration>
+                                    </wkWebView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="對戰成績" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A74-Y2-Lph">
+                                        <rect key="frame" x="15" y="321.5" width="345" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZB-5j-qpQ">
+                                        <rect key="frame" x="15" y="347" width="345" height="1"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="gSU-Zk-E0K"/>
+                                        </constraints>
+                                        <wkWebViewConfiguration key="configuration">
+                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                            <wkPreferences key="preferences"/>
+                                        </wkWebViewConfiguration>
+                                    </wkWebView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="單場最高成績" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUG-l8-J9f">
+                                        <rect key="frame" x="15" y="363" width="345" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZUd-dl-oc2">
+                                        <rect key="frame" x="15" y="389" width="345" height="1"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="CcW-9b-C6E"/>
+                                        </constraints>
+                                        <wkWebViewConfiguration key="configuration">
+                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                            <wkPreferences key="preferences"/>
+                                        </wkWebViewConfiguration>
+                                    </wkWebView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="sdg-6j-yVP" firstAttribute="centerX" secondItem="D2k-cV-8Ag" secondAttribute="centerX" id="0VZ-kG-Cwt"/>
+                                    <constraint firstAttribute="trailing" secondItem="sdg-6j-yVP" secondAttribute="trailing" id="10L-91-pFn"/>
+                                    <constraint firstItem="izq-GP-YBR" firstAttribute="width" secondItem="sdg-6j-yVP" secondAttribute="height" multiplier="99:215" constant="-21.45348837209302" id="17f-iJ-KHe"/>
+                                    <constraint firstAttribute="trailing" secondItem="8ii-EF-0T8" secondAttribute="trailing" constant="15" id="2uB-Sp-TKz"/>
+                                    <constraint firstAttribute="trailing" secondItem="u3H-cG-zIM" secondAttribute="trailing" constant="15" id="3Oa-nA-kll"/>
+                                    <constraint firstItem="VZB-5j-qpQ" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" constant="15" id="6VY-ff-tR5"/>
+                                    <constraint firstItem="A74-Y2-Lph" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" constant="15" id="8No-Ns-GCQ"/>
+                                    <constraint firstItem="ZUd-dl-oc2" firstAttribute="top" secondItem="rUG-l8-J9f" secondAttribute="bottom" constant="5" id="9PK-se-wHq"/>
+                                    <constraint firstAttribute="trailing" secondItem="9Pz-Yw-ZoH" secondAttribute="trailing" constant="15" id="A2k-am-KH7"/>
+                                    <constraint firstItem="izq-GP-YBR" firstAttribute="bottom" secondItem="sdg-6j-yVP" secondAttribute="bottom" constant="-8" id="AUe-Bx-oTZ"/>
+                                    <constraint firstItem="Gq8-fe-NCp" firstAttribute="bottom" secondItem="izq-GP-YBR" secondAttribute="bottom" constant="-5" id="DTz-Jj-9oo"/>
+                                    <constraint firstItem="Gq8-fe-NCp" firstAttribute="trailing" secondItem="pwf-lW-JYg" secondAttribute="trailing" id="DiU-oe-hC0"/>
+                                    <constraint firstItem="VZB-5j-qpQ" firstAttribute="top" secondItem="A74-Y2-Lph" secondAttribute="bottom" constant="5.0000000000000568" id="Ehe-rl-P9O"/>
+                                    <constraint firstItem="9Pz-Yw-ZoH" firstAttribute="top" secondItem="sdg-6j-yVP" secondAttribute="bottom" constant="15" id="HoQ-Cz-gj4"/>
+                                    <constraint firstAttribute="trailing" secondItem="rUG-l8-J9f" secondAttribute="trailing" constant="15" id="Ieq-Kp-5F6"/>
+                                    <constraint firstItem="A74-Y2-Lph" firstAttribute="top" secondItem="8ii-EF-0T8" secondAttribute="bottom" constant="15" id="JBA-Jf-F3V"/>
+                                    <constraint firstItem="u3H-cG-zIM" firstAttribute="top" secondItem="9Pz-Yw-ZoH" secondAttribute="bottom" constant="5" id="JRO-UF-IYJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZUd-dl-oc2" secondAttribute="trailing" constant="15" id="JZf-e4-Tx5"/>
+                                    <constraint firstItem="sdg-6j-yVP" firstAttribute="top" secondItem="D2k-cV-8Ag" secondAttribute="top" id="Jmo-v0-JCM"/>
+                                    <constraint firstAttribute="trailing" secondItem="pwf-lW-JYg" secondAttribute="trailing" constant="18" id="NIX-A6-WCb"/>
+                                    <constraint firstItem="Gq8-fe-NCp" firstAttribute="top" secondItem="pwf-lW-JYg" secondAttribute="bottom" constant="5" id="Pd1-LE-hbG"/>
+                                    <constraint firstItem="sdg-6j-yVP" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" id="VL2-A2-LXE"/>
+                                    <constraint firstItem="rUG-l8-J9f" firstAttribute="top" secondItem="VZB-5j-qpQ" secondAttribute="bottom" constant="15" id="VSA-ZP-N7e"/>
+                                    <constraint firstItem="gk4-dN-oes" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" constant="15" id="WIX-tE-goz"/>
+                                    <constraint firstItem="9Pz-Yw-ZoH" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" constant="15" id="WUm-3q-dtP"/>
+                                    <constraint firstItem="gk4-dN-oes" firstAttribute="top" secondItem="u3H-cG-zIM" secondAttribute="bottom" constant="15" id="Zz1-HA-7fH"/>
+                                    <constraint firstItem="u3H-cG-zIM" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" constant="15" id="crr-3U-EmX"/>
+                                    <constraint firstItem="ZUd-dl-oc2" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" constant="15" id="dBW-jh-q3O"/>
+                                    <constraint firstAttribute="trailing" secondItem="VZB-5j-qpQ" secondAttribute="trailing" constant="15" id="e5M-y1-VdA"/>
+                                    <constraint firstAttribute="trailing" secondItem="gk4-dN-oes" secondAttribute="trailing" constant="15" id="gRM-yE-oD7"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZUd-dl-oc2" secondAttribute="bottom" constant="20" id="jHb-fI-SDB"/>
+                                    <constraint firstItem="8ii-EF-0T8" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" constant="15" id="kwG-PK-7hK"/>
+                                    <constraint firstItem="Gq8-fe-NCp" firstAttribute="leading" secondItem="izq-GP-YBR" secondAttribute="trailing" constant="10" id="nBv-hs-FhW"/>
+                                    <constraint firstItem="pwf-lW-JYg" firstAttribute="leading" secondItem="Gq8-fe-NCp" secondAttribute="leading" id="rfV-YV-9sf"/>
+                                    <constraint firstAttribute="trailing" secondItem="A74-Y2-Lph" secondAttribute="trailing" constant="15" id="rqI-xp-OOV"/>
+                                    <constraint firstItem="izq-GP-YBR" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" constant="15" id="sCZ-PH-ULb"/>
+                                    <constraint firstItem="8ii-EF-0T8" firstAttribute="top" secondItem="gk4-dN-oes" secondAttribute="bottom" constant="5" id="sEG-1j-6oQ"/>
+                                    <constraint firstItem="rUG-l8-J9f" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" constant="15" id="u4c-Ec-a2k"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="sdg-6j-yVP" firstAttribute="height" secondItem="CKc-t0-w3N" secondAttribute="height" multiplier="1:3" id="7TZ-qu-vxa"/>
+                            <constraint firstItem="D2k-cV-8Ag" firstAttribute="top" secondItem="OfK-eq-X1V" secondAttribute="bottom" id="SgG-Rd-93B"/>
+                            <constraint firstItem="D2k-cV-8Ag" firstAttribute="leading" secondItem="CKc-t0-w3N" secondAttribute="leading" id="aQW-4Q-qKP"/>
+                            <constraint firstItem="jTS-4J-tuv" firstAttribute="top" secondItem="D2k-cV-8Ag" secondAttribute="bottom" id="cJ7-QS-IeW"/>
+                            <constraint firstAttribute="trailing" secondItem="D2k-cV-8Ag" secondAttribute="trailing" id="lSn-Op-ZuG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dataLabel" destination="Gq8-fe-NCp" id="4eQ-MC-YF9"/>
+                        <outlet property="fieldingWebView" destination="8ii-EF-0T8" id="5H1-B7-itW"/>
+                        <outlet property="fieldingWebViewHeight" destination="aqL-kb-1H8" id="Ku2-fU-O8u"/>
+                        <outlet property="gameImageView" destination="sdg-6j-yVP" id="QMC-RW-N70"/>
+                        <outlet property="headImageView" destination="izq-GP-YBR" id="ZiC-Hi-E9L"/>
+                        <outlet property="nameLabel" destination="pwf-lW-JYg" id="0nJ-SQ-SJ2"/>
+                        <outlet property="scrollView" destination="D2k-cV-8Ag" id="PD0-1y-gjY"/>
+                        <outlet property="singleGameWebView" destination="ZUd-dl-oc2" id="lfP-KI-Lzy"/>
+                        <outlet property="singleGameWebViewHeight" destination="CcW-9b-C6E" id="rhM-Bc-Izg"/>
+                        <outlet property="statsLabel" destination="9Pz-Yw-ZoH" id="QZP-Bn-eju"/>
+                        <outlet property="statsWebView" destination="u3H-cG-zIM" id="XcE-RT-mXy"/>
+                        <outlet property="statsWebViewHeight" destination="cDH-3q-z9w" id="Tut-42-PxK"/>
+                        <outlet property="teamStatsWebView" destination="VZB-5j-qpQ" id="PYr-0g-POq"/>
+                        <outlet property="teamStatsWebViewHeight" destination="gSU-Zk-E0K" id="pXA-o3-BOh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RCk-DO-M0i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3357.5999999999999" y="443.92803598200902"/>
+        </scene>
+        <!--個人成績-->
+        <scene sceneID="6jD-p9-qfD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lc5-ct-p02" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="個人成績" image="statistics" selectedImage="statistics-fill" id="GS0-Rn-d1S"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="a1T-49-pIH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zlH-IO-f3i" kind="relationship" relationship="rootViewController" id="fkS-3Y-caq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Tc-Nm-bmJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="773.60000000000002" y="443.92803598200902"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="statistics" width="22" height="22"/>
+        <image name="statistics-fill" width="22" height="22"/>
+    </resources>
+</document>
