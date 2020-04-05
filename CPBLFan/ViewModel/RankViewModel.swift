@@ -7,38 +7,45 @@
 //
 
 import Foundation
-import SwiftyJSON
+import os
 import Alamofire
-import ObjectMapper
 import Kanna
 
 class RankViewModel{
     
-    var team: String!
-    var win: String!
-    var lose: String!
-    var tie: String!
-    var percentage: String!
-    var gamebehind: String!
-    
-    init(){}
-    
-    init(data: Rank){
-        self.team = data.team
-        self.win = data.win
-        self.lose = data.lose
-        self.tie = data.tie
-        self.percentage = data.percentage
-        self.gamebehind = data.gamebehind
+    private var ranks: [[Rank]] = []
+    private var rankCellViewModels: [[RankCellViewModel]] = [] {
+        didSet {
+            self.reloadTableViewClosure?(rankCellViewModels, headerSource)
+        }
+    }
+    private var headerSource: [String] {
+        return self.ranks.count == 3 ? ["上半季","下半季","全年度"] : ["上半季","全年度"]
     }
     
-    func fetchRank(from year:String, handler: @escaping (([[Rank]]?) -> ())){
+    var numberOfCells: Int {
+        return rankCellViewModels.count
+    }
+    
+    var reloadTableViewClosure: (([[RankCellViewModel]], [String])->())?
+    var errorHandleClosure: ((String?)->())?
+    
+    init(){
+        // Load and show rank info
+        self.fetchRank()
+    }
+    
+    func fetchRank(){
+        let date = Date()
+        let calendar = Calendar.current
+        var year = calendar.component(.year, from: date)
+        let month = calendar.component(.month, from: date)
+        if month < 3 { year -= 1 }
+        
         let route = "\(APIService.CPBLSourceURL)/standing/year/\(year).html"
-        APIService.request(.get, route: route, completionHandler: { text in
-            var ranks: [[Rank]]? = []
-            
+        APIService.request(.get, route: route, completionHandler: { [weak self] text in
             guard let text = text else {
-                handler(ranks)
+                self?.errorHandleClosure?(nil)
                 return
             }
             
@@ -47,7 +54,7 @@ class RankViewModel{
                 
                 for (_,node) in doc.css(".std_tb").enumerated(){
                     var rank: [Rank] = []
-
+                    
                     for (index,tag) in node.css("tr").enumerated(){
                         guard index != 0 else{continue}
                         var rankElement: [String] = []
@@ -56,17 +63,35 @@ class RankViewModel{
                             guard index > 0 && index != 2 else{continue}
                             rankElement.append(element.text!)
                         }
-
+                        
                         let winLose = rankElement[1].components(separatedBy: "-")
-                        rank.append(Rank(JSON: ["team":rankElement[0], "win":winLose[0], "tie":winLose[1], "lose":winLose[2], "percentage":rankElement[2], "gamebehind":rankElement[3]])!)
+                        rank.append(Rank(team: rankElement[0], win: winLose[0], lose: winLose[2], tie: winLose[1], percentage: rankElement[2], gamebehind: rankElement[3]))
                     }
-                    ranks?.append(rank)
+                    self?.ranks.append(rank)
                 }
-            } catch {
-                print("error")
+                
+                self?.processFetched(self?.ranks ?? [])
+                
+            } catch(let error) {
+                self?.errorHandleClosure?(error.localizedDescription)
+                os_log("Error: %s", error.localizedDescription)
             }
-            handler(ranks)
         })
     }
     
+    private func processFetched(_ seasons: [[Rank]]) {
+        var viewModels = [[RankCellViewModel]]()
+        for season in seasons {
+            var subViewModels = [RankCellViewModel]()
+            for (index, rank) in season.enumerated() {
+                subViewModels.append(createCellViewModel(with: rank, and: (index + 1)))
+            }
+            viewModels.append(subViewModels)
+        }
+        self.rankCellViewModels.append(contentsOf: viewModels)
+    }
+    
+    private func createCellViewModel(with rank: Rank, and number: Int) -> RankCellViewModel {
+        return RankCellViewModel(team: rank.team, rank: number, win: rank.win, lose: rank.lose, tie: rank.tie, percentage: rank.percentage, gamebehind: rank.gamebehind)
+    }
 }
