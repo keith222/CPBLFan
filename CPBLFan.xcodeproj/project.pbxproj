@@ -18,6 +18,14 @@
 		531BA2431E1EA7EF00B83B73 /* RankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531BA2411E1EA7EF00B83B73 /* RankCell.swift */; };
 		531BA2441E1EA7EF00B83B73 /* RankCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 531BA2421E1EA7EF00B83B73 /* RankCell.xib */; };
 		53215D191E12B3EF00A878B3 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53215D181E12B3EF00A878B3 /* Video.swift */; };
+		532CBB8F23F7EA47002EE0D6 /* GameScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532CBB8E23F7EA46002EE0D6 /* GameScheduleViewModel.swift */; };
+		532CBB9023F84072002EE0D6 /* GameScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532CBB8E23F7EA46002EE0D6 /* GameScheduleViewModel.swift */; };
+		532CBB9223F84991002EE0D6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532CBB9123F84991002EE0D6 /* BaseViewController.swift */; };
+		532CBB9423F84EA4002EE0D6 /* GameHeaderCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532CBB9323F84EA4002EE0D6 /* GameHeaderCellViewModel.swift */; };
+		532CBB9523F94907002EE0D6 /* GameCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F78123E5FA1900D670EF /* GameCellViewModel.swift */; };
+		532CBB9623F94915002EE0D6 /* GameHeaderCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532CBB9323F84EA4002EE0D6 /* GameHeaderCellViewModel.swift */; };
+		532CBB9723F94A3D002EE0D6 /* IdentifierHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F77B23E5F9F900D670EF /* IdentifierHelper.swift */; };
+		532CBB9823F94A3D002EE0D6 /* IdentifierHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F77B23E5F9F900D670EF /* IdentifierHelper.swift */; };
 		53359AAC1E27ADA500C29687 /* StatsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53359AAB1E27ADA500C29687 /* StatsListViewController.swift */; };
 		53359AAE1E27B18B00C29687 /* StatsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53359AAD1E27B18B00C29687 /* StatsList.swift */; };
 		53359AB01E27B1EA00C29687 /* StatsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53359AAF1E27B1EA00C29687 /* StatsListViewModel.swift */; };
@@ -25,6 +33,7 @@
 		5336D25D1E4368A300CAF66A /* GameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5336D25B1E4368A300CAF66A /* GameCell.xib */; };
 		5336D25F1E437A0400CAF66A /* GameHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5336D25E1E437A0400CAF66A /* GameHeaderCell.swift */; };
 		5336D2611E437A2700CAF66A /* GameHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5336D2601E437A2700CAF66A /* GameHeaderCell.xib */; };
+		533E5948241FC71300C1ECC7 /* UIColor+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5353FB8E1E23D6C000BDE259 /* UIColor+Addition.swift */; };
 		533F89EB220816230000F440 /* DateSelectCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533F89EA2208161B0000F440 /* DateSelectCollectionViewController.swift */; };
 		534B157A1E16CE6B009EA85C /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B15791E16CE6B009EA85C /* VideoViewModel.swift */; };
 		535272071E26740D00E1FFC7 /* StatsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535272051E26740D00E1FFC7 /* StatsListCell.swift */; };
@@ -39,6 +48,9 @@
 		536238011E44C5440091DA9C /* GameScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536238001E44C5440091DA9C /* GameScheduleViewController.swift */; };
 		536238031E44CAA20091DA9C /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536238021E44CAA20091DA9C /* GameViewModel.swift */; };
 		536238051E44CAE20091DA9C /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536238041E44CAE20091DA9C /* Game.swift */; };
+		53645AA92413A94700433BA7 /* UITableView+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53645AA82413A94700433BA7 /* UITableView+Addition.swift */; };
+		53645AAA2413AA5500433BA7 /* UITableView+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53645AA82413A94700433BA7 /* UITableView+Addition.swift */; };
+		53645AAB2413AA5600433BA7 /* UITableView+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53645AA82413A94700433BA7 /* UITableView+Addition.swift */; };
 		536B606E1E62A92D0027C796 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53CE89CA1E61532E00C528BC /* NotificationCenter.framework */; };
 		536B60711E62A92D0027C796 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536B60701E62A92D0027C796 /* TodayViewController.swift */; };
 		536B60741E62A92D0027C796 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 536B60721E62A92D0027C796 /* MainInterface.storyboard */; };
@@ -51,16 +63,34 @@
 		536B60831E62B77E0027C796 /* UIImage+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5309A2001E227A8600FB0037 /* UIImage+Addition.swift */; };
 		536B60841E62C8E40027C796 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536238041E44CAE20091DA9C /* Game.swift */; };
 		536B60861E62DEC10027C796 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53CBA2AD1E0D5F5F0012FFFB /* Assets.xcassets */; };
-		53764B4D1E2FAA3D00FFE77E /* GameSchedule.json in Resources */ = {isa = PBXBuildFile; fileRef = 53764B4C1E2FAA3D00FFE77E /* GameSchedule.json */; };
 		53788A211E10070F00C3F04B /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53788A201E10070F00C3F04B /* News.swift */; };
 		537CCF891E20BE7B00AFC864 /* RankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537CCF881E20BE7B00AFC864 /* RankViewController.swift */; };
 		537DB6541F151661008B7648 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537DB6531F151661008B7648 /* GameViewController.swift */; };
+		5386F77823E5F97E00D670EF /* VideoPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F77723E5F97E00D670EF /* VideoPlayerViewModel.swift */; };
+		5386F77A23E5F9D700D670EF /* NewsContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F77923E5F9D700D670EF /* NewsContentViewModel.swift */; };
+		5386F77D23E5F9FA00D670EF /* IdentifierHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F77B23E5F9F900D670EF /* IdentifierHelper.swift */; };
+		5386F77E23E5F9FA00D670EF /* PresentViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F77C23E5F9FA00D670EF /* PresentViewControllerHelper.swift */; };
+		5386F78523E5FA1A00D670EF /* NewsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F77F23E5FA1900D670EF /* NewsCellViewModel.swift */; };
+		5386F78623E5FA1A00D670EF /* StatsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F78023E5FA1900D670EF /* StatsCellViewModel.swift */; };
+		5386F78723E5FA1A00D670EF /* GameCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F78123E5FA1900D670EF /* GameCellViewModel.swift */; };
+		5386F78823E5FA1A00D670EF /* RankCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F78223E5FA1900D670EF /* RankCellViewModel.swift */; };
+		5386F78923E5FA1A00D670EF /* StatsListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F78323E5FA1A00D670EF /* StatsListCellViewModel.swift */; };
+		5386F78A23E5FA1A00D670EF /* VideoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F78423E5FA1A00D670EF /* VideoCellViewModel.swift */; };
+		5386F78B23E72ADA00D670EF /* RankCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F78223E5FA1900D670EF /* RankCellViewModel.swift */; };
+		5386F78D23E72B3800D670EF /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5386F78C23E72B3800D670EF /* WebKit.framework */; };
 		538F75EB1E20BACE001671EE /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538F75EA1E20BACE001671EE /* Rank.swift */; };
 		538F75ED1E20BBBF001671EE /* RankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538F75EC1E20BBBF001671EE /* RankViewModel.swift */; };
 		53A6FE2F1E13F72700B68243 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A6FE2D1E13F72700B68243 /* VideoCell.swift */; };
 		53A6FE301E13F72700B68243 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53A6FE2E1E13F72700B68243 /* VideoCell.xib */; };
 		53B396E11E1C02D00032D0DA /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B396E01E1C02D00032D0DA /* VideoPlayerViewController.swift */; };
 		53B396E51E1D37100032D0DA /* UIBarButtonItem+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B396E41E1D37100032D0DA /* UIBarButtonItem+Addition.swift */; };
+		53B9AD8423EFD5E0004A4E29 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B9AD8323EFD5E0004A4E29 /* PlayerViewModel.swift */; };
+		53B9AD8623EFDB66004A4E29 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B9AD8523EFDB66004A4E29 /* Player.swift */; };
+		53B9AD8B23EFFA54004A4E29 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53B9AD8923EFFA54004A4E29 /* News.storyboard */; };
+		53B9AD9123EFFBF3004A4E29 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53B9AD8F23EFFBF2004A4E29 /* Schedule.storyboard */; };
+		53B9AD9423EFFCFF004A4E29 /* Statistics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53B9AD9223EFFCFF004A4E29 /* Statistics.storyboard */; };
+		53B9AD9723EFFD0B004A4E29 /* Rank.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53B9AD9523EFFD0B004A4E29 /* Rank.storyboard */; };
+		53B9AD9A23EFFD43004A4E29 /* Video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53B9AD9823EFFD43004A4E29 /* Video.storyboard */; };
 		53CBA2A51E0D5F5F0012FFFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2A41E0D5F5F0012FFFB /* AppDelegate.swift */; };
 		53CBA2AC1E0D5F5F0012FFFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CBA2AA1E0D5F5F0012FFFB /* Main.storyboard */; };
 		53CBA2AE1E0D5F5F0012FFFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53CBA2AD1E0D5F5F0012FFFB /* Assets.xcassets */; };
@@ -153,6 +183,9 @@
 		531BA2411E1EA7EF00B83B73 /* RankCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RankCell.swift; path = View/RankCell.swift; sourceTree = "<group>"; };
 		531BA2421E1EA7EF00B83B73 /* RankCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RankCell.xib; path = View/RankCell.xib; sourceTree = "<group>"; };
 		53215D181E12B3EF00A878B3 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Video.swift; path = Model/Video.swift; sourceTree = "<group>"; };
+		532CBB8E23F7EA46002EE0D6 /* GameScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameScheduleViewModel.swift; path = ViewModel/GameScheduleViewModel.swift; sourceTree = "<group>"; };
+		532CBB9123F84991002EE0D6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = View/ViewController/BaseViewController.swift; sourceTree = "<group>"; };
+		532CBB9323F84EA4002EE0D6 /* GameHeaderCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameHeaderCellViewModel.swift; path = CPBLFan/View/ViewController/GameHeaderCellViewModel.swift; sourceTree = SOURCE_ROOT; };
 		53359AAB1E27ADA500C29687 /* StatsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatsListViewController.swift; path = View/ViewController/StatsListViewController.swift; sourceTree = "<group>"; };
 		53359AAD1E27B18B00C29687 /* StatsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatsList.swift; path = Model/StatsList.swift; sourceTree = "<group>"; };
 		53359AAF1E27B1EA00C29687 /* StatsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatsListViewModel.swift; path = ViewModel/StatsListViewModel.swift; sourceTree = "<group>"; };
@@ -174,6 +207,7 @@
 		536238001E44C5440091DA9C /* GameScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScheduleViewController.swift; path = View/ViewController/GameScheduleViewController.swift; sourceTree = "<group>"; };
 		536238021E44CAA20091DA9C /* GameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewModel.swift; path = ViewModel/GameViewModel.swift; sourceTree = "<group>"; };
 		536238041E44CAE20091DA9C /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Game.swift; path = Model/Game.swift; sourceTree = "<group>"; };
+		53645AA82413A94700433BA7 /* UITableView+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITableView+Addition.swift"; path = "Extension/UITableView+Addition.swift"; sourceTree = "<group>"; };
 		536B606D1E62A92C0027C796 /* Schedule-Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Schedule-Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		536B60701E62A92D0027C796 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		536B60731E62A92D0027C796 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -181,10 +215,20 @@
 		536B607F1E62B5740027C796 /* TodayGameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayGameCell.swift; sourceTree = "<group>"; };
 		536B60801E62B5740027C796 /* TodayGameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TodayGameCell.xib; sourceTree = "<group>"; };
 		536B60871E6334DB0027C796 /* CPBLFan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CPBLFan.entitlements; sourceTree = "<group>"; };
-		53764B4C1E2FAA3D00FFE77E /* GameSchedule.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GameSchedule.json; sourceTree = "<group>"; };
 		53788A201E10070F00C3F04B /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = News.swift; path = Model/News.swift; sourceTree = "<group>"; };
 		537CCF881E20BE7B00AFC864 /* RankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RankViewController.swift; path = View/ViewController/RankViewController.swift; sourceTree = "<group>"; };
 		537DB6531F151661008B7648 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = View/ViewController/GameViewController.swift; sourceTree = "<group>"; };
+		5386F77723E5F97E00D670EF /* VideoPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VideoPlayerViewModel.swift; path = ViewModel/VideoPlayerViewModel.swift; sourceTree = "<group>"; };
+		5386F77923E5F9D700D670EF /* NewsContentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsContentViewModel.swift; path = ViewModel/NewsContentViewModel.swift; sourceTree = "<group>"; };
+		5386F77B23E5F9F900D670EF /* IdentifierHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IdentifierHelper.swift; path = Helper/IdentifierHelper.swift; sourceTree = "<group>"; };
+		5386F77C23E5F9FA00D670EF /* PresentViewControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentViewControllerHelper.swift; path = Helper/PresentViewControllerHelper.swift; sourceTree = "<group>"; };
+		5386F77F23E5FA1900D670EF /* NewsCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsCellViewModel.swift; path = CPBLFan/ViewModel/CellViewModel/NewsCellViewModel.swift; sourceTree = SOURCE_ROOT; };
+		5386F78023E5FA1900D670EF /* StatsCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatsCellViewModel.swift; path = CPBLFan/ViewModel/CellViewModel/StatsCellViewModel.swift; sourceTree = SOURCE_ROOT; };
+		5386F78123E5FA1900D670EF /* GameCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameCellViewModel.swift; path = CPBLFan/ViewModel/CellViewModel/GameCellViewModel.swift; sourceTree = SOURCE_ROOT; };
+		5386F78223E5FA1900D670EF /* RankCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RankCellViewModel.swift; path = CPBLFan/ViewModel/CellViewModel/RankCellViewModel.swift; sourceTree = SOURCE_ROOT; };
+		5386F78323E5FA1A00D670EF /* StatsListCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatsListCellViewModel.swift; path = CPBLFan/ViewModel/CellViewModel/StatsListCellViewModel.swift; sourceTree = SOURCE_ROOT; };
+		5386F78423E5FA1A00D670EF /* VideoCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoCellViewModel.swift; path = CPBLFan/ViewModel/CellViewModel/VideoCellViewModel.swift; sourceTree = SOURCE_ROOT; };
+		5386F78C23E72B3800D670EF /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		538F75EA1E20BACE001671EE /* Rank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Rank.swift; path = Model/Rank.swift; sourceTree = "<group>"; };
 		538F75EC1E20BBBF001671EE /* RankViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RankViewModel.swift; path = ViewModel/RankViewModel.swift; sourceTree = "<group>"; };
 		53A6FE2D1E13F72700B68243 /* VideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoCell.swift; path = View/VideoCell.swift; sourceTree = "<group>"; };
@@ -192,6 +236,13 @@
 		53B396E01E1C02D00032D0DA /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoPlayerViewController.swift; path = View/ViewController/VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		53B396E21E1C04390032D0DA /* CPBLFan-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CPBLFan-Bridging-Header.h"; sourceTree = "<group>"; };
 		53B396E41E1D37100032D0DA /* UIBarButtonItem+Addition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIBarButtonItem+Addition.swift"; path = "Extension/UIBarButtonItem+Addition.swift"; sourceTree = "<group>"; };
+		53B9AD8323EFD5E0004A4E29 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayerViewModel.swift; path = ViewModel/PlayerViewModel.swift; sourceTree = "<group>"; };
+		53B9AD8523EFDB66004A4E29 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Player.swift; path = Model/Player.swift; sourceTree = "<group>"; };
+		53B9AD8A23EFFA54004A4E29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/News.storyboard; sourceTree = "<group>"; };
+		53B9AD9023EFFBF2004A4E29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Schedule.storyboard; sourceTree = "<group>"; };
+		53B9AD9323EFFCFF004A4E29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Statistics.storyboard; sourceTree = "<group>"; };
+		53B9AD9623EFFD0B004A4E29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Rank.storyboard; sourceTree = "<group>"; };
+		53B9AD9923EFFD43004A4E29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Video.storyboard; sourceTree = "<group>"; };
 		53CBA2A11E0D5F5E0012FFFB /* CPBLFan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPBLFan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53CBA2A41E0D5F5F0012FFFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53CBA2AB1E0D5F5F0012FFFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -247,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4942F1D4C2E6FAA4B2E0917F /* Pods_CPBLFan.framework in Frameworks */,
+				5386F78D23E72B3800D670EF /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,14 +330,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		53185D0E23D99A69002A7BCE /* CellViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5386F78123E5FA1900D670EF /* GameCellViewModel.swift */,
+				532CBB9323F84EA4002EE0D6 /* GameHeaderCellViewModel.swift */,
+				5386F77F23E5FA1900D670EF /* NewsCellViewModel.swift */,
+				5386F78223E5FA1900D670EF /* RankCellViewModel.swift */,
+				5386F78023E5FA1900D670EF /* StatsCellViewModel.swift */,
+				5386F78323E5FA1A00D670EF /* StatsListCellViewModel.swift */,
+				5386F78423E5FA1A00D670EF /* VideoCellViewModel.swift */,
+			);
+			path = CellViewModel;
+			sourceTree = "<group>";
+		};
 		536B606F1E62A92D0027C796 /* Schedule-Widget */ = {
 			isa = PBXGroup;
 			children = (
-				536B60701E62A92D0027C796 /* TodayViewController.swift */,
-				536B60721E62A92D0027C796 /* MainInterface.storyboard */,
 				536B60751E62A92D0027C796 /* Info.plist */,
+				536B60721E62A92D0027C796 /* MainInterface.storyboard */,
 				536B607F1E62B5740027C796 /* TodayGameCell.swift */,
 				536B60801E62B5740027C796 /* TodayGameCell.xib */,
+				536B60701E62A92D0027C796 /* TodayViewController.swift */,
 			);
 			path = "Schedule-Widget";
 			sourceTree = "<group>";
@@ -294,10 +360,25 @@
 			isa = PBXGroup;
 			children = (
 				53B396E41E1D37100032D0DA /* UIBarButtonItem+Addition.swift */,
-				5309A2001E227A8600FB0037 /* UIImage+Addition.swift */,
 				5353FB8E1E23D6C000BDE259 /* UIColor+Addition.swift */,
+				5309A2001E227A8600FB0037 /* UIImage+Addition.swift */,
+				53645AA82413A94700433BA7 /* UITableView+Addition.swift */,
 			);
 			name = Extension;
+			sourceTree = "<group>";
+		};
+		53B9AD8823EFFA46004A4E29 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				53CBA2AF1E0D5F5F0012FFFB /* LaunchScreen.storyboard */,
+				53CBA2AA1E0D5F5F0012FFFB /* Main.storyboard */,
+				53B9AD8923EFFA54004A4E29 /* News.storyboard */,
+				53B9AD9523EFFD0B004A4E29 /* Rank.storyboard */,
+				53B9AD8F23EFFBF2004A4E29 /* Schedule.storyboard */,
+				53B9AD9223EFFCFF004A4E29 /* Statistics.storyboard */,
+				53B9AD9823EFFD43004A4E29 /* Video.storyboard */,
+			);
+			name = Storyboard;
 			sourceTree = "<group>";
 		};
 		53CBA2981E0D5F5E0012FFFB = {
@@ -329,20 +410,18 @@
 		53CBA2A31E0D5F5F0012FFFB /* CPBLFan */ = {
 			isa = PBXGroup;
 			children = (
-				536B60871E6334DB0027C796 /* CPBLFan.entitlements */,
 				53B396E31E1D36C20032D0DA /* Extension */,
-				53CBA2D71E0D66770012FFFB /* Model */,
-				53CBA2E81E0D964B0012FFFB /* ViewModel */,
-				53CBA2D81E0D667C0012FFFB /* View */,
 				53CBA2D61E0D66660012FFFB /* Helpers */,
+				53CBA2D71E0D66770012FFFB /* Model */,
+				53B9AD8823EFFA46004A4E29 /* Storyboard */,
+				53CBA2D81E0D667C0012FFFB /* View */,
+				53CBA2E81E0D964B0012FFFB /* ViewModel */,
 				53CBA2A41E0D5F5F0012FFFB /* AppDelegate.swift */,
-				53CBA2AA1E0D5F5F0012FFFB /* Main.storyboard */,
 				53CBA2AD1E0D5F5F0012FFFB /* Assets.xcassets */,
-				53CBA2AF1E0D5F5F0012FFFB /* LaunchScreen.storyboard */,
-				53CBA2B21E0D5F5F0012FFFB /* Info.plist */,
 				53B396E21E1C04390032D0DA /* CPBLFan-Bridging-Header.h */,
+				536B60871E6334DB0027C796 /* CPBLFan.entitlements */,
 				530976FB1E69AD0700411F46 /* GoogleService-Info.plist */,
-				53764B4C1E2FAA3D00FFE77E /* GameSchedule.json */,
+				53CBA2B21E0D5F5F0012FFFB /* Info.plist */,
 			);
 			path = CPBLFan;
 			sourceTree = "<group>";
@@ -369,6 +448,8 @@
 			isa = PBXGroup;
 			children = (
 				53CBA2DA1E0D66AB0012FFFB /* APIService.swift */,
+				5386F77B23E5F9F900D670EF /* IdentifierHelper.swift */,
+				5386F77C23E5F9FA00D670EF /* PresentViewControllerHelper.swift */,
 				53CBA2E61E0D920D0012FFFB /* TableViewHelper.swift */,
 			);
 			name = Helpers;
@@ -377,12 +458,13 @@
 		53CBA2D71E0D66770012FFFB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				536238041E44CAE20091DA9C /* Game.swift */,
 				53788A201E10070F00C3F04B /* News.swift */,
-				53215D181E12B3EF00A878B3 /* Video.swift */,
+				53B9AD8523EFDB66004A4E29 /* Player.swift */,
 				538F75EA1E20BACE001671EE /* Rank.swift */,
 				5353FB8C1E23D5F000BDE259 /* Stats.swift */,
 				53359AAD1E27B18B00C29687 /* StatsList.swift */,
-				536238041E44CAE20091DA9C /* Game.swift */,
+				53215D181E12B3EF00A878B3 /* Video.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -391,10 +473,12 @@
 			isa = PBXGroup;
 			children = (
 				53CBA2D91E0D66850012FFFB /* ViewController */,
+				5336D25A1E4368A300CAF66A /* GameCell.swift */,
+				5336D25B1E4368A300CAF66A /* GameCell.xib */,
+				5336D25E1E437A0400CAF66A /* GameHeaderCell.swift */,
+				5336D2601E437A2700CAF66A /* GameHeaderCell.xib */,
 				53CBA2DC1E0D7DAC0012FFFB /* NewsCell.swift */,
 				53CBA2DD1E0D7DAC0012FFFB /* NewsCell.xib */,
-				53A6FE2D1E13F72700B68243 /* VideoCell.swift */,
-				53A6FE2E1E13F72700B68243 /* VideoCell.xib */,
 				531BA2411E1EA7EF00B83B73 /* RankCell.swift */,
 				531BA2421E1EA7EF00B83B73 /* RankCell.xib */,
 				5309A2061E22961400FB0037 /* RankHeaderCell.swift */,
@@ -403,10 +487,8 @@
 				5353FB891E23CD7400BDE259 /* StatsCell.xib */,
 				535272051E26740D00E1FFC7 /* StatsListCell.swift */,
 				535272061E26740D00E1FFC7 /* StatsListCell.xib */,
-				5336D25A1E4368A300CAF66A /* GameCell.swift */,
-				5336D25B1E4368A300CAF66A /* GameCell.xib */,
-				5336D25E1E437A0400CAF66A /* GameHeaderCell.swift */,
-				5336D2601E437A2700CAF66A /* GameHeaderCell.xib */,
+				53A6FE2D1E13F72700B68243 /* VideoCell.swift */,
+				53A6FE2E1E13F72700B68243 /* VideoCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -414,17 +496,18 @@
 		53CBA2D91E0D66850012FFFB /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				53CBA2E21E0D80BD0012FFFB /* NewsViewController.swift */,
-				53CBA2EB1E0ECC1E0012FFFB /* NewsContentViewController.swift */,
-				5354ABE31E1553320034D9E2 /* VideoViewController.swift */,
-				53B396E01E1C02D00032D0DA /* VideoPlayerViewController.swift */,
-				537CCF881E20BE7B00AFC864 /* RankViewController.swift */,
-				5353FB861E23CD4600BDE259 /* StatsViewController.swift */,
-				53359AAB1E27ADA500C29687 /* StatsListViewController.swift */,
-				5315DA531E2A45A5002509AC /* PlayerViewController.swift */,
+				532CBB9123F84991002EE0D6 /* BaseViewController.swift */,
+				533F89EA2208161B0000F440 /* DateSelectCollectionViewController.swift */,
 				536238001E44C5440091DA9C /* GameScheduleViewController.swift */,
 				537DB6531F151661008B7648 /* GameViewController.swift */,
-				533F89EA2208161B0000F440 /* DateSelectCollectionViewController.swift */,
+				53CBA2EB1E0ECC1E0012FFFB /* NewsContentViewController.swift */,
+				53CBA2E21E0D80BD0012FFFB /* NewsViewController.swift */,
+				5315DA531E2A45A5002509AC /* PlayerViewController.swift */,
+				537CCF881E20BE7B00AFC864 /* RankViewController.swift */,
+				53359AAB1E27ADA500C29687 /* StatsListViewController.swift */,
+				5353FB861E23CD4600BDE259 /* StatsViewController.swift */,
+				53B396E01E1C02D00032D0DA /* VideoPlayerViewController.swift */,
+				5354ABE31E1553320034D9E2 /* VideoViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -432,12 +515,17 @@
 		53CBA2E81E0D964B0012FFFB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				53CBA2E91E0D96670012FFFB /* NewsViewModel.swift */,
-				534B15791E16CE6B009EA85C /* VideoViewModel.swift */,
-				538F75EC1E20BBBF001671EE /* RankViewModel.swift */,
-				5354E13A1E2523B800B87E4D /* StatsViewModel.swift */,
-				53359AAF1E27B1EA00C29687 /* StatsListViewModel.swift */,
+				53185D0E23D99A69002A7BCE /* CellViewModel */,
+				532CBB8E23F7EA46002EE0D6 /* GameScheduleViewModel.swift */,
 				536238021E44CAA20091DA9C /* GameViewModel.swift */,
+				5386F77923E5F9D700D670EF /* NewsContentViewModel.swift */,
+				53CBA2E91E0D96670012FFFB /* NewsViewModel.swift */,
+				53B9AD8323EFD5E0004A4E29 /* PlayerViewModel.swift */,
+				538F75EC1E20BBBF001671EE /* RankViewModel.swift */,
+				53359AAF1E27B1EA00C29687 /* StatsListViewModel.swift */,
+				5354E13A1E2523B800B87E4D /* StatsViewModel.swift */,
+				5386F77723E5F97E00D670EF /* VideoPlayerViewModel.swift */,
+				534B15791E16CE6B009EA85C /* VideoViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -445,13 +533,13 @@
 		53CE89CC1E61532E00C528BC /* Rank-Widget */ = {
 			isa = PBXGroup;
 			children = (
-				53CE89CD1E61532E00C528BC /* TodayViewController.swift */,
-				53CE89CF1E61532E00C528BC /* MainInterface.storyboard */,
 				53CE89D21E61532E00C528BC /* Info.plist */,
-				53CE89EE1E61716500C528BC /* WidgetHeaderCell.swift */,
-				53CE89E71E6164DD00C528BC /* WidgetHeaderCell.xib */,
+				53CE89CF1E61532E00C528BC /* MainInterface.storyboard */,
+				53CE89CD1E61532E00C528BC /* TodayViewController.swift */,
 				53CE89EA1E6164F200C528BC /* WidgetCell.swift */,
 				53CE89EC1E61653500C528BC /* WidgetCell.xib */,
+				53CE89EE1E61716500C528BC /* WidgetHeaderCell.swift */,
+				53CE89E71E6164DD00C528BC /* WidgetHeaderCell.xib */,
 			);
 			path = "Rank-Widget";
 			sourceTree = "<group>";
@@ -459,12 +547,13 @@
 		66FD5EA4EBFE2AD74F66A754 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				53CE89CA1E61532E00C528BC /* NotificationCenter.framework */,
 				C2DA969A0B0630BE49B2AF90 /* Pods_CPBLFan.framework */,
 				9800F6C1BFD0DC46FE73BFFA /* Pods_CPBLFanTests.framework */,
 				031AC937497451A2DE3EDB61 /* Pods_CPBLFanUITests.framework */,
-				53CE89CA1E61532E00C528BC /* NotificationCenter.framework */,
 				D64CF72F3CFE322AC61FED4B /* Pods_Rank_Widget.framework */,
 				44F61F5EF3C9A039649C1B27 /* Pods_Schedule_Widget.framework */,
+				5386F78C23E72B3800D670EF /* WebKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -678,10 +767,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				536B60741E62A92D0027C796 /* MainInterface.storyboard in Resources */,
-				530976FD1E69B1CA00411F46 /* GoogleService-Info.plist in Resources */,
-				536B60821E62B5740027C796 /* TodayGameCell.xib in Resources */,
 				536B60861E62DEC10027C796 /* Assets.xcassets in Resources */,
+				530976FD1E69B1CA00411F46 /* GoogleService-Info.plist in Resources */,
+				536B60741E62A92D0027C796 /* MainInterface.storyboard in Resources */,
+				536B60821E62B5740027C796 /* TodayGameCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -689,19 +778,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				530976FC1E69AD0700411F46 /* GoogleService-Info.plist in Resources */,
-				53A6FE301E13F72700B68243 /* VideoCell.xib in Resources */,
-				53CBA2B11E0D5F5F0012FFFB /* LaunchScreen.storyboard in Resources */,
 				53CBA2AE1E0D5F5F0012FFFB /* Assets.xcassets in Resources */,
-				53CBA2DF1E0D7DAC0012FFFB /* NewsCell.xib in Resources */,
-				53764B4D1E2FAA3D00FFE77E /* GameSchedule.json in Resources */,
+				5336D25D1E4368A300CAF66A /* GameCell.xib in Resources */,
+				5336D2611E437A2700CAF66A /* GameHeaderCell.xib in Resources */,
+				530976FC1E69AD0700411F46 /* GoogleService-Info.plist in Resources */,
+				53CBA2B11E0D5F5F0012FFFB /* LaunchScreen.storyboard in Resources */,
 				53CBA2AC1E0D5F5F0012FFFB /* Main.storyboard in Resources */,
+				53B9AD8B23EFFA54004A4E29 /* News.storyboard in Resources */,
+				53CBA2DF1E0D7DAC0012FFFB /* NewsCell.xib in Resources */,
+				53B9AD9723EFFD0B004A4E29 /* Rank.storyboard in Resources */,
+				531BA2441E1EA7EF00B83B73 /* RankCell.xib in Resources */,
+				5309A2051E228E8A00FB0037 /* RankHeaderCell.xib in Resources */,
+				53B9AD9123EFFBF3004A4E29 /* Schedule.storyboard in Resources */,
+				53B9AD9423EFFCFF004A4E29 /* Statistics.storyboard in Resources */,
 				5353FB8B1E23CD7400BDE259 /* StatsCell.xib in Resources */,
 				535272081E26740D00E1FFC7 /* StatsListCell.xib in Resources */,
-				5309A2051E228E8A00FB0037 /* RankHeaderCell.xib in Resources */,
-				531BA2441E1EA7EF00B83B73 /* RankCell.xib in Resources */,
-				5336D2611E437A2700CAF66A /* GameHeaderCell.xib in Resources */,
-				5336D25D1E4368A300CAF66A /* GameCell.xib in Resources */,
+				53B9AD9A23EFFD43004A4E29 /* Video.storyboard in Resources */,
+				53A6FE301E13F72700B68243 /* VideoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -723,10 +816,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53CE89E91E6164DD00C528BC /* WidgetHeaderCell.xib in Resources */,
+				53CE89E51E6160A900C528BC /* Assets.xcassets in Resources */,
 				53CE89D11E61532E00C528BC /* MainInterface.storyboard in Resources */,
 				53CE89ED1E61653500C528BC /* WidgetCell.xib in Resources */,
-				53CE89E51E6160A900C528BC /* Assets.xcassets in Resources */,
+				53CE89E91E6164DD00C528BC /* WidgetHeaderCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -828,7 +921,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 7e59115715190eb6df483058be96c12df9c938d3 2f411f234f0a60c3127a7780c126ea52b1c55cce06c9d02357841188726cdee8";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
 		};
 		53B568CB1E68605800F9AE7A /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -841,7 +934,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Replace this with the GOOGLE_APP_ID from your GoogleService-Info.plist file\nGOOGLE_APP_ID=1:4885271827:ios:d9648250693bc047\n\n# Replace the /Path/To/ServiceAccount.json with the path to the key you just downloaded\n\"${PODS_ROOT}\"/FirebaseCrash/upload-sym-util.bash \"${PODS_ROOT}\"/FirebaseCrash/\"cpbl-fans-firebase-crashreporting-q84tj-50897277fc.json\"";
+			shellScript = "# Replace this with the GOOGLE_APP_ID from your GoogleService-Info.plist file\nGOOGLE_APP_ID=1:4885271827:ios:d9648250693bc047UIAlertController\n";
 		};
 		53F7FE80F7F411C654366A2D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -962,38 +1055,30 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CPBLFan/Pods-CPBLFan-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/DynamicColor/DynamicColor.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-				"${BUILT_PRODUCTS_DIR}/youtube-ios-player-helper/youtube_ios_player_helper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicColor.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/youtube_ios_player_helper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1007,13 +1092,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				536B60811E62B5740027C796 /* TodayGameCell.swift in Sources */,
-				536B60831E62B77E0027C796 /* UIImage+Addition.swift in Sources */,
-				536B60841E62C8E40027C796 /* Game.swift in Sources */,
-				536B607E1E62B5420027C796 /* GameViewModel.swift in Sources */,
 				536B607C1E62B53A0027C796 /* APIService.swift in Sources */,
+				536B60841E62C8E40027C796 /* Game.swift in Sources */,
+				532CBB9523F94907002EE0D6 /* GameCellViewModel.swift in Sources */,
+				532CBB9623F94915002EE0D6 /* GameHeaderCellViewModel.swift in Sources */,
+				532CBB9023F84072002EE0D6 /* GameScheduleViewModel.swift in Sources */,
+				536B607E1E62B5420027C796 /* GameViewModel.swift in Sources */,
+				532CBB9723F94A3D002EE0D6 /* IdentifierHelper.swift in Sources */,
 				536B607D1E62B53A0027C796 /* TableViewHelper.swift in Sources */,
+				536B60811E62B5740027C796 /* TodayGameCell.swift in Sources */,
 				536B60711E62A92D0027C796 /* TodayViewController.swift in Sources */,
+				536B60831E62B77E0027C796 /* UIImage+Addition.swift in Sources */,
+				53645AAB2413AA5600433BA7 /* UITableView+Addition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1021,43 +1111,59 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5354E13B1E2523B800B87E4D /* StatsViewModel.swift in Sources */,
-				535272071E26740D00E1FFC7 /* StatsListCell.swift in Sources */,
-				53B396E51E1D37100032D0DA /* UIBarButtonItem+Addition.swift in Sources */,
 				53CBA2DB1E0D66AB0012FFFB /* APIService.swift in Sources */,
-				537DB6541F151661008B7648 /* GameViewController.swift in Sources */,
-				531BA2431E1EA7EF00B83B73 /* RankCell.swift in Sources */,
-				53CBA2EA1E0D96670012FFFB /* NewsViewModel.swift in Sources */,
-				5353FB871E23CD4600BDE259 /* StatsViewController.swift in Sources */,
-				5309A2071E22961400FB0037 /* RankHeaderCell.swift in Sources */,
-				53B396E11E1C02D00032D0DA /* VideoPlayerViewController.swift in Sources */,
-				53359AAE1E27B18B00C29687 /* StatsList.swift in Sources */,
-				53788A211E10070F00C3F04B /* News.swift in Sources */,
-				537CCF891E20BE7B00AFC864 /* RankViewController.swift in Sources */,
 				53CBA2A51E0D5F5F0012FFFB /* AppDelegate.swift in Sources */,
-				53215D191E12B3EF00A878B3 /* Video.swift in Sources */,
+				532CBB9223F84991002EE0D6 /* BaseViewController.swift in Sources */,
 				533F89EB220816230000F440 /* DateSelectCollectionViewController.swift in Sources */,
-				53A6FE2F1E13F72700B68243 /* VideoCell.swift in Sources */,
-				5354ABE41E1553320034D9E2 /* VideoViewController.swift in Sources */,
 				536238051E44CAE20091DA9C /* Game.swift in Sources */,
-				5353FB8F1E23D6C000BDE259 /* UIColor+Addition.swift in Sources */,
-				5353FB8D1E23D5F000BDE259 /* Stats.swift in Sources */,
-				5336D25F1E437A0400CAF66A /* GameHeaderCell.swift in Sources */,
-				538F75ED1E20BBBF001671EE /* RankViewModel.swift in Sources */,
-				53359AAC1E27ADA500C29687 /* StatsListViewController.swift in Sources */,
-				53CBA2DE1E0D7DAC0012FFFB /* NewsCell.swift in Sources */,
-				5353FB8A1E23CD7400BDE259 /* StatsCell.swift in Sources */,
-				53359AB01E27B1EA00C29687 /* StatsListViewModel.swift in Sources */,
-				536238031E44CAA20091DA9C /* GameViewModel.swift in Sources */,
-				5309A2011E227A8600FB0037 /* UIImage+Addition.swift in Sources */,
-				53CBA2EC1E0ECC1E0012FFFB /* NewsContentViewController.swift in Sources */,
-				53CBA2E71E0D920D0012FFFB /* TableViewHelper.swift in Sources */,
-				534B157A1E16CE6B009EA85C /* VideoViewModel.swift in Sources */,
-				538F75EB1E20BACE001671EE /* Rank.swift in Sources */,
-				536238011E44C5440091DA9C /* GameScheduleViewController.swift in Sources */,
-				53CBA2E31E0D80BD0012FFFB /* NewsViewController.swift in Sources */,
 				5336D25C1E4368A300CAF66A /* GameCell.swift in Sources */,
+				5386F78723E5FA1A00D670EF /* GameCellViewModel.swift in Sources */,
+				5336D25F1E437A0400CAF66A /* GameHeaderCell.swift in Sources */,
+				532CBB9423F84EA4002EE0D6 /* GameHeaderCellViewModel.swift in Sources */,
+				536238011E44C5440091DA9C /* GameScheduleViewController.swift in Sources */,
+				532CBB8F23F7EA47002EE0D6 /* GameScheduleViewModel.swift in Sources */,
+				537DB6541F151661008B7648 /* GameViewController.swift in Sources */,
+				536238031E44CAA20091DA9C /* GameViewModel.swift in Sources */,
+				5386F77D23E5F9FA00D670EF /* IdentifierHelper.swift in Sources */,
+				53788A211E10070F00C3F04B /* News.swift in Sources */,
+				53CBA2DE1E0D7DAC0012FFFB /* NewsCell.swift in Sources */,
+				5386F78523E5FA1A00D670EF /* NewsCellViewModel.swift in Sources */,
+				53CBA2EC1E0ECC1E0012FFFB /* NewsContentViewController.swift in Sources */,
+				5386F77A23E5F9D700D670EF /* NewsContentViewModel.swift in Sources */,
+				53CBA2E31E0D80BD0012FFFB /* NewsViewController.swift in Sources */,
+				53CBA2EA1E0D96670012FFFB /* NewsViewModel.swift in Sources */,
+				53B9AD8623EFDB66004A4E29 /* Player.swift in Sources */,
 				5315DA541E2A45A5002509AC /* PlayerViewController.swift in Sources */,
+				53B9AD8423EFD5E0004A4E29 /* PlayerViewModel.swift in Sources */,
+				5386F77E23E5F9FA00D670EF /* PresentViewControllerHelper.swift in Sources */,
+				538F75EB1E20BACE001671EE /* Rank.swift in Sources */,
+				531BA2431E1EA7EF00B83B73 /* RankCell.swift in Sources */,
+				5386F78823E5FA1A00D670EF /* RankCellViewModel.swift in Sources */,
+				5309A2071E22961400FB0037 /* RankHeaderCell.swift in Sources */,
+				537CCF891E20BE7B00AFC864 /* RankViewController.swift in Sources */,
+				538F75ED1E20BBBF001671EE /* RankViewModel.swift in Sources */,
+				5353FB8D1E23D5F000BDE259 /* Stats.swift in Sources */,
+				5353FB8A1E23CD7400BDE259 /* StatsCell.swift in Sources */,
+				5386F78623E5FA1A00D670EF /* StatsCellViewModel.swift in Sources */,
+				53359AAE1E27B18B00C29687 /* StatsList.swift in Sources */,
+				535272071E26740D00E1FFC7 /* StatsListCell.swift in Sources */,
+				5386F78923E5FA1A00D670EF /* StatsListCellViewModel.swift in Sources */,
+				53359AAC1E27ADA500C29687 /* StatsListViewController.swift in Sources */,
+				53359AB01E27B1EA00C29687 /* StatsListViewModel.swift in Sources */,
+				5353FB871E23CD4600BDE259 /* StatsViewController.swift in Sources */,
+				5354E13B1E2523B800B87E4D /* StatsViewModel.swift in Sources */,
+				53CBA2E71E0D920D0012FFFB /* TableViewHelper.swift in Sources */,
+				53B396E51E1D37100032D0DA /* UIBarButtonItem+Addition.swift in Sources */,
+				5353FB8F1E23D6C000BDE259 /* UIColor+Addition.swift in Sources */,
+				5309A2011E227A8600FB0037 /* UIImage+Addition.swift in Sources */,
+				53645AA92413A94700433BA7 /* UITableView+Addition.swift in Sources */,
+				53215D191E12B3EF00A878B3 /* Video.swift in Sources */,
+				53A6FE2F1E13F72700B68243 /* VideoCell.swift in Sources */,
+				5386F78A23E5FA1A00D670EF /* VideoCellViewModel.swift in Sources */,
+				53B396E11E1C02D00032D0DA /* VideoPlayerViewController.swift in Sources */,
+				5386F77823E5F97E00D670EF /* VideoPlayerViewModel.swift in Sources */,
+				5354ABE41E1553320034D9E2 /* VideoViewController.swift in Sources */,
+				534B157A1E16CE6B009EA85C /* VideoViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1081,14 +1187,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53CE89CE1E61532E00C528BC /* TodayViewController.swift in Sources */,
-				53CE89EB1E6164F200C528BC /* WidgetCell.swift in Sources */,
-				53CE89E21E615C6E00C528BC /* Rank.swift in Sources */,
-				53CE89E01E615C4D00C528BC /* UIImage+Addition.swift in Sources */,
 				53CE89DB1E6155B600C528BC /* APIService.swift in Sources */,
+				533E5948241FC71300C1ECC7 /* UIColor+Addition.swift in Sources */,
+				532CBB9823F94A3D002EE0D6 /* IdentifierHelper.swift in Sources */,
+				53CE89E21E615C6E00C528BC /* Rank.swift in Sources */,
+				5386F78B23E72ADA00D670EF /* RankCellViewModel.swift in Sources */,
 				53CE89DD1E6155F000C528BC /* RankViewModel.swift in Sources */,
-				53CE89EF1E61716500C528BC /* WidgetHeaderCell.swift in Sources */,
 				53CE89DC1E6155B600C528BC /* TableViewHelper.swift in Sources */,
+				53CE89CE1E61532E00C528BC /* TodayViewController.swift in Sources */,
+				53CE89E01E615C4D00C528BC /* UIImage+Addition.swift in Sources */,
+				53645AAA2413AA5500433BA7 /* UITableView+Addition.swift in Sources */,
+				53CE89EB1E6164F200C528BC /* WidgetCell.swift in Sources */,
+				53CE89EF1E61716500C528BC /* WidgetHeaderCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1126,6 +1236,46 @@
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
+		53B9AD8923EFFA54004A4E29 /* News.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53B9AD8A23EFFA54004A4E29 /* Base */,
+			);
+			name = News.storyboard;
+			sourceTree = "<group>";
+		};
+		53B9AD8F23EFFBF2004A4E29 /* Schedule.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53B9AD9023EFFBF2004A4E29 /* Base */,
+			);
+			name = Schedule.storyboard;
+			sourceTree = "<group>";
+		};
+		53B9AD9223EFFCFF004A4E29 /* Statistics.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53B9AD9323EFFCFF004A4E29 /* Base */,
+			);
+			name = Statistics.storyboard;
+			sourceTree = "<group>";
+		};
+		53B9AD9523EFFD0B004A4E29 /* Rank.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53B9AD9623EFFD0B004A4E29 /* Base */,
+			);
+			name = Rank.storyboard;
+			sourceTree = "<group>";
+		};
+		53B9AD9823EFFD43004A4E29 /* Video.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53B9AD9923EFFD43004A4E29 /* Base */,
+			);
+			name = Video.storyboard;
+			sourceTree = "<group>";
+		};
 		53CBA2AA1E0D5F5F0012FFFB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1161,8 +1311,9 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8MREJM6257;
 				INFOPLIST_FILE = "Schedule-Widget/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Schedule-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8a276960-7ae1-4aa0-b1e4-f569745c93d8";
@@ -1180,8 +1331,9 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8MREJM6257;
 				INFOPLIST_FILE = "Schedule-Widget/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Schedule-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8a276960-7ae1-4aa0-b1e4-f569745c93d8";
@@ -1224,7 +1376,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Tun-Kai Yang (QMVFD9YCH5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Tun-Kai Yang (QMVFD9YCH5)";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 8MREJM6257;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1242,7 +1394,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1297,7 +1449,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1311,15 +1463,18 @@
 			baseConfigurationReference = 33A63E445BD3C441C933A21C /* Pods-CPBLFan.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CPBLFan/CPBLFan.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 8MREJM6257;
 				INFOPLIST_FILE = CPBLFan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "539e0c24-b0d2-40f0-8851-4a7d3a418cb9";
@@ -1334,6 +1489,7 @@
 			baseConfigurationReference = F3FC4FF9ECC545551F027CFE /* Pods-CPBLFan.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CPBLFan/CPBLFan.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
@@ -1341,7 +1497,9 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8MREJM6257;
 				INFOPLIST_FILE = CPBLFan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2214cd66-8fb7-4bc8-b27e-cbe7f1bd991a";
@@ -1433,8 +1591,9 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8MREJM6257;
 				INFOPLIST_FILE = "Rank-Widget/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Rank-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b259db02-3e52-444f-9cd0-c096a549d989";
@@ -1452,8 +1611,9 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8MREJM6257;
 				INFOPLIST_FILE = "Rank-Widget/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Rank-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b259db02-3e52-444f-9cd0-c096a549d989";
