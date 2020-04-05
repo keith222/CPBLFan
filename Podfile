@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '9.0'
+platform :ios, '10.0'
 
 target 'CPBLFan' do
 
@@ -9,29 +9,22 @@ target 'CPBLFan' do
 
   #Pods about Swift Language
   pod 'SwifterSwift'
-
+  
   #Pods about internet request/response/parse
   pod 'Alamofire', '~> 4.7'
-  pod 'ObjectMapper'
-  pod 'SwiftyJSON'
   pod 'Kanna', '~> 4.0.0'
   
   #Pods for detect net connection
   pod 'ReachabilitySwift'
 
   #Pods about UI
-  pod 'Kingfisher'
-  pod 'DynamicColor', '~> 3.1.0'
+  pod 'Kingfisher', '~> 5.0'
   pod 'PKHUD'
-  
-  #Google APIs
-  pod 'youtube-ios-player-helper', '~> 0.1.4'
-  
+    
   #Google Firebase
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Messaging'
-  pod 'Firebase/Crash'
   
   #Fabric
   pod 'Fabric'
@@ -52,20 +45,22 @@ end
 target 'Rank-Widget' do
    use_frameworks!
    #Pods for today widget
+   #Pods about Swift Language
+   pod 'SwifterSwift' 
    #Pods about internet request/response/parse
    pod 'Alamofire', '~> 4.7'
-   pod 'ObjectMapper'
-   pod 'SwiftyJSON'
    pod 'Kanna', '~> 4.0.0'
 end
 
 target 'Schedule-Widget' do
     use_frameworks!
     #Pods for today widget
+    #Pods about Swift Language
+    pod 'SwifterSwift' 
+    
     #Pods about internet request/response/parse
     pod 'Alamofire', '~> 4.7'
-    pod 'ObjectMapper'
-    pod 'SwiftyJSON'
+    pod 'Kanna', '~> 4.0.0'
     
     #Google Firebase
     pod 'Firebase/Core'
