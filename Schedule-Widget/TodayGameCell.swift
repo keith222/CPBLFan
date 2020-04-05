@@ -18,45 +18,15 @@ class TodayGameCell: UITableViewCell, BindView {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-        // for ios9
-        if #available(iOS 10, *) {}else{
-            for views in self.subviews[0].subviews as [UIView]{
-                if let label = views as? UILabel{
-                    label.textColor = .white
-                }
-            }
-        }
     }
 
     func bindViewModel(_ viewModel: Any) {
-        if let gameViewModel = viewModel as? GameViewModel{
+        if let gameCellViewModel = viewModel as? GameCellViewModel{
             //cell content
-            
-            var numString = ""
-            switch gameViewModel.game {
-            case 0:
-                numString = "All Stars Game"
-            case _ where gameViewModel.game > 0:
-                numString = "Game: \(gameViewModel.game!)"
-            case _ where gameViewModel.game < -10:
-                numString = "季後挑戰賽: G\(-(gameViewModel.game! % 10))"
-            case _ where gameViewModel.game < 0:
-                numString = "Taiwan Series: G\(-gameViewModel.game!)"
-            default:
-                break
-            }
-            
-            self.gameNumLabel.text = numString
-            self.guestImageView.image = UIImage(named: gameViewModel.guest)
-            self.homeImageView.image = UIImage(named: gameViewModel.home)
-            self.placeLabel.text = gameViewModel.place
+            self.gameNumLabel.text = gameCellViewModel.num
+            self.placeLabel.text = gameCellViewModel.place
+            self.homeImageView.image = UIImage(named: gameCellViewModel.homeImageString)
+            self.guestImageView.image = UIImage(named: gameCellViewModel.guestImageString)
         }
     }
-    
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//        
-//    }
-    
 }

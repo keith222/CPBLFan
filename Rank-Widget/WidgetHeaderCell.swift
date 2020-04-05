@@ -9,4 +9,15 @@
 import UIKit
 
 class WidgetHeaderCell: UITableViewHeaderFooterView {
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+        contentView.backgroundColor = UIColor.darkBlue
+        contentView.subviews.forEach({ view in
+            if let label = view as? UILabel {
+                label.textColor = .white
+            }
+        })
+    }
 }

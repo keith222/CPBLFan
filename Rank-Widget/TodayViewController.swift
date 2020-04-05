@@ -13,117 +13,69 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     @IBOutlet weak var alertLabel: UILabel!
     @IBOutlet weak var seasonTableView: UITableView!
-    @IBOutlet weak var firstSeeasonTableView: UITableView!
-    @IBOutlet weak var secondSeasonTableView: UITableView!
     
+    @IBOutlet var categoryButtons: [UIButton]!
     
-    lazy var rankViewModel = {
+    private var seasontableHelper: TableViewHelper?
+    private var seasonRankCellViewModel: [RankCellViewModel] = []
+    private var firstSeasonRankCellViewModel: [RankCellViewModel] = []
+    private var secondSeasonRankCellViewModel: [RankCellViewModel] = []
+    
+    private lazy var rankViewModel = {
         return RankViewModel()
     }()
-    
-    var seasontableHelper: TableViewHelper?
-    var firstSeasontableHelper: TableViewHelper?
-    var secondSeasontableHelper: TableViewHelper?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.isHidden = true
-        
+        self.setUp()
+        self.bindViewModel()
+    }
+    
+    private func setUp() {
         // set tableview layout
-        let rowHeight: CGFloat = 45.0
-        let sectionHeight: CGFloat = 30.0
-        self.seasonTableView.rowHeight = rowHeight
-        self.seasonTableView.sectionHeaderHeight = sectionHeight
-        self.seasonTableView.sectionHeaderHeight = UITableView.automaticDimension
-        self.firstSeeasonTableView.rowHeight = rowHeight
-        self.firstSeeasonTableView.sectionHeaderHeight = sectionHeight
-        self.firstSeeasonTableView.sectionHeaderHeight = UITableView.automaticDimension
-        self.secondSeasonTableView.rowHeight = rowHeight
-        self.secondSeasonTableView.sectionHeaderHeight = sectionHeight
-        self.secondSeasonTableView.sectionHeaderHeight = UITableView.automaticDimension
+        self.seasonTableView.rowHeight = 45
+        self.seasonTableView.sectionHeaderHeight = 30
+        self.seasonTableView.isHidden = true
+        
+        self.alertLabel.isHidden = true
+        
+        self.categoryButtons.first?.isSelected = true
+        self.categoryButtons.first?.backgroundColor = .darkBlue
         
         // add tap gesture to tableview
-        for view in self.view.subviews{
-            if view is UITableView{
-                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tableViewTapped(tapGestureRecognizer:)))
-                view.addGestureRecognizer(tapGesture)
-            }
-        }
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tableViewTapped(tapGestureRecognizer:)))
+        self.seasonTableView.addGestureRecognizer(tapGesture)
+                
+        self.seasontableHelper = TableViewHelper(
+            tableView: self.seasonTableView,
+            nibName: IdentifierHelper.widgetCell,
+            sectionNib: IdentifierHelper.widgetHeaderCell
+        )
         
-        // extension view for ios 10 and old version
         if #available(iOS 10, *) {
             self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
-        } else {
-            var currentSize: CGSize = self.preferredContentSize
-            currentSize = CGSize(width: currentSize.width, height: 248)
-            self.preferredContentSize = currentSize
         }
-
-        
-        let date = Date()
-        let calendar = Calendar.current
-        
-        var year = calendar.component(.year, from: date)
-        let month = calendar.component(.month, from: date)
-        if month < 3{
-            year = year - 1
-        }
-        // load and show rank info
-        self.rankViewModel.fetchRank(from: String(year) , handler: { [weak self] data in
-            
-            guard data != nil && (data?[0].count)! > 0 else{
+    }
+    
+    private func bindViewModel() {
+        self.rankViewModel.reloadTableViewClosure = { [weak self] (source, header) in
+            guard !source.isEmpty, !source[0].isEmpty else {
                 self?.alertLabel.isHidden = false
-                self?.seasonTableView.isHidden = true
-                self?.firstSeeasonTableView.isHidden = true
-                self?.secondSeasonTableView.isHidden = true
-                
-                self?.view.isHidden = false
                 return
             }
             
-            let source: [[RankViewModel]] = data!.map{ value -> [RankViewModel] in
-                return value.map{ rankValue -> RankViewModel in
-                    return RankViewModel(data: rankValue)
-                }
-            }
-            
-            let season = (source.count == 3) ? source[2] : source[1]
-            let second = (source.count == 3) ? source[1] : []
-
-            self?.seasontableHelper = TableViewHelper(
-                tableView: (self?.seasonTableView)!,
-                nibName: "WidgetCell",
-                source: season as [AnyObject],
-                sectionCount: 1,
-                sectionNib: "WidgetHeaderCell",
-                sectionSource: nil
-            )
-            
-            self?.firstSeasontableHelper = TableViewHelper(
-                tableView: (self?.firstSeeasonTableView)!,
-                nibName: "WidgetCell",
-                source: source[0] as [AnyObject],
-                sectionCount: 1,
-                sectionNib: "WidgetHeaderCell",
-                sectionSource: nil
-            )
-            
-            self?.secondSeasontableHelper = TableViewHelper(
-                tableView: (self?.secondSeasonTableView)!,
-                nibName: "WidgetCell",
-                source: second as [AnyObject],
-                sectionCount: 1,
-                sectionNib: "WidgetHeaderCell",
-                sectionSource: nil
-            )
-
-            self?.view.isHidden = false
-        })
+            let seasonData = (source.count == 3) ? source[2] : source[1]
+            self?.firstSeasonRankCellViewModel = source[0]
+            self?.seasonRankCellViewModel = seasonData
+            self?.secondSeasonRankCellViewModel = (source.count == 3) ? source[1] : []
+            self?.seasontableHelper?.savedData = [seasonData as [AnyObject]]
+            self?.seasonTableView.isHidden = false
+            self?.alertLabel.isHidden = true
+        }
     }
     
     // for epanding view
-    @available(iOS 10, *)
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
         
         var currentSize: CGSize = self.preferredContentSize
@@ -132,43 +84,42 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             currentSize.height = 248
             self.preferredContentSize = currentSize
         case .compact:
+            currentSize.height = 115
             self.preferredContentSize = maxSize
-        @unknown default:
+        default:
             currentSize.height = 248
             self.preferredContentSize = currentSize
         }
     }
     
-    // for ios9
-    func widgetMarginInsets(forProposedMarginInsets defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
-        return UIEdgeInsets.zero
-    }
-    
     @IBAction func seasonSelectionAction(_ sender: UIButton) {
-        // hide tableview
-        let isHidden = true
+        var data = [AnyObject]()
         
+        categoryButtons.forEach({
+            $0.backgroundColor = ($0 == sender) ? .darkBlue : UIColor(white: 1, alpha: 0.5)
+            $0.isSelected = ($0 == sender)
+        })
+
         switch sender.tag {
         case 0:
-            self.seasonTableView.isHidden = !isHidden
-            self.firstSeeasonTableView.isHidden = isHidden
-            self.secondSeasonTableView.isHidden = isHidden
+            data = self.seasonRankCellViewModel as [AnyObject]
+
         case 1:
-            self.seasonTableView.isHidden = isHidden
-            self.firstSeeasonTableView.isHidden = !isHidden
-            self.secondSeasonTableView.isHidden = isHidden
+            data = self.firstSeasonRankCellViewModel as [AnyObject]
+            
         case 2:
-            self.seasonTableView.isHidden = isHidden
-            self.firstSeeasonTableView.isHidden = isHidden
-            self.secondSeasonTableView.isHidden = !isHidden
+            data = self.secondSeasonRankCellViewModel as [AnyObject]
+            
         default:
             break
         }
+        
+        self.seasontableHelper?.savedData = [data]
     }
     
     @objc func tableViewTapped(tapGestureRecognizer: UITapGestureRecognizer){
-        let url: URL = URL(string: "CPBLFan://?rank")!
-        self.extensionContext?.open(url, completionHandler: nil)
+        if let url: URL = URL(string: "CPBLFan://?rank") {
+            self.extensionContext?.open(url, completionHandler: nil)
+        }
     }
-    
 }

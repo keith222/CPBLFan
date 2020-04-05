@@ -10,6 +10,7 @@ import UIKit
 
 class WidgetCell: UITableViewCell, BindView{
     
+    @IBOutlet weak var rankLabel: UILabel!
     @IBOutlet weak var teamLogoImageView: UIImageView!
     @IBOutlet weak var winLabel: UILabel!
     @IBOutlet weak var tieLabel: UILabel!
@@ -24,25 +25,18 @@ class WidgetCell: UITableViewCell, BindView{
         self.isUserInteractionEnabled = false
         // set team logo image
         self.teamLogoImageView.contentMode = .scaleAspectFill
-        
-        if #available(iOS 10, *) {}else{
-            for views in self.subviews[0].subviews as [UIView]{
-                if let label = views as? UILabel{
-                    label.textColor = .white
-                }
-            }
-        }
     }
 
     func bindViewModel(_ viewModel: Any) {
-        if let rankViewModel = viewModel as? RankViewModel{
+        if let rankCellViewModel = viewModel as? RankCellViewModel{
             // cell content
-            self.teamLogoImageView.image = UIImage.logoImage(team: rankViewModel.team)
-            self.winLabel.text = rankViewModel.win
-            self.tieLabel.text = rankViewModel.tie
-            self.loseLabel.text = rankViewModel.lose
-            self.percentageLabel.text = rankViewModel.percentage
-            self.gamebehindLabel.text = rankViewModel.gamebehind
+            self.rankLabel.text = "\(rankCellViewModel.rank ?? 0)"
+            self.teamLogoImageView.image = UIImage.logoImage(team: rankCellViewModel.team)
+            self.winLabel.text = rankCellViewModel.win
+            self.tieLabel.text = rankCellViewModel.tie
+            self.loseLabel.text = rankCellViewModel.lose
+            self.percentageLabel.text = rankCellViewModel.percentage
+            self.gamebehindLabel.text = rankCellViewModel.gamebehind
         }
     }
 }

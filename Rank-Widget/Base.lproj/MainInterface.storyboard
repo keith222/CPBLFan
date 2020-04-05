@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
-    <device id="retina5_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,8 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暫無資料。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIs-e2-VCp">
-                                <rect key="frame" x="116.66666666666666" y="139.33333333333334" width="86.666666666666657" height="20.333333333333343"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暫無資料。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIs-e2-VCp">
+                                <rect key="frame" x="116.66666666666666" y="140" width="86.666666666666657" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <nil key="highlightedColor"/>
@@ -34,9 +32,18 @@
                                         <rect key="frame" x="5" y="5" width="99" height="29"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="全年度">
                                             <color key="titleColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="titleColorForSelected">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="seasonSelectionAction:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="MHJ-ep-pTt"/>
                                         </connections>
@@ -45,9 +52,18 @@
                                         <rect key="frame" x="109" y="5" width="99" height="29"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="上半季">
                                             <color key="titleColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="titleColorForSelected">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="seasonSelectionAction:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="UwV-ps-VFO"/>
                                         </connections>
@@ -56,9 +72,18 @@
                                         <rect key="frame" x="213" y="5" width="102" height="29"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="下半季">
                                             <color key="titleColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="titleColorForSelected">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="seasonSelectionAction:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="P9p-ix-SNl"/>
                                         </connections>
@@ -66,37 +91,21 @@
                                 </subviews>
                                 <edgeInsets key="layoutMargins" top="5" left="5" bottom="5" right="5"/>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FZL-Sb-RIO">
-                                <rect key="frame" x="0.0" y="39" width="320" height="261"/>
-                                <color key="backgroundColor" white="1" alpha="0.10000000000000001" colorSpace="calibratedWhite"/>
-                            </tableView>
-                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="En9-sh-tm4">
-                                <rect key="frame" x="0.0" y="39" width="320" height="261"/>
-                                <color key="backgroundColor" white="1" alpha="0.10000000000000001" colorSpace="calibratedWhite"/>
-                            </tableView>
-                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="quq-3I-3zC">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="FZL-Sb-RIO">
                                 <rect key="frame" x="0.0" y="39" width="320" height="261"/>
                                 <color key="backgroundColor" white="1" alpha="0.10000000000000001" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="BIs-e2-VCp" firstAttribute="centerY" secondItem="02m-a6-ex0" secondAttribute="centerY" id="06R-Eu-Ino"/>
-                            <constraint firstItem="En9-sh-tm4" firstAttribute="leading" secondItem="02m-a6-ex0" secondAttribute="leading" id="88g-DL-Jhk"/>
                             <constraint firstItem="FZL-Sb-RIO" firstAttribute="top" secondItem="6za-2H-6fE" secondAttribute="bottom" id="8GN-47-b64"/>
                             <constraint firstItem="NZq-b5-eIB" firstAttribute="top" secondItem="FZL-Sb-RIO" secondAttribute="bottom" id="BLu-ck-Sua"/>
                             <constraint firstAttribute="trailing" secondItem="FZL-Sb-RIO" secondAttribute="trailing" id="Dea-Sl-zIp"/>
                             <constraint firstItem="6za-2H-6fE" firstAttribute="top" secondItem="UeO-EL-2DY" secondAttribute="bottom" id="IMj-yo-bA8"/>
-                            <constraint firstItem="NZq-b5-eIB" firstAttribute="top" secondItem="quq-3I-3zC" secondAttribute="bottom" id="L6G-qT-b02"/>
-                            <constraint firstItem="NZq-b5-eIB" firstAttribute="top" secondItem="En9-sh-tm4" secondAttribute="bottom" id="MEH-Ta-BDr"/>
-                            <constraint firstAttribute="trailing" secondItem="En9-sh-tm4" secondAttribute="trailing" id="PJS-mi-nvp"/>
                             <constraint firstItem="6za-2H-6fE" firstAttribute="leading" secondItem="02m-a6-ex0" secondAttribute="leading" id="Z7q-lX-rp3"/>
                             <constraint firstAttribute="trailing" secondItem="6za-2H-6fE" secondAttribute="trailing" id="dXH-ef-XMo"/>
                             <constraint firstItem="BIs-e2-VCp" firstAttribute="centerX" secondItem="02m-a6-ex0" secondAttribute="centerX" id="dae-7O-8zl"/>
-                            <constraint firstItem="En9-sh-tm4" firstAttribute="top" secondItem="6za-2H-6fE" secondAttribute="bottom" id="e6m-wH-UOL"/>
-                            <constraint firstItem="quq-3I-3zC" firstAttribute="top" secondItem="6za-2H-6fE" secondAttribute="bottom" id="gh5-yy-enD"/>
                             <constraint firstItem="FZL-Sb-RIO" firstAttribute="leading" secondItem="02m-a6-ex0" secondAttribute="leading" id="hWF-Tu-z7X"/>
-                            <constraint firstItem="quq-3I-3zC" firstAttribute="leading" secondItem="02m-a6-ex0" secondAttribute="leading" id="ia0-NW-XSi"/>
-                            <constraint firstAttribute="trailing" secondItem="quq-3I-3zC" secondAttribute="trailing" id="oAL-6O-ewI"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -107,13 +116,15 @@
                     <size key="freeformSize" width="320" height="300"/>
                     <connections>
                         <outlet property="alertLabel" destination="BIs-e2-VCp" id="lrd-gb-WFg"/>
-                        <outlet property="firstSeeasonTableView" destination="En9-sh-tm4" id="czy-kD-IHT"/>
                         <outlet property="seasonTableView" destination="FZL-Sb-RIO" id="GIs-5m-Mct"/>
-                        <outlet property="secondSeasonTableView" destination="quq-3I-3zC" id="aNd-gN-VPU"/>
+                        <outletCollection property="categoryButtons" destination="8ua-hd-JuQ" collectionClass="NSMutableArray" id="F4T-AS-QiS"/>
+                        <outletCollection property="categoryButtons" destination="NSg-Il-kcp" collectionClass="NSMutableArray" id="g8L-KW-rTq"/>
+                        <outletCollection property="categoryButtons" destination="W7l-vG-6YN" collectionClass="NSMutableArray" id="voz-3o-pZ7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="141" y="135"/>
         </scene>
     </scenes>
 </document>
