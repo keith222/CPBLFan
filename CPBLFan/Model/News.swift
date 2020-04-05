@@ -7,21 +7,11 @@
 //
 
 import Foundation
-import ObjectMapper
 
-struct News: Mappable{
+struct News {
     
-    var title: String!
-    var date: String!
-    var imageUrl: String!
-    var newsUrl: String!
-    
-    init?(map: Map) {}
-    
-    mutating func mapping(map: Map) {
-        self.title <- map["title"]
-        self.date <- map["date"]
-        self.imageUrl <- map["imageUrl"]
-        self.newsUrl <- map["newsUrl"]
-    }
+    let title: String?
+    let date: String?
+    let imageUrl: String?
+    let newsUrl: String?
 }

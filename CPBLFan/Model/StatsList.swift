@@ -7,24 +7,12 @@
 //
 
 import Foundation
-import ObjectMapper
 
-struct StatsList: Mappable{
-    
-    var num: String!
-    var name: String!
-    var team: String!
-    var stats: String!
-    var playerUrl: String!
-    
-    init?(map: Map) {}
-    
-    mutating func mapping(map: Map) {
-        self.num <- map["num"]
-        self.name <- map["name"]
-        self.team <- map["team"]
-        self.stats <- map["stats"]
-        self.playerUrl <- map["playerUrl"]
-    }
-    
+struct StatsList{
+   
+    let num: String?
+    let name: String?
+    let team: String?
+    let stats: String?
+    let playerUrl: String?
 }

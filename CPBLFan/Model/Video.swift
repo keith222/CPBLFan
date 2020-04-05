@@ -7,20 +7,37 @@
 //
 
 import Foundation
-import ObjectMapper
 
-struct Video: Mappable {
+struct Video: Codable {
     
-    var videoId: String!
-    var title: String!
-    var imageUrl: String!
-    var date: String!
-    init?(map: Map) {}
+    let nextPageToken: String?
+    let items: [VideoItem]?
+}
+
+struct VideoItem: Codable {
     
-    mutating func mapping(map: Map) {
-        self.videoId <- map["id.videoId"]
-        self.title <- map["snippet.title"]
-        self.imageUrl <- map["snippet.thumbnails.high.url"]
-        self.date <- map["snippet.publishedAt"]
-    }
+    let id: VideoId?
+    let snippet: VideoSnippet?
+}
+
+struct VideoId: Codable {
+    
+    let videoId: String?
+}
+
+struct VideoSnippet: Codable {
+    
+    let publishedAt: String?
+    let title: String?
+    let thumbnails: VideoThumbnails?
+}
+
+struct VideoThumbnails: Codable {
+    
+    let high: VideoImage
+}
+
+struct VideoImage: Codable {
+    
+    let url: String
 }

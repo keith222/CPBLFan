@@ -7,25 +7,13 @@
 //
 
 import Foundation
-import ObjectMapper
 
-struct Rank: Mappable{
- 
-    var team: String!
-    var win: String!
-    var lose: String!
-    var tie: String!
-    var percentage: String!
-    var gamebehind: String!
+struct Rank {
     
-    init?(map: Map) {}
-    
-    mutating func mapping(map: Map) {
-        self.team <- map["team"]
-        self.win <- map["win"]
-        self.lose <- map["lose"]
-        self.tie <- map["tie"]
-        self.percentage <- map["percentage"]
-        self.gamebehind <- map["gamebehind"]
-    }
+    let team: String?
+    let win: String?
+    let lose: String?
+    let tie: String?
+    let percentage: String?
+    let gamebehind: String?
 }
