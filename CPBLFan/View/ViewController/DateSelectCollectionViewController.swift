@@ -13,9 +13,6 @@ protocol DateSelectDelegate: class {
     func dateSelected(with year: Int, and month: Int)
 }
 
-private let reuseIdentifier = "DateCell"
-private let reuseHeadIdentifier = "DateSelectHeader"
-
 class DateSelectCollectionViewController: UICollectionViewController {
 
     private var year: Int?
@@ -24,26 +21,33 @@ class DateSelectCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.setUp()
+    }
+    
+    private func setUp() {
         // set navigation bar title
         self.navigationItem.title = "選擇年月"
-        
+        self.navigationController?.navigationBar.barTintColor = UIColor.CompromisedColors.background
+        self.navigationController?.navigationBar.isTranslucent = false
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(self.dismissAction))
-        
+        self.navigationController?.navigationBar.tintColor = .darkBlue
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkBlue]
+        }
         
         self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: IdentifierHelper.dateCell)
         
-        // Do any additional setup after loading the view.
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
-        layout.minimumLineSpacing = 1
-        layout.minimumInteritemSpacing = 0
-        let itemWidth = (UIScreen.main.bounds.width / 4) - 2
-        layout.itemSize = CGSize(width: itemWidth, height: itemWidth)
-        layout.headerReferenceSize = CGSize(width: UIScreen.main.bounds.width, height: 30)
+        layout.sectionInset = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
+        layout.minimumLineSpacing = 4
+        layout.minimumInteritemSpacing = 2
+        let itemWidth = (UIScreen.main.bounds.width / 4) - 4
+        layout.itemSize = CGSize(width: itemWidth, height: 40)
+        layout.headerReferenceSize = CGSize(width: UIScreen.main.bounds.width, height: 35)
         self.collectionView.collectionViewLayout = layout
     }
 
@@ -56,8 +60,7 @@ class DateSelectCollectionViewController: UICollectionViewController {
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
     }
-
-
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0: return (Date().year - 1990) + 1
@@ -69,7 +72,7 @@ class DateSelectCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         var reusableview: UICollectionReusableView!
         if kind == UICollectionView.elementKindSectionHeader {
-            reusableview = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: reuseHeadIdentifier, for: indexPath)
+            reusableview = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: IdentifierHelper.dateSelectHeader, for: indexPath)
             let label = reusableview.viewWithTag(1) as! UILabel
             label.text = (indexPath.section == 0) ? "選擇年份" : "選擇月份"
             return reusableview
@@ -81,8 +84,8 @@ class DateSelectCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let text = (indexPath.section == 0) ? "\(1990 + indexPath.row)年" : "\(2 + indexPath.row)月"
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        cell.backgroundColor = .white
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IdentifierHelper.dateCell, for: indexPath)
+        cell.backgroundColor = UIColor.CompromisedColors.tertiarySystemBackground
 
         guard cell.contentView.subviews.compactMap({ $0 as? UILabel}).count == 0 else {
             let label = cell.contentView.viewWithTag(1) as! UILabel
@@ -93,27 +96,29 @@ class DateSelectCollectionViewController: UICollectionViewController {
 
         let titleLabel = UILabel(frame: cell.bounds)
         titleLabel.tag = 1
-        titleLabel.textColor = UIColor.darkBlue()
+        titleLabel.textColor = .darkBlue
         titleLabel.font.withSize(16)
         titleLabel.textAlignment = .center
         titleLabel.text = text
         cell.contentView.addSubview(titleLabel)
         
-    
         return cell
     }
 
     // MARK: UICollectionViewDelegate
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath){
-            cell.layer.masksToBounds = true
-            cell.layer.cornerRadius = 5
-            cell.layer.borderWidth = 3
-            cell.layer.borderColor = UIColor.darkBlue().cgColor
+            cell.cornerRadius = 5
+            cell.borderWidth = 2
+            cell.borderColor = .darkBlue
         }
         
         if indexPath.section == 0 {
             self.year = 1990 + indexPath.row
+            if let year = self.year, let month = self.month {
+                self.dateSelectDelegate?.dateSelected(with: year, and: month)
+                self.dismissAction()
+            }
             
         } else if indexPath.section == 1 {
             self.month = 2 + indexPath.row
@@ -122,14 +127,12 @@ class DateSelectCollectionViewController: UICollectionViewController {
                 self.dismissAction()
             }
         }
-
     }
     
     override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath){
             cell.layer.cornerRadius = 0
             cell.layer.borderWidth = 0
-            cell.layer.borderColor = UIColor.clear.cgColor
         }
     }
     

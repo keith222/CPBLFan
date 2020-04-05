@@ -9,119 +9,72 @@
 import UIKit
 import Kingfisher
 import PKHUD
-import DynamicColor
 import Reachability
 
-class VideoViewController: UIViewController {
+class VideoViewController: BaseViewController {
     
     @IBOutlet weak var videoTableView: UITableView!
-    var nextPageToken: String = ""
     
-    var tableViewHelper: TableViewHelper?
-    
-    var footerView: UIView!
-    var activity: UIActivityIndicatorView!
-    
-    lazy var videoViewModel = {
+    private var tableViewHelper: TableViewHelper?
+    private var presentViewControllerHelper: PresentViewControllerHelper = PresentViewControllerHelper()
+    private lazy var videoViewModel = {
         return VideoViewModel()
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // check net connection
-        let reachability = Reachability()
-        guard reachability?.connection != .none else {
-            let alert = UIAlertController(title: "提示", message: "網路連線異常。")
-            alert.show()
-            return
-        }
-
-        // show loading activity view
-        HUD.show(.progress)
-        
         self.setUp()
+        self.bindViewModel()
+    }
+       
+    private func bindViewModel() {
+        self.videoViewModel.reloadTableViewClosure = { [weak self] source in
+            self?.tableViewHelper?.savedData = [source as [AnyObject]]
+            
+            self?.performAnimation(of: self?.videoTableView, isHidden: source.isEmpty)
+        }
         
-        self.videoViewModel.fetchVideos(handler: { [unowned self] (video,nextPageToken) in
-            var source: [VideoViewModel] = video.map{ value -> VideoViewModel in
-                return VideoViewModel(data: value)
-            }
-            
-            //token for load next page
-            self.nextPageToken = nextPageToken!
-            // use tableview helper class to seperate uitableview delegate and datasource for reuse
-            self.tableViewHelper = TableViewHelper(
-                tableView: self.videoTableView,
-                nibName: "VideoCell",
-                source: source as [AnyObject],
-                selectAction:{ [unowned self] (num,_) in
-                    // closure for tableview cell tapping
-                    
-                    let videoURL: String = "https://www.youtube.com/watch?v=\(source[num].videoId!)"
-                    UIApplication.shared.openURL(URL(string: videoURL)!)
-                    
-                    // temporarily comment
-//                    let destination: VideoPlayerViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "VideoPlayerViewController") as! VideoPlayerViewController
-//                    destination.videoId = source[num].videoId
-//                    self.present(destination, animated: true, completion: nil)
-                },
-                refreshAction:{ page in
-                    // closure for refresh(load more)data
-                    self.activity.startAnimating()
-                    self.videoViewModel.fetchVideos(from: self.nextPageToken, handler: { [unowned self] (video,nextPageToken) in
-                        let moreSource: [VideoViewModel] = video.map{ value -> VideoViewModel in
-                            return VideoViewModel(data: value)
-                        }
-                        self.nextPageToken = nextPageToken!
-                        source.append(contentsOf: moreSource)
-                        self.tableViewHelper?.savedData = source
-                        self.activity.stopAnimating()
-                    })
-                }
-            )
-            
-            self.footerView.isHidden = false
-            
-            HUD.hide(animated: true, completion: {finished in
-                UIView.animate(withDuration: 0.3, animations: { [weak self] in
-                    self?.videoTableView.alpha = 1
+        self.videoViewModel.errorHandleClosure = {
+            HUD.hide(animated: true, completion: { finished in
+                UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.3, delay: 0, animations: { [weak self] in
+                    self?.videoTableView.alpha = 0
                 })
             })
-        })
+        }
         
+        // load and show video from youtube
+        // use tableview helper class to seperate uitableview delegate and datasource for reuse
+        self.tableViewHelper = TableViewHelper(
+            tableView: self.videoTableView,
+            nibName: IdentifierHelper.videoCell,
+            selectAction: { [weak self] (num, _) in
+                // closure for tableview cell tapping
+                let destination: VideoPlayerViewController = UIStoryboard(name: IdentifierHelper.video, bundle: nil).instantiateViewController(withClass: VideoPlayerViewController.self)!
+                destination.videoPlayerViewModel = self?.videoViewModel.getVideoPlayerViewModel(at: num)
+                destination.transitioningDelegate = self
+                destination.modalPresentationStyle = .fullScreen
+                self?.present(destination, animated: true, completion: nil)
+                
+            }, refreshAction: {[weak self] _ in
+                // closure for refresh(load more)data
+                self?.videoViewModel.fetchVideos()
+            })
+
     }
     
-    deinit {
-        print("============")
-        print("VideoViewController Deinit")
-        print("============")
-    }
-    
-    func setUp(){
-        // hide tableview
-        self.videoTableView.alpha = 0
+    private func setUp(){
+        // hide navigation bar bottom border
+        self.navigationController?.navigationBar.shadowImage = UIImage()
         
-        // set navigation bar title
-        self.navigationItem.title = "職棒影音"
-        
-        // set tableview layout
+        // set tableview
         self.videoTableView.separatorStyle = .none
-        self.videoTableView.estimatedRowHeight = 200
-        self.videoTableView.rowHeight = self.cellHeight()
-        self.videoTableView.sectionHeaderHeight = UITableView.automaticDimension
-        
-        // set activity indicator in foot view
-        footerView = UIView(frame: CGRect(x: 0, y: 5, width: self.view.bounds.size.width, height: 50))
-        activity = UIActivityIndicatorView(style: .gray)
-        activity.frame = CGRect(x: (self.view.bounds.size.width - 44) / 2, y: 5, width: 44, height: 44)
-        activity.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
-        footerView.addSubview(activity)
-        footerView.isHidden = true
-        self.videoTableView.tableFooterView = footerView
-        
+        self.videoTableView.estimatedRowHeight = cellHeight()
+        self.videoTableView.rowHeight = UITableView.automaticDimension
+        self.videoTableView.sectionHeaderHeight = 0
     }
     
-    func cellHeight() -> CGFloat{
+    private func cellHeight() -> CGFloat{
         switch UIDevice.current.userInterfaceIdiom {
         case .pad:
             return (UIScreen.main.bounds.size.height / CGFloat(3))
@@ -131,14 +84,26 @@ class VideoViewController: UIViewController {
             return 200
         }
     }
+}
 
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        // Tab bar height + Navigation bar height
-        let adjustForTabbarInsets = UIEdgeInsets(top: -5, left: 0, bottom: 0, right: 0)
-        self.videoTableView.contentInset = adjustForTabbarInsets
-        self.videoTableView.scrollIndicatorInsets = adjustForTabbarInsets
+extension VideoViewController: UIViewControllerTransitioningDelegate {
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        guard let selectedIndexPath = self.videoTableView.indexPathForSelectedRow, let selectedCell = self.videoTableView.cellForRow(at: selectedIndexPath) as? VideoCell, let selectedCellSuperview = selectedCell.superview else { return nil }
+        presentViewControllerHelper.originFrame = selectedCellSuperview.convert(selectedCell.frame, to: nil)
+        presentViewControllerHelper.originFrame = CGRect(
+          x: presentViewControllerHelper.originFrame.origin.x + 20,
+          y: presentViewControllerHelper.originFrame.origin.y + 20,
+          width: presentViewControllerHelper.originFrame.size.width - 40,
+          height: presentViewControllerHelper.originFrame.size.height - 40
+        )
+        presentViewControllerHelper.presenting = true
+        presentViewControllerHelper.isVideo = true
+        return presentViewControllerHelper
     }
 
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        presentViewControllerHelper.presenting = false
+        return presentViewControllerHelper
+    }
 }

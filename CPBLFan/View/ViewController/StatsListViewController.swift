@@ -9,20 +9,15 @@
 import UIKit
 import PKHUD
 
-class StatsListViewController: UIViewController {
+class StatsListViewController: BaseViewController {
 
     @IBOutlet weak var statsListTableView: UITableView!
     
-    var listUrl: String!
-    var category: String!
-    var type: playerType!
-    var footerView: UIView!
-    var activity: UIActivityIndicatorView!
-    var tableHelper: TableViewHelper?
+    private var footerView: UIView?
+    private var activity: UIActivityIndicatorView?
+    private var tableViewHelper: TableViewHelper?
     
-    lazy var statsListViewModel = {
-        return StatsListViewModel()
-    }()
+    var statsListViewModel: StatsListViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,62 +26,62 @@ class StatsListViewController: UIViewController {
         HUD.show(.progress)
         
         self.setUp()
-        
-        self.statsListViewModel.fetchStatList(from: self.category, route: self.listUrl, handler: { [weak self] (stats, totalPage) in
-            var source: [StatsListViewModel] = stats.map{ value -> StatsListViewModel in
-                return StatsListViewModel(data: value)
-            }
-            
-            self?.tableHelper = TableViewHelper(
-                tableView: (self?.statsListTableView)!,
-                nibName: "StatsListCell",
-                source: source,
-                selectAction: { (num,_) in
-                    let destination: PlayerViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlayerViewController") as! PlayerViewController
-                    destination.playerUrl = source[num].playerUrl
-                    destination.type = self?.type
-                    self?.navigationController?.pushViewController(destination, animated: true)
-                },
-                refreshAction: { page in
-                    // closure for refresh(load more)data
-                    if page <= totalPage!{
-                        self?.activity.startAnimating()
-                        self?.statsListViewModel.fetchStatList(from: (self?.category)!, route: (self?.listUrl)!, page: page, handler:{ [weak self] (stats, totalPage) in
-                            let moreSource: [StatsListViewModel] = stats.map{ value -> StatsListViewModel in
-                                return StatsListViewModel(data: value)
-                            }
-
-                            source.append(contentsOf: moreSource)
-                            self?.tableHelper?.savedData = source
-                            self?.activity.stopAnimating()
-                        })
-                    }else{
-                        // remove footer view if it is last page
-                        self?.statsListTableView.removeTableFooterView()
-                    }
-                }
-            )
-            
-            self?.footerView.isHidden = false
-            
-            HUD.hide(animated: true, completion: {finished in
-                UIView.animate(withDuration: 0.3, animations: { [weak self] in
-                    self?.statsListTableView.alpha = 1
-                })
-            })
-        })
-
+        self.bindViewModel()
     }
     
-    func setUp(){
-        // hide tableview
-        self.statsListTableView.alpha = 0
+    private func bindViewModel() {
+        self.statsListViewModel?.reloadTableViewClosure = { [weak self] source in
+            self?.tableViewHelper?.savedData = [source as [AnyObject]]
+            self?.activity?.stopAnimating()
+            
+            guard !source.isEmpty else {
+                self?.performAnimation(of: self?.statsListTableView, isHidden: true)
+                return
+            }
         
-        // set navigation bar
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem.noTitleBarButtonItem()
+            self?.statsListTableView.alpha = 1
+            self?.footerView?.isHidden = false
+            
+            HUD.hide(animated: true)
+        }
         
-        self.title = self.category
+        self.statsListViewModel?.errorHandleClosure = {
+            HUD.hide(animated: true, completion: { finished in
+                UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.3, delay: 0, animations: { [weak self] in
+                    self?.statsListTableView.alpha = 0
+                })
+            })
+        }
         
+        self.title = self.statsListViewModel?.category
+
+        self.tableViewHelper = TableViewHelper(
+            tableView: self.statsListTableView,
+            nibName: IdentifierHelper.statsListCell,
+            selectAction: { [weak self] (num,_) in
+                let destination: PlayerViewController = UIStoryboard(name: IdentifierHelper.statistics, bundle: nil).instantiateViewController(withClass: PlayerViewController.self)!
+                destination.playerViewModel = self?.statsListViewModel?.getPlayerViewModel(with: num)
+                self?.navigationController?.pushViewController(destination, animated: true)
+            },
+            refreshAction: { [weak self] page in
+                // closure for refresh(load more)data
+                if page <= self?.statsListViewModel?.totalPage ?? 0 {
+                    self?.activity?.startAnimating()
+                    self?.statsListViewModel?.fetchStatList(of: page)
+                    
+                } else {
+                    // remove footer view if it is last page
+                    self?.statsListTableView.removeTableFooterView()
+                }
+            }
+        )
+    }
+    
+    private func setUp(){
+        if #available(iOS 11.0, *) {
+            self.navigationItem.largeTitleDisplayMode = .never
+        }
+          
         // set tableview layout
         self.statsListTableView.separatorStyle = .none
         self.statsListTableView.rowHeight = 55
@@ -95,10 +90,10 @@ class StatsListViewController: UIViewController {
         // set activity indicator in foot view
         footerView = UIView(frame: CGRect(x: 0, y: 5, width: self.view.bounds.size.width, height: 50))
         activity = UIActivityIndicatorView(style: .gray)
-        activity.frame = CGRect(x: (self.view.bounds.size.width - 44) / 2, y: 5, width: 44, height: 44)
-        activity.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
-        footerView.addSubview(activity)
-        footerView.isHidden = true
+        activity?.frame = CGRect(x: (self.view.bounds.size.width - 44) / 2, y: 5, width: 44, height: 44)
+        activity?.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+        footerView?.addSubview(activity!)
+        footerView?.isHidden = true
         self.statsListTableView.tableFooterView = footerView
     }
 

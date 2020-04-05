@@ -9,114 +9,67 @@
 import UIKit
 import Kingfisher
 import PKHUD
-import DynamicColor
 import Reachability
+import Crashlytics
 
-class NewsViewController: UIViewController {
+class NewsViewController: BaseViewController {
     
     @IBOutlet weak var newsTableView: UITableView!
-    var page: Int = 0
     
-    var tableViewHelper: TableViewHelper?
-    
-    var footerView: UIView!
-    var activity: UIActivityIndicatorView!
-    
-    lazy var newsViewModel = {
+    private var tableViewHelper: TableViewHelper?
+    private var presentViewControllerHelper: PresentViewControllerHelper = PresentViewControllerHelper()
+    private lazy var newsViewModel = {
         return NewsViewModel()
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // check net connection
-        let reachability = Reachability()
-        guard reachability?.connection != .none else {
-            let alert = UIAlertController(title: "提示", message: "網路連線異常。")
-            alert.show()
-            return
+        self.setUp()
+        self.bindViewModel()
+    }
+    
+    private func bindViewModel() {
+        self.newsViewModel.reloadTableViewClosure = { [weak self] source in
+            self?.tableViewHelper?.savedData = [source as [AnyObject]]
+            self?.performAnimation(of: self?.newsTableView, isHidden: source.isEmpty)
         }
         
-        // show loading activity view
-        HUD.show(.progress)
+        self.newsViewModel.errorHandleClosure = { [weak self] message in
+            self?.performAlert(with: message)
+        }
         
-        self.setUp()
-        
-        // load and show news from cpbl website
-        self.newsViewModel.fetchNews(from: page, handler: { [unowned self] data in
-            
-            var source: [NewsViewModel] = data.map{ value -> NewsViewModel in
-                return NewsViewModel(data: value)
+        self.tableViewHelper = TableViewHelper(
+            tableView: self.newsTableView,
+            nibName: IdentifierHelper.newsCell,
+            selectAction: { [weak self] (num, _) in
+                // closure for tableview cell tapping
+                let destination: NewsContentViewController = UIStoryboard(name: IdentifierHelper.news, bundle: nil).instantiateViewController(withClass: NewsContentViewController.self)!
+                destination.newsContentViewModel = self?.newsViewModel.getNewsContentViewModel(with: num)
+                destination.transitioningDelegate = self
+                destination.modalPresentationStyle = .fullScreen
+                self?.present(destination, animated: true, completion: nil)
+            },
+            refreshAction: { [weak self] page in
+                // closure for refresh(load more)data
+                let newPage = (self?.newsViewModel.numberOfCells == 0 && page == 2) ? 0 : page - 1
+                self?.newsViewModel.fetchNews(from: newPage)
             }
+        )
+    }
+    
+    private func setUp(){
+        // hide navigation bar bottom border
+        self.navigationController?.navigationBar.shadowImage = UIImage()
 
-            // use tableview helper class to seperate uitableview delegate and datasource for reuse
-            self.tableViewHelper = TableViewHelper(
-                tableView: self.newsTableView,
-                nibName: "NewsCell",
-                source: source as [AnyObject],
-                selectAction:{ [weak self] (num,_) in
-                    // closure for tableview cell tapping
-                    let newsURL: String = "\(APIService.CPBLSourceURL)/\(source[num].newsUrl!)"
-                    UIApplication.shared.openURL(URL(string: newsURL)!)
-                    
-                    //temporarily comment
-//                    let destination: NewsContentViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsContentViewController") as! NewsContentViewController
-//                    destination.newsUrl = source[num].newsUrl!
-//                    destination.newsTitle = source[num].title!
-//                    destination.newsDate = source[num].date!
-//                    destination.newsImageUrl = source[num].imageURL!
-//                    self?.navigationController?.pushViewController(destination, animated: true)
-                },
-                refreshAction:{ page in
-                    // closure for refresh(load more)data
-                    self.activity.startAnimating()
-                    
-                    let newPage = (source.count == 0 && page == 2) ? 0 : page - 1
-                    
-                    self.newsViewModel.fetchNews(from: newPage, handler: { [unowned self] data in
-                        let moreSource: [NewsViewModel] = data.map{ value -> NewsViewModel in
-                            return NewsViewModel(data: value)
-                        }
-                        source.append(contentsOf: moreSource)
-                        self.tableViewHelper?.savedData = source
-                        self.activity.stopAnimating()
-                    })
-                }
-            )
-            self.footerView.isHidden = false
-            
-            HUD.hide(animated: true, completion: { finished in
-                UIView.animate(withDuration: 0.3, animations: { [weak self] in
-                    self?.newsTableView.alpha = 1
-                })
-            })
-        })
-    }
-    
-    func setUp(){
-        // hide tableview
-        self.newsTableView.alpha = 0
-        // set navigation bar title
-        self.navigationItem.title = "職棒新聞"
-        
-        // set tableview layout
+        // set tableview
         self.newsTableView.separatorStyle = .none
-        self.newsTableView.estimatedRowHeight = 200
-        self.newsTableView.rowHeight = self.cellHeight()
-        self.newsTableView.sectionHeaderHeight = UITableView.automaticDimension
-        
-        // set activity indicator in foot view
-        footerView = UIView(frame: CGRect(x: 0, y: 5, width: self.view.bounds.size.width, height: 50))
-        activity = UIActivityIndicatorView(style: .gray)
-        activity.frame = CGRect(x: (self.view.bounds.size.width - 44) / 2, y: 5, width: 44, height: 44)
-        activity.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
-        footerView.addSubview(activity)
-        footerView.isHidden = true
-        self.newsTableView.tableFooterView = footerView
-        
+        self.newsTableView.estimatedRowHeight = cellHeight()
+        self.newsTableView.sectionHeaderHeight = 0
+        self.newsTableView.rowHeight = UITableView.automaticDimension
     }
     
-    func cellHeight() -> CGFloat{
+    private func cellHeight() -> CGFloat{
         switch UIDevice.current.userInterfaceIdiom {
         case .pad:
             return (UIScreen.main.bounds.size.height / CGFloat(3))
@@ -126,13 +79,25 @@ class NewsViewController: UIViewController {
             return 200
         }
     }
+}
+
+extension NewsViewController: UIViewControllerTransitioningDelegate {
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        // Tab bar height + Navigation bar height
-        let adjustForTabbarInsets = UIEdgeInsets(top: -5, left: 0, bottom: 0, right: 0)
-        self.newsTableView.contentInset = adjustForTabbarInsets
-        self.newsTableView.scrollIndicatorInsets = adjustForTabbarInsets
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        guard let selectedIndexPath = self.newsTableView.indexPathForSelectedRow, let selectedCell = self.newsTableView.cellForRow(at: selectedIndexPath) as? NewsCell, let selectedCellSuperview = selectedCell.superview else { return nil }
+        presentViewControllerHelper.originFrame = selectedCellSuperview.convert(selectedCell.frame, to: nil)
+        presentViewControllerHelper.originFrame = CGRect(
+          x: presentViewControllerHelper.originFrame.origin.x + 20,
+          y: presentViewControllerHelper.originFrame.origin.y + 20,
+          width: presentViewControllerHelper.originFrame.size.width - 40,
+          height: presentViewControllerHelper.originFrame.size.height - 40
+        )
+        presentViewControllerHelper.presenting = true
+        return presentViewControllerHelper
+    }
+
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        presentViewControllerHelper.presenting = false
+        return presentViewControllerHelper
     }
 }

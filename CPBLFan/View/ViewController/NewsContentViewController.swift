@@ -18,86 +18,66 @@ class NewsContentViewController: UIViewController {
     @IBOutlet weak var newsContentLabel: UILabel!
     @IBOutlet weak var linkLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var buttonStackView: UIStackView!
     
-    var newsUrl: String = ""
-    var newsImageUrl: String = ""
-    var newsTitle: String = ""
-    var newsDate: String = ""
-    
-    var fontChanged: Bool = false
-    
-    lazy var newsViewModel = {
-        return NewsViewModel()
-    }()
+    var newsContentViewModel: NewsContentViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.setUp()
         
-        HUD.show(.progress)
-        
+        self.bindViewModel()
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    private func bindViewModel() {
         // get news content
-        let route = "\(APIService.CPBLSourceURL)\(newsUrl)"
-        self.newsViewModel.fetchNewsContent(from: route, handler: { [weak self] content in
+        self.newsContentViewModel?.loadNewsContent = { [weak self] content in
             let attributedString = NSMutableAttributedString(string: content)
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.lineSpacing = 5
             attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
             self?.newsContentLabel.attributedText = attributedString
-
-            HUD.hide(animated: true, completion: { finished in
-                UIView.animate(withDuration: 0.3, animations: { [weak self] in
-                    self?.scrollView.alpha = 1
-                })
-    
-            })
-        })
-
-        if !self.newsImageUrl.isEmpty{
-            self.newsImage.kf.setImage(with: self.newsImageUrl.url!)
-        }else{
+        }
+        
+        if let imageUrl = self.newsContentViewModel?.imageUrl.url {
+             self.newsImage.kf.setImage(with: imageUrl)
+        } else {
             self.newsImage.image = UIImage(named: "logo")
         }
-        self.newsTitleLabel.text = self.newsTitle
-        self.newsDateLabel.text = self.newsDate
-        self.linkLabel.text = route
-    }
-    
-    func setUp(){
-                
-        // set navigation bar style
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem.noTitleBarButtonItem()
-        self.scrollView.alpha = 0
         
-        let fontButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "font"), style: .plain, target: self, action: #selector(self.changeFontSize))
-        let shareButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "share"), style: .plain, target: self, action: #selector(self.shareNews))
-        self.navigationItem.rightBarButtonItems = [shareButton,fontButton]
+        self.newsTitleLabel.text = self.newsContentViewModel?.title
+        self.newsDateLabel.text = self.newsContentViewModel?.date
+        self.linkLabel.text = self.newsContentViewModel?.route
+    }
 
-        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.openLink(recognizer:)))
-        self.linkLabel.addGestureRecognizer(tapGesture)
-        
-        self.navigationItem.title = "職棒新聞"
+    @IBAction func dissmissAction(_ sender: UIButton) {
+        self.buttonStackView.isHidden = true
+        self.dismiss(animated: true, completion: nil)
     }
     
-    @objc func changeFontSize(){
+    @IBAction func changeFontSizeAction(_ sender: UIButton) {
         let size = self.newsContentLabel.font.pointSize
-        if !self.fontChanged{
+        if !(self.newsContentViewModel?.fontChanged ?? false){
             self.newsContentLabel.font = UIFont.systemFont(ofSize: size * 2)
         }else{
             self.newsContentLabel.font = UIFont.systemFont(ofSize: size / 2)
         }
-        self.fontChanged = !self.fontChanged
+        self.newsContentViewModel?.fontChanged = !(self.newsContentViewModel?.fontChanged ?? false)
     }
-    
-    @objc func shareNews(){
-        let news = "\(APIService.CPBLSourceURL)\(self.newsUrl)"
-        let activity: UIActivityViewController = UIActivityViewController(activityItems: [news], applicationActivities: nil)
-        self.present(activity, animated: true, completion: nil)
+ 
+    @IBAction func shareNewsAction(_ sender: UIButton) {
+        if let newsUrl = self.newsContentViewModel?.route.url {
+            let activity: UIActivityViewController = UIActivityViewController(activityItems: [newsUrl], applicationActivities: nil)
+            self.present(activity, animated: true, completion: nil)
+        }
     }
 
     @objc func openLink(recognizer: UITapGestureRecognizer) {
-        let url = (recognizer.view as! UILabel).text
-        UIApplication.shared.openURL(URL(string: url!)!)
+        if let linkLabel = recognizer.view as? UILabel, let url = linkLabel.text {
+            UIApplication.shared.open(URL(string: url)!, options: [:], completionHandler: nil)
+        }
     }
 }

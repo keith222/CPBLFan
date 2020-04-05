@@ -7,59 +7,61 @@
 //
 
 import UIKit
-import youtube_ios_player_helper
+import PKHUD
+import WebKit
+import os
 
-class VideoPlayerViewController: UIViewController, YTPlayerViewDelegate{
+class VideoPlayerViewController: BaseViewController {
 
-    @IBOutlet weak var videoPlayView: YTPlayerView!
-    var videoId: String!
-    var isPresented: Bool = true
-    var navigation: UINavigationBar!
+    @IBOutlet weak var videoWebView: WKWebView!
+            
+    var videoPlayerViewModel: VideoPlayerViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // set custom navigation bar
-        self.navigation = UINavigationBar(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        self.navigation.alpha = 1.0
-        navigation?.tintColor = UIColor.darkBlue()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(dismiss(_:)))
-        navigation?.items = [self.navigationItem]
-        self.view.addSubview(navigation!)
-        
-        // play video with youtube iframe player
-        let playerVars: [String: Any] = ["rel": 0]
-        self.videoPlayView.delegate = self
-        self.videoPlayView.load(withVideoId: self.videoId, playerVars: playerVars)
-        self.videoPlayView.setPlaybackQuality(.HD1080)
+                
+        self.setUp()
+        self.bindViewModel()
     }
     
-    func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
-        playerView.playVideo()
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     override func viewDidLayoutSubviews() {
-        let height: CGFloat = (UIDevice.current.orientation == .portrait) ? 64 : 40
-        self.navigation.frame = CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: height)
+        super.viewDidLayoutSubviews()
+        
+        self.view.updateConstraintsIfNeeded()
     }
-
-    
-    
-    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        switch UIDevice.current.orientation{
-        case .landscapeLeft, .landscapeRight:
-            self.navigation.frame.size = CGSize(width: self.view.bounds.size.width, height: 40)
-        case .portrait:
-            self.navigation.frame.size = CGSize(width: self.view.bounds.size.width, height: 64)
-        default:
-            break
+        
+    private func bindViewModel() {
+        // play video with youtube iframe player
+        if let htmlString = videoPlayerViewModel?.videoHtml {
+            self.videoWebView.loadHTMLString(htmlString, baseURL: nil)
         }
     }
     
-
-    @objc func dismiss(_ sender: AnyObject? = nil) {
-        self.isPresented = false
-        self.dismiss(animated: true) {}
+    private func setUp() {
+        self.videoWebView.navigationDelegate = self
+        self.videoWebView.isOpaque = false
     }
+    
+    @IBAction func dismissAction(_ sender: UIButton) {
+        self.videoPlayerViewModel?.isPresented = false
+        self.dismiss(animated: true)
+    }
+}
 
+extension VideoPlayerViewController: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        HUD.hide(animated: true)
+    }
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        HUD.hide(animated: true, completion: { [weak self] _ in
+            self?.performAlert(with: error.localizedDescription)
+            os_log("Error: %s", error.localizedDescription)
+        })
+    }
 }

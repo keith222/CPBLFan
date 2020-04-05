@@ -11,40 +11,71 @@ import PKHUD
 import Reachability
 import SwifterSwift
 
-class GameScheduleViewController: UIViewController {
-    
+class GameScheduleViewController: BaseViewController {
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var gameTableView: UITableView!
     
-    var tableHelper: TableViewHelper?
-    var gameSource: [[GameViewModel]]?
-    var year: Int = 0
-    var month: Int = 0
-
-    weak var dateSelectDelegate: DateSelectDelegate?
-    
-    lazy var gameViewModel = {
-        return GameViewModel()
+    private weak var dateSelectDelegate: DateSelectDelegate?
+    private var tableHelper: TableViewHelper?
+    private lazy var gameScheduleViewModel = {
+        return GameScheduleViewModel()
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // check net connection
-        let reachability = Reachability()
-        guard reachability?.connection != .none else {
-            let alert = UIAlertController(title: "提示", message: "網路連線異常。")
-            alert.show()
-            return
+        self.setUp()
+        self.bindViewModel()
+    }
+    
+    private func bindViewModel() {
+        self.gameScheduleViewModel.reloadTableViewClosure = { [weak self] gameSchedules in
+            
+            let headers = gameSchedules.map({ $0.0 }) as [AnyObject]
+            let games = gameSchedules.map({ $0.1 }) as [AnyObject]
+
+            self?.tableHelper?.savedData = [games, headers]
+                        
+            self?.dateLabel.text = "\(self?.gameScheduleViewModel.year ?? 0) 年 \(self?.gameScheduleViewModel.month ?? 0) 月"
+            
+            guard !games.isEmpty else {
+                HUD.hide(animated: true)
+                return
+            }
+            
+            self?.performAnimation(of: self?.gameTableView, isHidden: false)
+            
+            
+            if let sectionIndex = (headers as! [GameHeaderCellViewModel]).firstIndex(where: { return $0.day == self?.gameScheduleViewModel.day}){
+                let indexPath = IndexPath(row: 0, section: sectionIndex)
+                self?.gameTableView.scrollToRow(at: indexPath, at: .top, animated: false)
+            }
         }
         
-        dateSelectDelegate = self
+        self.gameScheduleViewModel.errorHandleClosure = { [weak self] message in
+            self?.performAlert(with: message)
+            self?.performAnimation(of: self?.gameTableView, isHidden: true)
+        }
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "calendar"), style: .plain, target: self, action: #selector(self.presentToDateSelect))
-
-        // set table hide
-        self.gameTableView.alpha = 0
+        self.gameScheduleViewModel.updateDateClosure = { [weak self] date in
+            self?.dateLabel.text = date
+            HUD.hide(animated: true)
+        }
+    }
+    
+    private func setUp() {
+        self.dateSelectDelegate = self
+        
+        // set navigation bar
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "filter"), style: .plain, target: self, action: #selector(self.presentToDateSelect))
+        self.navigationItem.title = "職棒賽程"
+        self.navigationController?.navigationBar.backgroundColor = UIColor.CompromisedColors.background
+        
+        // set tableview
+        self.gameTableView.rowHeight = 70
+        self.gameTableView.sectionHeaderHeight = 35
+        self.gameTableView.tableFooterView = UIView()
         
         // add left and right swipe gesture
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeGestureAction(gesture:)))
@@ -54,208 +85,71 @@ class GameScheduleViewController: UIViewController {
         self.view.addGestureRecognizer(rightSwipe)
         self.view.addGestureRecognizer(leftSwipe)
         
-        // show loading activity view
-        HUD.show(.progress)
-        
-        // set navigation bar title
-        self.navigationItem.title = "職棒賽程"
-        
-        // set tableview
-        self.gameTableView.rowHeight = 100
-        self.gameTableView.sectionHeaderHeight = 30
-        self.gameTableView.tableFooterView = UIView()
-        
-        // set schedule year and month
-        let date = Date()
-        let calendar = Calendar.current
-        year = calendar.component(.year, from: date)
-        month = calendar.component(.month, from: date)
-        let day = calendar.component(.day, from: date)
-        // because of baseball season is from 2 to 11
-        if month < 2{
-            year -= 1
-            month = 11
-        }else if month > 11{
-            month = 11
-        }
-        
-        let yearString = String(year)
-        let monthString = String(month)
-        
-        self.gameViewModel.fetchGame(at: yearString, month: monthString, handler: { [weak self] data in
-            if let data = data {
-                // map cell source
-                self?.gameSource = (data as [(String,[Game])]).map{ value -> [GameViewModel] in
-                    return value.1.map{ gameValue -> GameViewModel in
-                        return GameViewModel(data: gameValue)
-                    }
-                }
-                
-                //for child change
-                self?.dateLabel.text = "\(yearString) 年 \(monthString) 月"
-                self?.month = Int(monthString)!
-                
-                // map head soruce
-                let headSource: [[String]] = (data as [(String,[Game])]).map{ value -> [String] in
-                    return [yearString, monthString ,value.0]
-                }
-                
-                self?.tableHelper = TableViewHelper(
-                    tableView: (self?.gameTableView)!,
-                    nibName: "GameCell",
-                    source: self!.gameSource! as [AnyObject],
-                    sectionCount: (self?.gameSource?.count)!,
-                    sectionNib: "GameHeaderCell",
-                    sectionSource: headSource as [AnyObject],
-                    selectAction: { [weak self] (num,section) in
-                        // closure for tableview cell tapping
-                        let destination: GameViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
-                        destination.gameViewModel = self?.gameSource?[section][num]
-                        self?.navigationController?.pushViewController(destination, animated: true)
-                    }
-                )
-                
-                if data.count > 0 {
-                    HUD.hide(animated: true, completion: {finished in
-                        UIView.animate(withDuration: 0.1, animations: { [weak self] in
-                            self?.gameTableView.alpha = 1
-                        })
-                    })
-                    
-                } else {
-                    self?.gameTableView.alpha = 0
-                    HUD.hide(animated: true)
-                }
-                
-                if let sectionIndex = headSource.firstIndex(where: { return $0[2] == day.string}){
-                    let indexPath = IndexPath(row: 0, section: sectionIndex)
-                    self?.gameTableView.scrollToRow(at: indexPath, at: .top, animated: false)
-                }
-                
-            }else{
-                print("無資料")
-                self?.gameTableView.alpha = 0
-                HUD.hide(animated: true)
+        self.tableHelper = TableViewHelper(
+            tableView: self.gameTableView,
+            nibName: IdentifierHelper.gameCell,
+            sectionNib: IdentifierHelper.gameHeaderCell,
+            selectAction: { [weak self] (index, section) in
+                // closure for tableview cell tapping
+                let destination: GameViewController = UIStoryboard(name: IdentifierHelper.schedule, bundle: nil).instantiateViewController(withClass: GameViewController.self)!
+                destination.gameViewModel = self?.gameScheduleViewModel.getGameViewModel(at: section, and: index)
+                self?.navigationController?.pushViewController(destination, animated: true)
             }
-        })
+        )
     }
     
-    func loadData(_ year: String, month: String){
-        self.dateLabel.text = "\(year) 年 \(month) 月"
-        
-        self.gameViewModel.fetchGame(at: year, month: month, handler: { [weak self] data in
-            if data != nil, data!.count > 0{
-                self?.gameSource = (data! as [(String,[Game])]).map{ value -> [GameViewModel] in
-                    return value.1.map{ gameValue -> GameViewModel in
-                        return GameViewModel(data: gameValue)
-                    }
-                }
-                
-                let headSource: [[String]] = (data! as [(String,[Game])]).map{ value -> [String] in
-                    return [year, month ,value.0]
-                }
-
-                self?.tableHelper?.headSavedData = headSource as [AnyObject]
-                self?.tableHelper?.savedData = self!.gameSource! as [AnyObject]
-                
-                HUD.hide(animated: true, completion: {finished in
-                    UIView.animate(withDuration: 0.2, animations: { [weak self] in
-                        self?.gameTableView.alpha = 1
-                    })
-                })
-                
-            }else{
-                self?.gameTableView.alpha = 0
-                HUD.hide(animated: true)
-            }
-        })
+    func loadData(){
+        self.gameTableView.alpha = 0
+        self.gameScheduleViewModel.fetchGame()
     }
-
+    
     @objc private func presentToDateSelect() {
-        let destination: DateSelectCollectionViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DateSelectCollectionViewController") as! DateSelectCollectionViewController
+        let destination: DateSelectCollectionViewController = UIStoryboard(name: IdentifierHelper.schedule, bundle: nil).instantiateViewController(withClass: DateSelectCollectionViewController.self)!
         destination.dateSelectDelegate = self
         let navigationController = UINavigationController(rootViewController: destination)
         self.present(navigationController, animated: true, completion: nil)
     }
     
     @IBAction func loadDataAction(_ sender: UIButton) {
-        
         HUD.show(.progress)
         
-        if sender.tag == 0{
-            month -= 1
-            if month < 2{
-                year -= 1
-                month = 11
-            }
-        }else{
-            month += 1
-            if month > 11{
-                year += 1
-                month = 2
-            }
-        }
-        
-        self.loadData("\(year)", month: "\(month)")
+        self.gameScheduleViewModel.updateTime(with: (sender.tag == 0) ? .previous : .next)
+        self.loadData()
     }
     
     @objc func swipeGestureAction(gesture: UISwipeGestureRecognizer){
         HUD.show(.progress)
         
-        switch gesture.direction {
-        case UISwipeGestureRecognizer.Direction.right:
-            month -= 1
-            if month < 2{
-                year -= 1
-                month = 11
-            }
-            
-            UIView.animate(withDuration: 0.2, animations: { [weak self] in
-                self?.dateLabel.transform = CGAffineTransform(translationX: ((self?.dateLabel.superview?.frame.width)! / 2), y: 0)
-                self?.dateLabel.fadeOut()
-            }, completion: { [weak self] _ in
-                self?.dateLabel.transform = CGAffineTransform(translationX: -((self?.dateLabel.frame.width)!), y: 0)
-                UIView.animate(withDuration: 0.2, animations: { [weak self] in
-                    self?.dateLabel.transform = CGAffineTransform(translationX: 0, y: 0)
-                    self?.dateLabel.fadeIn()
-                    self?.loadData(String(self!.year), month: String(self!.month))
-                })
-            })
-            
-
-        case UISwipeGestureRecognizer.Direction.left:
-            month += 1
-            if month > 11{
-                year += 1
-                month = 2
-            }
-            
-            UIView.animate(withDuration: 0.2, animations: { [weak self] in
-                self?.dateLabel.transform = CGAffineTransform(translationX: -((self?.dateLabel.superview?.frame.width)! / 2), y: 0)
-                self?.dateLabel.fadeOut()
-                
-            }, completion: { [weak self] finished in
-                self?.dateLabel.transform = CGAffineTransform(translationX: ((self?.dateLabel.superview?.frame.width)! / 2), y: 0)
-                UIView.animate(withDuration: 0.2, animations: { [weak self] in
-                    self?.dateLabel.transform = CGAffineTransform(translationX: 0, y: 0)
-                    self?.dateLabel.fadeIn()
-                    self?.loadData(String(self!.year), month: String(self!.month))
-
-                })
-            })
-
-        default:
-            break
+        self.gameScheduleViewModel.updateTime(with: (gesture.direction == .right) ? .previous : .next)
+        
+        let swiperAnimation = UIViewPropertyAnimator(duration: 0.3, curve: .linear)
+        let loadingAnimation = UIViewPropertyAnimator(duration: 0.3, curve: .linear)
+        
+        loadingAnimation.addAnimations { [weak self] in
+            self?.dateLabel.transform = CGAffineTransform(translationX: 0, y: 0)
+            self?.dateLabel.fadeIn()
+            self?.loadData()
         }
+        
+        swiperAnimation.addAnimations { [weak self] in
+            var translationX = ((self?.dateLabel.superview?.frame.width ?? 0) / 2)
+            translationX *= (gesture.direction == .right) ? 1 : -1
+            self?.dateLabel.transform = CGAffineTransform(translationX: translationX, y: 0)
+            self?.dateLabel.fadeOut()
+        }
+        swiperAnimation.addCompletion({ _ in
+            loadingAnimation.startAnimation()
+        })
+        swiperAnimation.startAnimation()
     }
 }
 
 extension GameScheduleViewController: DateSelectDelegate {
     
     func dateSelected(with year: Int, and month: Int) {
-        self.year = year
-        self.month = month
+        self.gameScheduleViewModel.year = year
+        self.gameScheduleViewModel.month = month
         HUD.show(.progress)
-        self.loadData("\(year)", month: "\(month)")
+        self.loadData()
     }
 }
