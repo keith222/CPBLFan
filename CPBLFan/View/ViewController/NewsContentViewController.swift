@@ -51,6 +51,9 @@ class NewsContentViewController: UIViewController {
         self.newsTitleLabel.text = self.newsContentViewModel?.title
         self.newsDateLabel.text = self.newsContentViewModel?.date
         self.linkLabel.text = self.newsContentViewModel?.route
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(openLink(recognizer:)))
+        self.linkLabel.addGestureRecognizer(tapGesture)
     }
 
     @IBAction func dissmissAction(_ sender: UIButton) {
