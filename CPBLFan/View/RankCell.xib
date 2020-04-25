@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -111,11 +111,11 @@
             <connections>
                 <outlet property="containerView" destination="mvY-9P-X1p" id="Slk-fh-n28"/>
                 <outlet property="gamebehindLabel" destination="v10-Fl-CZr" id="oTG-mq-4UW"/>
-                <outlet property="loseLabel" destination="CV3-re-gmk" id="OYH-Mg-NGB"/>
+                <outlet property="loseLabel" destination="3le-pK-bO1" id="fcg-Nm-tLs"/>
                 <outlet property="percentageLabel" destination="SMs-4J-Mpn" id="eb8-V2-UjL"/>
                 <outlet property="rankLabel" destination="qzr-Df-uoF" id="asb-yE-vMm"/>
                 <outlet property="teamLogoImageView" destination="bwo-lA-fvg" id="LMq-91-xZp"/>
-                <outlet property="tieLabel" destination="3le-pK-bO1" id="432-Xc-rx7"/>
+                <outlet property="tieLabel" destination="CV3-re-gmk" id="yNv-uT-F36"/>
                 <outlet property="winLabel" destination="i0U-1p-zZ1" id="Rfs-T2-Edi"/>
             </connections>
             <point key="canvasLocation" x="139" y="144"/>
