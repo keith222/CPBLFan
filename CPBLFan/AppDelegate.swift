@@ -9,8 +9,8 @@
 import UIKit
 import Firebase
 import FirebaseMessaging
+import FirebaseCrashlytics
 import UserNotifications
-import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -25,10 +25,8 @@ target 'CPBLFan' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Messaging'
-  
-  #Fabric
-  pod 'Fabric'
-  pod 'Crashlytics', '~> 3.10'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Crashlytics'
   
   target 'CPBLFanTests' do
     inherit! :search_paths

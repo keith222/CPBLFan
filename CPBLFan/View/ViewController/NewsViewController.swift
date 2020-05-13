@@ -10,7 +10,6 @@ import UIKit
 import Kingfisher
 import PKHUD
 import Reachability
-import Crashlytics
 
 class NewsViewController: BaseViewController {
     
