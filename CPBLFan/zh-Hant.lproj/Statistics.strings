@@ -1,0 +1,36 @@
+
+/* Class = "UILabel"; text = "打擊成績"; ObjectID = "9Pz-Yw-ZoH"; */
+"9Pz-Yw-ZoH.text" = "打擊成績";
+
+/* Class = "UILabel"; text = "對戰成績"; ObjectID = "A74-Y2-Lph"; */
+"A74-Y2-Lph.text" = "對戰成績";
+
+/* Class = "UITabBarItem"; title = "個人成績"; ObjectID = "GS0-Rn-d1S"; */
+"GS0-Rn-d1S.title" = "個人成績";
+
+/* Class = "UILabel"; text = "---｜---｜---"; ObjectID = "Gq8-fe-NCp"; */
+"Gq8-fe-NCp.text" = "---｜---｜---";
+
+/* Class = "UISegmentedControl"; XRP-Eg-qP8.segmentTitles[0] = "打擊成績"; ObjectID = "XRP-Eg-qP8"; */
+"XRP-Eg-qP8.segmentTitles[0]" = "打擊成績";
+
+/* Class = "UISegmentedControl"; XRP-Eg-qP8.segmentTitles[1] = "投手成績"; ObjectID = "XRP-Eg-qP8"; */
+"XRP-Eg-qP8.segmentTitles[1]" = "投手成績";
+
+/* Class = "UILabel"; text = "守備成績"; ObjectID = "gk4-dN-oes"; */
+"gk4-dN-oes.text" = "守備成績";
+
+/* Class = "UILabel"; text = "未有選手資料"; ObjectID = "lvr-nk-HRi"; */
+"lvr-nk-HRi.text" = "未有選手資料";
+
+/* Class = "UILabel"; text = "選手 00 | 球隊"; ObjectID = "pwf-lW-JYg"; */
+"pwf-lW-JYg.text" = "選手 00 | 球隊";
+
+/* Class = "UILabel"; text = "單場最高成績"; ObjectID = "rUG-l8-J9f"; */
+"rUG-l8-J9f.text" = "單場最高成績";
+
+/* Class = "UILabel"; text = "未有選手資料"; ObjectID = "res-pH-sM0"; */
+"res-pH-sM0.text" = "未有選手資料";
+
+/* Class = "UINavigationItem"; title = "個人成績"; ObjectID = "vJ0-7u-jDV"; */
+"vJ0-7u-jDV.title" = "個人成績";
