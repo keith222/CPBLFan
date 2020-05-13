@@ -7,7 +7,7 @@
 		<key>CPBLSourceURL</key>
 		<string>http://www.cpbl.com.tw</string>
 		<key>YoutubeAPIKey</key>
-		<string>AIzaSyC7ySm6mYThqbyQAJ96qMEl87sWcatEAx8</string>
+		<string>${YOTUBE_API_KEY}</string>
 		<key>YoutubeAPIURL</key>
 		<string>https://www.googleapis.com/youtube/v3/</string>
 	</dict>
