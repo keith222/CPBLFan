@@ -41,7 +41,7 @@ class VideoViewModel{
                 return
             }
             
-            if let dataFromString = text.data(using: .utf8, allowLossyConversion: false){
+            if let dataFromString = text.data(using: .utf8, allowLossyConversion: false) {
                 do {
                     let json = try JSONDecoder().decode(Video.self, from: dataFromString)
                     self?.pageToken = json.nextPageToken ?? ""
@@ -53,6 +53,7 @@ class VideoViewModel{
                     os_log("Error: %s", error.localizedDescription)
                 }
             }
+            
         })
     }
     
