@@ -36,7 +36,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // set table view
         self.todayGameTableView.allowsSelection = false
         self.todayGameTableView.rowHeight = 50
-        self.todayGameTableView.sectionHeaderHeight = UITableView.automaticDimension
+        self.todayGameTableView.sectionHeaderHeight = 0
         
         self.alertLabel.isHidden = true
         
@@ -49,9 +49,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             nibName: IdentifierHelper.todayGameCell
         )
         
-        if #available(iOS 10, *) {
-            self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
-        }
+        self.extensionContext?.widgetLargestAvailableDisplayMode = .compact
     }
     
     private func bindViewModel() {
@@ -65,7 +63,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             }
             
             self?.tableHelper?.savedData = [todayGame.map({ $0.1 }) as [AnyObject]]
-            self?.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
             self?.todayGameTableView.isHidden = false
             self?.alertLabel.isHidden = true
         }
@@ -74,21 +71,5 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @objc private func tableViewTapped(tapGesture: UITapGestureRecognizer){
         let url: URL = URL(string: "CPBLFan://?game")!
         self.extensionContext?.open(url, completionHandler: nil)
-    }
-    
-    // for epanding view
-    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
-        
-        var currentSize: CGSize = self.preferredContentSize
-        switch activeDisplayMode {
-        case .expanded:
-            currentSize.height = 130
-            self.preferredContentSize = currentSize
-        case .compact:
-            self.preferredContentSize = maxSize
-        default:
-            currentSize.height = 130
-            self.preferredContentSize = currentSize
-        }
     }
 }
