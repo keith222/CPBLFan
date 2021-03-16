@@ -24,7 +24,7 @@ class TodayGameCell: UITableViewCell, BindView {
         if let gameCellViewModel = viewModel as? GameCellViewModel{
             //cell content
             self.gameNumLabel.text = gameCellViewModel.num
-            self.placeLabel.text = gameCellViewModel.place
+            self.placeLabel.text = gameCellViewModel.place.localized()
             self.homeImageView.image = UIImage(named: gameCellViewModel.homeImageString)
             self.guestImageView.image = UIImage(named: gameCellViewModel.guestImageString)
         }

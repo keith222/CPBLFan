@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lc5-ct-p02">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lc5-ct-p02">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment version="4352" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--個人成績-->
+        <!--Statistics-->
         <scene sceneID="nQo-QH-d85">
             <objects>
                 <viewController id="zlH-IO-f3i" customClass="StatsViewController" customModule="CPBLFan" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,20 +21,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Itz-g9-ndO">
-                                <rect key="frame" x="0.0" y="104.5" width="375" height="0.5"/>
-                                <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="96" width="375" height="0.5"/>
+                                <color key="backgroundColor" systemColor="separatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="0.29999999999999999" id="KXE-gt-1dd"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ni0-ix-fVv">
-                                <rect key="frame" x="0.0" y="105" width="375" height="71"/>
+                                <rect key="frame" x="0.0" y="96.5" width="375" height="71"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XRP-Eg-qP8">
                                         <rect key="frame" x="94" y="20" width="187.5" height="32"/>
                                         <segments>
-                                            <segment title="打擊成績"/>
-                                            <segment title="投手成績"/>
+                                            <segment title="Batting"/>
+                                            <segment title="Pitching"/>
                                         </segments>
                                         <color key="tintColor" red="0.031372549019607843" green="0.10588235294117647" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
@@ -41,7 +42,7 @@
                                         </connections>
                                     </segmentedControl>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="XRP-Eg-qP8" firstAttribute="centerX" secondItem="ni0-ix-fVv" secondAttribute="centerX" id="1EK-oB-aM6"/>
                                     <constraint firstItem="XRP-Eg-qP8" firstAttribute="top" secondItem="ni0-ix-fVv" secondAttribute="top" constant="20" id="5zU-4t-QlJ"/>
@@ -49,24 +50,24 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wFo-vF-Taf">
-                                <rect key="frame" x="0.0" y="176" width="375" height="0.5"/>
-                                <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="167.5" width="375" height="0.5"/>
+                                <color key="backgroundColor" systemColor="separatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="0.5" id="8sN-RQ-7Oe"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未有選手資料" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvr-nk-HRi">
-                                <rect key="frame" x="96.5" y="403.5" width="182" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Players Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvr-nk-HRi">
+                                <rect key="frame" x="85" y="399.5" width="205.5" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="tertiaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oHM-On-f9N">
-                                <rect key="frame" x="0.0" y="176.5" width="375" height="490.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="0.0" y="168" width="375" height="499"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Q3R-P0-I8I" firstAttribute="top" secondItem="oHM-On-f9N" secondAttribute="bottom" id="06n-rY-Plq"/>
                             <constraint firstItem="wFo-vF-Taf" firstAttribute="leading" secondItem="ogO-ET-0YC" secondAttribute="leading" id="345-jH-izW"/>
@@ -86,7 +87,7 @@
                             <constraint firstItem="XRP-Eg-qP8" firstAttribute="width" secondItem="ogO-ET-0YC" secondAttribute="width" multiplier="1:2" id="rgS-eG-w6h"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="個人成績" largeTitleDisplayMode="always" id="vJ0-7u-jDV"/>
+                    <navigationItem key="navigationItem" title="Statistics" largeTitleDisplayMode="always" id="vJ0-7u-jDV"/>
                     <connections>
                         <outlet property="batterPitcherTableView" destination="oHM-On-f9N" id="vnI-Ra-GBl"/>
                         <outlet property="statsSegmentedControl" destination="XRP-Eg-qP8" id="Fwi-T8-bgX"/>
@@ -109,18 +110,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未有選手資料" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="res-pH-sM0">
-                                <rect key="frame" x="96.5" y="315.5" width="182" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Players Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="res-pH-sM0">
+                                <rect key="frame" x="85" y="315.5" width="205.5" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="tertiaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lPu-AW-7j1">
-                                <rect key="frame" x="0.0" y="104.5" width="375" height="562.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="0.0" y="96" width="375" height="571"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="lPu-AW-7j1" secondAttribute="trailing" id="Dfj-hZ-rCn"/>
                             <constraint firstItem="res-pH-sM0" firstAttribute="centerX" secondItem="57K-Oo-smo" secondAttribute="centerX" id="JJP-wq-Dff"/>
@@ -152,7 +153,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D2k-cV-8Ag">
-                                <rect key="frame" x="0.0" y="104.5" width="375" height="562.5"/>
+                                <rect key="frame" x="0.0" y="96" width="375" height="571"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sdg-6j-yVP">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="222.5"/>
@@ -186,7 +187,43 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="打擊成績" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Pz-Yw-ZoH">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rr4-C2-wul">
+                                        <rect key="frame" x="15" y="237.5" width="345" height="27"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pitching Records" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqF-9e-VmJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="345" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="Pen-HW-4br"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <color key="textColor" red="0.40784313729999999" green="0.40784313729999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h0j-WW-T3I">
+                                                <rect key="frame" x="0.0" y="26" width="345" height="1"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="6Rm-0u-U45"/>
+                                                </constraints>
+                                                <wkWebViewConfiguration key="configuration" allowsAirPlayForMediaPlayback="NO" allowsPictureInPictureMediaPlayback="NO">
+                                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                                    <wkPreferences key="preferences"/>
+                                                </wkWebViewConfiguration>
+                                            </wkWebView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="DqF-9e-VmJ" firstAttribute="leading" secondItem="rr4-C2-wul" secondAttribute="leading" id="5ct-4M-Utg"/>
+                                            <constraint firstAttribute="trailing" secondItem="h0j-WW-T3I" secondAttribute="trailing" id="D3I-Bh-khU"/>
+                                            <constraint firstItem="DqF-9e-VmJ" firstAttribute="top" secondItem="rr4-C2-wul" secondAttribute="top" id="Et5-vM-XCf"/>
+                                            <constraint firstAttribute="bottom" secondItem="h0j-WW-T3I" secondAttribute="bottom" id="FP6-dn-fMX"/>
+                                            <constraint firstItem="h0j-WW-T3I" firstAttribute="leading" secondItem="rr4-C2-wul" secondAttribute="leading" id="H6E-NE-JgA"/>
+                                            <constraint firstAttribute="trailing" secondItem="DqF-9e-VmJ" secondAttribute="trailing" id="Rrm-cS-IM9"/>
+                                            <constraint firstItem="h0j-WW-T3I" firstAttribute="top" secondItem="DqF-9e-VmJ" secondAttribute="bottom" constant="5" id="fyk-PE-jg2"/>
+                                            <constraint firstAttribute="height" constant="27" id="lej-GB-s1Q"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Batting Records" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Pz-Yw-ZoH">
                                         <rect key="frame" x="15" y="237.5" width="345" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <color key="textColor" red="0.40784313725490196" green="0.40784313725490196" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -203,7 +240,7 @@
                                             <wkPreferences key="preferences"/>
                                         </wkWebViewConfiguration>
                                     </wkWebView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="守備成績" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gk4-dN-oes">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Defense" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gk4-dN-oes">
                                         <rect key="frame" x="15" y="279.5" width="345" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -220,7 +257,7 @@
                                             <wkPreferences key="preferences"/>
                                         </wkWebViewConfiguration>
                                     </wkWebView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="對戰成績" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A74-Y2-Lph">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A74-Y2-Lph">
                                         <rect key="frame" x="15" y="321.5" width="345" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -237,7 +274,7 @@
                                             <wkPreferences key="preferences"/>
                                         </wkWebViewConfiguration>
                                     </wkWebView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="單場最高成績" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUG-l8-J9f">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Highest in Sigle Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUG-l8-J9f">
                                         <rect key="frame" x="15" y="363" width="345" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -255,22 +292,23 @@
                                         </wkWebViewConfiguration>
                                     </wkWebView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="sdg-6j-yVP" firstAttribute="centerX" secondItem="D2k-cV-8Ag" secondAttribute="centerX" id="0VZ-kG-Cwt"/>
                                     <constraint firstAttribute="trailing" secondItem="sdg-6j-yVP" secondAttribute="trailing" id="10L-91-pFn"/>
                                     <constraint firstItem="izq-GP-YBR" firstAttribute="width" secondItem="sdg-6j-yVP" secondAttribute="height" multiplier="99:215" constant="-21.45348837209302" id="17f-iJ-KHe"/>
                                     <constraint firstAttribute="trailing" secondItem="8ii-EF-0T8" secondAttribute="trailing" constant="15" id="2uB-Sp-TKz"/>
                                     <constraint firstAttribute="trailing" secondItem="u3H-cG-zIM" secondAttribute="trailing" constant="15" id="3Oa-nA-kll"/>
+                                    <constraint firstAttribute="trailing" secondItem="rr4-C2-wul" secondAttribute="trailing" constant="15" id="6TH-Cp-PUJ"/>
                                     <constraint firstItem="VZB-5j-qpQ" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" constant="15" id="6VY-ff-tR5"/>
                                     <constraint firstItem="A74-Y2-Lph" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" constant="15" id="8No-Ns-GCQ"/>
                                     <constraint firstItem="ZUd-dl-oc2" firstAttribute="top" secondItem="rUG-l8-J9f" secondAttribute="bottom" constant="5" id="9PK-se-wHq"/>
                                     <constraint firstAttribute="trailing" secondItem="9Pz-Yw-ZoH" secondAttribute="trailing" constant="15" id="A2k-am-KH7"/>
                                     <constraint firstItem="izq-GP-YBR" firstAttribute="bottom" secondItem="sdg-6j-yVP" secondAttribute="bottom" constant="-8" id="AUe-Bx-oTZ"/>
+                                    <constraint firstItem="rr4-C2-wul" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" constant="15" id="Cg3-yL-UDM"/>
                                     <constraint firstItem="Gq8-fe-NCp" firstAttribute="bottom" secondItem="izq-GP-YBR" secondAttribute="bottom" constant="-5" id="DTz-Jj-9oo"/>
                                     <constraint firstItem="Gq8-fe-NCp" firstAttribute="trailing" secondItem="pwf-lW-JYg" secondAttribute="trailing" id="DiU-oe-hC0"/>
                                     <constraint firstItem="VZB-5j-qpQ" firstAttribute="top" secondItem="A74-Y2-Lph" secondAttribute="bottom" constant="5.0000000000000568" id="Ehe-rl-P9O"/>
-                                    <constraint firstItem="9Pz-Yw-ZoH" firstAttribute="top" secondItem="sdg-6j-yVP" secondAttribute="bottom" constant="15" id="HoQ-Cz-gj4"/>
                                     <constraint firstAttribute="trailing" secondItem="rUG-l8-J9f" secondAttribute="trailing" constant="15" id="Ieq-Kp-5F6"/>
                                     <constraint firstItem="A74-Y2-Lph" firstAttribute="top" secondItem="8ii-EF-0T8" secondAttribute="bottom" constant="15" id="JBA-Jf-F3V"/>
                                     <constraint firstItem="u3H-cG-zIM" firstAttribute="top" secondItem="9Pz-Yw-ZoH" secondAttribute="bottom" constant="5" id="JRO-UF-IYJ"/>
@@ -278,6 +316,7 @@
                                     <constraint firstItem="sdg-6j-yVP" firstAttribute="top" secondItem="D2k-cV-8Ag" secondAttribute="top" id="Jmo-v0-JCM"/>
                                     <constraint firstAttribute="trailing" secondItem="pwf-lW-JYg" secondAttribute="trailing" constant="18" id="NIX-A6-WCb"/>
                                     <constraint firstItem="Gq8-fe-NCp" firstAttribute="top" secondItem="pwf-lW-JYg" secondAttribute="bottom" constant="5" id="Pd1-LE-hbG"/>
+                                    <constraint firstItem="9Pz-Yw-ZoH" firstAttribute="top" secondItem="sdg-6j-yVP" secondAttribute="bottom" constant="15" id="UVk-58-udZ"/>
                                     <constraint firstItem="sdg-6j-yVP" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" id="VL2-A2-LXE"/>
                                     <constraint firstItem="rUG-l8-J9f" firstAttribute="top" secondItem="VZB-5j-qpQ" secondAttribute="bottom" constant="15" id="VSA-ZP-N7e"/>
                                     <constraint firstItem="gk4-dN-oes" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" constant="15" id="WIX-tE-goz"/>
@@ -285,6 +324,7 @@
                                     <constraint firstItem="gk4-dN-oes" firstAttribute="top" secondItem="u3H-cG-zIM" secondAttribute="bottom" constant="15" id="Zz1-HA-7fH"/>
                                     <constraint firstItem="u3H-cG-zIM" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" constant="15" id="crr-3U-EmX"/>
                                     <constraint firstItem="ZUd-dl-oc2" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" constant="15" id="dBW-jh-q3O"/>
+                                    <constraint firstItem="rr4-C2-wul" firstAttribute="top" secondItem="sdg-6j-yVP" secondAttribute="bottom" constant="15" id="dzL-ps-pcb"/>
                                     <constraint firstAttribute="trailing" secondItem="VZB-5j-qpQ" secondAttribute="trailing" constant="15" id="e5M-y1-VdA"/>
                                     <constraint firstAttribute="trailing" secondItem="gk4-dN-oes" secondAttribute="trailing" constant="15" id="gRM-yE-oD7"/>
                                     <constraint firstAttribute="bottom" secondItem="ZUd-dl-oc2" secondAttribute="bottom" constant="20" id="jHb-fI-SDB"/>
@@ -298,7 +338,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="sdg-6j-yVP" firstAttribute="height" secondItem="CKc-t0-w3N" secondAttribute="height" multiplier="1:3" id="7TZ-qu-vxa"/>
                             <constraint firstItem="D2k-cV-8Ag" firstAttribute="top" secondItem="OfK-eq-X1V" secondAttribute="bottom" id="SgG-Rd-93B"/>
@@ -314,10 +354,15 @@
                         <outlet property="gameImageView" destination="sdg-6j-yVP" id="QMC-RW-N70"/>
                         <outlet property="headImageView" destination="izq-GP-YBR" id="ZiC-Hi-E9L"/>
                         <outlet property="nameLabel" destination="pwf-lW-JYg" id="0nJ-SQ-SJ2"/>
+                        <outlet property="optionalView" destination="rr4-C2-wul" id="Ro6-Zs-4Pi"/>
+                        <outlet property="optionalViewHeight" destination="lej-GB-s1Q" id="g3a-1c-n6t"/>
+                        <outlet property="optionalWebView" destination="h0j-WW-T3I" id="Bhq-tB-GK3"/>
+                        <outlet property="optionalWebViewHeight" destination="6Rm-0u-U45" id="RYk-KW-ph4"/>
                         <outlet property="scrollView" destination="D2k-cV-8Ag" id="PD0-1y-gjY"/>
                         <outlet property="singleGameWebView" destination="ZUd-dl-oc2" id="lfP-KI-Lzy"/>
                         <outlet property="singleGameWebViewHeight" destination="CcW-9b-C6E" id="rhM-Bc-Izg"/>
                         <outlet property="statsLabel" destination="9Pz-Yw-ZoH" id="QZP-Bn-eju"/>
+                        <outlet property="statsLabelTop" destination="UVk-58-udZ" id="ZZn-fb-D41"/>
                         <outlet property="statsWebView" destination="u3H-cG-zIM" id="XcE-RT-mXy"/>
                         <outlet property="statsWebViewHeight" destination="cDH-3q-z9w" id="Tut-42-PxK"/>
                         <outlet property="teamStatsWebView" destination="VZB-5j-qpQ" id="PYr-0g-POq"/>
@@ -328,11 +373,11 @@
             </objects>
             <point key="canvasLocation" x="3357.5999999999999" y="443.92803598200902"/>
         </scene>
-        <!--個人成績-->
+        <!--Statistics-->
         <scene sceneID="6jD-p9-qfD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lc5-ct-p02" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="個人成績" image="statistics" selectedImage="statistics-fill" id="GS0-Rn-d1S"/>
+                    <tabBarItem key="tabBarItem" title="Statistics" image="statistics" selectedImage="statistics-fill" id="GS0-Rn-d1S"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="a1T-49-pIH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
@@ -351,5 +396,17 @@
     <resources>
         <image name="statistics" width="22" height="22"/>
         <image name="statistics-fill" width="22" height="22"/>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

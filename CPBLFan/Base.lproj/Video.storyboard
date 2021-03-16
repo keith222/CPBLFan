@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--職棒影音-->
+        <!--Videos-->
         <scene sceneID="2yJ-8p-zof">
             <objects>
                 <viewController id="1l8-se-7xg" customClass="VideoViewController" customModule="CPBLFan" customModuleProvider="target" sceneMemberID="viewController">
@@ -40,7 +40,7 @@
                             <constraint firstItem="sy3-aQ-f2D" firstAttribute="leading" secondItem="50r-Uc-tX2" secondAttribute="leading" id="qwI-VW-XOM"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="職棒影音" id="wDa-si-vrH"/>
+                    <navigationItem key="navigationItem" title="Videos" id="wDa-si-vrH"/>
                     <connections>
                         <outlet property="videoTableView" destination="sy3-aQ-f2D" id="n60-da-BQu"/>
                         <segue destination="2Pf-tX-yeC" kind="presentation" identifier="modalToVideo" modalPresentationStyle="overFullScreen" id="ZaF-oz-jiP"/>
@@ -168,11 +168,11 @@
             </objects>
             <point key="canvasLocation" x="2427.34375" y="1964.6484374999998"/>
         </scene>
-        <!--職棒影音-->
+        <!--Videos-->
         <scene sceneID="rnQ-jj-oeH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GgG-HH-Fon" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="職棒影音" image="video" selectedImage="video-fill" id="02H-Jm-f2u"/>
+                    <tabBarItem key="tabBarItem" title="Videos" image="video" selectedImage="video-fill" id="02H-Jm-f2u"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="L0g-zK-8wX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="104.5"/>

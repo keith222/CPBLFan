@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "全年度"; ObjectID = "LQJ-Lp-AYc"; */
+"LQJ-Lp-AYc.text" = "全年度";
+
+/* Class = "UILabel"; text = "勝差"; ObjectID = "Mat-SY-bfC"; */
+"Mat-SY-bfC.text" = "勝差";
+
+/* Class = "UILabel"; text = "敗"; ObjectID = "Nsu-yS-KIc"; */
+"Nsu-yS-KIc.text" = "敗";
+
+/* Class = "UILabel"; text = "#"; ObjectID = "WZe-yY-HXN"; */
+"WZe-yY-HXN.text" = "#";
+
+/* Class = "UILabel"; text = "勝率"; ObjectID = "bME-6a-MCf"; */
+"bME-6a-MCf.text" = "勝率";
+
+/* Class = "UILabel"; text = "勝"; ObjectID = "gJu-DU-vkE"; */
+"gJu-DU-vkE.text" = "勝";
+
+/* Class = "UILabel"; text = "隊伍"; ObjectID = "ng2-Vn-oPt"; */
+"ng2-Vn-oPt.text" = "隊伍";
+
+/* Class = "UILabel"; text = "和"; ObjectID = "piM-ii-kzG"; */
+"piM-ii-kzG.text" = "和";

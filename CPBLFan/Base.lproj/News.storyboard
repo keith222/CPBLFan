@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Zev-r0-DUz">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Zev-r0-DUz">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment version="4352" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--職棒新聞-->
+        <!--News-->
         <scene sceneID="Akq-m7-E6h">
             <objects>
                 <viewController id="Dyl-7Q-gWO" customClass="NewsViewController" customModule="CPBLFan" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,22 +17,22 @@
                         <viewControllerLayoutGuide type="bottom" id="Ug0-wc-65c"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8cv-qN-7vh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未有新聞資料" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Fd-lc-GPJ">
-                                <rect key="frame" x="96.5" y="315.5" width="182" height="36"/>
+                                <rect key="frame" x="116" y="430" width="182" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="tertiaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="185" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ux1-Wr-Orx">
-                                <rect key="frame" x="0.0" y="104.5" width="375" height="562.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <sections/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="3Fd-lc-GPJ" firstAttribute="centerY" secondItem="8cv-qN-7vh" secondAttribute="centerY" id="7cf-ua-djx"/>
                             <constraint firstItem="Ux1-Wr-Orx" firstAttribute="leading" secondItem="8cv-qN-7vh" secondAttribute="leading" id="A8y-39-lX0"/>
@@ -41,7 +42,7 @@
                             <constraint firstAttribute="trailing" secondItem="Ux1-Wr-Orx" secondAttribute="trailing" id="zFw-Ug-Plw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="職棒新聞" id="JBz-vd-tvv"/>
+                    <navigationItem key="navigationItem" title="News" id="JBz-vd-tvv"/>
                     <connections>
                         <outlet property="newsTableView" destination="Ux1-Wr-Orx" id="YKi-wI-8gA"/>
                         <segue destination="Z5b-90-V5n" kind="presentation" identifier="presentToContent" animates="NO" modalPresentationStyle="fullScreen" id="dTU-Gi-zDt"/>
@@ -59,20 +60,20 @@
                         <viewControllerLayoutGuide type="top" id="2bL-VN-FAt"/>
                         <viewControllerLayoutGuide type="bottom" id="dMy-qn-WKu"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="NpQ-y7-OtK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NpQ-y7-OtK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SQG-JY-ThJ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="258"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="258"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="258" id="79x-YX-twm"/>
                                 </constraints>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wvr-Wx-NYP">
-                                <rect key="frame" x="0.0" y="258" width="375" height="409"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wvr-Wx-NYP">
+                                <rect key="frame" x="0.0" y="258" width="414" height="638"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中華職棒新聞" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tqI-Ng-E83">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tqI-Ng-E83">
                                         <rect key="frame" x="15" y="5" width="250" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="bNm-r8-RQF"/>
@@ -102,20 +103,20 @@
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新聞" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dl-3u-23C">
-                                        <rect key="frame" x="15" y="71.5" width="345" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News Content" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dl-3u-23C">
+                                        <rect key="frame" x="15" y="71.5" width="384" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新聞連結：" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ppn-zu-Vzd">
-                                        <rect key="frame" x="15" y="92" width="345" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ppn-zu-Vzd">
+                                        <rect key="frame" x="15" y="92" width="384" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" contentMode="bottomLeft" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="http://www.cpbl.com.tw" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44B-Zq-BJj">
-                                        <rect key="frame" x="16" y="114.5" width="344" height="20.5"/>
+                                        <rect key="frame" x="16" y="114.5" width="383" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.23945538865277782" blue="0.79473198784722221" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -132,7 +133,7 @@
                                     <constraint firstItem="2dl-3u-23C" firstAttribute="top" secondItem="07f-Vc-f81" secondAttribute="bottom" constant="15" id="GEl-hG-Ndf"/>
                                     <constraint firstItem="Ppn-zu-Vzd" firstAttribute="top" secondItem="2dl-3u-23C" secondAttribute="bottom" id="L7I-NC-7oz"/>
                                     <constraint firstItem="tqI-Ng-E83" firstAttribute="leading" secondItem="Wvr-Wx-NYP" secondAttribute="leading" constant="15" id="NCX-Ra-hFt"/>
-                                    <constraint firstAttribute="bottom" secondItem="44B-Zq-BJj" secondAttribute="bottom" id="Rhr-3l-9d6"/>
+                                    <constraint firstAttribute="bottom" secondItem="44B-Zq-BJj" secondAttribute="bottom" constant="20" id="Rhr-3l-9d6"/>
                                     <constraint firstItem="07f-Vc-f81" firstAttribute="top" secondItem="tqI-Ng-E83" secondAttribute="bottom" id="fdg-S0-kvH"/>
                                     <constraint firstItem="2dl-3u-23C" firstAttribute="width" secondItem="Wvr-Wx-NYP" secondAttribute="width" constant="-30" id="fpT-F7-UxZ"/>
                                     <constraint firstItem="07f-Vc-f81" firstAttribute="leading" secondItem="tqI-Ng-E83" secondAttribute="leading" id="sdF-n1-Avm"/>
@@ -141,12 +142,12 @@
                                 </constraints>
                             </scrollView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="v1U-nJ-Cwr">
-                                <rect key="frame" x="333" y="15" width="32" height="116"/>
+                                <rect key="frame" x="372" y="59" width="32" height="116"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Svg-76-2iA">
                                         <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6P7-gj-gLp">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6P7-gj-gLp">
                                                 <rect key="frame" x="2" y="2" width="28" height="28"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -174,7 +175,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iCy-vS-QSs">
                                         <rect key="frame" x="0.0" y="42" width="32" height="32"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EX0-Yn-OZp">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EX0-Yn-OZp">
                                                 <rect key="frame" x="4" y="4" width="24" height="24"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -202,7 +203,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NsV-Gc-ddy">
                                         <rect key="frame" x="0.0" y="84" width="32" height="32"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UjJ-qc-m5V">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UjJ-qc-m5V">
                                                 <rect key="frame" x="4" y="2" width="24" height="24"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="share"/>
@@ -233,7 +234,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="SQG-JY-ThJ" firstAttribute="leading" secondItem="NpQ-y7-OtK" secondAttribute="leading" id="5Lb-XH-60D"/>
                             <constraint firstAttribute="trailing" secondItem="Wvr-Wx-NYP" secondAttribute="trailing" id="JAo-bX-5Oa"/>
@@ -241,7 +242,7 @@
                             <constraint firstAttribute="trailing" secondItem="v1U-nJ-Cwr" secondAttribute="trailing" constant="10" id="SvX-Lg-4ge"/>
                             <constraint firstAttribute="trailing" secondItem="SQG-JY-ThJ" secondAttribute="trailing" id="TDG-PT-Qeg"/>
                             <constraint firstItem="SQG-JY-ThJ" firstAttribute="top" secondItem="NpQ-y7-OtK" secondAttribute="top" id="UaT-hd-SD0"/>
-                            <constraint firstItem="dMy-qn-WKu" firstAttribute="top" secondItem="Wvr-Wx-NYP" secondAttribute="bottom" id="Y5h-nM-A6d"/>
+                            <constraint firstAttribute="bottom" secondItem="Wvr-Wx-NYP" secondAttribute="bottom" id="Y5h-nM-A6d"/>
                             <constraint firstItem="v1U-nJ-Cwr" firstAttribute="top" secondItem="2bL-VN-FAt" secondAttribute="bottom" constant="15" id="tsw-mJ-Qic"/>
                             <constraint firstItem="Wvr-Wx-NYP" firstAttribute="top" secondItem="SQG-JY-ThJ" secondAttribute="bottom" id="xfn-Jc-SWf"/>
                         </constraints>
@@ -258,16 +259,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Eu-hd-AvL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2428.985507246377" y="-978.26086956521749"/>
+            <point key="canvasLocation" x="2428.985507246377" y="-978.34821428571422"/>
         </scene>
-        <!--職棒新聞-->
+        <!--News-->
         <scene sceneID="e4K-np-eQ3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zev-r0-DUz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="職棒新聞" image="news" selectedImage="news-fill" id="5Wz-dZ-b8c"/>
+                    <tabBarItem key="tabBarItem" title="News" image="news" selectedImage="news-fill" id="5Wz-dZ-b8c"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="P2H-Gj-n71">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -286,5 +287,14 @@
         <image name="news" width="25" height="25"/>
         <image name="news-fill" width="25" height="25"/>
         <image name="share" width="25" height="25"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

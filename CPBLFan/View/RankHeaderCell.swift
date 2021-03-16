@@ -14,7 +14,7 @@ class RankHeaderCell: UITableViewHeaderFooterView, BindView {
     
     func bindViewModel(_ viewModel: Any) {
         if let sectionString = viewModel as? String{
-            self.yearLabel.text = sectionString
+            self.yearLabel.text = sectionString.localized()
         }
     }
     

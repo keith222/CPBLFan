@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -23,29 +23,13 @@
                             <constraint firstAttribute="height" constant="1" id="2Ht-q7-8Tl"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQ1-KU-84k">
-                        <rect key="frame" x="106.33333333333333" y="7.3333333333333339" width="21.333333333333329" height="20.333333333333329"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="747" text="月" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NbH-MC-ICv">
-                        <rect key="frame" x="132.66666666666666" y="8.3333333333333339" width="16" height="18.666666666666664"/>
-                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="16"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="747" text="00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKM-cc-dSc">
-                        <rect key="frame" x="153.66666666666666" y="7.3333333333333339" width="20.333333333333343" height="20.333333333333329"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="747" text="日期" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDZ-VO-VOr">
+                        <rect key="frame" x="150.66666666666666" y="8.3333333333333339" width="32.666666666666657" height="18.666666666666664"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="747" text="日" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDZ-VO-VOr">
-                        <rect key="frame" x="179" y="8.3333333333333339" width="16" height="18.666666666666664"/>
-                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="16"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="星期一" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ax8-Xe-QWT">
-                        <rect key="frame" x="235.66666666666663" y="7.3333333333333339" width="49" height="20.333333333333329"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="星期一" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ax8-Xe-QWT">
+                        <rect key="frame" x="222.66666666666666" y="7.3333333333333339" width="48.999999999999972" height="20.333333333333329"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -60,28 +44,21 @@
                 </subviews>
                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 <constraints>
-                    <constraint firstItem="Ax8-Xe-QWT" firstAttribute="centerX" secondItem="eV4-zW-nbb" secondAttribute="centerX" constant="53" id="9LL-bA-Raq"/>
-                    <constraint firstItem="jDZ-VO-VOr" firstAttribute="leading" secondItem="DKM-cc-dSc" secondAttribute="trailing" constant="5" id="AcQ-jC-QND"/>
+                    <constraint firstItem="Ax8-Xe-QWT" firstAttribute="centerX" secondItem="eV4-zW-nbb" secondAttribute="centerX" constant="40" id="9LL-bA-Raq"/>
                     <constraint firstItem="Ax8-Xe-QWT" firstAttribute="centerY" secondItem="eV4-zW-nbb" secondAttribute="centerY" id="CFO-cC-r8h"/>
                     <constraint firstItem="xiF-Xe-lgA" firstAttribute="leading" secondItem="eV4-zW-nbb" secondAttribute="leading" id="FeY-51-YQL"/>
                     <constraint firstItem="xiF-Xe-lgA" firstAttribute="top" secondItem="eV4-zW-nbb" secondAttribute="top" id="LFZ-cE-eLh"/>
                     <constraint firstAttribute="trailing" secondItem="xiF-Xe-lgA" secondAttribute="trailing" id="TkI-2b-N59"/>
-                    <constraint firstItem="NbH-MC-ICv" firstAttribute="centerY" secondItem="jDZ-VO-VOr" secondAttribute="centerY" id="XeG-nU-2Aq"/>
-                    <constraint firstItem="DKM-cc-dSc" firstAttribute="centerY" secondItem="jDZ-VO-VOr" secondAttribute="centerY" id="eX2-tj-qVX"/>
-                    <constraint firstItem="NbH-MC-ICv" firstAttribute="leading" secondItem="UQ1-KU-84k" secondAttribute="trailing" constant="5" id="g0l-7s-ugh"/>
                     <constraint firstAttribute="trailing" secondItem="m4s-L0-R7N" secondAttribute="trailing" id="hcc-HN-SAO"/>
                     <constraint firstAttribute="bottom" secondItem="m4s-L0-R7N" secondAttribute="bottom" id="i3y-9i-2Ya"/>
                     <constraint firstItem="m4s-L0-R7N" firstAttribute="leading" secondItem="eV4-zW-nbb" secondAttribute="leading" id="jSp-Mj-PcI"/>
                     <constraint firstItem="jDZ-VO-VOr" firstAttribute="centerY" secondItem="eV4-zW-nbb" secondAttribute="centerY" id="rA3-jo-c2X"/>
-                    <constraint firstItem="DKM-cc-dSc" firstAttribute="leading" secondItem="NbH-MC-ICv" secondAttribute="trailing" constant="5" id="uSF-xR-Bo2"/>
-                    <constraint firstItem="jDZ-VO-VOr" firstAttribute="centerX" secondItem="eV4-zW-nbb" secondAttribute="centerX" constant="-20" id="wV6-oc-naH"/>
-                    <constraint firstItem="UQ1-KU-84k" firstAttribute="centerY" secondItem="NbH-MC-ICv" secondAttribute="centerY" id="zJm-ko-VL4"/>
+                    <constraint firstItem="jDZ-VO-VOr" firstAttribute="centerX" secondItem="eV4-zW-nbb" secondAttribute="centerX" constant="-40" id="wV6-oc-naH"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="dayLabel" destination="DKM-cc-dSc" id="IiZ-Bw-dOd"/>
-                <outlet property="monthLabel" destination="UQ1-KU-84k" id="Op9-SM-zJj"/>
-                <outlet property="weekDayLabel" destination="Ax8-Xe-QWT" id="1Yc-Re-hhF"/>
+                <outlet property="dateLabel" destination="jDZ-VO-VOr" id="hNP-u1-9Pk"/>
+                <outlet property="weekDayLabel" destination="Ax8-Xe-QWT" id="gq0-Rz-QDX"/>
             </connections>
             <point key="canvasLocation" x="-136.23188405797103" y="451.22282608695656"/>
         </tableViewCell>
