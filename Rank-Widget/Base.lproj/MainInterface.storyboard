@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,21 +19,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暫無資料。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIs-e2-VCp">
-                                <rect key="frame" x="116.66666666666666" y="140" width="86.666666666666657" height="20.333333333333343"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Standings Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIs-e2-VCp">
+                                <rect key="frame" x="88.333333333333329" y="140" width="143.33333333333337" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6za-2H-6fE">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6za-2H-6fE">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ua-hd-JuQ">
-                                        <rect key="frame" x="5" y="5" width="99" height="29"/>
+                                        <rect key="frame" x="5" y="5" width="100" height="29"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="全年度">
+                                        <state key="normal" title="Full">
                                             <color key="titleColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -49,11 +49,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSg-Il-kcp">
-                                        <rect key="frame" x="109" y="5" width="99" height="29"/>
+                                        <rect key="frame" x="110" y="5" width="100" height="29"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="上半季">
+                                        <state key="normal" title="1st Half ">
                                             <color key="titleColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -69,11 +69,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7l-vG-6YN">
-                                        <rect key="frame" x="213" y="5" width="102" height="29"/>
+                                        <rect key="frame" x="215" y="5" width="100" height="29"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="下半季">
+                                        <state key="normal" title="2nd Half ">
                                             <color key="titleColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>

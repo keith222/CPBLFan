@@ -1,0 +1,21 @@
+
+/* Class = "UILabel"; text = "勝"; ObjectID = "5vf-fO-PKu"; */
+"5vf-fO-PKu.text" = "勝";
+
+/* Class = "UILabel"; text = "勝率"; ObjectID = "A8Q-od-Sr7"; */
+"A8Q-od-Sr7.text" = "勝率";
+
+/* Class = "UILabel"; text = "隊伍"; ObjectID = "SVG-0V-uQk"; */
+"SVG-0V-uQk.text" = "隊伍";
+
+/* Class = "UILabel"; text = "#"; ObjectID = "Ugv-m9-ZN4"; */
+"Ugv-m9-ZN4.text" = "#";
+
+/* Class = "UILabel"; text = "和"; ObjectID = "hiB-so-tCl"; */
+"hiB-so-tCl.text" = "和";
+
+/* Class = "UILabel"; text = "勝差"; ObjectID = "xSt-u8-Cv4"; */
+"xSt-u8-Cv4.text" = "勝差";
+
+/* Class = "UILabel"; text = "敗"; ObjectID = "yGB-rk-cWS"; */
+"yGB-rk-cWS.text" = "敗";

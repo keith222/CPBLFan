@@ -5,3 +5,38 @@
   Created by Yang Tun-Kai on 2020/5/13.
   Copyright © 2020 Sparkr. All rights reserved.
 */
+"台北棒球場"="Taipei Baseball Stadium";
+"天母棒球場"="Tianmu Baseball Stadium";
+"新莊棒球場"="Xinzhuang Baseball Stadium";
+"龍潭棒球場"="Longtan Baseball Stadium";
+"桃園國際棒球場"="Taoyuan International Baseball Stadium";
+"新竹棒球場"="Hsinchu Baseball Stadium";
+"台中棒球場"="Taichung Baseball Field";
+"洲際棒球場"="Taichung Intercontinental Baseball Stadium";
+"斗六棒球場"="Douliu Baseball Stadium";
+"嘉義市棒球場"="Chiayi City Baseball Stadium";
+"嘉義縣棒球場"="Chiayi County Baseball Stadium";
+"台南棒球場"="Tainan Baseball Stadium";
+"立德棒球場"="Lide Baseball Stadium";
+"澄清湖棒球場"="Chengcing Lake Baseball Stadium";
+"屏東棒球場"="Pingtung Baseball Field";
+"羅東棒球場"="Luodong Baseball Field";
+"花蓮棒球場"="Hualien Baseball Stadium";
+"台東棒球場"="Taitung Baseball Stadium";
+"選手資訊"="Player Info";
+"賽事資訊"="Game Info";
+"上半季"="1st Half Season";
+"下半季"="2nd Half Season";
+"全年度"="Full Season";
+"打擊成績"="Batting Records";
+"投球成績"="Pitching Records";
+"選擇年月"="Filter";
+"選擇年份"="By Year";
+"選擇月份"="By Month";
+"B03"="EDA Rhinos";
+"A02"="Lamigo Monkeys";
+"AJL011"="Rakuten Monkeys";
+"E02"="CTBC Brothers";
+"L01"="Uni-Lions";
+"B04"="Fubon Guardians";
+"D01"="Wei Chuan Dragons";

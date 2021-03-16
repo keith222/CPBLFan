@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 import PKHUD
 
-class NewsContentViewController: UIViewController {
+class NewsContentViewController: BaseViewController {
 
     @IBOutlet weak var newsImage: UIImageView!
     @IBOutlet weak var newsDateLabel: UILabel!
