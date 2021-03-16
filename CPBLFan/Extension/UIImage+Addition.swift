@@ -31,6 +31,7 @@ extension UIImage{
         default:
             break
         }
-        return UIImage(named: filename)!
+        
+        return UIImage(named: filename.logoLocalizedString)!
     }
 }
