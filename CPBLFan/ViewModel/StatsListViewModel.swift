@@ -44,6 +44,7 @@ class StatsListViewModel{
     
     func fetchStatList(of page: Int = 1){
         let url = "\(APIService.CPBLSourceURL)\(self.stats.moreUrl ?? "")&per_page=\(page)"
+
         APIService.request(.get, route: url, completionHandler: { [weak self] text in
             guard let text = text else {
                 self?.errorHandleClosure?()
@@ -56,10 +57,10 @@ class StatsListViewModel{
                 
                 for (index,node) in doc.css(".std_tb tr").enumerated(){
                     guard index > 0 else{continue}
-                    let categoryIndex = self?.getIndex(of: self?.stats.category ?? "") ?? 0
+                    let categoryIndex = self?.stats.category?.getIndex() ?? 0
                     let numData = node.css("td")[0].text
-                    let nameData = node.css("td")[1].text?.replacingOccurrences(of: "*", with: "").trimmed
-                    let teamData = self?.getTeam(with: (node.css("td")[1].at_css("img")?["src"])!)
+                    let nameData = node.css("td")[1].text?.replacingOccurrences(of: "*", with: "").trimmed.components(separatedBy: " ").dropFirst().joined(separator: " ") ?? ""
+                    let teamData = (node.css("td")[1].at_css("img")?["src"])?.getTeam()
                     let statsData = node.css("td")[categoryIndex].text
                     let playerUrlData = node.css("td")[1].at_css("a")?["href"]
                     statsList.append(StatsList(num: numData, name: nameData, team: teamData, stats: statsData, playerUrl: playerUrlData))
@@ -100,53 +101,5 @@ class StatsListViewModel{
     
     private func createCellViewModel(with statsList: StatsList) -> StatsListCellViewModel {
         return StatsListCellViewModel(num: statsList.num, name: statsList.name, team: statsList.team, stats: statsList.stats, playerUrl: statsList.playerUrl)
-    }
-    
-    private func getTeam(with fileName: String) -> String{
-        if fileName.contains("B03") {
-            return "義大犀牛"
-        } else if fileName.contains("A02") {
-            return "Lamigo"
-        } else if fileName.contains("AJL011") {
-            return "樂天"
-        } else if fileName.contains("E02"){
-            return "中信兄弟"
-        } else if fileName.contains("L01") {
-            return "統一獅"
-        } else if fileName.contains("B04") {
-            return "富邦"
-        }
-        return "無"
-    }
-    
-    private func getIndex(of category: String) -> Int{
-        switch category {
-        case "AVG":
-            return 17
-        case "H":
-            return 7
-        case "HR":
-            return 11
-        case "ERA":
-            return 15
-        case "W":
-            return 8
-        case "SV":
-            return 10
-        case "RBI":
-            return 5
-        case "SB":
-            return 14
-        case "SO":
-            return 23
-        case "WHIP":
-            return 14
-        case "TB":
-            return 12
-        case "HLD":
-            return 12
-        default:
-            return 0
-        }
     }
 }

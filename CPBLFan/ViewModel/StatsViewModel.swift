@@ -40,7 +40,12 @@ class StatsViewModel{
     }
     
     init(){
-        fetchStats()
+        if (Locale.preferredLanguages.first?.lowercased() ?? "").contains("zh-hant") {
+            fetchStats()
+            
+        } else {
+            fetchEngStats()
+        }
     }
     
     func fetchStats(){
@@ -56,7 +61,7 @@ class StatsViewModel{
                 let doc = try HTML(html: text, encoding: .utf8)
                 
                 for (index,node) in doc.css(".statstoplist_box").enumerated(){
-                    let category = self?.getDataCategory(from: index) ?? ""
+                    let category = index.getDataCategory()
                     
                     let tag = node.css("table tr")[1]
                     var statsElement: [String] = []
@@ -65,7 +70,7 @@ class StatsViewModel{
                         statsElement.append(element.text!)
                     }
                     let moreUrl = node.at_css(".more_row")?["href"]?.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? ""
-                
+                    
                     statsData.append(Stats(name: statsElement[1], team: statsElement[0], stats: statsElement[2], category: category, moreUrl: moreUrl))
                 }
                 
@@ -78,11 +83,50 @@ class StatsViewModel{
                 let batterSource = Array(Set(statsData).subtracting(pitcherSource)).sorted(by: { ($0.category ?? "") < ($1.category ?? "")})
                 self?.processFetched(batterSource, category: .batter)
                 self?.batterStats.append(contentsOf: batterSource)
-
+                
             } catch let error as NSError{
                 os_log("Error: %s", error.localizedDescription)
             }
         })
+    }
+    
+    func fetchEngStats() {
+        let queue = DispatchGroup()
+        let params = ["AVG", "HIT", "HR", "RBI", "SB", "TB", "ERA", "WIN", "SV", "SO", "WHIP", "HLD",]
+        var statsData: [Stats?] = Array(repeating: nil, count: 12)
+        let year = Date().year
+        for (index, param) in params.enumerated() {
+            queue.enter()
+            let type = (index >= 6) ? "ppit" : "pbat"
+            let subUrl = "/en/stats/all.html?&game_type=01&online=1&year=\(year)&stat=\(type)&sort=\(param)&order=desc"
+            let route = "\(APIService.CPBLSourceURL)\(subUrl)"
+            APIService.request(.get, route: route, completionHandler: { [weak self] text in
+                guard let text = text else {
+                    self?.errorHandleClosure?()
+                    return
+                }
+                
+                do {
+                    let doc = try HTML(html: text, encoding: .utf8)
+                    if let node = doc.at_css(".std_tb tr:nth-child(2)") {
+                        let categoryIndex = param.getIndex()
+                        let category = (index == 1 || index == 7) ? String(param.prefix(1)) : param
+                        let name = node.css("td")[1].text?.replacingOccurrences(of: "*", with: "").trimmed.components(separatedBy: " ").dropFirst().joined(separator: " ") ?? ""
+                        let team = (node.css("td")[1].at_css("img")?["src"])?.getTeam()
+                        let stats = node.css("td")[categoryIndex].text
+                        statsData[index] = Stats(name: name, team: team, stats: stats, category: category, moreUrl: subUrl)
+                    }
+                    
+                    if !statsData.contains(nil) {
+                        self?.processEngFetch(statsData)
+                    }
+                    
+                } catch let error as NSError{
+                    os_log("Error: %s", error.localizedDescription)
+                }
+                queue.leave()
+            })
+        }
     }
     
     func getCellViewModels(of category: PlayerType) -> [StatsCellViewModel] {
@@ -96,6 +140,18 @@ class StatsViewModel{
     func getStatsLivewViewModel(at index: Int) -> StatsListViewModel {
         let stats = (self.savedCategory == .pitcher) ? self.pitcherStats[index] : self.batterStats[index]
         return StatsListViewModel(with: stats, and: self.savedCategory)
+    }
+    
+    private func processEngFetch(_ stats: [Stats?]) {
+        // filter pitcher data
+        let pitcherSource = stats[6..<stats.count].compactMap({ $0 })
+        self.processFetched(pitcherSource, category: .pitcher)
+        self.pitcherStats.append(contentsOf: pitcherSource)
+        
+        // filter batter data
+        let batterSource = stats[0..<6].compactMap({ $0 })
+        self.processFetched(batterSource, category: .batter)
+        self.batterStats.append(contentsOf: batterSource)
     }
     
     private func processFetched(_ stats: [Stats], category: PlayerType) {
@@ -114,38 +170,4 @@ class StatsViewModel{
     private func createCellViewModel(with stat: Stats, and type: PlayerType) -> StatsCellViewModel {
         return StatsCellViewModel(name: stat.name, team: stat.team, stats: stat.stats, category: stat.category, moreUrl: stat.moreUrl, type: type)
     }
-    
-    private func getDataCategory(from index:Int) -> String{
-        var category = ""
-        switch index {
-        case 0:
-            category = "AVG"
-        case 1:
-            category = "H"
-        case 2:
-            category = "HR"
-        case 3:
-            category = "ERA"
-        case 4:
-            category = "W"
-        case 5:
-            category = "SV"
-        case 6:
-            category = "RBI"
-        case 7:
-            category = "SB"
-        case 8:
-            category = "SO"
-        case 9:
-            category = "WHIP"
-        case 10:
-            category = "TB"
-        case 11:
-            category = "HLD"
-        default:
-            break
-        }
-        return category
-    }
-    
 }

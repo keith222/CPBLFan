@@ -34,7 +34,7 @@ class StatsViewController: BaseViewController {
     
             self?.performAnimation(of: self?.batterPitcherTableView, isHidden: source.isEmpty)
         }
-        
+
         self.statsViewModel.errorHandleClosure = {
             HUD.hide(animated: true, completion: { finished in
                 UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.3, delay: 0, animations: { [weak self] in
