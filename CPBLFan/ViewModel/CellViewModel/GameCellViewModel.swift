@@ -24,7 +24,7 @@ struct GameCellViewModel {
         case _ where game > 0:
             return "Game \(game)"
         case _ where game < -10:
-            return "季後挑戰賽: G\(-(game % 10))"
+            return "PlayOff Series G\(-(game % 10))"
         case _ where game < 0:
             return "Taiwan Series G\(-game)"
         default:
@@ -33,7 +33,8 @@ struct GameCellViewModel {
     }
     
     var place: String {
-        return self.game?.place ?? ""
+        guard let place = self.game?.place?.localized() else { return "" }
+        return place
     }
     
     var streamUrl: URL? {
@@ -46,7 +47,7 @@ struct GameCellViewModel {
     }
     
     var guestImageString: String {
-        return self.game?.guest ?? ""
+        return self.game?.guest?.logoLocalizedString ?? ""
     }
     
     var homeScore: String {
@@ -55,7 +56,12 @@ struct GameCellViewModel {
     }
     
     var homeImageString: String {
-        return self.game?.home ?? ""
+        return self.game?.home?.logoLocalizedString ?? ""
+    }
+    
+    var timeString: String {
+        guard let time = self.game?.time else { return "" }
+        return time + ((TimeZone.current.secondsFromGMT() == 28800) ? "" : "(GMT+8)")
     }
     
     init(with game: Game?) {

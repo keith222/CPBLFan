@@ -35,8 +35,6 @@ class RankViewController: BaseViewController {
                 return
             }
 
-//            self?.tableHelper?.headSavedData = header as [AnyObject]
-//            self?.tableHelper?.savedData = source as [AnyObject]
             self?.tableHelper?.savedData = [source as [AnyObject], header as [AnyObject]]
             self?.rankTableView.alpha = 1
             

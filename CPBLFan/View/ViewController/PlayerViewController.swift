@@ -28,11 +28,18 @@ class PlayerViewController: BaseViewController {
     @IBOutlet weak var dataLabel: UILabel!
     @IBOutlet weak var statsLabel: UILabel!
     
+    @IBOutlet weak var optionalView: UIView!
+    
+    @IBOutlet weak var optionalViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var optionalWebView: WKWebView!
     @IBOutlet weak var statsWebView: WKWebView!
     @IBOutlet weak var fieldingWebView: WKWebView!
     @IBOutlet weak var teamStatsWebView: WKWebView!
     @IBOutlet weak var singleGameWebView: WKWebView!
     
+    @IBOutlet weak var optionalWebViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var statsLabelTop: NSLayoutConstraint!
     @IBOutlet weak var statsWebViewHeight: NSLayoutConstraint!
     @IBOutlet weak var fieldingWebViewHeight: NSLayoutConstraint!
     @IBOutlet weak var teamStatsWebViewHeight: NSLayoutConstraint!
@@ -59,7 +66,14 @@ class PlayerViewController: BaseViewController {
             }
         }
         
-        self.playerViewModel?.loadHtmlStringClosure = { [weak self] (statsContent, fieldContent, teamContent, singleContent, playerInfo, infoString) in
+        self.playerViewModel?.loadHtmlStringClosure = { [weak self] (optionalContent, statsContent, fieldContent, teamContent, singleContent, playerInfo, infoString) in
+            if let optionalContent = optionalContent {
+                self?.optionalView.isHidden = false
+                self?.optionalViewHeight.constant = optionalContent.height + 21
+                self?.statsLabelTop.constant = optionalContent.height + 21 + 30
+                self?.optionalWebView.loadHTMLString(optionalContent.html, baseURL: nil)
+                self?.optionalWebViewHeight.constant = optionalContent.height
+            }
             self?.statsWebView.loadHTMLString(statsContent.html, baseURL: nil)
             self?.statsWebViewHeight.constant = statsContent.height
 
@@ -74,17 +88,17 @@ class PlayerViewController: BaseViewController {
             
             self?.nameLabel.text = playerInfo
             self?.dataLabel.text = infoString
+            
+            self?.statsLabel.text = (self?.optionalView.isHidden ?? true) ? self?.playerViewModel?.type.localized() : PlayerType.batter.rawValue.localized()
         }
         
         self.playerViewModel?.errorHandleClosure = {
             HUD.hide(animated: true)
         }
-        
-        self.statsLabel.text = self.playerViewModel?.type
     }
     
     private func setUp() {
-        self.title = "選手資訊"
+        self.title = "選手資訊".localized()
         
         self.nameLabel.backgroundColor = UIColor.black.withAlphaComponent(0.3)
         self.dataLabel.backgroundColor = UIColor.black.withAlphaComponent(0.3)

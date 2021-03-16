@@ -27,7 +27,7 @@ class DateSelectCollectionViewController: UICollectionViewController {
     
     private func setUp() {
         // set navigation bar title
-        self.navigationItem.title = "選擇年月"
+        self.navigationItem.title = "選擇年月".localized()
         self.navigationController?.navigationBar.barTintColor = UIColor.CompromisedColors.background
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(self.dismissAction))
@@ -74,7 +74,7 @@ class DateSelectCollectionViewController: UICollectionViewController {
         if kind == UICollectionView.elementKindSectionHeader {
             reusableview = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: IdentifierHelper.dateSelectHeader, for: indexPath)
             let label = reusableview.viewWithTag(1) as! UILabel
-            label.text = (indexPath.section == 0) ? "選擇年份" : "選擇月份"
+            label.text = (indexPath.section == 0) ? "選擇年份".localized() : "選擇月份".localized()
             return reusableview
         }
         
