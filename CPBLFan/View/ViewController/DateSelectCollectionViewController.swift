@@ -82,7 +82,13 @@ class DateSelectCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let text = (indexPath.section == 0) ? "\(1990 + indexPath.row)年" : "\(2 + indexPath.row)月"
+        var text = ""
+        if (Locale.preferredLanguages.first?.lowercased() ?? "").contains("zh-hant") {
+            text = (indexPath.section == 0) ? "\(1990 + indexPath.row)年" : "\(2 + indexPath.row)月"
+        
+        } else {
+            text = (indexPath.section == 0) ? "\(1990 + indexPath.row)" : (2 + indexPath.row).monthName
+        }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IdentifierHelper.dateCell, for: indexPath)
         cell.backgroundColor = UIColor.CompromisedColors.tertiarySystemBackground
