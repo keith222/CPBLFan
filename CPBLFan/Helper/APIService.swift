@@ -23,7 +23,7 @@ class APIService{
         route: String,
         completionHandler: @escaping(String?)->()
     ){
-        let manager = Alamofire.SessionManager.default
+        let manager = Alamofire.Session.default
         manager.session.configuration.timeoutIntervalForRequest = 5
         manager.session.configuration.timeoutIntervalForResource = 5
         manager.request(
@@ -32,7 +32,7 @@ class APIService{
             ).responseString(completionHandler: { response in
                 switch response.result {
                 case .success:
-                    completionHandler(response.result.value)
+                    completionHandler(response.value)
 
                 case .failure:
                     completionHandler(nil)
