@@ -37,6 +37,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         self.seasonTableView.rowHeight = 45
         self.seasonTableView.sectionHeaderHeight = 30
         self.seasonTableView.isHidden = true
+        self.seasonTableView.tableFooterView = UIView()
         
         self.alertLabel.isHidden = true
         
@@ -81,13 +82,13 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         var currentSize: CGSize = self.preferredContentSize
         switch activeDisplayMode {
         case .expanded:
-            currentSize.height = 248
+            currentSize.height = 293
             self.preferredContentSize = currentSize
         case .compact:
             currentSize.height = 115
             self.preferredContentSize = maxSize
         default:
-            currentSize.height = 248
+            currentSize.height = 293
             self.preferredContentSize = currentSize
         }
     }
