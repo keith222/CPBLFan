@@ -37,12 +37,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         self.todayGameTableView.allowsSelection = false
         self.todayGameTableView.rowHeight = 50
         self.todayGameTableView.sectionHeaderHeight = 0
+        self.todayGameTableView.tableFooterView = UIView()
         
         self.alertLabel.isHidden = true
-        
-        // add a gesture on table view
+        // add a gesture on table view and alert label
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tableViewTapped(tapGesture:)))
         self.todayGameTableView.addGestureRecognizer(tapGesture)
+        let tapGestureTwo = UITapGestureRecognizer(target: self, action: #selector(self.tableViewTapped(tapGesture:)))
+        self.alertLabel.addGestureRecognizer(tapGestureTwo)
         
         self.tableHelper = TableViewHelper(
             tableView: self.todayGameTableView,
@@ -53,6 +55,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     private func bindViewModel() {
+        let calendar = Calendar.current.dateComponents([.year, .month, .day], from: Date())
+        guard let month = calendar.month, month < 12, month > 2  else {
+            self.alertLabel.isHidden = false
+            return
+        }
         
         self.gameScheduleViewModel.reloadTableViewClosure = { [weak self] gameSchedules in
             let todayGame = gameSchedules.filter({ $0.0.day == self?.gameScheduleViewModel.day })
