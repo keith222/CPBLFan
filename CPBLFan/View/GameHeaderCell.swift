@@ -9,10 +9,9 @@
 import UIKit
 
 class GameHeaderCell: UITableViewHeaderFooterView, BindView {
-
-    @IBOutlet weak var monthLabel: UILabel!
-    @IBOutlet weak var dayLabel: UILabel!
+    
     @IBOutlet weak var weekDayLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,27 +19,14 @@ class GameHeaderCell: UITableViewHeaderFooterView, BindView {
     
     func bindViewModel(_ viewModel: Any) {
         if let data = viewModel as? GameHeaderCellViewModel{
-            let week = Date(year: data.year, month: data.month, day: data.day)?.weekday ?? 0
-            let chineseWeekDay = self.numberToChineseWeekDay(week)
-            self.monthLabel.text = data.month?.string
-            self.dayLabel.text = data.day?.string
-            self.weekDayLabel.text = chineseWeekDay
+            if let date = Date(year: data.year, month: data.month, day: data.day) {
+                let daySymbol = (Locale.preferredLanguages.first?.lowercased() ?? "").contains("zh-hant") ? "日" : ""
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "MMMM d\(daySymbol)"
+                self.dateLabel.text = dateFormatter.string(from: date)
+                dateFormatter.dateFormat = "EEEE"
+                self.weekDayLabel.text = dateFormatter.string(from: date)
+            }
         }
     }
-    
-    private func numberToChineseWeekDay(_ weekday: Int) -> String {
-        switch weekday {
-        case 1: return "星期日"
-        case 2: return "星期一"
-        case 3: return "星期二"
-        case 4: return "星期三"
-        case 5: return "星期四"
-        case 6: return "星期五"
-        case 7: return "星期六"
-        default: return ""
-        }
-    }
-    
-    
-
 }

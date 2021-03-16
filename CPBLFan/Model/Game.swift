@@ -18,4 +18,5 @@ struct Game: Codable {
     let g_score: String?
     let h_score: String?
     let stream: String?
+    let time: String?
 }

@@ -17,6 +17,8 @@ class GameCell: UITableViewCell, BindView{
     @IBOutlet weak var homeScoreLabel: UILabel!
     @IBOutlet weak var guestScoreLabel: UILabel!
     @IBOutlet weak var placeLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    
     private var streamUrl: URL?
     
     override func awakeFromNib() {
@@ -30,6 +32,7 @@ class GameCell: UITableViewCell, BindView{
             self.guestScoreLabel.text = gameCellViewModel.guestScore
             self.homeScoreLabel.text = gameCellViewModel.homeScore
             self.placeLabel.text = gameCellViewModel.place
+            self.timeLabel.text = gameCellViewModel.timeString
             self.homeImageView.image = UIImage(named: gameCellViewModel.homeImageString)
             self.guestImageView.image = UIImage(named: gameCellViewModel.guestImageString)
             self.streamUrl = gameCellViewModel.streamUrl

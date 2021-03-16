@@ -42,10 +42,7 @@ class GameViewController: BaseViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        if self.timer != nil {
-            self.timer?.invalidate()
-            self.timer = nil
-        }
+        self.stopTimer()
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -59,7 +56,7 @@ class GameViewController: BaseViewController {
             self.navigationItem.largeTitleDisplayMode = .never
         }
         
-        self.title = "賽事資訊"
+        self.title = "賽事資訊".localized()
             
         self.streamButton.cornerRadius = 5
         self.streamButton.borderWidth = 0.5
@@ -86,6 +83,12 @@ class GameViewController: BaseViewController {
     }
     
     private func bindViewModel() {
+        // check if today is game day and start timer
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy-MM-dd"
+//        let gameDate = dateFormatter.date(from: self.gameViewModel?.date ?? "")
+        let gameDate = self.gameViewModel?.date.date
+        
         self.loadHTML()
         
         self.gameViewModel?.errorHandleClosure = {
@@ -98,39 +101,28 @@ class GameViewController: BaseViewController {
             self?.boxWebView.loadHTMLString(boxHtml, baseURL: nil)
         }
         
-        self.gameViewModel?.loadGameHtml = { [weak self] (gameHtml, scoreBoardHtml) in
+        self.gameViewModel?.loadGameHtml = { [weak self] (gameHtml, scoreBoardHtml, isGameStarted) in
             guard let gameHtml = gameHtml, let scoreBoardHtml = scoreBoardHtml else { return }
             
             self?.gameWebView.loadHTMLString(gameHtml, baseURL: nil)
             self?.scoreboardWebView.loadHTMLString(scoreBoardHtml, baseURL: nil)
+            
+            if (gameDate?.isInToday ?? false) && isGameStarted {
+                if !(self?.timer?.isValid ?? false) {
+                    self?.setTimer()
+                }
+                
+            } else {
+                self?.stopTimer()
+            }
         }
         
         self.gameNumLabel.text = self.gameViewModel?.gameString
-        self.guestImageView.image = UIImage(named: (self.gameViewModel?.guestImageString) ?? "")
-        self.homeImageView.image = UIImage(named: (self.gameViewModel?.homeImageString) ?? "")
+        self.guestImageView.image = UIImage(named: (self.gameViewModel?.guestImageString.logoLocalizedString) ?? "")
+        self.homeImageView.image = UIImage(named: (self.gameViewModel?.homeImageString.logoLocalizedString) ?? "")
         self.guestScoreLabel.text = self.gameViewModel?.guestScore
         self.homeScoreLabel.text = self.gameViewModel?.homeScore
-        self.placeLabel.text = self.gameViewModel?.place
-        
-        // check if today is game day and start timer
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let gameDate = dateFormatter.date(from: self.gameViewModel?.date ?? "")
-        let weekDay = Date().weekday
-        let hour = Date().hour
-        let minute = Date().minute
-        
-        if (gameDate?.isInToday ?? false) {
-            if hour >= 13 {
-                self.setTimer()
-            }
-//            if weekDay == 7 && hour >= 12 {
-//                self.setTimer()
-//
-//            } else if hour >= 18 && minute >= 30 {
-//                self.setTimer()
-//            }
-        }
+        self.placeLabel.text = self.gameViewModel?.place.localized()
     }
     
     @objc func loadHTML() {
@@ -138,8 +130,15 @@ class GameViewController: BaseViewController {
         self.gameViewModel?.loadHtml()
     }
     
-    func setTimer(){
+    private func setTimer(){
         self.timer = Timer.scheduledTimer(timeInterval: 120, target: self, selector: #selector(self.loadHTML), userInfo: nil, repeats: true)
+    }
+    
+    private func stopTimer() {
+        if self.timer != nil {
+            self.timer?.invalidate()
+            self.timer = nil
+        }
     }
     
     @IBAction func streamAction(_ sender: UIButton) {

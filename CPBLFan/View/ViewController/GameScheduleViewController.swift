@@ -36,8 +36,12 @@ class GameScheduleViewController: BaseViewController {
             let games = gameSchedules.map({ $0.1 }) as [AnyObject]
 
             self?.tableHelper?.savedData = [games, headers]
-                        
             self?.dateLabel.text = "\(self?.gameScheduleViewModel.year ?? 0) 年 \(self?.gameScheduleViewModel.month ?? 0) 月"
+            if (Locale.preferredLanguages.first?.lowercased() ?? "").contains("zh-hant") {
+                self?.dateLabel.text = "\(self?.gameScheduleViewModel.year ?? 0) 年 \(self?.gameScheduleViewModel.month ?? 0) 月"
+            } else {
+                self?.dateLabel.text = "\(self?.gameScheduleViewModel.year ?? 0)  \(self?.gameScheduleViewModel.month.monthName ?? "--")"
+            }
             
             guard !games.isEmpty else {
                 HUD.hide(animated: true)
@@ -45,7 +49,6 @@ class GameScheduleViewController: BaseViewController {
             }
             
             self?.performAnimation(of: self?.gameTableView, isHidden: false)
-            
             
             if let sectionIndex = (headers as! [GameHeaderCellViewModel]).firstIndex(where: { return $0.day == self?.gameScheduleViewModel.day}){
                 let indexPath = IndexPath(row: 0, section: sectionIndex)
@@ -69,11 +72,11 @@ class GameScheduleViewController: BaseViewController {
         
         // set navigation bar
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "filter"), style: .plain, target: self, action: #selector(self.presentToDateSelect))
-        self.navigationItem.title = "職棒賽程"
         self.navigationController?.navigationBar.backgroundColor = UIColor.CompromisedColors.background
         
         // set tableview
-        self.gameTableView.rowHeight = 70
+        self.gameTableView.rowHeight = UITableView.automaticDimension
+        self.gameTableView.estimatedRowHeight = 70
         self.gameTableView.sectionHeaderHeight = 35
         self.gameTableView.tableFooterView = UIView()
         

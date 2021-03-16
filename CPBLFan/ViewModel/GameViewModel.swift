@@ -14,9 +14,11 @@ import os
 class GameViewModel{
     
     private let game: Game?
-    private let cssString = "<header><meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'></header><style> @media (prefers-color-scheme: dark){h3,p.box_note{color: #fff;}}body{margin: 0;}.std_tb{color: #333;font-size: 13px;line-height: 2.2em;}table.std_tb tr{background-color: #f8f8f8;}table.mix_x tr:nth-child(2n+1), table.std_tb tr.change{background-color: #e6e6e6;}table.std_tb th {background-color: #081B2F;color: #fff;font-weight: normal;padding: 0 6px;}table.std_tb td{padding: 0 6px;}table.std_tb th a, table.std_tb th a:link, table.std_tb th a:visited, table.std_tb th a:active {color: #fff;}a, a:link, a:visited, a:active {text-decoration: none;color: #333}table.std_tb td.sub {padding-left: 1.2em;}.box_note{font-size: 13px;color:#081B2F;padding-left:15px;}h3{colro: #081B2F}</style>"
+    private static let cssString = "<header><meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'></header><style> @media (prefers-color-scheme: dark){h3,p.box_note{color: #fff;}}body{margin: 0;font: -apple-system-body ;}.std_tb{color: #333;font-size: 13px;line-height: 2.2em;}table.std_tb tr{background-color: #f8f8f8;}table.mix_x tr:nth-child(2n+1), table.std_tb tr.change{background-color: #e6e6e6;}table.std_tb th {background-color: #081B2F;color: #fff;font-weight: normal;padding: 0 6px;}table.std_tb td{padding: 0 6px;}table.std_tb th a, table.std_tb th a:link, table.std_tb th a:visited, table.std_tb th a:active {color: #fff;}a, a:link, a:visited, a:active {text-decoration: none;color: #333}table.std_tb td.sub {padding-left: 1.2em;}.box_note{font-size: 13px;color:#081B2F;padding-left:15px;}h3{colro: #081B2F}</style>"
     
-    private let boardCss = "<header><meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'></header><style>body{margin: 0;}table{width:100%;}.score_board{overflow:hidden;width:480px;}.gap_l20{margin-left:10px;}.score_board_side,.score_board_main{float:left;}table.score_table th{color:#b2b1b1}table.score_table th, table.score_table td{height:34px;padding:0 3px;}table.score_table tr:nth-child(2) td{border-bottom:1px solid #0d0d0d;}table.score_table td{color:#fff;}table.score_table td span {margin: 0 2px;padding: 1px 3px;width: 20px;}table.score_table tr:nth-child(3) td {border-top: 1px solid #575757;}</style>"
+    private static let boardCss = "<header><meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'></header><style>body{margin: 0;}table{width:100%;}.score_board{overflow:hidden;width:480px;}.gap_l20{margin-left:10px;}.score_board_side,.score_board_main{float:left;}table.score_table th{color:#b2b1b1}table.score_table th, table.score_table td{height:34px;padding:0 3px;}table.score_table tr:nth-child(2) td{border-bottom:1px solid #0d0d0d;}table.score_table td{color:#fff;}table.score_table td span {margin: 0 2px;padding: 1px 3px;width: 20px;}table.score_table tr:nth-child(3) td {border-top: 1px solid #575757;}</style>"
+    
+    private var inningCount = 1
     
     var gameNum: Int {
         return self.game?.game ?? 0
@@ -44,7 +46,7 @@ class GameViewModel{
     var stream: URL? {
         return self.game?.stream?.url
     }
-    
+        
     var gameString: String {
         switch self.gameNum {
         case 0:
@@ -61,13 +63,12 @@ class GameViewModel{
         }
     }
     
-    var loadGameHtml: ((String?, String?)->())?
+    var loadGameHtml: ((String?, String?, Bool)->())?
     var loadBoxHtml: ((String?)->())?
     var errorHandleClosure: (()->())?
     
     init(with game: Game?){
         self.game = game
-        
     }
     
     func loadHtml() {
@@ -107,10 +108,13 @@ class GameViewModel{
             do {
                 let doc = try HTML(html: text, encoding: .utf8)
                 
-                var gameHtml = self?.cssString ?? ""
-                var scoreboardHTML = self?.boardCss ?? ""
+                var gameHtml = GameViewModel.cssString
+                var scoreboardHTML = GameViewModel.boardCss
+                var isGameStarted = false
                 
-                if let gameTable = doc.at_css(".std_tb:first-child")?.toHTML {
+                if let game = doc.at_css(".std_tb:first-child"), let firstInning = game.css("tr").first?.toHTML, let gameTable = game.toHTML {
+                    isGameStarted = firstInning.contains("1上")
+       
                     gameHtml += gameTable
                     gameHtml = gameHtml.replacingOccurrences(of: "display:none;", with: "")
                 }
@@ -119,7 +123,7 @@ class GameViewModel{
                     scoreboardHTML += scoreBoard
                 }
                 
-                self?.loadGameHtml?(gameHtml, scoreboardHTML)
+                self?.loadGameHtml?(gameHtml, scoreboardHTML, isGameStarted)
                 
             } catch(let error){
                 self?.errorHandleClosure?()
@@ -147,7 +151,7 @@ class GameViewModel{
                 let doc = try HTML(html: text, encoding: .utf8)
                 
                 // batting box
-                var battingHtml = (self?.cssString ?? "") + "<h3 style='margin:20px 0 10px 10px;'>打擊成績</h3>"
+                var battingHtml = GameViewModel.cssString + "<h3 style='margin:20px 0 10px 10px;'>打擊成績</h3>"
                 battingHtml += doc.css(".half_block.left > table")[0].toHTML ?? ""
                 battingHtml += doc.css(".half_block.left > p.box_note")[0].toHTML ?? ""
                 battingHtml += "<p></p>"
@@ -170,6 +174,10 @@ class GameViewModel{
                 os_log("Error: %s", error.localizedDescription)
             }
         })
+    }
+    
+    private func getTeamName(with string: String) -> String {
+        return ""
     }
 }
 
