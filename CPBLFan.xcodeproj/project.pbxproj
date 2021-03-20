@@ -74,6 +74,7 @@
 		536B60831E62B77E0027C796 /* UIImage+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5309A2001E227A8600FB0037 /* UIImage+Addition.swift */; };
 		536B60841E62C8E40027C796 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536238041E44CAE20091DA9C /* Game.swift */; };
 		536B60861E62DEC10027C796 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53CBA2AD1E0D5F5F0012FFFB /* Assets.xcassets */; };
+		5374A3AB26060A6900BD2DEC /* UIViewController+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374A3AA26060A6900BD2DEC /* UIViewController+Addition.swift */; };
 		53788A211E10070F00C3F04B /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53788A201E10070F00C3F04B /* News.swift */; };
 		53792F42246C69DF001E9416 /* WidgetHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53792F44246C69DF001E9416 /* WidgetHeaderCell.xib */; };
 		537CCF891E20BE7B00AFC864 /* RankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537CCF881E20BE7B00AFC864 /* RankViewController.swift */; };
@@ -251,6 +252,7 @@
 		536B607F1E62B5740027C796 /* TodayGameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayGameCell.swift; sourceTree = "<group>"; };
 		536B60801E62B5740027C796 /* TodayGameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TodayGameCell.xib; sourceTree = "<group>"; };
 		536B60871E6334DB0027C796 /* CPBLFan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CPBLFan.entitlements; sourceTree = "<group>"; };
+		5374A3AA26060A6900BD2DEC /* UIViewController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Addition.swift"; sourceTree = "<group>"; };
 		53788A201E10070F00C3F04B /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = News.swift; path = Model/News.swift; sourceTree = "<group>"; };
 		53792F43246C69DF001E9416 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WidgetHeaderCell.xib; sourceTree = "<group>"; };
 		53792F46246C69EE001E9416 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/WidgetHeaderCell.strings"; sourceTree = "<group>"; };
@@ -395,6 +397,7 @@
 				53645AA82413A94700433BA7 /* UITableView+Addition.swift */,
 				530C8CA325FE122A00A0D919 /* String+Addition.swift */,
 				53006DB925FFBEBC0079EAFB /* Int+Addition.swift */,
+				5374A3AA26060A6900BD2DEC /* UIViewController+Addition.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -1094,6 +1097,7 @@
 				53359AAE1E27B18B00C29687 /* StatsList.swift in Sources */,
 				535272071E26740D00E1FFC7 /* StatsListCell.swift in Sources */,
 				5386F78923E5FA1A00D670EF /* StatsListCellViewModel.swift in Sources */,
+				5374A3AB26060A6900BD2DEC /* UIViewController+Addition.swift in Sources */,
 				53359AAC1E27ADA500C29687 /* StatsListViewController.swift in Sources */,
 				53359AB01E27B1EA00C29687 /* StatsListViewModel.swift in Sources */,
 				5353FB871E23CD4600BDE259 /* StatsViewController.swift in Sources */,

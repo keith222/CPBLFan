@@ -84,9 +84,6 @@ class GameViewController: BaseViewController {
     
     private func bindViewModel() {
         // check if today is game day and start timer
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "yyyy-MM-dd"
-//        let gameDate = dateFormatter.date(from: self.gameViewModel?.date ?? "")
         let gameDate = self.gameViewModel?.date.date
         
         self.loadHTML()
