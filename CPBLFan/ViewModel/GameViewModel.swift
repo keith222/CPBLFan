@@ -112,9 +112,15 @@ class GameViewModel{
                 var scoreboardHTML = GameViewModel.boardCss
                 var isGameStarted = false
                 
-                if let game = doc.at_css(".std_tb:first-child"), let firstInning = game.css("tr").first?.toHTML, let gameTable = game.toHTML {
-                    isGameStarted = firstInning.contains("1上")
-       
+                if let game = doc.at_css(".std_tb:first-child"), let gameTable = game.toHTML {
+                    if gameTable.contains("1上") {
+                        isGameStarted = true
+                        
+                        if gameTable.contains("比賽結束") || gameTable.lowercased().contains("final") {
+                            isGameStarted = false
+                        }
+                    }
+                    
                     gameHtml += gameTable
                     gameHtml = gameHtml.replacingOccurrences(of: "display:none;", with: "")
                 }
