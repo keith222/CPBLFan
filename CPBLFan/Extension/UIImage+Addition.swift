@@ -12,24 +12,22 @@ import UIKit
 extension UIImage{
     
     class func logoImage(team: String?) -> UIImage{
+        guard let team = team else { return UIImage(named: "logo")! }
+        
         var filename = ""
         switch team {
-        case "味全":
+        case _ where team.contains("味全"):
             filename = "-1"
-        case "中信兄弟":
+        case _ where team.contains("中信"):
             filename = "1"
-        case "統一7-ELEVEn":
+        case _ where team.contains("統一"):
             filename = "2"
-        case "Lamigo":
-            filename = "3"
-        case "樂天":
+        case _ where team.contains("樂天"):
             filename = "3-0"
-        case "富邦":
+        case _ where team.contains("富邦"):
             filename = "4"
-        case "義大":
-            filename = "4-1"
         default:
-            break
+            return UIImage(named: "logo")!
         }
         
         return UIImage(named: filename.logoLocalizedString)!
