@@ -15,5 +15,4 @@ struct StatsCellViewModel {
     let stats: String?
     let category: String?
     let moreUrl: String?
-    let type: PlayerType?
 }

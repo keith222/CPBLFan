@@ -43,8 +43,12 @@ class StatsListViewModel{
     }
     
     func fetchStatList(of page: Int = 1){
-        let url = "\(APIService.CPBLSourceURL)\(self.stats.moreUrl ?? "")&per_page=\(page)"
-
+        let date = Date()
+        let calendar = Calendar.current
+        let month = calendar.component(.month, from: date)
+        let year = calendar.component(.year, from: date) - ((month < 3) ? 1 : 0)
+        let url = "\(APIService.CPBLSourceURL)\(self.stats.moreUrl ?? "")&page=\(page)&year=\(year)"
+        
         APIService.request(.get, route: url, completionHandler: { [weak self] text in
             guard let text = text else {
                 self?.errorHandleClosure?()
@@ -54,25 +58,27 @@ class StatsListViewModel{
             do {
                 var statsList: [StatsList] = []
                 let doc = try HTML(html: text, encoding: .utf8)
-                
-                for (index,node) in doc.css(".std_tb tr").enumerated(){
-                    guard index > 0 else{continue}
+                for (index,node) in doc.css(".RecordTable tr").enumerated(){
+                    guard index > 0 else{ continue }
+                    
                     let categoryIndex = self?.stats.category?.getIndex() ?? 0
-                    let numData = node.css("td")[0].text
-                    let nameData = node.css("td")[1].text?.replacingOccurrences(of: "*", with: "").trimmed.components(separatedBy: " ").dropFirst().joined(separator: " ") ?? ""
-                    let teamData = (node.css("td")[1].at_css("img")?["src"])?.getTeam()
-                    let statsData = node.css("td")[categoryIndex].text
-                    let playerUrlData = node.css("td")[1].at_css("a")?["href"]
+                    let numData = node.at_css(".rank")?.text ?? ""
+                    let player = node.at_css("td .name a")
+                    let nameData = player?.text ?? ""
+                    let teamData = String(node.at_css("td .team_logo a")?["href"]?.split(separator: "=").last ?? "").getTeam()
+                    let statsData = node.css("td.num")[categoryIndex - 1].text
+                    let playerUrlData = player?["href"]
                     statsList.append(StatsList(num: numData, name: nameData, team: teamData, stats: statsData, playerUrl: playerUrlData))
                 }
                 self?.statsList.append(contentsOf: statsList)
                 self?.processFetched(statsList)
                 
-                if let page = (doc.at_css("a.page:nth-last-child(2)")?.text)?.int{
+                if let page = doc.at_css(".setting")?.text?.split(separator: "/").first?.replacingOccurrences(of: "[^\\d]", with: "", options: [.regularExpression]).int {
                     self?.totalPage = page
                 }
                 
             } catch let error as NSError{
+                self?.errorHandleClosure?()
                 os_log("Error: %s", error.localizedDescription)
             }
         })
@@ -83,7 +89,7 @@ class StatsListViewModel{
     }
     
     func getPlayerViewModel(with index: Int) -> PlayerViewModel {
-        let player = Player(playerUrl: self.statsList[index].playerUrl, type: self.type)
+        let player = Player(playerUrl: self.statsList[index].playerUrl)
         return PlayerViewModel(with: player)
     }
     

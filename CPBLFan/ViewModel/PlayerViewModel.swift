@@ -9,108 +9,66 @@
 import Foundation
 import os
 import Alamofire
-import Kanna
 
 class PlayerViewModel {
     
-    typealias HtmlSource = (html: String, height: CGFloat)
-    
     private var player: Player!
-    // set css for source from web
-    private let cssString = "<header><meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'></header><style>body{margin: 0;font: -apple-system-body;}.std_tb{color: #333;font-size: 13px;line-height: 2.2em;}table.std_tb tr{background-color: #f8f8f8;}table.mix_x tr:nth-child(2n+1), table.std_tb tr.change{background-color: #e6e6e6;}table.std_tb th{background-color: #081B2F;color: #fff;font-weight: normal;padding: 0 6px;}table.std_tb td{padding: 0 6px;}table.std_tb th a, table.std_tb th a:link, table.std_tb th a:visited, table.std_tb th a:active{color: #fff;}a, a:link, a:visited, a:active{text-decoration: none;}</style>"
     
-    var type: String {
-        return self.player.type?.rawValue ?? ""
+    var playerURL: String {
+        return "\(APIService.CPBLSourceURL)\(player.playerUrl ?? "")"
     }
     
-    var loadHtmlStringClosure: ((HtmlSource?, HtmlSource, HtmlSource, HtmlSource, HtmlSource, String, String)->())?
-    var loadImageHtmlClosure: ((String?, String?)->())?
-    var errorHandleClosure: (()->())?
+    let specialJSCode: String = """
+            function changeStyle() {
+                document.querySelectorAll('.PlayerHeader').forEach(function(a){a.remove()});
+                document.querySelectorAll('.search').forEach(function(a){a.remove()});
+                document.querySelectorAll('.record_table_swipe_guide').forEach(function(a){a.remove()});
+                document.querySelectorAll('.record_table_scroll_ctrl').forEach(function(a){a.remove()});
+                document.querySelectorAll('.PageTitle').forEach(function(a){a.remove()});
+                document.querySelectorAll('.BtnTop').forEach(function(a){a.remove()});
+                document.querySelectorAll('.born').forEach(function(a){a.remove()});
+                document.querySelectorAll('.debut').forEach(function(a){a.remove()});
+                document.querySelectorAll('.edu').forEach(function(a){a.remove()});
+                document.querySelectorAll('.nationality').forEach(function(a){a.remove()});
+                document.querySelectorAll('.original_name').forEach(function(a){a.remove()});
+                document.querySelectorAll('.draft').forEach(function(a){a.remove()});
+                document.getElementById('Footer').remove();
+                document.getElementById('MenuMobile').remove();
+                document.getElementById('Header').remove();
+                document.getElementById('Breadcrumbs').remove();
+                document.getElementById('nav').remove();
+                const cssTemplateString = `
+                *{-webkit-touch-callout:none;-webkit-user-select:none}
+                @media (prefers-color-scheme: dark) {
+                 body {background-color: black; }
+                 .DistTitle h3, .DistTitle .en { color: #0E90C4 }
+                 .RecordTable th{background: #0E90C4}
+                 .PlayerBrief dd .desc, .PlayerBrief dd .label {color: white}
+                 .PlayerBrief > div {background-color: black}
+                 .PlayerBrief {background: #787878}
+                 .PlayerBrief dt {color: white}
+                }
+                @media (prefers-color-scheme: light) {
+                  body {background-color: white;}
+                  .DistTitle h3, .DistTitle .en {color: #081B2F }
+                  .RecordTable th{background-color: #081B2F}
+                  .PlayerBrief dd .desc{color: #081B2F}
+                  .PlayerBrief dd .label{color: #666}
+                  .PlayerBrief > div {background-color: rgba(255,255,255,0.8)}
+                  .PlayerBrief {background: #081B2F}
+                  .PlayerBrief dt { color: white }
+                }
+                .PlayerBrief:after{background: none}
+                .ContHeader {margin-top: -35px}
+                `;
+                const styleTag = document.createElement('style');
+                styleTag.innerHTML = cssTemplateString;
+                document.head.insertAdjacentElement(`beforeend`, styleTag)
+            };
+            changeStyle();
+            """
     
     init(with player: Player) {
         self.player = player
-        self.fetchSource()
     }
-    
-    func fetchSource() {
-        let route = "\(APIService.CPBLSourceURL)\(self.player.playerUrl ?? "")"
-        APIService.request(.get, route: route, completionHandler: { [weak self] text in
-            guard let text = text else {
-                self?.errorHandleClosure?()
-                return
-            }
-            
-            do {
-                let doc = try HTML(html: text, encoding: .utf8)
-                
-                var headUrl = doc.at_css(".player_info div img")?["src"]
-                headUrl = ((headUrl?.hasSuffix(".jpg"))! || (headUrl?.hasSuffix(".png"))!) ? headUrl : headUrl?.appending("/phone/images/playerhead.png")
-                let gameUrl = headUrl?.replacingOccurrences(of: "head", with: "game")
-                self?.loadImageHtmlClosure?(headUrl, gameUrl)
-                
-                let count = doc.css(".std_tb").count
-                var recordCount = 0
-                var optionalContent: HtmlSource?
-                
-                if doc.css(".gap_b20")[1].css(".std_tb").count > 2 {
-                    recordCount += 1
-                    var optionalHtml = "\(self?.cssString ?? "")\(doc.css(".std_tb").first?.toHTML ?? "")"
-                    optionalHtml = optionalHtml.replacingOccurrences(of: "display:none;", with: "")
-                    let optionalHeight = CGFloat(30 * doc.css(".std_tb")[0].css("tr").count + 10)
-                    optionalContent = (html: optionalHtml, height: optionalHeight)
-                }
-                
-                var statsHtml = "\(self?.cssString ?? "")\(doc.css(".std_tb")[recordCount].toHTML ?? "")"
-                statsHtml = statsHtml.replacingOccurrences(of: "display:none;", with: "")
-                let statsHeight = CGFloat(30 * doc.css(".std_tb")[recordCount].css("tr").count + 10)
-                let statsContent = (html: statsHtml, height: statsHeight)
-              
-                var fieldHtml = "\(self?.cssString ?? "")\(doc.css(".std_tb")[recordCount + 1].toHTML ?? "")"
-                fieldHtml = fieldHtml.replacingOccurrences(of: "詳細", with: "")
-                let fieldHeight = CGFloat(30 * doc.css(".std_tb")[recordCount + 1].css("tr").count + 10)
-                let fieldContent = (html: fieldHtml, height: fieldHeight)
-                
-                var teamHtml = "\(self?.cssString ?? "")\(doc.css(".std_tb")[count - 2].toHTML ?? "")"
-                teamHtml = teamHtml.replacingOccurrences(of: "display:none;", with: "")
-                let teamHeight = CGFloat(30 * (doc.css(".std_tb")[count - 2].css("tr").count + 2) + 10)
-                let teamContent = (html: teamHtml, height: teamHeight)
-                
-                let singleHtml = "\(self?.cssString ?? "")\(doc.css(".std_tb")[count - 1].toHTML ?? "")"
-                let singleHeight = CGFloat(30 * doc.css(".std_tb")[count - 1].css("tr").count + 10)
-                let singleContent = (html: singleHtml, singleHeight)
-                
-                var playerInfo = (doc.at_css(".player_info_name")?.text) ?? (doc.at_css(".player_info3_name")?.text) ?? ""
-                playerInfo = playerInfo.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "球隊:", with: "｜")
-                
-                var position = "", batpitch = "", height = "", weight = ""
-                var playerInfoOther = doc.css(".player_info_other tr:first-child td")
-                if playerInfoOther.count < 1{
-                    playerInfoOther = doc.css(".player_info3_other tr:first-child td")
-                    position = (playerInfoOther[0].text?.components(separatedBy: ":")[1])!
-                    batpitch = (playerInfoOther[1].text?.components(separatedBy: ":")[1])!
-                    let playerInfoOther2 = doc.css(".player_info3_other tr:nth-child(2) td")
-                    height = (playerInfoOther2[0].text?.components(separatedBy: ":")[1])!
-                    height = height.replacingOccurrences(of: "\\(?\\)?", with: "", options: .regularExpression, range: (height.startIndex)..<(height.endIndex)).lowercased()
-                    weight = (playerInfoOther2[1].text?.components(separatedBy: ":")[1])!
-                    weight = weight.replacingOccurrences(of: "\\(?\\)?", with: "", options: .regularExpression, range: (weight.startIndex)..<(weight.endIndex)).lowercased()
-                }else{
-                    position = (playerInfoOther[0].text?.components(separatedBy: ":")[1])!
-                    batpitch = (playerInfoOther[1].text?.components(separatedBy: ":")[1])!
-                    height = (playerInfoOther[2].text?.components(separatedBy: ":")[1])!
-                    height = height.replacingOccurrences(of: "\\(?\\)?", with: "", options: .regularExpression, range: (height.startIndex)..<(height.endIndex)).lowercased()
-                    weight = (playerInfoOther[3].text?.components(separatedBy: ":")[1])!
-                    weight = weight.replacingOccurrences(of: "\\(?\\)?", with: "", options: .regularExpression, range: (weight.startIndex)..<(weight.endIndex)).lowercased()
-                }
-                
-                let infoString = "\(position)｜\(batpitch)｜\(height)/\(weight)"
-                
-                self?.loadHtmlStringClosure?(optionalContent, statsContent, fieldContent, teamContent, singleContent, playerInfo, infoString)
-                
-            } catch (let error){
-                os_log("Error: %s", error.localizedDescription)
-            }
-        })
-    }
-    
-    
 }

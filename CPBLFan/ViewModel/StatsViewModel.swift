@@ -40,16 +40,11 @@ class StatsViewModel{
     }
     
     init(){
-        if (Locale.preferredLanguages.first?.lowercased() ?? "").contains("zh-hant") {
-            fetchStats()
-            
-        } else {
-            fetchEngStats()
-        }
+        self.fetchStats()
     }
     
     func fetchStats(){
-        let route = "\(APIService.CPBLSourceURL)/stats/toplist.html"
+        let route = "\(APIService.CPBLSourceURL)/stats/toplist"
         APIService.request(.get, route: route, completionHandler: { [weak self] text in
             guard let text = text else {
                 self?.errorHandleClosure?()
@@ -60,36 +55,34 @@ class StatsViewModel{
                 var statsData: [Stats] = []
                 let doc = try HTML(html: text, encoding: .utf8)
                 
-                for (index,node) in doc.css(".statstoplist_box").enumerated(){
+                for (index, node) in doc.css(".TopFiveList div.item").enumerated(){
                     let category = index.getDataCategory()
-                    
-                    let tag = node.css("table tr")[1]
-                    var statsElement: [String] = []
-                    for (index, element) in tag.css("td").enumerated(){
-                        guard index > 0 else{continue}
-                        statsElement.append(element.text!)
-                    }
-                    let moreUrl = node.at_css(".more_row")?["href"]?.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? ""
-                    
-                    statsData.append(Stats(name: statsElement[1], team: statsElement[0], stats: statsElement[2], category: category, moreUrl: moreUrl))
+                    let moreUrl = node.at_css(".btn_more a")?["href"]?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+                    let topPlayerNode = node.at_css("ul li:first-child")
+                    let playerData = topPlayerNode?.at_css(".player")?.text?.trimmingCharacters(in: .whitespacesAndNewlines).replacingOccurrences(of: ")", with: "").split(separator: "(") ?? ["", ""]
+                    let stats = topPlayerNode?.at_css(".num")?.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+    
+                    statsData.append(Stats(name: String(playerData[0]), team: String(playerData[1]), stats: stats, category: category, moreUrl: moreUrl))
                 }
                 
-                // filter pitcher data
-                let pitcherSource = statsData.enumerated().filter{ return (($0.offset > 2 && $0.offset < 6) || ($0.offset > 7 && $0.offset != 10)) }.map{$0.element}
-                self?.processFetched(pitcherSource, category: .pitcher)
-                self?.pitcherStats.append(contentsOf: pitcherSource)
-                
                 // filter batter data
-                let batterSource = Array(Set(statsData).subtracting(pitcherSource)).sorted(by: { ($0.category ?? "") < ($1.category ?? "")})
+                let batterSource = Array(statsData[0...4])
                 self?.processFetched(batterSource, category: .batter)
                 self?.batterStats.append(contentsOf: batterSource)
                 
+                // filter pitcher data
+                let pitcherSource = Array(statsData[5...9])
+                self?.processFetched(pitcherSource, category: .pitcher)
+                self?.pitcherStats.append(contentsOf: pitcherSource)
+
             } catch let error as NSError{
+                self?.errorHandleClosure?()
                 os_log("Error: %s", error.localizedDescription)
             }
         })
     }
     
+    // not used
     func fetchEngStats() {
         let queue = DispatchGroup()
         let params = ["AVG", "HIT", "HR", "RBI", "SB", "TB", "ERA", "WIN", "SV", "SO", "WHIP", "HLD",]
@@ -168,6 +161,6 @@ class StatsViewModel{
     }
     
     private func createCellViewModel(with stat: Stats, and type: PlayerType) -> StatsCellViewModel {
-        return StatsCellViewModel(name: stat.name, team: stat.team, stats: stat.stats, category: stat.category, moreUrl: stat.moreUrl, type: type)
+        return StatsCellViewModel(name: stat.name, team: stat.team, stats: stat.stats, category: stat.category, moreUrl: stat.moreUrl)
     }
 }

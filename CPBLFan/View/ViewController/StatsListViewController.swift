@@ -61,7 +61,7 @@ class StatsListViewController: BaseViewController {
             selectAction: { [weak self] (num,_) in
                 let destination: PlayerViewController = UIStoryboard(name: IdentifierHelper.statistics, bundle: nil).instantiateViewController(withClass: PlayerViewController.self)!
                 destination.playerViewModel = self?.statsListViewModel?.getPlayerViewModel(with: num)
-                self?.navigationController?.pushViewController(destination, animated: true)
+                self?.navigationController?.pushViewController(destination, animated: true)                
             },
             refreshAction: { [weak self] page in
                 // closure for refresh(load more)data
