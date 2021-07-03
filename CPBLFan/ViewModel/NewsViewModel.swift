@@ -32,7 +32,7 @@ class NewsViewModel {
     }
     
     func fetchNews(from page: Int = 0) {
-        let route = "\(APIService.CPBLSourceURL)/news/lists/news_lits.html?per_page=\(page)"
+        let route = "\(APIService.CPBLSourceURL)/xmdoc?page=\(page)"
         APIService.request(.get, route: route, completionHandler: { [weak self] text in
             guard let text = text else{
                 self?.errorHandleClosure?(nil)
@@ -42,32 +42,14 @@ class NewsViewModel {
             do {
                 var news = [News]()
                 let doc = try HTML(html: text, encoding: .utf8)
-                
-                let topNewsTitle = doc.at_css(".news_head_title > a")?.text ?? ""
-                let topNewsDate = doc.at_css(".news_head_date")?.text ?? ""
-                let topNewsImageUrl = doc.at_css(".games_news_pic > a > img")?["src"]?.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? ""
-                let topNewsUrl = doc.at_css(".games_news_pic > a")?["href"]?.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? ""
-                
-                if !topNewsTitle.isEmpty {
-                    let topNewsElemet: News = News(title: topNewsTitle, date: topNewsDate, imageUrl: topNewsImageUrl, newsUrl: topNewsUrl)
-                    news.append(topNewsElemet)
-                }
-                
-                for (_,node) in doc.css(".news_row").enumerated() {
-                    guard node.at_css(".news_row_date")?.text! != nil else{continue}
-                    
-                    let newsTitle = node.at_css(".news_row_cont > div > a.news_row_title")?.text!.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-                    
-                    var tempDate = node.at_css(".news_row_date")?.text!
-                    let startIndex = tempDate?.index((tempDate?.startIndex)!, offsetBy: 6)
-                    let endIndex = tempDate?.index((tempDate?.endIndex)!, offsetBy: -17)
-                    tempDate = String(tempDate![startIndex!..<endIndex!])
-                    let newsDate = tempDate?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-                    
-                    let newsImageUrl = node.at_css(".news_row_pic > img")?["src"]!.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? ""
-                    let newsUrl = node.at_css(".news_row_cont > div > a")?["href"]!.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? ""
+            
+                for (_,node) in doc.css(".NewsList > .item").enumerated() {
+                    let newsTitleNode = node.at_css(".title > a")
+                    let newsTitle = newsTitleNode?.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+                    let newsDate = node.at_css(".date")?.text ?? ""
+                    let newsImageUrl = node.at_css(".img a")?["style"]?.replacingOccurrences(of: ".*?(h[^)]*)\\)", with: "$1", options: [.regularExpression]) ?? ""
+                    let newsUrl = newsTitleNode?["href"]!.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? ""
                     let newsElement: News = News(title: newsTitle, date: newsDate, imageUrl: newsImageUrl, newsUrl: newsUrl)
-
                     news.append(newsElement)
                 }
                 self?.news.append(contentsOf: news)

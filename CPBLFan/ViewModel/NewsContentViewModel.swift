@@ -52,9 +52,8 @@ class NewsContentViewModel {
             
             do {
                 let doc = try HTML(html: text, encoding: .utf8)
-                
-                let content = doc.at_css(".cont_txt_line_height")?.text ?? ""
-                self?.newsContent = content.replacingOccurrences(of: "\r\n\t\t\t\t", with: "")
+                let content = doc.at_css(".content.dev-xew-block")?.text ?? ""
+                self?.newsContent = content.replacingOccurrences(of: "\n", with: "\n\n")
                 
             } catch let error as NSError{
                os_log("Error: %s", error.localizedDescription)
