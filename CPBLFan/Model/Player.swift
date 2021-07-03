@@ -9,7 +9,5 @@
 import Foundation
 
 struct Player {
-    
     let playerUrl: String?
-    let type: PlayerType?
 }
