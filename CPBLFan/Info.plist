@@ -5,7 +5,7 @@
 	<key>API Service</key>
 	<dict>
 		<key>CPBLSourceURL</key>
-		<string>http://www.cpbl.com.tw</string>
+		<string>https://www.cpbl.com.tw</string>
 		<key>YoutubeAPIKey</key>
 		<string>${YOTUBE_API_KEY}</string>
 		<key>YoutubeAPIURL</key>
