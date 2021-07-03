@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lc5-ct-p02">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lc5-ct-p02">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment version="4352" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -152,221 +152,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D2k-cV-8Ag">
+                            <wkWebView alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q10-vA-fjZ">
                                 <rect key="frame" x="0.0" y="96" width="375" height="571"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sdg-6j-yVP">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="222.5"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="izq-GP-YBR">
-                                        <rect key="frame" x="15" y="105.5" width="81" height="109"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="izq-GP-YBR" secondAttribute="height" multiplier="9:11" constant="-8.181818181818187" id="hKc-xE-KN4"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---｜---｜---" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gq8-fe-NCp">
-                                        <rect key="frame" x="106" y="191.5" width="251" height="18"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="選手 00 | 球隊" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwf-lW-JYg">
-                                        <rect key="frame" x="106" y="161.5" width="251" height="25"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rr4-C2-wul">
-                                        <rect key="frame" x="15" y="237.5" width="345" height="27"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pitching Records" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqF-9e-VmJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="345" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="Pen-HW-4br"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                <color key="textColor" red="0.40784313729999999" green="0.40784313729999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h0j-WW-T3I">
-                                                <rect key="frame" x="0.0" y="26" width="345" height="1"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="1" id="6Rm-0u-U45"/>
-                                                </constraints>
-                                                <wkWebViewConfiguration key="configuration" allowsAirPlayForMediaPlayback="NO" allowsPictureInPictureMediaPlayback="NO">
-                                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                                    <wkPreferences key="preferences"/>
-                                                </wkWebViewConfiguration>
-                                            </wkWebView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="DqF-9e-VmJ" firstAttribute="leading" secondItem="rr4-C2-wul" secondAttribute="leading" id="5ct-4M-Utg"/>
-                                            <constraint firstAttribute="trailing" secondItem="h0j-WW-T3I" secondAttribute="trailing" id="D3I-Bh-khU"/>
-                                            <constraint firstItem="DqF-9e-VmJ" firstAttribute="top" secondItem="rr4-C2-wul" secondAttribute="top" id="Et5-vM-XCf"/>
-                                            <constraint firstAttribute="bottom" secondItem="h0j-WW-T3I" secondAttribute="bottom" id="FP6-dn-fMX"/>
-                                            <constraint firstItem="h0j-WW-T3I" firstAttribute="leading" secondItem="rr4-C2-wul" secondAttribute="leading" id="H6E-NE-JgA"/>
-                                            <constraint firstAttribute="trailing" secondItem="DqF-9e-VmJ" secondAttribute="trailing" id="Rrm-cS-IM9"/>
-                                            <constraint firstItem="h0j-WW-T3I" firstAttribute="top" secondItem="DqF-9e-VmJ" secondAttribute="bottom" constant="5" id="fyk-PE-jg2"/>
-                                            <constraint firstAttribute="height" constant="27" id="lej-GB-s1Q"/>
-                                        </constraints>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Batting Records" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Pz-Yw-ZoH">
-                                        <rect key="frame" x="15" y="237.5" width="345" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                        <color key="textColor" red="0.40784313725490196" green="0.40784313725490196" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u3H-cG-zIM">
-                                        <rect key="frame" x="15" y="263.5" width="345" height="1"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="cDH-3q-z9w"/>
-                                        </constraints>
-                                        <wkWebViewConfiguration key="configuration" allowsAirPlayForMediaPlayback="NO" allowsPictureInPictureMediaPlayback="NO">
-                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                            <wkPreferences key="preferences"/>
-                                        </wkWebViewConfiguration>
-                                    </wkWebView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Defense" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gk4-dN-oes">
-                                        <rect key="frame" x="15" y="279.5" width="345" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ii-EF-0T8">
-                                        <rect key="frame" x="15" y="305.5" width="345" height="1"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="aqL-kb-1H8"/>
-                                        </constraints>
-                                        <wkWebViewConfiguration key="configuration">
-                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                            <wkPreferences key="preferences"/>
-                                        </wkWebViewConfiguration>
-                                    </wkWebView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A74-Y2-Lph">
-                                        <rect key="frame" x="15" y="321.5" width="345" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZB-5j-qpQ">
-                                        <rect key="frame" x="15" y="347" width="345" height="1"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="gSU-Zk-E0K"/>
-                                        </constraints>
-                                        <wkWebViewConfiguration key="configuration">
-                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                            <wkPreferences key="preferences"/>
-                                        </wkWebViewConfiguration>
-                                    </wkWebView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Highest in Sigle Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUG-l8-J9f">
-                                        <rect key="frame" x="15" y="363" width="345" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZUd-dl-oc2">
-                                        <rect key="frame" x="15" y="389" width="345" height="1"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="CcW-9b-C6E"/>
-                                        </constraints>
-                                        <wkWebViewConfiguration key="configuration">
-                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                            <wkPreferences key="preferences"/>
-                                        </wkWebViewConfiguration>
-                                    </wkWebView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="sdg-6j-yVP" firstAttribute="centerX" secondItem="D2k-cV-8Ag" secondAttribute="centerX" id="0VZ-kG-Cwt"/>
-                                    <constraint firstAttribute="trailing" secondItem="sdg-6j-yVP" secondAttribute="trailing" id="10L-91-pFn"/>
-                                    <constraint firstItem="izq-GP-YBR" firstAttribute="width" secondItem="sdg-6j-yVP" secondAttribute="height" multiplier="99:215" constant="-21.45348837209302" id="17f-iJ-KHe"/>
-                                    <constraint firstAttribute="trailing" secondItem="8ii-EF-0T8" secondAttribute="trailing" constant="15" id="2uB-Sp-TKz"/>
-                                    <constraint firstAttribute="trailing" secondItem="u3H-cG-zIM" secondAttribute="trailing" constant="15" id="3Oa-nA-kll"/>
-                                    <constraint firstAttribute="trailing" secondItem="rr4-C2-wul" secondAttribute="trailing" constant="15" id="6TH-Cp-PUJ"/>
-                                    <constraint firstItem="VZB-5j-qpQ" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" constant="15" id="6VY-ff-tR5"/>
-                                    <constraint firstItem="A74-Y2-Lph" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" constant="15" id="8No-Ns-GCQ"/>
-                                    <constraint firstItem="ZUd-dl-oc2" firstAttribute="top" secondItem="rUG-l8-J9f" secondAttribute="bottom" constant="5" id="9PK-se-wHq"/>
-                                    <constraint firstAttribute="trailing" secondItem="9Pz-Yw-ZoH" secondAttribute="trailing" constant="15" id="A2k-am-KH7"/>
-                                    <constraint firstItem="izq-GP-YBR" firstAttribute="bottom" secondItem="sdg-6j-yVP" secondAttribute="bottom" constant="-8" id="AUe-Bx-oTZ"/>
-                                    <constraint firstItem="rr4-C2-wul" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" constant="15" id="Cg3-yL-UDM"/>
-                                    <constraint firstItem="Gq8-fe-NCp" firstAttribute="bottom" secondItem="izq-GP-YBR" secondAttribute="bottom" constant="-5" id="DTz-Jj-9oo"/>
-                                    <constraint firstItem="Gq8-fe-NCp" firstAttribute="trailing" secondItem="pwf-lW-JYg" secondAttribute="trailing" id="DiU-oe-hC0"/>
-                                    <constraint firstItem="VZB-5j-qpQ" firstAttribute="top" secondItem="A74-Y2-Lph" secondAttribute="bottom" constant="5.0000000000000568" id="Ehe-rl-P9O"/>
-                                    <constraint firstAttribute="trailing" secondItem="rUG-l8-J9f" secondAttribute="trailing" constant="15" id="Ieq-Kp-5F6"/>
-                                    <constraint firstItem="A74-Y2-Lph" firstAttribute="top" secondItem="8ii-EF-0T8" secondAttribute="bottom" constant="15" id="JBA-Jf-F3V"/>
-                                    <constraint firstItem="u3H-cG-zIM" firstAttribute="top" secondItem="9Pz-Yw-ZoH" secondAttribute="bottom" constant="5" id="JRO-UF-IYJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="ZUd-dl-oc2" secondAttribute="trailing" constant="15" id="JZf-e4-Tx5"/>
-                                    <constraint firstItem="sdg-6j-yVP" firstAttribute="top" secondItem="D2k-cV-8Ag" secondAttribute="top" id="Jmo-v0-JCM"/>
-                                    <constraint firstAttribute="trailing" secondItem="pwf-lW-JYg" secondAttribute="trailing" constant="18" id="NIX-A6-WCb"/>
-                                    <constraint firstItem="Gq8-fe-NCp" firstAttribute="top" secondItem="pwf-lW-JYg" secondAttribute="bottom" constant="5" id="Pd1-LE-hbG"/>
-                                    <constraint firstItem="9Pz-Yw-ZoH" firstAttribute="top" secondItem="sdg-6j-yVP" secondAttribute="bottom" constant="15" id="UVk-58-udZ"/>
-                                    <constraint firstItem="sdg-6j-yVP" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" id="VL2-A2-LXE"/>
-                                    <constraint firstItem="rUG-l8-J9f" firstAttribute="top" secondItem="VZB-5j-qpQ" secondAttribute="bottom" constant="15" id="VSA-ZP-N7e"/>
-                                    <constraint firstItem="gk4-dN-oes" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" constant="15" id="WIX-tE-goz"/>
-                                    <constraint firstItem="9Pz-Yw-ZoH" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" constant="15" id="WUm-3q-dtP"/>
-                                    <constraint firstItem="gk4-dN-oes" firstAttribute="top" secondItem="u3H-cG-zIM" secondAttribute="bottom" constant="15" id="Zz1-HA-7fH"/>
-                                    <constraint firstItem="u3H-cG-zIM" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" constant="15" id="crr-3U-EmX"/>
-                                    <constraint firstItem="ZUd-dl-oc2" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" constant="15" id="dBW-jh-q3O"/>
-                                    <constraint firstItem="rr4-C2-wul" firstAttribute="top" secondItem="sdg-6j-yVP" secondAttribute="bottom" constant="15" id="dzL-ps-pcb"/>
-                                    <constraint firstAttribute="trailing" secondItem="VZB-5j-qpQ" secondAttribute="trailing" constant="15" id="e5M-y1-VdA"/>
-                                    <constraint firstAttribute="trailing" secondItem="gk4-dN-oes" secondAttribute="trailing" constant="15" id="gRM-yE-oD7"/>
-                                    <constraint firstAttribute="bottom" secondItem="ZUd-dl-oc2" secondAttribute="bottom" constant="20" id="jHb-fI-SDB"/>
-                                    <constraint firstItem="8ii-EF-0T8" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" constant="15" id="kwG-PK-7hK"/>
-                                    <constraint firstItem="Gq8-fe-NCp" firstAttribute="leading" secondItem="izq-GP-YBR" secondAttribute="trailing" constant="10" id="nBv-hs-FhW"/>
-                                    <constraint firstItem="pwf-lW-JYg" firstAttribute="leading" secondItem="Gq8-fe-NCp" secondAttribute="leading" id="rfV-YV-9sf"/>
-                                    <constraint firstAttribute="trailing" secondItem="A74-Y2-Lph" secondAttribute="trailing" constant="15" id="rqI-xp-OOV"/>
-                                    <constraint firstItem="izq-GP-YBR" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" constant="15" id="sCZ-PH-ULb"/>
-                                    <constraint firstItem="8ii-EF-0T8" firstAttribute="top" secondItem="gk4-dN-oes" secondAttribute="bottom" constant="5" id="sEG-1j-6oQ"/>
-                                    <constraint firstItem="rUG-l8-J9f" firstAttribute="leading" secondItem="D2k-cV-8Ag" secondAttribute="leading" constant="15" id="u4c-Ec-a2k"/>
-                                </constraints>
-                            </scrollView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="sdg-6j-yVP" firstAttribute="height" secondItem="CKc-t0-w3N" secondAttribute="height" multiplier="1:3" id="7TZ-qu-vxa"/>
-                            <constraint firstItem="D2k-cV-8Ag" firstAttribute="top" secondItem="OfK-eq-X1V" secondAttribute="bottom" id="SgG-Rd-93B"/>
-                            <constraint firstItem="D2k-cV-8Ag" firstAttribute="leading" secondItem="CKc-t0-w3N" secondAttribute="leading" id="aQW-4Q-qKP"/>
-                            <constraint firstItem="jTS-4J-tuv" firstAttribute="top" secondItem="D2k-cV-8Ag" secondAttribute="bottom" id="cJ7-QS-IeW"/>
-                            <constraint firstAttribute="trailing" secondItem="D2k-cV-8Ag" secondAttribute="trailing" id="lSn-Op-ZuG"/>
+                            <constraint firstItem="Q10-vA-fjZ" firstAttribute="leading" secondItem="CKc-t0-w3N" secondAttribute="leading" id="6Wu-nO-RBi"/>
+                            <constraint firstItem="jTS-4J-tuv" firstAttribute="top" secondItem="Q10-vA-fjZ" secondAttribute="bottom" id="92S-kY-ukr"/>
+                            <constraint firstItem="Q10-vA-fjZ" firstAttribute="top" secondItem="OfK-eq-X1V" secondAttribute="bottom" id="f4I-BI-pjb"/>
+                            <constraint firstAttribute="trailing" secondItem="Q10-vA-fjZ" secondAttribute="trailing" id="huI-2y-4jL"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="dataLabel" destination="Gq8-fe-NCp" id="4eQ-MC-YF9"/>
-                        <outlet property="fieldingWebView" destination="8ii-EF-0T8" id="5H1-B7-itW"/>
-                        <outlet property="fieldingWebViewHeight" destination="aqL-kb-1H8" id="Ku2-fU-O8u"/>
-                        <outlet property="gameImageView" destination="sdg-6j-yVP" id="QMC-RW-N70"/>
-                        <outlet property="headImageView" destination="izq-GP-YBR" id="ZiC-Hi-E9L"/>
-                        <outlet property="nameLabel" destination="pwf-lW-JYg" id="0nJ-SQ-SJ2"/>
-                        <outlet property="optionalView" destination="rr4-C2-wul" id="Ro6-Zs-4Pi"/>
-                        <outlet property="optionalViewHeight" destination="lej-GB-s1Q" id="g3a-1c-n6t"/>
-                        <outlet property="optionalWebView" destination="h0j-WW-T3I" id="Bhq-tB-GK3"/>
-                        <outlet property="optionalWebViewHeight" destination="6Rm-0u-U45" id="RYk-KW-ph4"/>
-                        <outlet property="scrollView" destination="D2k-cV-8Ag" id="PD0-1y-gjY"/>
-                        <outlet property="singleGameWebView" destination="ZUd-dl-oc2" id="lfP-KI-Lzy"/>
-                        <outlet property="singleGameWebViewHeight" destination="CcW-9b-C6E" id="rhM-Bc-Izg"/>
-                        <outlet property="statsLabel" destination="9Pz-Yw-ZoH" id="QZP-Bn-eju"/>
-                        <outlet property="statsLabelTop" destination="UVk-58-udZ" id="ZZn-fb-D41"/>
-                        <outlet property="statsWebView" destination="u3H-cG-zIM" id="XcE-RT-mXy"/>
-                        <outlet property="statsWebViewHeight" destination="cDH-3q-z9w" id="Tut-42-PxK"/>
-                        <outlet property="teamStatsWebView" destination="VZB-5j-qpQ" id="PYr-0g-POq"/>
-                        <outlet property="teamStatsWebViewHeight" destination="gSU-Zk-E0K" id="pXA-o3-BOh"/>
+                        <outlet property="playerWebView" destination="Q10-vA-fjZ" id="kkn-bZ-UxX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RCk-DO-M0i" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="w4p-tS-s7Q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="w4p-tS-s7Q">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment version="4352" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -144,46 +144,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Cancel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hk8-fb-tKP">
+                                <rect key="frame" x="100.5" y="315.5" width="174.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" systemColor="tertiaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <wkWebView contentMode="scaleToFill" allowsLinkPreview="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZy-ZB-xT9">
-                                <rect key="frame" x="0.0" y="346" width="375" height="321"/>
+                                <rect key="frame" x="0.0" y="371" width="375" height="296"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <wkWebViewConfiguration key="configuration" suppressesIncrementalRendering="YES">
+                                <wkWebViewConfiguration key="configuration">
+                                    <dataDetectorTypes key="dataDetectorTypes"/>
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences" javaScriptEnabled="NO"/>
+                                    <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <wkWebView contentMode="scaleToFill" allowsLinkPreview="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1j-8o-oah">
-                                <rect key="frame" x="0.0" y="346" width="375" height="321"/>
+                                <rect key="frame" x="0.0" y="371" width="375" height="296"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <wkWebViewConfiguration key="configuration" suppressesIncrementalRendering="YES">
+                                <wkWebViewConfiguration key="configuration">
+                                    <dataDetectorTypes key="dataDetectorTypes"/>
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences" javaScriptEnabled="NO"/>
+                                    <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AuY-fe-QbK">
-                                <rect key="frame" x="0.0" y="196" width="375" height="100"/>
+                                <rect key="frame" x="0.0" y="196" width="375" height="125"/>
                                 <subviews>
-                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2BF-7s-bel">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                    <wkWebView contentMode="scaleToFill" allowsLinkPreview="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2BF-7s-bel">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="124.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <wkWebViewConfiguration key="configuration">
+                                            <dataDetectorTypes key="dataDetectorTypes"/>
                                             <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                             <wkPreferences key="preferences"/>
                                         </wkWebViewConfiguration>
                                     </wkWebView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qXZ-mG-G8i">
-                                        <rect key="frame" x="0.0" y="99.5" width="375" height="0.5"/>
+                                        <rect key="frame" x="0.0" y="124.5" width="375" height="0.5"/>
                                         <color key="backgroundColor" systemColor="separatorColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.29999999999999999" id="U2R-U5-XPJ"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.031372549020000001" green="0.1058823529" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="qXZ-mG-G8i" secondAttribute="bottom" id="4FF-My-BlD"/>
                                     <constraint firstItem="2BF-7s-bel" firstAttribute="top" secondItem="AuY-fe-QbK" secondAttribute="top" id="IIA-EZ-fDt"/>
-                                    <constraint firstAttribute="height" constant="100" id="QJh-I3-OV6"/>
+                                    <constraint firstAttribute="height" constant="125" id="QJh-I3-OV6"/>
                                     <constraint firstAttribute="trailing" secondItem="qXZ-mG-G8i" secondAttribute="trailing" id="VRf-zZ-QyY"/>
                                     <constraint firstItem="2BF-7s-bel" firstAttribute="leading" secondItem="AuY-fe-QbK" secondAttribute="leading" id="XAK-6Z-mrN"/>
                                     <constraint firstItem="qXZ-mG-G8i" firstAttribute="top" secondItem="2BF-7s-bel" secondAttribute="bottom" id="saU-oa-liY"/>
@@ -287,7 +296,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ngT-WO-4YI">
-                                <rect key="frame" x="0.0" y="296" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="321" width="375" height="50"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aFK-bQ-0Xh">
                                         <rect key="frame" x="94" y="10" width="187" height="32"/>
@@ -335,13 +344,16 @@
                             <constraint firstAttribute="trailing" secondItem="EZy-ZB-xT9" secondAttribute="trailing" id="dZN-b4-sF4"/>
                             <constraint firstAttribute="trailing" secondItem="vQ4-QX-E8c" secondAttribute="trailing" id="dyX-QX-GVw"/>
                             <constraint firstItem="vQ4-QX-E8c" firstAttribute="leading" secondItem="Hyo-Nb-leO" secondAttribute="leading" id="k3Z-mq-Rgm"/>
+                            <constraint firstItem="hk8-fb-tKP" firstAttribute="centerX" secondItem="Hyo-Nb-leO" secondAttribute="centerX" id="lRS-Df-muI"/>
                             <constraint firstAttribute="trailing" secondItem="AuY-fe-QbK" secondAttribute="trailing" id="lwI-6a-sHZ"/>
                             <constraint firstItem="vQ4-QX-E8c" firstAttribute="top" secondItem="GZ2-SX-JuA" secondAttribute="bottom" id="rzg-4E-uVi"/>
                             <constraint firstItem="AuY-fe-QbK" firstAttribute="leading" secondItem="Hyo-Nb-leO" secondAttribute="leading" id="xrK-9q-tNj"/>
+                            <constraint firstItem="hk8-fb-tKP" firstAttribute="centerY" secondItem="Hyo-Nb-leO" secondAttribute="centerY" id="yMY-sa-W4x"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="boxWebView" destination="EZy-ZB-xT9" id="SFu-f5-Pe1"/>
+                        <outlet property="cancelLabel" destination="hk8-fb-tKP" id="OFF-ET-FOz"/>
                         <outlet property="gameNumLabel" destination="zWl-oZ-ipP" id="tYF-yZ-gVr"/>
                         <outlet property="gameView" destination="vQ4-QX-E8c" id="3X0-Y7-Ln4"/>
                         <outlet property="gameWebView" destination="c1j-8o-oah" id="mp3-2D-L0b"/>
