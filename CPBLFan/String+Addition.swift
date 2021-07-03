@@ -11,20 +11,16 @@ import Foundation
 extension String {
     
     func getTeam() -> String{
-        if self.contains("B03") {
-            return "B03".localized()
-        } else if self.contains("A02") {
-            return "A02".localized()
-        } else if self.contains("AJL011") {
+        if self.contains("ADD011") || self.contains("統一7-ELEVEn獅") {
+            return "ADD011".localized()
+        } else if self.contains("ACN011") || self.contains("中信兄弟") {
+            return "ACN011".localized()
+        } else if self.contains("AJL011") || self.contains("樂天桃猿") {
             return "AJL011".localized()
-        } else if self.contains("E02"){
-            return "E02".localized()
-        } else if self.contains("L01") {
-            return "L01".localized()
-        } else if self.contains("B04") {
-            return "B04".localized()
-        } else if self.contains("D01") {
-            return "D01".localized()
+        } else if self.contains("AEO011") || self.contains("富邦悍將") {
+            return "AEO011".localized()
+        } else if self.contains("AAA011") || self.contains("味全龍") {
+            return "AAA011".localized()
         }
         return "無"
     }
@@ -32,29 +28,25 @@ extension String {
     func getIndex() -> Int{
         switch self {
         case "AVG":
-            return 17
-        case "H", "HIT":
+            return 1
+        case "H":
             return 7
         case "HR":
             return 11
-        case "ERA":
-            return 15
-        case "W", "WIN":
-            return 8
-        case "SV":
-            return 10
         case "RBI":
             return 5
         case "SB":
             return 14
-        case "SO":
-            return 23
-        case "WHIP":
-            return 14
-        case "TB":
-            return 12
+        case "ERA":
+            return 1
+        case "W":
+            return 7
+        case "SV":
+            return 9
         case "HLD":
-            return 12
+            return 10
+        case "SO":
+            return 21
         default:
             return 0
         }

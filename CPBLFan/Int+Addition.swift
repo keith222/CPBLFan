@@ -20,23 +20,19 @@ extension Int {
         case 2:
             category = "HR"
         case 3:
-            category = "ERA"
-        case 4:
-            category = "W"
-        case 5:
-            category = "SV"
-        case 6:
             category = "RBI"
-        case 7:
+        case 4:
             category = "SB"
+        case 5:
+            category = "ERA"
+        case 6:
+            category = "W"
+        case 7:
+            category = "SV"
         case 8:
-            category = "SO"
-        case 9:
-            category = "WHIP"
-        case 10:
-            category = "TB"
-        case 11:
             category = "HLD"
+        case 9:
+            category = "SO"
         default:
             break
         }
