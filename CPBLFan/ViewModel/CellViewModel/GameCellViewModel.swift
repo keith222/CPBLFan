@@ -19,7 +19,7 @@ struct GameCellViewModel {
     var num: String {
         let game = self.game?.game ?? 0
         switch game {
-        case 0:
+        case 0, -100:
              return "All Stars Game"
         case _ where game > 0:
             return "Game \(game)"

@@ -12,7 +12,7 @@ import PKHUD
 import WebKit
 
 class GameViewController: BaseViewController {
-
+    
     @IBOutlet weak var gameView: UIView!
     @IBOutlet weak var scoreView: UIView!
     @IBOutlet weak var segmentView: UIView!
@@ -27,8 +27,7 @@ class GameViewController: BaseViewController {
     @IBOutlet weak var boxWebView: WKWebView!
     @IBOutlet weak var gameWebView: WKWebView!
     @IBOutlet weak var selectSegment: UISegmentedControl!
-    
-    private var timer: Timer?
+    @IBOutlet weak var cancelLabel: UILabel!
     
     var gameViewModel: GameViewModel?
     
@@ -36,20 +35,19 @@ class GameViewController: BaseViewController {
         super.viewDidLoad()
         
         self.setUp()
-        self.bindViewModel()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        self.stopTimer()
+        self.bindViewModel()
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         self.streamButton.borderColor = .darkBlue
     }
-
+    
     
     func setUp(){
         if #available(iOS 11.0, *) {
@@ -57,19 +55,23 @@ class GameViewController: BaseViewController {
         }
         
         self.title = "賽事資訊".localized()
-            
+        
         self.streamButton.cornerRadius = 5
         self.streamButton.borderWidth = 0.5
         self.streamButton.tintColor = .darkBlue
         self.streamButton.borderColor = .darkBlue
         
+        self.scoreView.backgroundColor = .darkBlue
+        
         self.gameWebView.navigationDelegate = self
         self.gameWebView.scrollView.showsVerticalScrollIndicator = false
         self.gameWebView.isOpaque = false
         self.gameWebView.isHidden = true
-        
+                
         self.boxWebView.navigationDelegate = self
         self.boxWebView.scrollView.showsVerticalScrollIndicator = false
+        self.boxWebView.configuration.userContentController.add(self, name: "scoreBoard")
+        self.boxWebView.configuration.userContentController.add(self, name: "gameCancel")
         self.boxWebView.isOpaque = false
         
         self.scoreboardWebView.navigationDelegate = self
@@ -80,62 +82,23 @@ class GameViewController: BaseViewController {
         self.gameView.alpha = 0
         self.scoreView.alpha = 0
         self.segmentView.alpha = 0
+        self.boxWebView.alpha = 0
+        self.gameWebView.alpha = 0
     }
     
     private func bindViewModel() {
-        // check if today is game day and start timer
-        let gameDate = self.gameViewModel?.date.date
-        
-        self.loadHTML()
-        
-        self.gameViewModel?.errorHandleClosure = {
-            HUD.hide(animated: true)
-        }
-        
-        self.gameViewModel?.loadBoxHtml = { [weak self] boxHtml in
-            guard let boxHtml = boxHtml else { return }
-            
-            self?.boxWebView.loadHTMLString(boxHtml, baseURL: nil)
-        }
-        
-        self.gameViewModel?.loadGameHtml = { [weak self] (gameHtml, scoreBoardHtml, isGameStarted) in
-            guard let gameHtml = gameHtml, let scoreBoardHtml = scoreBoardHtml else { return }
-            
-            self?.gameWebView.loadHTMLString(gameHtml, baseURL: nil)
-            self?.scoreboardWebView.loadHTMLString(scoreBoardHtml, baseURL: nil)
-            
-            if (gameDate?.isInToday ?? false) && isGameStarted {
-                if !(self?.timer?.isValid ?? false) {
-                    self?.setTimer()
-                }
-                
-            } else {
-                self?.stopTimer()
-            }
-        }
-        
         self.gameNumLabel.text = self.gameViewModel?.gameString
         self.guestImageView.image = UIImage(named: (self.gameViewModel?.guestImageString.logoLocalizedString) ?? "")
         self.homeImageView.image = UIImage(named: (self.gameViewModel?.homeImageString.logoLocalizedString) ?? "")
         self.guestScoreLabel.text = self.gameViewModel?.guestScore
         self.homeScoreLabel.text = self.gameViewModel?.homeScore
         self.placeLabel.text = self.gameViewModel?.place.localized()
-    }
-    
-    @objc func loadHTML() {
-        HUD.show(.progress)
-        self.gameViewModel?.loadHtml()
-    }
-    
-    private func setTimer(){
-        self.timer = Timer.scheduledTimer(timeInterval: 120, target: self, selector: #selector(self.loadHTML), userInfo: nil, repeats: true)
-    }
-    
-    private func stopTimer() {
-        if self.timer != nil {
-            self.timer?.invalidate()
-            self.timer = nil
+        
+        guard let boxURL = self.gameViewModel?.boxURL.url else {
+            HUD.hide()
+            return
         }
+        self.boxWebView.load(URLRequest(url: boxURL))
     }
     
     @IBAction func streamAction(_ sender: UIButton) {
@@ -167,28 +130,66 @@ class GameViewController: BaseViewController {
     }
 }
 
+extension GameViewController: WKScriptMessageHandler {
+    
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        if message.name == "scoreBoard", let html = message.body as? String {
+            let scoreBoard = self.gameViewModel?.scoreBoardHtml.replacingOccurrences(of: "%@", with: html) ?? html
+            self.scoreboardWebView.loadHTMLString(scoreBoard, baseURL: nil)
+        }
+        
+        if message.name == "gameCancel", let content = message.body as? String {
+            HUD.hide(animated: true, completion: { [weak self] finished in
+                self?.cancelLabel.text = content
+                self?.cancelLabel.isHidden = false
+            })
+        }
+        
+    }
+}
+
 extension GameViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        HUD.hide(animated: true, completion: {finished in
-            UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.3, delay: 0, animations: {
-                [weak self] in
+        if webView == self.boxWebView, let jsCode = self.gameViewModel?.boxJSCode {
+            webView.evaluateJavaScript(jsCode, completionHandler: { [weak self] (any,error) in
+                print(error)
+                if error != nil {
+                    self?.performAlert(with: error?.localizedDescription)
+                    return
+                }
+                
+                guard let liveURL = self?.gameViewModel?.liveURL.url else { return }
+                
+                self?.gameWebView.load(URLRequest(url: liveURL))
+            })
+        }
+
+        if webView == self.gameWebView, let jsCode = self.gameViewModel?.liveJSCode {
+            webView.evaluateJavaScript(jsCode, completionHandler: { [weak self] (any,error) in
+                if error != nil {
+                    self?.performAlert(with: error?.localizedDescription)
+                    return
+                }
+            })
+        }
+
+        if webView == self.scoreboardWebView {
+            HUD.hide(animated: true, completion: { [weak self] finished in
+                UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.3, delay: 0, animations: {
                     self?.gameView.alpha = 1
                     self?.scoreView.alpha = 1
                     self?.segmentView.alpha = 1
+                    self?.boxWebView.alpha = 1
+                    self?.gameWebView.alpha = 1
+                })
             })
-        })
+        }
     }
     
+    
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        HUD.hide(animated: true, completion: {finished in
-            UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.3, delay: 0, animations: {
-                [weak self] in
-                    self?.gameView.alpha = 1
-                    self?.scoreView.alpha = 1
-                    self?.segmentView.alpha = 1
-            })
-        })
+        self.performAlert(with: error.localizedDescription)
     }
     
 }
