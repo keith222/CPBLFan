@@ -30,9 +30,14 @@ class BaseViewController: UIViewController {
     
     func performAlert(with message: String?) {
         let alertMessage = message ?? "發生錯誤，請稍後再試。"
-        HUD.hide(animated: true, completion: { _ in
+        if HUD.isVisible {
+            HUD.hide(animated: true, completion: { _ in
+                UIAlertController(title: "提示", message: alertMessage).show()
+            })
+            
+        } else {
             UIAlertController(title: "提示", message: alertMessage).show()
-        })
+        }
     }
     
     func performAnimation(of view: UIView?, isHidden: Bool) {
