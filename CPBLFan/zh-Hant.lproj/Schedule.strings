@@ -31,3 +31,6 @@
 
 /* Class = "UILabel"; text = "000"; ObjectID = "zWl-oZ-ipP"; */
 "zWl-oZ-ipP.text" = "000";
+
+/* Class = "UILabel"; text = "Game Cancel"; ObjectID = "hk8-fb-tKP"; */
+"hk8-fb-tKP.text" = "本場賽事延賽"

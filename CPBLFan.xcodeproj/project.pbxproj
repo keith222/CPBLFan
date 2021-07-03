@@ -211,7 +211,6 @@
 		5317B2BE246C2B60003A6523 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		5317B2BF246C43EC003A6523 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/MainInterface.strings"; sourceTree = "<group>"; };
 		5317B2C1246C459C003A6523 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/MainInterface.strings"; sourceTree = "<group>"; };
-		5317B2C3246C51D3003A6523 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/News.strings"; sourceTree = "<group>"; };
 		5317B2C5246C51E0003A6523 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Rank.strings"; sourceTree = "<group>"; };
 		5317B2C7246C51EE003A6523 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Schedule.strings"; sourceTree = "<group>"; };
 		5317B2C9246C523E003A6523 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Statistics.strings"; sourceTree = "<group>"; };
@@ -295,6 +294,7 @@
 		53CBA2E61E0D920D0012FFFB /* TableViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewHelper.swift; path = Helper/TableViewHelper.swift; sourceTree = "<group>"; };
 		53CBA2E91E0D96670012FFFB /* NewsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsViewModel.swift; path = ViewModel/NewsViewModel.swift; sourceTree = "<group>"; };
 		53CBA2EB1E0ECC1E0012FFFB /* NewsContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsContentViewController.swift; path = View/ViewController/NewsContentViewController.swift; sourceTree = "<group>"; };
+		53CD456326622D22000041D0 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/News.strings"; sourceTree = "<group>"; };
 		53CE89C91E61532E00C528BC /* Rank-Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Rank-Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53CE89CA1E61532E00C528BC /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		53CE89CD1E61532E00C528BC /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -1240,7 +1240,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5317B2B8246C2B5F003A6523 /* Base */,
-				5317B2C3246C51D3003A6523 /* zh-Hant */,
+				53CD456326622D22000041D0 /* zh-Hant */,
 			);
 			name = News.storyboard;
 			sourceTree = "<group>";
