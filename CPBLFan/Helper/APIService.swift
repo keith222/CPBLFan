@@ -18,25 +18,18 @@ class APIService{
     //youtube api key
     static let YoutubeAPIKey: String = (Bundle.main.object(forInfoDictionaryKey: "API Service") as! Dictionary<String, String>)["YoutubeAPIKey"]!
     
-    static func request(_
-        method: Alamofire.HTTPMethod,
-        route: String,
-        completionHandler: @escaping(String?)->()
-    ){
+    static func request(_ method: Alamofire.HTTPMethod, route: String, parameters: Parameters? = nil, completionHandler: @escaping(String?)->()){
         let manager = Alamofire.Session.default
         manager.session.configuration.timeoutIntervalForRequest = 5
         manager.session.configuration.timeoutIntervalForResource = 5
-        manager.request(
-            route,
-            method: .get
-            ).responseString(completionHandler: { response in
-                switch response.result {
-                case .success:
-                    completionHandler(response.value)
-
-                case .failure:
-                    completionHandler(nil)
-                }
-            })
+        manager.request(route, method: method, parameters: parameters).responseString(completionHandler: { response in
+            switch response.result {
+            case .success:
+                completionHandler(response.value)
+                
+            case .failure:
+                completionHandler(nil)
+            }
+        })
     }
 }
