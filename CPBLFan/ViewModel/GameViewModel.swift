@@ -236,6 +236,7 @@ class GameViewModel{
                  .InningPlays .item.action { background-color: #505050; }
                  .col_title h3, .GamePlaysDetail .tab_cont .col_title .en { color: #0E90C4}
                  .GameNote, .editable_content, .desc, .score, .InningPlaysGroup .tabs li a, .InningPlays .play .detail .call_desc, .InningPlays .item .call_desc a, .InningPlays .item .desc a, .InningPlays .item .desc a:focus, .InningPlays .item .desc a:hover { color: white; }
+                
                 }
                 @media (prefers-color-scheme: light) {
                  body { background-color: white;}
@@ -249,6 +250,7 @@ class GameViewModel{
                                          
                 .InningPlays .play .detail .no-pitch .call_desc, .InningPlays .play .detail .event .call_desc { background-color: transparent; }
                 .InningPlays .item .desc a::after { height: 0px; }
+                .InningPlays .item .desc a { font-weight: bold; }
                 .GamePlaysDetail > .tabs li.active:after, .InningPlaysGroup .tabs, .InningPlaysGroup .tabs li.active:after {border: none}
                 .GamePlaysDetail > .tabs li a > span {background: none; color: white}
                 .InningPlaysGroup .tab_container { margin-right: 0px }

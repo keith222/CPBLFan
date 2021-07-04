@@ -26,7 +26,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         self.setUp()
         self.bindViewModel()
-        
     }
     
     private func setUp() {
@@ -60,18 +59,21 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             self.alertLabel.isHidden = false
             return
         }
-        
+       
         self.gameScheduleViewModel.reloadTableViewClosure = { [weak self] gameSchedules in
             let todayGame = gameSchedules.filter({ $0.0.day == self?.gameScheduleViewModel.day })
-            
             guard !todayGame.isEmpty else {
                 self?.alertLabel.isHidden = false
                 return
             }
             
+            self?.alertLabel.isHidden = true
             self?.tableHelper?.savedData = [todayGame.map({ $0.1 }) as [AnyObject]]
             self?.todayGameTableView.isHidden = false
-            self?.alertLabel.isHidden = true
+        }
+        
+        self.gameScheduleViewModel.updateDateClosure = { [weak self] _ in
+            self?.alertLabel.isHidden = false            
         }
     }
     
