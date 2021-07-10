@@ -42,8 +42,8 @@ class NewsCell: UITableViewCell, BindView {
 
         if let newsCellViewModel = viewModel as? NewsCellViewModel{
             //cell content
-            if !(newsCellViewModel.imageURL?.isEmpty)!{
-                self.newsImage.kf.setImage(with: newsCellViewModel.imageURL?.removingPercentEncoding?.url!)
+            if let url = newsCellViewModel.imageURL?.removingPercentEncoding?.url {
+                self.newsImage.kf.setImage(with: url, options: [.transition(.fade(0.2)), .onFailureImage(UIImage(named: "logo"))])
             }else{
                 self.newsImage.image = UIImage(named: "logo")
             }

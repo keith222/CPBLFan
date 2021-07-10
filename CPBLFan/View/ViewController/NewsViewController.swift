@@ -51,8 +51,7 @@ class NewsViewController: BaseViewController {
             },
             refreshAction: { [weak self] page in
                 // closure for refresh(load more)data
-                let newPage = (self?.newsViewModel.numberOfCells == 0 && page == 2) ? 0 : page - 1
-                self?.newsViewModel.fetchNews(from: newPage)
+                self?.newsViewModel.fetchNews(from: page)
             }
         )
     }

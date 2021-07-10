@@ -31,7 +31,7 @@ class NewsViewModel {
         self.fetchNews()
     }
     
-    func fetchNews(from page: Int = 0) {
+    func fetchNews(from page: Int = 1) {
         let route = "\(APIService.CPBLSourceURL)/xmdoc?page=\(page)"
         APIService.request(.get, route: route, completionHandler: { [weak self] text in
             guard let text = text else{
