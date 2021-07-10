@@ -29,9 +29,6 @@ extension UIColor{
         }
     }()
     
-    
-    
-    
     enum CompromisedColors {
         static let label: UIColor = {
             if #available(iOS 13.0, *) {
@@ -73,12 +70,20 @@ extension UIColor{
             }
         }()
         
+        static let systemGray5: UIColor = {
+            if #available(iOS 13.0, *) {
+                return UIColor.systemGray5
+            } else {
+                return .gray
+            }
+        }()
+        
         
         static let separator: UIColor = {
             if #available(iOS 13.0, *) {
                 return UIColor.separator
             } else {
-                return .white
+                return .lightGray
             }
         }()
     }

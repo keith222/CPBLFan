@@ -1,5 +1,5 @@
 
-/* Class = "UILabel"; text = "--年--月"; ObjectID = "HTG-fU-zcb"; */
+/* Class = "UILabel"; text = "--Y--M"; ObjectID = "HTG-fU-zcb"; */
 "HTG-fU-zcb.text" = "--年--月";
 
 /* Class = "UILabel"; text = "--"; ObjectID = "NyC-3y-e4U"; */
@@ -11,13 +11,13 @@
 /* Class = "UILabel"; text = "Label"; ObjectID = "Ssd-VK-kFg"; */
 "Ssd-VK-kFg.text" = "Label";
 
-/* Class = "UILabel"; text = "比賽場地"; ObjectID = "TsZ-Y8-xpK"; */
+/* Class = "UILabel"; text = "Place"; ObjectID = "TsZ-Y8-xpK"; */
 "TsZ-Y8-xpK.text" = "比賽場地";
 
-/* Class = "UINavigationItem"; title = "職棒賽程"; ObjectID = "Wuj-jy-JOT"; */
+/* Class = "UINavigationItem"; title = "Schedule"; ObjectID = "Wuj-jy-JOT"; */
 "Wuj-jy-JOT.title" = "職棒賽程";
 
-/* Class = "UILabel"; text = "未有比賽資料"; ObjectID = "Yzp-vJ-2eB"; */
+/* Class = "UILabel"; text = "No Game Schedule"; ObjectID = "Yzp-vJ-2eB"; */
 "Yzp-vJ-2eB.text" = "未有比賽資料";
 
 /* Class = "UISegmentedControl"; aFK-bQ-0Xh.segmentTitles[0] = "Box"; ObjectID = "aFK-bQ-0Xh"; */
@@ -26,11 +26,11 @@
 /* Class = "UISegmentedControl"; aFK-bQ-0Xh.segmentTitles[1] = "Play By Play"; ObjectID = "aFK-bQ-0Xh"; */
 "aFK-bQ-0Xh.segmentTitles[1]" = "Play By Play";
 
-/* Class = "UITabBarItem"; title = "職棒賽程"; ObjectID = "cPa-gy-q4n"; */
+/* Class = "UITabBarItem"; title = "Schedule"; ObjectID = "cPa-gy-q4n"; */
 "cPa-gy-q4n.title" = "職棒賽程";
+
+/* Class = "UILabel"; text = "Game Cancel"; ObjectID = "hk8-fb-tKP"; */
+"hk8-fb-tKP.text" = "本場賽事延賽";
 
 /* Class = "UILabel"; text = "000"; ObjectID = "zWl-oZ-ipP"; */
 "zWl-oZ-ipP.text" = "000";
-
-/* Class = "UILabel"; text = "Game Cancel"; ObjectID = "hk8-fb-tKP"; */
-"hk8-fb-tKP.text" = "本場賽事延賽"

@@ -42,6 +42,6 @@ class GameCell: UITableViewCell, BindView{
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
         
-        containerView.backgroundColor = (highlighted) ? .groupTableViewBackground : UIColor.CompromisedColors.background
+        containerView.backgroundColor = (highlighted) ? UIColor.CompromisedColors.systemGray5: UIColor.CompromisedColors.background
     }
 }

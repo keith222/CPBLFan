@@ -212,7 +212,6 @@
 		5317B2BF246C43EC003A6523 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/MainInterface.strings"; sourceTree = "<group>"; };
 		5317B2C1246C459C003A6523 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/MainInterface.strings"; sourceTree = "<group>"; };
 		5317B2C5246C51E0003A6523 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Rank.strings"; sourceTree = "<group>"; };
-		5317B2C7246C51EE003A6523 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Schedule.strings"; sourceTree = "<group>"; };
 		5317B2C9246C523E003A6523 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Statistics.strings"; sourceTree = "<group>"; };
 		5317B2CB246C5253003A6523 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Video.strings"; sourceTree = "<group>"; };
 		531BA2411E1EA7EF00B83B73 /* RankCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RankCell.swift; path = View/RankCell.swift; sourceTree = "<group>"; };
@@ -268,6 +267,7 @@
 		5386F78323E5FA1A00D670EF /* StatsListCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatsListCellViewModel.swift; path = CPBLFan/ViewModel/CellViewModel/StatsListCellViewModel.swift; sourceTree = SOURCE_ROOT; };
 		5386F78423E5FA1A00D670EF /* VideoCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoCellViewModel.swift; path = CPBLFan/ViewModel/CellViewModel/VideoCellViewModel.swift; sourceTree = SOURCE_ROOT; };
 		5386F78C23E72B3800D670EF /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		5389784E269987690007D3DA /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Schedule.strings"; sourceTree = "<group>"; };
 		538F75EA1E20BACE001671EE /* Rank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Rank.swift; path = Model/Rank.swift; sourceTree = "<group>"; };
 		538F75EC1E20BBBF001671EE /* RankViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RankViewModel.swift; path = ViewModel/RankViewModel.swift; sourceTree = "<group>"; };
 		53A6FE2D1E13F72700B68243 /* VideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoCell.swift; path = View/VideoCell.swift; sourceTree = "<group>"; };
@@ -1249,7 +1249,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5317B2BA246C2B60003A6523 /* Base */,
-				5317B2C7246C51EE003A6523 /* zh-Hant */,
+				5389784E269987690007D3DA /* zh-Hant */,
 			);
 			name = Schedule.storyboard;
 			sourceTree = "<group>";
@@ -1315,7 +1315,7 @@
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 8MREJM6257;
 				INFOPLIST_FILE = "Schedule-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1336,7 +1336,7 @@
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 8MREJM6257;
 				INFOPLIST_FILE = "Schedule-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1481,7 +1481,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 8MREJM6257;
 				INFOPLIST_FILE = CPBLFan/Info.plist;
@@ -1508,7 +1508,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 8MREJM6257;
 				INFOPLIST_FILE = CPBLFan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1603,7 +1603,7 @@
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 8MREJM6257;
 				INFOPLIST_FILE = "Rank-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1624,7 +1624,7 @@
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 8MREJM6257;
 				INFOPLIST_FILE = "Rank-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;

@@ -191,7 +191,7 @@ class GameViewModel{
                 }
                 @media (prefers-color-scheme: light) {
                   body { background-color: white;}
-                  .GameBoxDetail > .tabs li.active a, .RecordTable th {background-color: #0E90C4 }
+                  .GameBoxDetail > .tabs li.active a, .RecordTable th {background-color: #081B2F }
                   .DistTitle h3, .DistTitle .en {color: #081B2F }
                   .GameNote, .editable_content {color: #333 }
                 }
@@ -241,7 +241,7 @@ class GameViewModel{
                 @media (prefers-color-scheme: light) {
                  body { background-color: white;}
                  .InningPlays .title, .InningPlays .item.action { background: none; }
-                 .GamePlaysDetail > .tabs li.active a, .InningPlays .title, .InningPlaysGroup .tabs li.active a {background-color: #0E90C4}
+                 .GamePlaysDetail > .tabs li.active a, .InningPlays .title, .InningPlaysGroup .tabs li.active a {background-color: #081B2F}
                  .InningPlays .item.action { background-color: #505050; }
                  .col_title h3, .GamePlaysDetail .tab_cont .col_title .en {color: #081B2F}
                  .GameNote, .editable_content {color: black}
