@@ -59,7 +59,7 @@ class StatsListViewModel{
                 var statsList: [StatsList] = []
                 let doc = try HTML(html: text, encoding: .utf8)
                 for (index,node) in doc.css(".RecordTable tr").enumerated(){
-                    guard index > 0 else{ continue }
+                    guard index > 0 else { continue }
                     
                     let categoryIndex = self?.stats.category?.getIndex() ?? 0
                     let numData = node.at_css(".rank")?.text ?? ""

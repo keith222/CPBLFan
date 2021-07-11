@@ -27,9 +27,9 @@ extension String {
     
     func getIndex() -> Int{
         switch self {
-        case "AVG":
+        case "AVG", "ERA":
             return 1
-        case "H":
+        case "H", "W":
             return 7
         case "HR":
             return 11
@@ -37,10 +37,6 @@ extension String {
             return 5
         case "SB":
             return 14
-        case "ERA":
-            return 1
-        case "W":
-            return 7
         case "SV":
             return 9
         case "HLD":

@@ -54,9 +54,9 @@ class PlayerViewModel {
                   .RecordTable th{background-color: #081B2F}
                   .PlayerBrief dd .desc{color: #081B2F}
                   .PlayerBrief dd .label{color: #666}
-                  .PlayerBrief > div {background-color: rgba(255,255,255,0.8)}
+                  .PlayerBrief > div {background-color: white}
                   .PlayerBrief {background: #081B2F}
-                  .PlayerBrief dt { color: white }
+                  .PlayerBrief dt { color: #081B2F }
                 }
                 .PlayerBrief:after{background: none}
                 .ContHeader {margin-top: -35px}
