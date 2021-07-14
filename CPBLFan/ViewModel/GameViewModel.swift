@@ -107,7 +107,7 @@ class GameViewModel{
         
             .linescore_table {
                 padding: 5px 10px;
-                width: 480px;
+                width: 500px;
             }
         
             .linescore_table td {
@@ -213,6 +213,8 @@ class GameViewModel{
                         score_board = score_board[0].outerHTML.toString()
                         window.webkit.messageHandlers['scoreBoard'].postMessage(score_board)
                         document.querySelectorAll('.GameHeader').forEach(function(a){a.remove()});
+                    } else {
+                        window.webkit.messageHandlers['scoreBoard'].postMessage(\"\")
                     }
                 }, 1000);
             };

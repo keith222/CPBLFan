@@ -79,9 +79,7 @@ class GameViewController: BaseViewController {
         self.scoreboardWebView.scrollView.showsVerticalScrollIndicator = false
         self.scoreboardWebView.isOpaque = false
         
-        self.gameView.alpha = 0
-        self.scoreView.alpha = 0
-        self.segmentView.alpha = 0
+        self.scoreboardWebView.alpha = 0
         self.boxWebView.alpha = 0
         self.gameWebView.alpha = 0
     }
@@ -95,7 +93,10 @@ class GameViewController: BaseViewController {
         self.placeLabel.text = self.gameViewModel?.place.localized()
         
         guard let boxURL = self.gameViewModel?.boxURL.url else {
-            HUD.hide()
+            HUD.hide(animated: true, completion: { [weak self] finished in
+                self?.cancelLabel.text = "game_not_start".localized()
+                self?.cancelLabel.isHidden = false
+            })
             return
         }
         self.boxWebView.load(URLRequest(url: boxURL))
@@ -144,7 +145,6 @@ extension GameViewController: WKScriptMessageHandler {
                 self?.cancelLabel.isHidden = false
             })
         }
-        
     }
 }
 
@@ -167,7 +167,9 @@ extension GameViewController: WKNavigationDelegate {
 
         if webView == self.gameWebView, let jsCode = self.gameViewModel?.liveJSCode {
             webView.evaluateJavaScript(jsCode, completionHandler: { [weak self] (any,error) in
+                print(error)
                 if error != nil {
+                    self?.gameWebView.alpha = 0
                     self?.performAlert(with: error?.localizedDescription)
                     return
                 }
@@ -177,9 +179,7 @@ extension GameViewController: WKNavigationDelegate {
         if webView == self.scoreboardWebView {
             HUD.hide(animated: true, completion: { [weak self] finished in
                 UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.3, delay: 0, animations: {
-                    self?.gameView.alpha = 1
-                    self?.scoreView.alpha = 1
-                    self?.segmentView.alpha = 1
+                    self?.scoreboardWebView.alpha = 1
                     self?.boxWebView.alpha = 1
                     self?.gameWebView.alpha = 1
                 })
