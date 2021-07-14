@@ -46,7 +46,7 @@ class VideoCell: UITableViewCell, BindView {
             // cell content
             
             let maxResDefault = videoCellViewModel.imageUrl?.replacingOccurrences(of: "hqdefault", with: "maxresdefault")
-            self.videoImageView.kf.setImage(with: maxResDefault?.url)
+            self.videoImageView.kf.setImage(with: maxResDefault?.url, options: [.onFailureImage(UIImage(named: "logo"))])
             
             self.videoTitleLabel.text = videoCellViewModel.title
             

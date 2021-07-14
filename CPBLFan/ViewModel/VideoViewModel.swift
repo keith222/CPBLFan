@@ -40,7 +40,7 @@ class VideoViewModel{
                 self?.errorHandleClosure?()
                 return
             }
-            
+
             if let dataFromString = text.data(using: .utf8, allowLossyConversion: false) {
                 do {
                     let json = try JSONDecoder().decode(Video.self, from: dataFromString)
