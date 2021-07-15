@@ -24,7 +24,7 @@ struct GameCellViewModel {
         case _ where game > 0:
             return "Game \(game)"
         case _ where game < -10:
-            return "PlayOff Series G\(-(game % 10))"
+            return "Playoff Series G\(-(game % 10))"
         case _ where game < 0:
             return "Taiwan Series G\(-game)"
         default:

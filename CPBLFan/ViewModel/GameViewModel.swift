@@ -67,106 +67,107 @@ class GameViewModel{
             document.querySelectorAll('.BtnTop').forEach(function(a){a.remove()});
             document.querySelectorAll('.GameSearch').forEach(function(a){a.remove()});
             document.querySelectorAll('.GameDateSelect').forEach(function(a){a.remove()});
-            document.getElementById('Footer').remove();
-            document.getElementById('MenuMobile').remove();
-            document.getElementById('Header').remove();
-            document.getElementById('Breadcrumbs').remove();
-            document.getElementById('nav').remove();
+            document.querySelectorAll('.record_table_swipe_guide').forEach(function(a){a.remove()});
+            document.querySelectorAll('#Footer').forEach(function(a){a.remove()});
+            document.querySelectorAll('#MenuMobile').forEach(function(a){a.remove()});
+            document.querySelectorAll('#Header').forEach(function(a){a.remove()});
+            document.querySelectorAll('#Breadcrumbs').forEach(function(a){a.remove()});
+            document.querySelectorAll('#nav').forEach(function(a){a.remove()});
             """
     }
     
     var scoreBoardHtml: String {
         return """
         <html>
-        <header>
+        <head>
             <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
-        </header>
-        <style>
-            *{-webkit-touch-callout:none;-webkit-user-select:none}
-        
-            @media (prefers-color-scheme: dark) {
-                body { background-color: #0E90C4; }
-            }
-            @media (prefers-color-scheme: light) {
-                body { background-color: #081B2F; }
-            }
-          
-            body {
-                margin: 0;
-                color: white;
-                font-family: '-apple-system','Helvetica'
-            }
-        
-            table {
-                width: 100%;
-                table-layout: auto;
-                border-collapse: collapse;
-                border-spacing: 0;
-                font-family: '.SF UI Text';
-            }
-        
-            .linescore_table {
-                padding: 5px 10px;
-                width: 500px;
-            }
-        
-            .linescore_table td {
-                height: 40px;
-            }
-        
-            .linescore_table .linescore th span {
-                display: block;
-            }
-        
-            .linescore_table th {
-                height: 30px;
-                line-height: 30px;
-            }
-        
-            .linescore td {
-                text-align: center;
-            }
-        
-            .team_name {
-                width: fit-content;
-            }
-        
-            .linescore.scrollable {
-                width: 50%;
-                margin-left: 10px;
-                overflow-y: auto;
-            }
-        
-            .linescore.fixed {
-                width: 20%
-            }
-        
-            .linescore, .team_name {
-                float: left;
-            }
-        
-            .linescore_table div:not(.team_name) th, .linescore_table>div:not(.team_name) .away td {
-                border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            }
-        
-            .card, .inning, .away td, .home td, .linescore th span {
-                font-family: '-apple-system','Helvetica'
-            }
-        
-            .short {
-                width: 20px;
-                height: 30px;
-                background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(240, 240, 240, 1) 50%, rgba(255, 255, 255, 1) 100%);
-                border-radius: 5px;
-                display: block;
-            }
-        
-            .team_name td img {
-                width: 20px;
-                height: 20px;
-                margin: 5px 0;
-            }
-        </style>
+            <style>
+                *{-webkit-touch-callout:none;-webkit-user-select:none}
+            
+                @media (prefers-color-scheme: dark) {
+                    body { background-color: #0E90C4; }
+                }
+                @media (prefers-color-scheme: light) {
+                    body { background-color: #081B2F; }
+                }
+              
+                body {
+                    margin: 0;
+                    color: white;
+                    font-family: '-apple-system','Helvetica'
+                }
+            
+                table {
+                    width: 100%;
+                    table-layout: auto;
+                    border-collapse: collapse;
+                    border-spacing: 0;
+                    font-family: '.SF UI Text';
+                }
+            
+                .linescore_table {
+                    padding: 5px 10px;
+                    width: 500px;
+                }
+            
+                .linescore_table td {
+                    height: 40px;
+                }
+            
+                .linescore_table .linescore th span {
+                    display: block;
+                }
+            
+                .linescore_table th {
+                    height: 30px;
+                    line-height: 30px;
+                }
+            
+                .linescore td {
+                    text-align: center;
+                }
+            
+                .team_name {
+                    width: fit-content;
+                }
+            
+                .linescore.scrollable {
+                    width: 50%;
+                    margin-left: 10px;
+                    overflow-y: auto;
+                }
+            
+                .linescore.fixed {
+                    width: 20%
+                }
+            
+                .linescore, .team_name {
+                    float: left;
+                }
+            
+                .linescore_table div:not(.team_name) th, .linescore_table>div:not(.team_name) .away td {
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+                }
+            
+                .card, .inning, .away td, .home td, .linescore th span {
+                    font-family: '-apple-system','Helvetica'
+                }
+            
+                .short {
+                    width: 20px;
+                    height: 30px;
+                    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(240, 240, 240, 1) 50%, rgba(255, 255, 255, 1) 100%);
+                    border-radius: 5px;
+                    display: block;
+                }
+            
+                .team_name td img {
+                    width: 20px;
+                    height: 20px;
+                    margin: 5px 0;
+                }
+            </style>
+        </head>
         <body>%@</body>
         <script>
             document.querySelectorAll('.short').forEach(function (a) { a.remove(); });
@@ -201,6 +202,7 @@ class GameViewModel{
                 const styleTag = document.createElement('style');
                 styleTag.innerHTML = cssTemplateString;
                 document.head.insertAdjacentElement(`beforeend`, styleTag)
+                document.querySelectorAll('.player .name a').forEach(function(a){ a.removeAttribute('href');});
                 \(changeStyleJSCode)
                 setTimeout(() => {
                     if (app.curtGameDetail.GameStatus == 1 || app.curtGameDetail.GameStatus == 5 || app.curtGameDetail.GameStatus == 6) {
@@ -237,15 +239,16 @@ class GameViewModel{
                  .GamePlaysDetail > .tabs li.active a, .InningPlays .title, .InningPlaysGroup .tabs li.active a { background-color: #0E90C4}
                  .InningPlays .item.action { background-color: #505050; }
                  .col_title h3, .GamePlaysDetail .tab_cont .col_title .en { color: #0E90C4}
-                 .GameNote, .editable_content, .desc, .score, .InningPlaysGroup .tabs li a, .InningPlays .play .detail .call_desc, .InningPlays .item .call_desc a, .InningPlays .item .desc a, .InningPlays .item .desc a:focus, .InningPlays .item .desc a:hover { color: white; }
+                 .GameNote, .editable_content, .desc, .score, .InningPlaysGroup .tabs li a, .InningPlays .play .detail .call_desc, .InningPlays .item .call_desc a, .InningPlays .item .desc a, .InningPlays .item .desc a:focus, .InningPlays .item .desc a:hover, .InningPlays .play .detail .pitches_count { color: white; }
                 
                 }
                 @media (prefers-color-scheme: light) {
                  body { background-color: white;}
                  .InningPlays .title, .InningPlays .item.action { background: none; }
                  .GamePlaysDetail > .tabs li.active a, .InningPlays .title, .InningPlaysGroup .tabs li.active a {background-color: #081B2F}
-                 .InningPlays .item.action { background-color: #505050; }
-                 .col_title h3, .GamePlaysDetail .tab_cont .col_title .en {color: #081B2F}
+                 .InningPlays .item.action { background-color: #505050;}
+                 .InningPlays .item.action .desc { color: white; }
+                 .InningPlays .play .detail .pitches_count, .col_title h3, .GamePlaysDetail .tab_cont .col_title .en {color: #081B2F}
                  .GameNote, .editable_content {color: black}
                  .desc, .score, .InningPlaysGroup .tabs li a, .InningPlays .play .detail .call_desc, .InningPlays .item .call_desc a, .InningPlays .item .desc a, .InningPlays .item .desc a:focus, .InningPlays .item .desc a:hover { color: #333 }
                 }
@@ -273,6 +276,7 @@ class GameViewModel{
                 document.querySelectorAll('.en').forEach(function(element) {element.remove();});
                 document.querySelectorAll('.title > a').forEach(function(element){element.remove();});
                 document.querySelectorAll('.player a').forEach(function(element){ element.removeAttribute('href');});
+                document.querySelectorAll('.InningPlays .item .desc a').forEach(function(element){ element.removeAttribute('href')});
                 document.querySelectorAll('.team.away').forEach(function(a){a.innerHTML = '<span><img class="team_image" src="data:application/png;base64,\(UIImage(named: (guestImageString.logoLocalizedString) )?.pngBase64String() ?? "")"></span>'});
                 document.querySelectorAll('.team.home').forEach(function(a){a.innerHTML = '<span><img class="team_image" src="data:application/png;base64,\(UIImage(named: (homeImageString.logoLocalizedString) )?.pngBase64String() ?? "")"></span>'});
             

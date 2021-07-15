@@ -145,7 +145,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Cancel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hk8-fb-tKP">
-                                <rect key="frame" x="100.5" y="315.5" width="174.5" height="36"/>
+                                <rect key="frame" x="100.5" y="501" width="174.5" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" systemColor="tertiaryLabelColor"/>
                                 <nil key="highlightedColor"/>
@@ -340,6 +340,7 @@
                             <constraint firstItem="EZy-ZB-xT9" firstAttribute="top" secondItem="ngT-WO-4YI" secondAttribute="bottom" id="S4E-nt-2nc"/>
                             <constraint firstItem="c1j-8o-oah" firstAttribute="top" secondItem="ngT-WO-4YI" secondAttribute="bottom" id="S6t-kV-Vhu"/>
                             <constraint firstItem="ngT-WO-4YI" firstAttribute="top" secondItem="AuY-fe-QbK" secondAttribute="bottom" id="ViE-N3-tCj"/>
+                            <constraint firstItem="hk8-fb-tKP" firstAttribute="centerY" secondItem="EZy-ZB-xT9" secondAttribute="centerY" id="aY4-L4-hQm"/>
                             <constraint firstItem="6db-aU-frm" firstAttribute="top" secondItem="c1j-8o-oah" secondAttribute="bottom" id="alQ-Ff-jyt"/>
                             <constraint firstAttribute="trailing" secondItem="EZy-ZB-xT9" secondAttribute="trailing" id="dZN-b4-sF4"/>
                             <constraint firstAttribute="trailing" secondItem="vQ4-QX-E8c" secondAttribute="trailing" id="dyX-QX-GVw"/>
@@ -348,7 +349,6 @@
                             <constraint firstAttribute="trailing" secondItem="AuY-fe-QbK" secondAttribute="trailing" id="lwI-6a-sHZ"/>
                             <constraint firstItem="vQ4-QX-E8c" firstAttribute="top" secondItem="GZ2-SX-JuA" secondAttribute="bottom" id="rzg-4E-uVi"/>
                             <constraint firstItem="AuY-fe-QbK" firstAttribute="leading" secondItem="Hyo-Nb-leO" secondAttribute="leading" id="xrK-9q-tNj"/>
-                            <constraint firstItem="hk8-fb-tKP" firstAttribute="centerY" secondItem="Hyo-Nb-leO" secondAttribute="centerY" id="yMY-sa-W4x"/>
                         </constraints>
                     </view>
                     <connections>
