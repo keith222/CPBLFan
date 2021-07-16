@@ -34,15 +34,13 @@ extension String {
         case "HR":
             return 11
         case "RBI":
-            return 5
-        case "SB":
-            return 14
+            return 6
+        case "SB", "SO":
+            return 21
         case "SV":
             return 9
         case "HLD":
             return 10
-        case "SO":
-            return 21
         default:
             return 0
         }
