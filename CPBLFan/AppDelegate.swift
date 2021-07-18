@@ -77,6 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
         application.applicationIconBadgeNumber = 0
         print("userinfo:\(userInfo)")
+        
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let tabController: UITabBarController = storyboard.instantiateInitialViewController() as! UITabBarController
         tabController.selectedIndex = 1
@@ -138,10 +139,11 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         if let messageID = userInfo["gcm.message_id"] {
             print("Message ID: \(messageID)")
         }
-        
-        guard let aps = userInfo[AnyHashable("aps")] as? NSDictionary, let alert = aps["alert"] as? NSDictionary, let body = alert["body"] as? String else { return }
-        
-        if let url = getUrl(from: body) {
+
+        if let aps = userInfo[AnyHashable("aps")] as? NSDictionary, let alert = aps["alert"] as? NSDictionary, let body = alert["body"] as? String, let url = getUrl(from: body) {
+            UIApplication.shared.open(url)
+            
+        } else if let urlString = userInfo[AnyHashable("url")] as? String, let url = urlString.url {
             UIApplication.shared.open(url)
         }
     }
