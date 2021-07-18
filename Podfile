@@ -25,6 +25,7 @@ target 'CPBLFan' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Messaging'
+  pod 'Firebase/InAppMessaging'
   pod 'Firebase/Analytics'
   pod 'Firebase/Crashlytics'
   
