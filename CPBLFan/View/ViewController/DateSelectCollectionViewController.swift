@@ -9,7 +9,7 @@
 import UIKit
 import SwifterSwift
 
-protocol DateSelectDelegate: class {
+protocol DateSelectDelegate: AnyObject {
     func dateSelected(with year: Int, and month: Int)
 }
 

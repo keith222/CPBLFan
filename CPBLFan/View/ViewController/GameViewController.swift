@@ -10,6 +10,7 @@ import UIKit
 import Kanna
 import PKHUD
 import WebKit
+import os
 
 class GameViewController: BaseViewController {
     
@@ -153,7 +154,7 @@ extension GameViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         if webView == self.boxWebView, let jsCode = self.gameViewModel?.boxJSCode {
             webView.evaluateJavaScript(jsCode, completionHandler: { [weak self] (any,error) in
-                print(error)
+                os_log("Error: %s", error?.localizedDescription ?? "")
                 if error != nil {
                     self?.performAlert(with: error?.localizedDescription)
                     return
@@ -167,7 +168,7 @@ extension GameViewController: WKNavigationDelegate {
 
         if webView == self.gameWebView, let jsCode = self.gameViewModel?.liveJSCode {
             webView.evaluateJavaScript(jsCode, completionHandler: { [weak self] (any,error) in
-                print(error)
+                print(error?.localizedDescription ?? "")
                 if error != nil {
                     self?.gameWebView.alpha = 0
                     self?.performAlert(with: error?.localizedDescription)

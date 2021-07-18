@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="w4p-tS-s7Q">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment version="4352" identifier="iOS"/>
+        <deployment version="4624" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -285,12 +285,14 @@
                                     <constraint firstItem="QCk-nm-0GN" firstAttribute="centerY" secondItem="vQ4-QX-E8c" secondAttribute="centerY" id="QPr-1N-u79"/>
                                     <constraint firstItem="8Zo-03-SQi" firstAttribute="top" secondItem="zWl-oZ-ipP" secondAttribute="bottom" constant="10" id="VXG-Tc-5eH"/>
                                     <constraint firstItem="8Zo-03-SQi" firstAttribute="centerX" secondItem="vQ4-QX-E8c" secondAttribute="centerX" id="YCN-cu-TML"/>
+                                    <constraint firstItem="8Zo-03-SQi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NyC-3y-e4U" secondAttribute="trailing" constant="8" symbolic="YES" id="cHS-qS-7Zm"/>
                                     <constraint firstItem="TsZ-Y8-xpK" firstAttribute="centerX" secondItem="vQ4-QX-E8c" secondAttribute="centerX" id="ccz-YJ-wru"/>
                                     <constraint firstItem="TNU-mK-UgL" firstAttribute="height" secondItem="qc8-1X-FRg" secondAttribute="height" id="dxH-AR-Cxt"/>
                                     <constraint firstAttribute="bottom" secondItem="Pc0-Lj-3v1" secondAttribute="bottom" id="faS-sp-oUV"/>
                                     <constraint firstItem="zWl-oZ-ipP" firstAttribute="top" secondItem="vQ4-QX-E8c" secondAttribute="top" constant="8" id="iGk-iQ-HcC"/>
                                     <constraint firstItem="qc8-1X-FRg" firstAttribute="height" secondItem="vQ4-QX-E8c" secondAttribute="height" multiplier="1:2" id="ivR-JI-2qO"/>
                                     <constraint firstItem="TNU-mK-UgL" firstAttribute="centerY" secondItem="vQ4-QX-E8c" secondAttribute="centerY" id="jiz-iA-MaU"/>
+                                    <constraint firstItem="QCk-nm-0GN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8Zo-03-SQi" secondAttribute="trailing" constant="8" symbolic="YES" id="pPp-wf-pEb"/>
                                     <constraint firstAttribute="height" constant="100" id="rY4-IT-ft4"/>
                                     <constraint firstItem="TNU-mK-UgL" firstAttribute="leading" secondItem="QCk-nm-0GN" secondAttribute="trailing" constant="5" id="sdK-UU-rMa"/>
                                 </constraints>
