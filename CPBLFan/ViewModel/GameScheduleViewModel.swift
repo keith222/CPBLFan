@@ -50,16 +50,7 @@ class GameScheduleViewModel {
         ref.child(year.string).child(month.string).observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
             
             // check data if existed
-            guard let data = snapshot.children.allObjects as? [DataSnapshot], !data.isEmpty else {
-                if (Locale.preferredLanguages.first?.lowercased() ?? "").contains("zh-hant") {
-                    self?.updateDateClosure?("\(self?.year.string ?? "--") 年 \(self?.month.string ?? "--") 月")
-                
-                } else {
-                    self?.updateDateClosure?("\(self?.year.string ?? "--") \(self?.month.monthName ?? "--")")
-                }
-                
-                return
-            }
+            guard let data = snapshot.children.allObjects as? [DataSnapshot], !data.isEmpty else { return }
             
             do {
                 // convert firebase data to dictionary

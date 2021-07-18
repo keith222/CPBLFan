@@ -36,11 +36,11 @@ class GameScheduleViewController: BaseViewController {
             let games = gameSchedules.map({ $0.1 }) as [AnyObject]
 
             self?.tableHelper?.savedData = [games, headers]
-            self?.dateLabel.text = "\(self?.gameScheduleViewModel.year ?? 0) 年 \(self?.gameScheduleViewModel.month ?? 0) 月"
+
             if (Locale.preferredLanguages.first?.lowercased() ?? "").contains("zh-hant") {
                 self?.dateLabel.text = "\(self?.gameScheduleViewModel.year ?? 0) 年 \(self?.gameScheduleViewModel.month ?? 0) 月"
             } else {
-                self?.dateLabel.text = "\(self?.gameScheduleViewModel.year ?? 0)  \(self?.gameScheduleViewModel.month.monthName ?? "--")"
+                self?.dateLabel.text = "\(self?.gameScheduleViewModel.year ?? 0)  \(self?.gameScheduleViewModel.month.monthName ?? "")"
             }
             
             guard !games.isEmpty else {
