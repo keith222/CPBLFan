@@ -21,15 +21,11 @@
 ## 第三方套件
 - [SwifterSwift](https://github.com/SwifterSwift/SwifterSwift)
 - [Alamofire](https://github.com/Alamofire/Alamofire)
-- [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
-- [AlamofireObjectMapper](https://github.com/tristanhimmelman/AlamofireObjectMapper)
 - [PKHUD](https://github.com/pkluz/PKHUD)
 - [Kanna](https://github.com/tid-kijyun/Kanna)
 - [Kingfisher](https://github.com/onevcat/Kingfisher)
-- [DynamicColor](https://github.com/yannickl/DynamicColor)
 - [Firebase](https://firebase.google.com/)
-- [Fabric](https://fabric.io/)
-- [youtube-ios-player-helper](https://github.com/youtube/youtube-ios-player-helper)
+- [ReachabilitySwift](https://github.com/ashleymills/Reachability.swift)
 
 ## 安裝
 - Xcode 8.0 
