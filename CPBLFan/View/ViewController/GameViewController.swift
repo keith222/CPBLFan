@@ -136,6 +136,7 @@ extension GameViewController: WKScriptMessageHandler {
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if message.name == "scoreBoard", let html = message.body as? String {
+            
             let scoreBoard = self.gameViewModel?.scoreBoardHtml.replacingOccurrences(of: "%@", with: html) ?? html
             self.scoreboardWebView.loadHTMLString(scoreBoard, baseURL: nil)
         }
@@ -168,7 +169,7 @@ extension GameViewController: WKNavigationDelegate {
 
         if webView == self.gameWebView, let jsCode = self.gameViewModel?.liveJSCode {
             webView.evaluateJavaScript(jsCode, completionHandler: { [weak self] (any,error) in
-                print(error?.localizedDescription ?? "")
+                os_log("Error: %s", error?.localizedDescription ?? "")
                 if error != nil {
                     self?.gameWebView.alpha = 0
                     self?.performAlert(with: error?.localizedDescription)

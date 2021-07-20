@@ -106,8 +106,10 @@ class GameViewModel{
                 }
             
                 .linescore_table {
+                    width: 110%;
                     padding: 5px 10px;
-                    width: 500px;
+                    white-space: nowrap;
+                    font-size: 0
                 }
             
                 .linescore_table td {
@@ -123,6 +125,10 @@ class GameViewModel{
                     line-height: 30px;
                 }
             
+                .linescore {
+                    display: inline-block;
+                }
+        
                 .linescore td {
                     text-align: center;
                 }
@@ -132,16 +138,15 @@ class GameViewModel{
                 }
             
                 .linescore.scrollable {
-                    width: 50%;
+                    width: 70%;
                     margin-left: 10px;
-                    overflow-y: auto;
                 }
             
                 .linescore.fixed {
                     width: 20%
                 }
             
-                .linescore, .team_name {
+                .team_name {
                     float: left;
                 }
             
