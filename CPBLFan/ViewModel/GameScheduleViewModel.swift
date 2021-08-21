@@ -83,12 +83,12 @@ class GameScheduleViewModel {
             self.month -= 1
             if self.month < 2{
                 self.year -= 1
-                self.month = 11
+                self.month = 12
             }
             
         case .next:
             self.month += 1
-            if self.month > 11{
+            if self.month > 12{
                 self.year += 1
                 self.month = 2
             }
@@ -140,13 +140,10 @@ class GameScheduleViewModel {
         self.month = calendar.month ?? 0
         self.day = calendar.day ?? 0
         
-        // because of baseball season is from 2 to 11
+        // because of baseball season is from 2 to 12
         if self.month < 2 {
             self.year -= 1
-            self.month = 11
-            
-        } else if self.month > 11 {
-            self.month = 11
+            self.month = 12
         }
     }
 }

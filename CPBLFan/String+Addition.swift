@@ -48,6 +48,6 @@ extension String {
 
     var logoLocalizedString: String {
         let langeCode = Locale.preferredLanguages.first?.lowercased() ?? ""
-        return self + (!langeCode.contains("zh-hant") ? "-E" : "")
+        return self + (langeCode.contains("en") ? "-E" : "")
     }
 }

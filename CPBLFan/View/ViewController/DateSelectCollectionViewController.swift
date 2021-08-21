@@ -64,7 +64,7 @@ class DateSelectCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0: return (Date().year - 1990) + 1
-        case 1: return 10
+        case 1: return 11
         default: return 0
         }
     }
