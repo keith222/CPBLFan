@@ -60,6 +60,7 @@ class RankViewModel{
             let param = ["SeasonCode": season]            
             queue.enter()
             var rank = [Rank]()
+            
             APIService.request(.post, route: "\(route)/season", parameters: param, completionHandler: { [weak self] text in
                 guard let text = text else {
                     self?.errorHandleClosure?(nil)
@@ -97,7 +98,7 @@ class RankViewModel{
                         switch season {
                         case 0: index = 2
                         case 1: index = 0
-                        default: index = season
+                        default: index = 1
                         }
                         self?.ranks[index] = rank
                     }
