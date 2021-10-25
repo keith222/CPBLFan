@@ -73,12 +73,12 @@ class StatsViewModel{
                 }
 
                 // filter batter data
-                let batterSource = Array(statsData[0...4])
+                let batterSource = Array(statsData[5...9])
                 self?.processFetched(batterSource, category: .batter)
                 self?.batterStats.append(contentsOf: batterSource)
                 
                 // filter pitcher data
-                let pitcherSource = Array(statsData[5...9])
+                let pitcherSource = Array(statsData[0...4])
                 self?.processFetched(pitcherSource, category: .pitcher)
                 self?.pitcherStats.append(contentsOf: pitcherSource)
 

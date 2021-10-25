@@ -11,32 +11,19 @@ import Foundation
 extension Int {
     
     func getDataCategory() -> String{
-        var category = ""
         switch self {
-        case 0:
-            category = "AVG"
-        case 1:
-            category = "H"
-        case 2:
-            category = "HR"
-        case 3:
-            category = "RBI"
-        case 4:
-            category = "SB"
-        case 5:
-            category = "ERA"
-        case 6:
-            category = "W"
-        case 7:
-            category = "SV"
-        case 8:
-            category = "HLD"
-        case 9:
-            category = "SO"
-        default:
-            break
+        case 0: return "ERA"
+        case 1: return "W"
+        case 2: return "SV"
+        case 3: return "HLD"
+        case 4: return "SO"
+        case 5: return "AVG"
+        case 6: return "H"
+        case 7: return "HR"
+        case 8: return "RBI"
+        case 9: return "SB"
+        default: return ""
         }
-        return category
     }
     
     var monthName: String {
