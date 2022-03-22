@@ -61,7 +61,7 @@ struct GameCellViewModel {
     
     var timeString: String {
         guard let time = self.game?.time else { return "" }
-        return time + ((TimeZone.current.secondsFromGMT() == 28800) ? "" : "(GMT+8)")
+        return time + ((TimeZone.current.secondsFromGMT() == 28800) ? "" : "\n(GMT+8)")
     }
     
     init(with game: Game?) {

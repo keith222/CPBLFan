@@ -51,6 +51,9 @@ class RankViewController: BaseViewController {
         self.rankTableView.rowHeight = 70
         self.rankTableView.sectionHeaderHeight = 60
         self.rankTableView.tableFooterView = UIView()
+        if #available(iOS 15.0, *) {
+            self.rankTableView.sectionHeaderTopPadding = 0
+        }
         
         self.tableHelper = TableViewHelper(
             tableView: self.rankTableView,

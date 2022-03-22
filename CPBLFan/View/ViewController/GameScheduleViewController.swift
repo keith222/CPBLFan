@@ -31,10 +31,8 @@ class GameScheduleViewController: BaseViewController {
     
     private func bindViewModel() {
         self.gameScheduleViewModel.reloadTableViewClosure = { [weak self] gameSchedules in
-            
             let headers = gameSchedules.map({ $0.0 }) as [AnyObject]
             let games = gameSchedules.map({ $0.1 }) as [AnyObject]
-
             self?.tableHelper?.savedData = [games, headers]
 
             if (Locale.preferredLanguages.first?.lowercased() ?? "").contains("zh-hant") {
@@ -44,7 +42,7 @@ class GameScheduleViewController: BaseViewController {
             }
             
             guard !games.isEmpty else {
-                HUD.hide(animated: true)
+                HUD.hide(afterDelay: 1)
                 return
             }
             
@@ -69,7 +67,6 @@ class GameScheduleViewController: BaseViewController {
     
     private func setUp() {
         self.dateSelectDelegate = self
-        
         // set navigation bar
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "filter"), style: .plain, target: self, action: #selector(self.presentToDateSelect))
         self.navigationController?.navigationBar.backgroundColor = UIColor.CompromisedColors.background
@@ -79,6 +76,9 @@ class GameScheduleViewController: BaseViewController {
         self.gameTableView.estimatedRowHeight = 70
         self.gameTableView.sectionHeaderHeight = 35
         self.gameTableView.tableFooterView = UIView()
+        if #available(iOS 15.0, *) {
+            self.gameTableView.sectionHeaderTopPadding = 0
+        }
         
         // add left and right swipe gesture
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeGestureAction(gesture:)))

@@ -83,6 +83,8 @@ class GameViewController: BaseViewController {
         self.scoreboardWebView.alpha = 0
         self.boxWebView.alpha = 0
         self.gameWebView.alpha = 0
+        
+        HUD.flash(.progress, delay: 10)
     }
     
     private func bindViewModel() {
@@ -136,7 +138,6 @@ extension GameViewController: WKScriptMessageHandler {
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if message.name == "scoreBoard", let html = message.body as? String {
-            
             let scoreBoard = self.gameViewModel?.scoreBoardHtml.replacingOccurrences(of: "%@", with: html) ?? html
             self.scoreboardWebView.loadHTMLString(scoreBoard, baseURL: nil)
         }
@@ -162,7 +163,7 @@ extension GameViewController: WKNavigationDelegate {
                 }
                 
                 guard let liveURL = self?.gameViewModel?.liveURL.url else { return }
-                
+
                 self?.gameWebView.load(URLRequest(url: liveURL))
             })
         }

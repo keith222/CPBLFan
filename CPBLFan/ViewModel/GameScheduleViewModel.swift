@@ -46,23 +46,24 @@ class GameScheduleViewModel {
     
     func fetchGame(){
         self.gameScheduleCellViewModels.removeAll()
-    
+
         ref.child(year.string).child(month.string).observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
-            
             // check data if existed
-            guard let data = snapshot.children.allObjects as? [DataSnapshot], !data.isEmpty else { return }
+            guard let data = snapshot.children.allObjects as? [DataSnapshot], !data.isEmpty else {
+                self?.gameScheduleCellViewModels = []
+                return
+            }
             
             do {
+                
                 // convert firebase data to dictionary
                 let jsonDictionary = data.compactMap({ ($0.key, ($0.value as? [AnyObject])) })
                     .reduce(into: [String: [AnyObject]](), { $0.updateValue($1.1, forKey: $1.0) })
 
                 // data jsonalize
                 let jsonData = try JSONSerialization.data(withJSONObject: jsonDictionary, options: [])
-                
                 // data map to model
                 let games = (try JSONDecoder().decode(GameItem.self, from: jsonData)).sorted(by: { (Int($0.key) ?? 0) < (Int($1.key) ?? 0) })
-                
                 guard let year = self?.year, let month = self?.month else {
                     self?.errorHandleClosure?(nil)
                     return

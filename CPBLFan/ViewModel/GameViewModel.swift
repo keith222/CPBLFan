@@ -185,6 +185,7 @@ class GameViewModel{
     
     var boxJSCode: String {
         return """
+            setTimeout(changeStyle, 1000);
             function changeStyle() {
                 document.querySelectorAll('.en').forEach(function(element) {element.remove();});
                 const cssTemplateString = `
@@ -225,7 +226,6 @@ class GameViewModel{
                     }
                 }, 1000);
             };
-            changeStyle();
             """
     }
     
