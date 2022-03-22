@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4942F1D4C2E6FAA4B2E0917F /* Pods_CPBLFan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DA969A0B0630BE49B2AF90 /* Pods_CPBLFan.framework */; };
-		4A3AAF08335D2A49C9FD9F79 /* Pods_Schedule_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F61F5EF3C9A039649C1B27 /* Pods_Schedule_Widget.framework */; };
+		2001451150CD41827D674337 /* Pods_CPBLFan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4CA9F1CA718AD299F1D9A3 /* Pods_CPBLFan.framework */; };
+		2D28F559D092FFB37E427E19 /* Pods_Schedule_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3ED3908743194B4BD5FF990 /* Pods_Schedule_Widget.framework */; };
 		53006D9525FF890D0079EAFB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53006D9725FF890D0079EAFB /* InfoPlist.strings */; };
 		53006D9F25FF89880079EAFB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53006DA125FF89880079EAFB /* InfoPlist.strings */; };
 		53006DAD25FFA3B50079EAFB /* String+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530C8CA325FE122A00A0D919 /* String+Addition.swift */; };
@@ -45,6 +45,16 @@
 		5336D2611E437A2700CAF66A /* GameHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5336D2601E437A2700CAF66A /* GameHeaderCell.xib */; };
 		533E5948241FC71300C1ECC7 /* UIColor+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5353FB8E1E23D6C000BDE259 /* UIColor+Addition.swift */; };
 		533F89EB220816230000F440 /* DateSelectCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533F89EA2208161B0000F440 /* DateSelectCollectionViewController.swift */; };
+		5347E65E27DE223700940046 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 530BD3BA27DA294F00B487E2 /* WidgetKit.framework */; };
+		5347E65F27DE223700940046 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 530BD3BC27DA294F00B487E2 /* SwiftUI.framework */; };
+		5347E66227DE223700940046 /* TodayGameWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347E66127DE223700940046 /* TodayGameWidget.swift */; };
+		5347E66427DE223800940046 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5347E66327DE223800940046 /* Assets.xcassets */; };
+		5347E66827DE223800940046 /* TodayGameWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5347E65D27DE223600940046 /* TodayGameWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5347E66C27DE22B500940046 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536238041E44CAE20091DA9C /* Game.swift */; };
+		5347E66D27DE22B800940046 /* Color+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536B748327DDEA3700A49A81 /* Color+Addition.swift */; };
+		5347E66E27DE22BD00940046 /* String+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530C8CA325FE122A00A0D919 /* String+Addition.swift */; };
+		5347E66F27DE3E8600940046 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53510986246B020D0030006B /* Localizable.strings */; };
+		5347E67027DE456900940046 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53CBA2AD1E0D5F5F0012FFFB /* Assets.xcassets */; };
 		534B157A1E16CE6B009EA85C /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B15791E16CE6B009EA85C /* VideoViewModel.swift */; };
 		53510984246B020D0030006B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53510986246B020D0030006B /* Localizable.strings */; };
 		535272071E26740D00E1FFC7 /* StatsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535272051E26740D00E1FFC7 /* StatsListCell.swift */; };
@@ -74,6 +84,7 @@
 		536B60831E62B77E0027C796 /* UIImage+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5309A2001E227A8600FB0037 /* UIImage+Addition.swift */; };
 		536B60841E62C8E40027C796 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536238041E44CAE20091DA9C /* Game.swift */; };
 		536B60861E62DEC10027C796 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53CBA2AD1E0D5F5F0012FFFB /* Assets.xcassets */; };
+		536B748427DDEA3700A49A81 /* Color+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536B748327DDEA3700A49A81 /* Color+Addition.swift */; };
 		5374A3AB26060A6900BD2DEC /* UIViewController+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374A3AA26060A6900BD2DEC /* UIViewController+Addition.swift */; };
 		53788A211E10070F00C3F04B /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53788A201E10070F00C3F04B /* News.swift */; };
 		53792F42246C69DF001E9416 /* WidgetHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53792F44246C69DF001E9416 /* WidgetHeaderCell.xib */; };
@@ -93,6 +104,10 @@
 		5386F78D23E72B3800D670EF /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5386F78C23E72B3800D670EF /* WebKit.framework */; };
 		538F75EB1E20BACE001671EE /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538F75EA1E20BACE001671EE /* Rank.swift */; };
 		538F75ED1E20BBBF001671EE /* RankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538F75EC1E20BBBF001671EE /* RankViewModel.swift */; };
+		53A3877027E1051C00FCA6BB /* TodayGameMediumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A3876F27E1051C00FCA6BB /* TodayGameMediumView.swift */; };
+		53A3877227E1053000FCA6BB /* TodayGameEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A3877127E1053000FCA6BB /* TodayGameEntry.swift */; };
+		53A3877427E1053D00FCA6BB /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A3877327E1053D00FCA6BB /* Provider.swift */; };
+		53A3877627E1062000FCA6BB /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A3877527E1062000FCA6BB /* GameView.swift */; };
 		53A6FE2F1E13F72700B68243 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A6FE2D1E13F72700B68243 /* VideoCell.swift */; };
 		53A6FE301E13F72700B68243 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53A6FE2E1E13F72700B68243 /* VideoCell.xib */; };
 		53B396E11E1C02D00032D0DA /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B396E01E1C02D00032D0DA /* VideoPlayerViewController.swift */; };
@@ -130,12 +145,19 @@
 		53CE89EB1E6164F200C528BC /* WidgetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CE89EA1E6164F200C528BC /* WidgetCell.swift */; };
 		53CE89ED1E61653500C528BC /* WidgetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53CE89EC1E61653500C528BC /* WidgetCell.xib */; };
 		53CE89EF1E61716500C528BC /* WidgetHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CE89EE1E61716500C528BC /* WidgetHeaderCell.swift */; };
-		98576FFE086CBF2D2AAECAC2 /* Pods_CPBLFanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9800F6C1BFD0DC46FE73BFFA /* Pods_CPBLFanTests.framework */; };
-		E372B36DD4EA6CD97FAD642B /* Pods_Rank_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64CF72F3CFE322AC61FED4B /* Pods_Rank_Widget.framework */; };
-		E585054292EA96FC3BAE7457 /* Pods_CPBLFanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 031AC937497451A2DE3EDB61 /* Pods_CPBLFanUITests.framework */; };
+		53ED2CE027DF9C0E00EFFE32 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 530976FB1E69AD0700411F46 /* GoogleService-Info.plist */; };
+		B81C1A10CE52F1C9E9F7306C /* Pods_Rank_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA890A7BEA51D59749E98AFD /* Pods_Rank_Widget.framework */; };
+		C415B333E62720A309E9F8FA /* Pods_TodayGameWidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B98F17255A951CA3B96D16BF /* Pods_TodayGameWidgetExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5347E66627DE223800940046 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53CBA2991E0D5F5E0012FFFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5347E65C27DE223600940046;
+			remoteInfo = TodayGameWidgetExtension;
+		};
 		536B60761E62A92D0027C796 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 53CBA2991E0D5F5E0012FFFB /* Project object */;
@@ -174,6 +196,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				53CE89D51E61532E00C528BC /* Rank-Widget.appex in Embed App Extensions */,
+				5347E66827DE223800940046 /* TodayGameWidgetExtension.appex in Embed App Extensions */,
 				536B60781E62A92D0027C796 /* Schedule-Widget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -182,11 +205,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0214F9294E9FC1F421BE8D43 /* Pods-CPBLFanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPBLFanUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CPBLFanUITests/Pods-CPBLFanUITests.release.xcconfig"; sourceTree = "<group>"; };
-		031AC937497451A2DE3EDB61 /* Pods_CPBLFanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPBLFanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		317D3554E844AE677F4D245D /* Pods-CPBLFanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPBLFanUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CPBLFanUITests/Pods-CPBLFanUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		26F0D973EC524C31B4C4023E /* Pods-TodayGameWidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayGameWidgetExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodayGameWidgetExtension/Pods-TodayGameWidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		33A63E445BD3C441C933A21C /* Pods-CPBLFan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPBLFan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CPBLFan/Pods-CPBLFan.debug.xcconfig"; sourceTree = "<group>"; };
-		44F61F5EF3C9A039649C1B27 /* Pods_Schedule_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Schedule_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53006D9D25FF89110079EAFB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		53006D9E25FF896F0079EAFB /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		53006DA025FF89880079EAFB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -197,6 +217,8 @@
 		530976FB1E69AD0700411F46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5309A2001E227A8600FB0037 /* UIImage+Addition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Addition.swift"; path = "Extension/UIImage+Addition.swift"; sourceTree = "<group>"; };
 		5309A2061E22961400FB0037 /* RankHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RankHeaderCell.swift; path = View/RankHeaderCell.swift; sourceTree = "<group>"; };
+		530BD3BA27DA294F00B487E2 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		530BD3BC27DA294F00B487E2 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		530C8CA325FE122A00A0D919 /* String+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Addition.swift"; sourceTree = "<group>"; };
 		5315DA531E2A45A5002509AC /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerViewController.swift; path = View/ViewController/PlayerViewController.swift; sourceTree = "<group>"; };
 		5317B2B5246C1E86003A6523 /* keys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = keys.xcconfig; sourceTree = "<group>"; };
@@ -228,6 +250,10 @@
 		5336D25E1E437A0400CAF66A /* GameHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameHeaderCell.swift; path = View/GameHeaderCell.swift; sourceTree = "<group>"; };
 		5336D2601E437A2700CAF66A /* GameHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GameHeaderCell.xib; path = View/GameHeaderCell.xib; sourceTree = "<group>"; };
 		533F89EA2208161B0000F440 /* DateSelectCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateSelectCollectionViewController.swift; path = View/ViewController/DateSelectCollectionViewController.swift; sourceTree = "<group>"; };
+		5347E65D27DE223600940046 /* TodayGameWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayGameWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5347E66127DE223700940046 /* TodayGameWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayGameWidget.swift; sourceTree = "<group>"; };
+		5347E66327DE223800940046 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5347E66527DE223800940046 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		534B15791E16CE6B009EA85C /* VideoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoViewModel.swift; path = ViewModel/VideoViewModel.swift; sourceTree = "<group>"; };
 		53510985246B020D0030006B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		5351099F246B03980030006B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -250,6 +276,7 @@
 		536B607F1E62B5740027C796 /* TodayGameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayGameCell.swift; sourceTree = "<group>"; };
 		536B60801E62B5740027C796 /* TodayGameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TodayGameCell.xib; sourceTree = "<group>"; };
 		536B60871E6334DB0027C796 /* CPBLFan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CPBLFan.entitlements; sourceTree = "<group>"; };
+		536B748327DDEA3700A49A81 /* Color+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Color+Addition.swift"; path = "Extension/Color+Addition.swift"; sourceTree = "<group>"; };
 		5374A3AA26060A6900BD2DEC /* UIViewController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Addition.swift"; sourceTree = "<group>"; };
 		53788A201E10070F00C3F04B /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = News.swift; path = Model/News.swift; sourceTree = "<group>"; };
 		53792F43246C69DF001E9416 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WidgetHeaderCell.xib; sourceTree = "<group>"; };
@@ -270,6 +297,10 @@
 		5389784E269987690007D3DA /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Schedule.strings"; sourceTree = "<group>"; };
 		538F75EA1E20BACE001671EE /* Rank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Rank.swift; path = Model/Rank.swift; sourceTree = "<group>"; };
 		538F75EC1E20BBBF001671EE /* RankViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RankViewModel.swift; path = ViewModel/RankViewModel.swift; sourceTree = "<group>"; };
+		53A3876F27E1051C00FCA6BB /* TodayGameMediumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayGameMediumView.swift; sourceTree = "<group>"; };
+		53A3877127E1053000FCA6BB /* TodayGameEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayGameEntry.swift; sourceTree = "<group>"; };
+		53A3877327E1053D00FCA6BB /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		53A3877527E1062000FCA6BB /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		53A6FE2D1E13F72700B68243 /* VideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoCell.swift; path = View/VideoCell.swift; sourceTree = "<group>"; };
 		53A6FE2E1E13F72700B68243 /* VideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VideoCell.xib; path = View/VideoCell.xib; sourceTree = "<group>"; };
 		53B396E01E1C02D00032D0DA /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoPlayerViewController.swift; path = View/ViewController/VideoPlayerViewController.swift; sourceTree = "<group>"; };
@@ -302,25 +333,35 @@
 		53CE89EA1E6164F200C528BC /* WidgetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetCell.swift; sourceTree = "<group>"; };
 		53CE89EC1E61653500C528BC /* WidgetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WidgetCell.xib; sourceTree = "<group>"; };
 		53CE89EE1E61716500C528BC /* WidgetHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetHeaderCell.swift; sourceTree = "<group>"; };
-		5B0090C7CC4830DD1B064E54 /* Pods-CPBLFanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPBLFanTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CPBLFanTests/Pods-CPBLFanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8CB900F5DEFEBAA58E8EBD95 /* Pods-Schedule-Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schedule-Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Schedule-Widget/Pods-Schedule-Widget.debug.xcconfig"; sourceTree = "<group>"; };
 		943B49B7EBD897BE0277A819 /* Pods-Schedule-Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schedule-Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Schedule-Widget/Pods-Schedule-Widget.release.xcconfig"; sourceTree = "<group>"; };
-		9800F6C1BFD0DC46FE73BFFA /* Pods_CPBLFanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPBLFanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B97B8B3BD2182D65A2A4F0CC /* Pods-Rank-Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rank-Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rank-Widget/Pods-Rank-Widget.debug.xcconfig"; sourceTree = "<group>"; };
+		B98F17255A951CA3B96D16BF /* Pods_TodayGameWidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayGameWidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB6E4D973F11C15A80172EAE /* Pods-Rank-Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rank-Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rank-Widget/Pods-Rank-Widget.release.xcconfig"; sourceTree = "<group>"; };
-		C2DA969A0B0630BE49B2AF90 /* Pods_CPBLFan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPBLFan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D64CF72F3CFE322AC61FED4B /* Pods_Rank_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rank_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3ED3908743194B4BD5FF990 /* Pods_Schedule_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Schedule_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED54CC14C0CC754B2E8A8546 /* Pods-TodayGameWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayGameWidgetExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodayGameWidgetExtension/Pods-TodayGameWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
 		F3FC4FF9ECC545551F027CFE /* Pods-CPBLFan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPBLFan.release.xcconfig"; path = "Pods/Target Support Files/Pods-CPBLFan/Pods-CPBLFan.release.xcconfig"; sourceTree = "<group>"; };
-		F766D370503CE15EE8B674EA /* Pods-CPBLFanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPBLFanTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CPBLFanTests/Pods-CPBLFanTests.release.xcconfig"; sourceTree = "<group>"; };
+		FA890A7BEA51D59749E98AFD /* Pods_Rank_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rank_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE4CA9F1CA718AD299F1D9A3 /* Pods_CPBLFan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPBLFan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5347E65A27DE223600940046 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5347E65F27DE223700940046 /* SwiftUI.framework in Frameworks */,
+				5347E65E27DE223700940046 /* WidgetKit.framework in Frameworks */,
+				C415B333E62720A309E9F8FA /* Pods_TodayGameWidgetExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		536B606A1E62A92C0027C796 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				536B606E1E62A92D0027C796 /* NotificationCenter.framework in Frameworks */,
-				4A3AAF08335D2A49C9FD9F79 /* Pods_Schedule_Widget.framework in Frameworks */,
+				2D28F559D092FFB37E427E19 /* Pods_Schedule_Widget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,8 +369,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4942F1D4C2E6FAA4B2E0917F /* Pods_CPBLFan.framework in Frameworks */,
 				5386F78D23E72B3800D670EF /* WebKit.framework in Frameworks */,
+				2001451150CD41827D674337 /* Pods_CPBLFan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,7 +378,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98576FFE086CBF2D2AAECAC2 /* Pods_CPBLFanTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,7 +385,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E585054292EA96FC3BAE7457 /* Pods_CPBLFanUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,7 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53CE89CB1E61532E00C528BC /* NotificationCenter.framework in Frameworks */,
-				E372B36DD4EA6CD97FAD642B /* Pods_Rank_Widget.framework in Frameworks */,
+				B81C1A10CE52F1C9E9F7306C /* Pods_Rank_Widget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +412,20 @@
 				5386F78423E5FA1A00D670EF /* VideoCellViewModel.swift */,
 			);
 			path = CellViewModel;
+			sourceTree = "<group>";
+		};
+		5347E66027DE223700940046 /* TodayGameWidget */ = {
+			isa = PBXGroup;
+			children = (
+				5347E66127DE223700940046 /* TodayGameWidget.swift */,
+				5347E66327DE223800940046 /* Assets.xcassets */,
+				5347E66527DE223800940046 /* Info.plist */,
+				53A3876F27E1051C00FCA6BB /* TodayGameMediumView.swift */,
+				53A3877127E1053000FCA6BB /* TodayGameEntry.swift */,
+				53A3877327E1053D00FCA6BB /* Provider.swift */,
+				53A3877527E1062000FCA6BB /* GameView.swift */,
+			);
+			path = TodayGameWidget;
 			sourceTree = "<group>";
 		};
 		536B606F1E62A92D0027C796 /* Schedule-Widget */ = {
@@ -398,6 +451,7 @@
 				530C8CA325FE122A00A0D919 /* String+Addition.swift */,
 				53006DB925FFBEBC0079EAFB /* Int+Addition.swift */,
 				5374A3AA26060A6900BD2DEC /* UIViewController+Addition.swift */,
+				536B748327DDEA3700A49A81 /* Color+Addition.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -424,6 +478,7 @@
 				53CBA2C51E0D5F5F0012FFFB /* CPBLFanUITests */,
 				53CE89CC1E61532E00C528BC /* Rank-Widget */,
 				536B606F1E62A92D0027C796 /* Schedule-Widget */,
+				5347E66027DE223700940046 /* TodayGameWidget */,
 				53CBA2A21E0D5F5F0012FFFB /* Products */,
 				97A7D9A1F9BF4BA2F55CB60C /* Pods */,
 				66FD5EA4EBFE2AD74F66A754 /* Frameworks */,
@@ -438,6 +493,7 @@
 				53CBA2C21E0D5F5F0012FFFB /* CPBLFanUITests.xctest */,
 				53CE89C91E61532E00C528BC /* Rank-Widget.appex */,
 				536B606D1E62A92C0027C796 /* Schedule-Widget.appex */,
+				5347E65D27DE223600940046 /* TodayGameWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -586,12 +642,13 @@
 			isa = PBXGroup;
 			children = (
 				53CE89CA1E61532E00C528BC /* NotificationCenter.framework */,
-				C2DA969A0B0630BE49B2AF90 /* Pods_CPBLFan.framework */,
-				9800F6C1BFD0DC46FE73BFFA /* Pods_CPBLFanTests.framework */,
-				031AC937497451A2DE3EDB61 /* Pods_CPBLFanUITests.framework */,
-				D64CF72F3CFE322AC61FED4B /* Pods_Rank_Widget.framework */,
-				44F61F5EF3C9A039649C1B27 /* Pods_Schedule_Widget.framework */,
 				5386F78C23E72B3800D670EF /* WebKit.framework */,
+				530BD3BA27DA294F00B487E2 /* WidgetKit.framework */,
+				530BD3BC27DA294F00B487E2 /* SwiftUI.framework */,
+				B98F17255A951CA3B96D16BF /* Pods_TodayGameWidgetExtension.framework */,
+				FE4CA9F1CA718AD299F1D9A3 /* Pods_CPBLFan.framework */,
+				FA890A7BEA51D59749E98AFD /* Pods_Rank_Widget.framework */,
+				E3ED3908743194B4BD5FF990 /* Pods_Schedule_Widget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -601,14 +658,12 @@
 			children = (
 				33A63E445BD3C441C933A21C /* Pods-CPBLFan.debug.xcconfig */,
 				F3FC4FF9ECC545551F027CFE /* Pods-CPBLFan.release.xcconfig */,
-				5B0090C7CC4830DD1B064E54 /* Pods-CPBLFanTests.debug.xcconfig */,
-				F766D370503CE15EE8B674EA /* Pods-CPBLFanTests.release.xcconfig */,
-				317D3554E844AE677F4D245D /* Pods-CPBLFanUITests.debug.xcconfig */,
-				0214F9294E9FC1F421BE8D43 /* Pods-CPBLFanUITests.release.xcconfig */,
 				B97B8B3BD2182D65A2A4F0CC /* Pods-Rank-Widget.debug.xcconfig */,
 				BB6E4D973F11C15A80172EAE /* Pods-Rank-Widget.release.xcconfig */,
 				8CB900F5DEFEBAA58E8EBD95 /* Pods-Schedule-Widget.debug.xcconfig */,
 				943B49B7EBD897BE0277A819 /* Pods-Schedule-Widget.release.xcconfig */,
+				26F0D973EC524C31B4C4023E /* Pods-TodayGameWidgetExtension.debug.xcconfig */,
+				ED54CC14C0CC754B2E8A8546 /* Pods-TodayGameWidgetExtension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -616,6 +671,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5347E65C27DE223600940046 /* TodayGameWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5347E66B27DE223800940046 /* Build configuration list for PBXNativeTarget "TodayGameWidgetExtension" */;
+			buildPhases = (
+				7AA9847422267A0DAE5890E5 /* [CP] Check Pods Manifest.lock */,
+				5347E65927DE223600940046 /* Sources */,
+				5347E65A27DE223600940046 /* Frameworks */,
+				5347E65B27DE223600940046 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TodayGameWidgetExtension;
+			productName = TodayGameWidgetExtension;
+			productReference = 5347E65D27DE223600940046 /* TodayGameWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		536B606C1E62A92C0027C796 /* Schedule-Widget */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 536B607B1E62A92D0027C796 /* Build configuration list for PBXNativeTarget "Schedule-Widget" */;
@@ -642,16 +715,17 @@
 				53CBA29D1E0D5F5E0012FFFB /* Sources */,
 				53CBA29E1E0D5F5E0012FFFB /* Frameworks */,
 				53CBA29F1E0D5F5E0012FFFB /* Resources */,
-				FE943A1C9D99A2F89B907D09 /* [CP] Embed Pods Frameworks */,
 				530152331E0FBABB00AE6FDE /* Embed App Extensions */,
 				53B568CB1E68605800F9AE7A /* ShellScript */,
 				531C4F571F1E605A005BC3ED /* ShellScript */,
+				E94AB123C5FBF8031986A6AD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				53CE89D41E61532E00C528BC /* PBXTargetDependency */,
 				536B60771E62A92D0027C796 /* PBXTargetDependency */,
+				5347E66727DE223800940046 /* PBXTargetDependency */,
 			);
 			name = CPBLFan;
 			productName = CPBLFan;
@@ -662,7 +736,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53CBA2CE1E0D5F5F0012FFFB /* Build configuration list for PBXNativeTarget "CPBLFanTests" */;
 			buildPhases = (
-				379115E60D7B0C77C036D754 /* [CP] Check Pods Manifest.lock */,
 				53CBA2B31E0D5F5F0012FFFB /* Sources */,
 				53CBA2B41E0D5F5F0012FFFB /* Frameworks */,
 				53CBA2B51E0D5F5F0012FFFB /* Resources */,
@@ -681,7 +754,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53CBA2D11E0D5F5F0012FFFB /* Build configuration list for PBXNativeTarget "CPBLFanUITests" */;
 			buildPhases = (
-				0A946770A0FA221DFC913A8E /* [CP] Check Pods Manifest.lock */,
 				53CBA2BE1E0D5F5F0012FFFB /* Sources */,
 				53CBA2BF1E0D5F5F0012FFFB /* Frameworks */,
 				53CBA2C01E0D5F5F0012FFFB /* Resources */,
@@ -720,10 +792,15 @@
 		53CBA2991E0D5F5E0012FFFB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
+				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = Sparkr;
 				TargetAttributes = {
+					5347E65C27DE223600940046 = {
+						CreatedOnToolsVersion = 13.2.1;
+						DevelopmentTeam = 8MREJM6257;
+						ProvisioningStyle = Automatic;
+					};
 					536B606C1E62A92C0027C796 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 8MREJM6257;
@@ -789,11 +866,23 @@
 				53CBA2C11E0D5F5F0012FFFB /* CPBLFanUITests */,
 				53CE89C81E61532E00C528BC /* Rank-Widget */,
 				536B606C1E62A92C0027C796 /* Schedule-Widget */,
+				5347E65C27DE223600940046 /* TodayGameWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5347E65B27DE223600940046 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5347E66427DE223800940046 /* Assets.xcassets in Resources */,
+				53ED2CE027DF9C0E00EFFE32 /* GoogleService-Info.plist in Resources */,
+				5347E67027DE456900940046 /* Assets.xcassets in Resources */,
+				5347E66F27DE3E8600940046 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		536B606B1E62A92C0027C796 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -862,24 +951,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0A946770A0FA221DFC913A8E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CPBLFanUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		24982F13417E05BD5FD3B7C6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -892,24 +963,6 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-CPBLFan-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		379115E60D7B0C77C036D754 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CPBLFanTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -961,6 +1014,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7AA9847422267A0DAE5890E5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TodayGameWidgetExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A92D439B20574D03C2EE9CB6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -979,7 +1054,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FE943A1C9D99A2F89B907D09 /* [CP] Embed Pods Frameworks */ = {
+		E94AB123C5FBF8031986A6AD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1036,6 +1111,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5347E65927DE223600940046 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53A3877227E1053000FCA6BB /* TodayGameEntry.swift in Sources */,
+				5347E66D27DE22B800940046 /* Color+Addition.swift in Sources */,
+				53A3877427E1053D00FCA6BB /* Provider.swift in Sources */,
+				5347E66227DE223700940046 /* TodayGameWidget.swift in Sources */,
+				53A3877027E1051C00FCA6BB /* TodayGameMediumView.swift in Sources */,
+				5347E66E27DE22BD00940046 /* String+Addition.swift in Sources */,
+				53A3877627E1062000FCA6BB /* GameView.swift in Sources */,
+				5347E66C27DE22B500940046 /* Game.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		536B60691E62A92C0027C796 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1073,6 +1163,7 @@
 				532CBB9423F84EA4002EE0D6 /* GameHeaderCellViewModel.swift in Sources */,
 				536238011E44C5440091DA9C /* GameScheduleViewController.swift in Sources */,
 				532CBB8F23F7EA47002EE0D6 /* GameScheduleViewModel.swift in Sources */,
+				536B748427DDEA3700A49A81 /* Color+Addition.swift in Sources */,
 				537DB6541F151661008B7648 /* GameViewController.swift in Sources */,
 				536238031E44CAA20091DA9C /* GameViewModel.swift in Sources */,
 				5386F77D23E5F9FA00D670EF /* IdentifierHelper.swift in Sources */,
@@ -1160,6 +1251,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5347E66727DE223800940046 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5347E65C27DE223600940046 /* TodayGameWidgetExtension */;
+			targetProxy = 5347E66627DE223800940046 /* PBXContainerItemProxy */;
+		};
 		536B60771E62A92D0027C796 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 536B606C1E62A92C0027C796 /* Schedule-Widget */;
@@ -1311,6 +1407,75 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5347E66927DE223800940046 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26F0D973EC524C31B4C4023E /* Pods-TodayGameWidgetExtension.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 8MREJM6257;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TodayGameWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TodayGameWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Sparkr. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.8.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan.TodayGameWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5347E66A27DE223800940046 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED54CC14C0CC754B2E8A8546 /* Pods-TodayGameWidgetExtension.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8MREJM6257;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TodayGameWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TodayGameWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Sparkr. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.8.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan.TodayGameWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "CPBLFan-Today-Game-Widget";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		536B60791E62A92D0027C796 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8CB900F5DEFEBAA58E8EBD95 /* Pods-Schedule-Widget.debug.xcconfig */;
@@ -1322,7 +1487,7 @@
 				INFOPLIST_FILE = "Schedule-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.7.7;
+				MARKETING_VERSION = 1.8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Schedule-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8a276960-7ae1-4aa0-b1e4-f569745c93d8";
@@ -1343,7 +1508,7 @@
 				INFOPLIST_FILE = "Schedule-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.7.7;
+				MARKETING_VERSION = 1.8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Schedule-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8a276960-7ae1-4aa0-b1e4-f569745c93d8";
@@ -1406,7 +1571,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1463,7 +1628,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1489,7 +1654,7 @@
 				INFOPLIST_FILE = CPBLFan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.7.7;
+				MARKETING_VERSION = 1.8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "539e0c24-b0d2-40f0-8851-4a7d3a418cb9";
@@ -1515,7 +1680,7 @@
 				INFOPLIST_FILE = CPBLFan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.7.7;
+				MARKETING_VERSION = 1.8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2214cd66-8fb7-4bc8-b27e-cbe7f1bd991a";
@@ -1527,7 +1692,6 @@
 		};
 		53CBA2CF1E0D5F5F0012FFFB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B0090C7CC4830DD1B064E54 /* Pods-CPBLFanTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1546,7 +1710,6 @@
 		};
 		53CBA2D01E0D5F5F0012FFFB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F766D370503CE15EE8B674EA /* Pods-CPBLFanTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1565,7 +1728,6 @@
 		};
 		53CBA2D21E0D5F5F0012FFFB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 317D3554E844AE677F4D245D /* Pods-CPBLFanUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1583,7 +1745,6 @@
 		};
 		53CBA2D31E0D5F5F0012FFFB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0214F9294E9FC1F421BE8D43 /* Pods-CPBLFanUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1610,7 +1771,7 @@
 				INFOPLIST_FILE = "Rank-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.7.7;
+				MARKETING_VERSION = 1.8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Rank-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b259db02-3e52-444f-9cd0-c096a549d989";
@@ -1631,7 +1792,7 @@
 				INFOPLIST_FILE = "Rank-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.7.7;
+				MARKETING_VERSION = 1.8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Rank-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b259db02-3e52-444f-9cd0-c096a549d989";
@@ -1644,6 +1805,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5347E66B27DE223800940046 /* Build configuration list for PBXNativeTarget "TodayGameWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5347E66927DE223800940046 /* Debug */,
+				5347E66A27DE223800940046 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		536B607B1E62A92D0027C796 /* Build configuration list for PBXNativeTarget "Schedule-Widget" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
