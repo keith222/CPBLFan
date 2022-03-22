@@ -4,7 +4,6 @@ platform :ios, '10.0'
 target 'CPBLFan' do
 
   use_frameworks!
-
   # Pods for CPBLFan
 
   #Pods about Swift Language
@@ -26,23 +25,14 @@ target 'CPBLFan' do
   pod 'Firebase/Database'
   pod 'Firebase/Messaging'
   pod 'Firebase/InAppMessaging'
-  pod 'Firebase/Analytics'
+  pod 'Firebase/AnalyticsWithoutAdIdSupport'
   pod 'Firebase/Crashlytics'
-  
-  target 'CPBLFanTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'CPBLFanUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
 
 end
 
 target 'Rank-Widget' do
    use_frameworks!
+
    #Pods for today widget
    #Pods about Swift Language
    pod 'SwifterSwift' 
@@ -53,6 +43,7 @@ end
 
 target 'Schedule-Widget' do
     use_frameworks!
+
     #Pods for today widget
     #Pods about Swift Language
     pod 'SwifterSwift' 
@@ -65,6 +56,19 @@ target 'Schedule-Widget' do
     pod 'Firebase/Core'
     pod 'Firebase/Database'
     pod 'Firebase/Messaging'
+end
+
+target 'TodayGameWidgetExtension' do
+   use_frameworks!
+
+   #Pods for today widget
+   #Pods about Swift Language
+   pod 'SwifterSwift'
+   #Pods about internet request/response/parse
+   pod 'Alamofire', '~> 5.2'
+   #Google Firebase
+   pod 'Firebase/Core'
+   pod 'Firebase/Database'
 end
 
 post_install do |installer|
