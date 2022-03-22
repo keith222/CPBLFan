@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwifterSwift
 
 extension String {
     
@@ -45,7 +46,7 @@ extension String {
             return 0
         }
     }
-
+    
     var logoLocalizedString: String {
         let langeCode = Locale.preferredLanguages.first?.lowercased() ?? ""
         return self + (langeCode.contains("en") ? "-E" : "")

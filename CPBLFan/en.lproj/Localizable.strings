@@ -23,6 +23,17 @@
 "羅東棒球場"="Luodong Baseball Field";
 "花蓮棒球場"="Hualien Baseball Stadium";
 "台東棒球場"="Taitung Baseball Stadium";
+"天母棒球場_short"="TMU";
+"新莊棒球場_short"="XZG";
+"桃園國際棒球場_short"="TYN";
+"新竹棒球場_short"="HUC";
+"洲際棒球場_short"="INT";
+"斗六棒球場_short"="DLU";
+"嘉義市棒球場_short"="CYC";
+"台南棒球場_short"="TNN";
+"澄清湖棒球場_short"="CCL";
+"花蓮棒球場_short"="HLN";
+"台東棒球場_short"="TTG";
 "選手資訊"="Player Info";
 "賽事資訊"="Game Info";
 "上半季"="1st Half Season";
@@ -45,3 +56,6 @@
 "味全龍"="Wei Chuan Dragons";
 "game_cancel"="Game Cancel";
 "game_not_start"="Game Has Not Started";
+"today_game"="Today's Game";
+"today_game_description"="Today's CPBL Game";
+"no_game_today"="No Game Today";
