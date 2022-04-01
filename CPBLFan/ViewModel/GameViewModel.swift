@@ -40,7 +40,8 @@ class GameViewModel{
         return score
     }
     var stream: URL? {
-        return self.game?.stream?.url
+        return "https://hamivideo.hinet.net/main/606.do".url
+//        return self.game?.stream?.url
     }
     var gameString: String {
         switch self.gameNum {
