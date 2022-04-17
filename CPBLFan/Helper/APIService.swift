@@ -13,6 +13,7 @@ class APIService{
     
     //url of cpbl web site
     static let CPBLSourceURL: String = (Bundle.main.object(forInfoDictionaryKey: "API Service") as! Dictionary<String, String>)["CPBLSourceURL"]!
+    static let CPBLSourceEnURL: String = (Bundle.main.object(forInfoDictionaryKey: "API Service") as! Dictionary<String, String>)["CPBLSourceEnURL"]!
     //url of youtube api
     static let YoutubeAPIURL: String = (Bundle.main.object(forInfoDictionaryKey: "API Service") as! Dictionary<String, String>)["YoutubeAPIURL"]!
     //youtube api key

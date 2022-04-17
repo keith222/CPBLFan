@@ -16,15 +16,15 @@ extension UIImage{
         
         var filename = ""
         switch team {
-        case _ where team.contains("味全"):
+        case _ where team.contains("味全") || team.contains("DRAGONS"):
             filename = "-1"
-        case _ where team.contains("中信"):
+        case _ where team.contains("中信") || team.contains("Brothers"):
             filename = "1"
-        case _ where team.contains("統一"):
+        case _ where team.contains("統一") || team.contains("U-Lions"):
             filename = "2"
-        case _ where team.contains("樂天"):
+        case _ where team.contains("樂天") || team.contains("Monkeys"):
             filename = "3-0"
-        case _ where team.contains("富邦"):
+        case _ where team.contains("富邦") || team.contains("Guardians"):
             filename = "4"
         default:
             return UIImage(named: "logo")!
