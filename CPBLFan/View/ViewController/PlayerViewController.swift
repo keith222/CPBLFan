@@ -71,7 +71,7 @@ extension PlayerViewController: WKNavigationDelegate {
             
             HUD.hide(animated: true, completion: { finished in
                 UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.3, delay: 0, animations: { [weak self] in
-                    self?.playerWebView.alpha = 1
+                    self?.playerWebView.alpha = 1                                        
                 })
             })
         })

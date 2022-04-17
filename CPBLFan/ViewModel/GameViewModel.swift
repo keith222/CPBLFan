@@ -15,7 +15,7 @@ class GameViewModel{
     
     private let game: Game?
     private let gameJSCode = ""
-        
+    
     var gameNum: Int {
         return self.game?.game ?? 0
     }
@@ -41,7 +41,7 @@ class GameViewModel{
     }
     var stream: URL? {
         return "https://hamivideo.hinet.net/main/606.do".url
-//        return self.game?.stream?.url
+        //        return self.game?.stream?.url
     }
     var gameString: String {
         switch self.gameNum {
@@ -74,6 +74,10 @@ class GameViewModel{
             document.querySelectorAll('#Header').forEach(function(a){a.remove()});
             document.querySelectorAll('#Breadcrumbs').forEach(function(a){a.remove()});
             document.querySelectorAll('#nav').forEach(function(a){a.remove()});
+            document.querySelectorAll('head > script').forEach(function(a){a.remove();});
+            document.querySelectorAll('script').forEach(function(a){a.remove();});
+            document.querySelectorAll('iframe').forEach(function(a){a.remove();});
+            document.querySelectorAll('noscript').forEach(function(a){a.remove();});
             """
     }
     
@@ -226,10 +230,21 @@ class GameViewModel{
                         window.webkit.messageHandlers['scoreBoard'].postMessage(\"\")
                     }
                 }, 1000);
+                
             };
+            setTimeout(() => {
+                document.querySelectorAll('.adGeek-author').forEach(function(a){a.remove()});
+                document.querySelectorAll('.adGeek-popup').forEach(function(a){a.remove()});
+                
+                const blocker = document.getElementById('mm-blocker').remove();
+                if (blocker != null) blocker.remove();
+            
+                const ad = document.getElementById('adGeek-slot-div-gpt-ad-1633344967434-0');
+                if (ad != null) ad.remove();
+            }, 6000);
             """
     }
-    
+
     var liveJSCode: String {
         return """
             app.switchTabs(3);
@@ -297,7 +312,18 @@ class GameViewModel{
                         document.querySelectorAll('.team.home').forEach(function(a){a.innerHTML = '<span><img class="team_image" src="data:application/png;base64,\(UIImage(named: (homeImageString.logoLocalizedString) )?.pngBase64String() ?? "")"></span>'});
                     });
                 });
+               
             };
+            setTimeout(() => {
+                document.querySelectorAll('.adGeek-author').forEach(function(a){a.remove()});
+                document.querySelectorAll('.adGeek-popup').forEach(function(a){a.remove()});
+            
+                const blocker = document.getElementById('mm-blocker').remove();
+                if (blocker != null) blocker.remove();
+            
+                const ad = document.getElementById('adGeek-slot-div-gpt-ad-1633344967434-0');
+                if (ad != null) ad.remove();
+            }, 6000);
             """
     }
     
@@ -330,13 +356,14 @@ class GameViewModel{
         default:
             gameID = (-gameID) % 10
         }
-                
+        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
         guard let checkDate = dateFormatter.date(from: self.date), checkDate <= Date() else { return }
         
-        self.boxURL = "\(APIService.CPBLSourceURL)/box?year=\(year)&kindCode=\(gameType)&gameSno=\(gameID)"
+        let sourceURL = (Locale.autoupdatingCurrent.languageCode == "en") ? APIService.CPBLSourceEnURL : APIService.CPBLSourceURL
+        self.boxURL = "\(sourceURL)/box?year=\(year)&kindCode=\(gameType)&gameSno=\(gameID)"
         self.liveURL = "\(APIService.CPBLSourceURL)/box/live?year=\(year)&kindCode=\(gameType)&gameSno=\(gameID)"
     }
 }

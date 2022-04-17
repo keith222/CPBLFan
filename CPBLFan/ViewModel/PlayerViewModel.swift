@@ -15,7 +15,8 @@ class PlayerViewModel {
     private var player: Player!
     
     var playerURL: String {
-        return "\(APIService.CPBLSourceURL)\(player.playerUrl ?? "")"
+        let sourceURL = (Locale.autoupdatingCurrent.languageCode == "en") ? APIService.CPBLSourceEnURL : APIService.CPBLSourceURL
+        return "\(sourceURL)\(player.playerUrl ?? "")"
     }
     
     let specialJSCode: String = """
@@ -32,11 +33,20 @@ class PlayerViewModel {
                 document.querySelectorAll('.nationality').forEach(function(a){a.remove()});
                 document.querySelectorAll('.original_name').forEach(function(a){a.remove()});
                 document.querySelectorAll('.draft').forEach(function(a){a.remove()});
+                document.querySelectorAll('.adGeek-author').forEach(function(a){a.remove()});
+                document.querySelectorAll('.adGeek-popup').forEach(function(a){a.remove()});
                 document.getElementById('Footer').remove();
                 document.getElementById('MenuMobile').remove();
                 document.getElementById('Header').remove();
                 document.getElementById('Breadcrumbs').remove();
                 document.getElementById('nav').remove();
+                
+                const ad = document.getElementById('adGeek-slot-div-gpt-ad-1633344967434-0');
+                if (ad != null) ad.remove();
+            
+                const blocker = document.getElementById('mm-blocker').remove();
+                if (blocker != null) blocker.remove();
+            
                 const cssTemplateString = `
                 *{-webkit-touch-callout:none;-webkit-user-select:none}
                 @media (prefers-color-scheme: dark) {
@@ -66,6 +76,16 @@ class PlayerViewModel {
                 document.head.insertAdjacentElement(`beforeend`, styleTag)
             };
             changeStyle();
+            setTimeout(() => {
+                document.querySelectorAll('.adGeek-author').forEach(function(a){a.remove()});
+                document.querySelectorAll('.adGeek-popup').forEach(function(a){a.remove()});
+                
+                const blocker = document.getElementById('mm-blocker').remove();
+                if (blocker != null) blocker.remove();
+            
+                const ad = document.getElementById('adGeek-slot-div-gpt-ad-1633344967434-0');
+                if (ad != null) ad.remove();
+            }, 6000);
             """
     
     init(with player: Player) {

@@ -156,8 +156,8 @@ extension GameViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         if webView == self.boxWebView, let jsCode = self.gameViewModel?.boxJSCode {
             webView.evaluateJavaScript(jsCode, completionHandler: { [weak self] (any,error) in
-                os_log("Error: %s", error?.localizedDescription ?? "")
                 if error != nil {
+                    os_log("Error: %s", error?.localizedDescription ?? "")
                     self?.performAlert(with: error?.localizedDescription)
                     return
                 }
@@ -170,8 +170,8 @@ extension GameViewController: WKNavigationDelegate {
 
         if webView == self.gameWebView, let jsCode = self.gameViewModel?.liveJSCode {
             webView.evaluateJavaScript(jsCode, completionHandler: { [weak self] (any,error) in
-                os_log("Error: %s", error?.localizedDescription ?? "")
                 if error != nil {
+                    os_log("Error: %s", error?.localizedDescription ?? "")
                     self?.gameWebView.alpha = 0
                     self?.performAlert(with: error?.localizedDescription)
                     return
