@@ -47,13 +47,14 @@ class VideoViewModel{
                     self?.pageToken = json.nextPageToken ?? ""
                     self?.videoItems.append(contentsOf: json.items ?? [])
                     self?.processFetched(json.items ?? [])
+                    return
                     
                 } catch(let error) {
                     self?.errorHandleClosure?()
                     os_log("Error: %s", error.localizedDescription)
                 }
             }
-            
+            self?.errorHandleClosure?()
         })
     }
     
