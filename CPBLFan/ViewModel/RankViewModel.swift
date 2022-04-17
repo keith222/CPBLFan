@@ -26,7 +26,10 @@ class RankViewModel{
         default: return ["上半季"]
         }
     }
-    private let route = "\(APIService.CPBLSourceURL)/standings"
+    private var route: String {
+        let sourceURL = (Locale.autoupdatingCurrent.languageCode == "en") ? APIService.CPBLSourceEnURL : APIService.CPBLSourceURL
+        return "\(sourceURL)/standings"
+    }
     
     var numberOfCells: Int {
         return rankCellViewModels.count

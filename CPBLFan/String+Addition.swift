@@ -12,15 +12,15 @@ import SwifterSwift
 extension String {
     
     func getTeam() -> String{
-        if self.contains("ADD011") || self.contains("統一7-ELEVEn獅") {
+        if self.contains("ADD011") || self.contains("統一7-ELEVEn獅") || self.contains("U-Lions") {
             return "ADD011".localized()
-        } else if self.contains("ACN011") || self.contains("中信兄弟") {
+        } else if self.contains("ACN011") || self.contains("中信兄弟") || self.contains("Brothers") {
             return "ACN011".localized()
-        } else if self.contains("AJL011") || self.contains("樂天桃猿") {
+        } else if self.contains("AJL011") || self.contains("樂天桃猿") || self.contains("Monkeys") {
             return "AJL011".localized()
-        } else if self.contains("AEO011") || self.contains("富邦悍將") {
+        } else if self.contains("AEO011") || self.contains("富邦悍將") || self.contains("Guardians") {
             return "AEO011".localized()
-        } else if self.contains("AAA011") || self.contains("味全龍") {
+        } else if self.contains("AAA011") || self.contains("味全龍") || self.contains("DRAGONS") {
             return "AAA011".localized()
         }
         return "無"

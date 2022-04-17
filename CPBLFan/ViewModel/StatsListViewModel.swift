@@ -47,7 +47,8 @@ class StatsListViewModel{
         let calendar = Calendar.current
         let month = calendar.component(.month, from: date)
         let year = calendar.component(.year, from: date) - ((month < 3) ? 1 : 0)
-        let url = "\(APIService.CPBLSourceURL)\(self.stats.moreUrl ?? "")&page=\(page)&year=\(year)"
+        let sourceURL = (Locale.autoupdatingCurrent.languageCode == "en") ? APIService.CPBLSourceEnURL : APIService.CPBLSourceURL
+        let url = "\(sourceURL)\(self.stats.moreUrl ?? "")&page=\(page)&year=\(year)"
         APIService.request(.get, route: url, completionHandler: { [weak self] text in
             guard let text = text else {
                 self?.errorHandleClosure?()

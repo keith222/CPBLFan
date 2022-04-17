@@ -25,7 +25,7 @@ class StatsCell: UITableViewCell, BindView {
     func bindViewModel(_ viewModel: Any) {
         if let statsCellViewModel = viewModel as? StatsCellViewModel{
             self.nameLabel.text = statsCellViewModel.name
-            self.teamLabel.text = statsCellViewModel.team
+            self.teamLabel.text = statsCellViewModel.team?.getTeam()
             self.statsLabel.text = statsCellViewModel.stats
             self.categoryLabel.text = statsCellViewModel.category
         }

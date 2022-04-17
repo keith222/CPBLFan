@@ -44,7 +44,8 @@ class StatsViewModel{
     }
     
     func fetchStats(){
-        let route = "\(APIService.CPBLSourceURL)/stats/toplist"
+        let sourceURL = (Locale.autoupdatingCurrent.languageCode == "en") ? APIService.CPBLSourceEnURL : APIService.CPBLSourceURL
+        let route = "\(sourceURL)/stats/toplist"
         APIService.request(.get, route: route, completionHandler: { [weak self] text in
             guard let text = text else {
                 self?.errorHandleClosure?()
