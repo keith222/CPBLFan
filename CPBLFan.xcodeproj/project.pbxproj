@@ -13,9 +13,6 @@
 		53006D9F25FF89880079EAFB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53006DA125FF89880079EAFB /* InfoPlist.strings */; };
 		53006DAD25FFA3B50079EAFB /* String+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530C8CA325FE122A00A0D919 /* String+Addition.swift */; };
 		53006DB325FFA3B60079EAFB /* String+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530C8CA325FE122A00A0D919 /* String+Addition.swift */; };
-		53006DBA25FFBEBC0079EAFB /* Int+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53006DB925FFBEBC0079EAFB /* Int+Addition.swift */; };
-		53006DC025FFC17E0079EAFB /* Int+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53006DB925FFBEBC0079EAFB /* Int+Addition.swift */; };
-		53006DC625FFC17F0079EAFB /* Int+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53006DB925FFBEBC0079EAFB /* Int+Addition.swift */; };
 		53006DCC25FFC4140079EAFB /* RankHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53006DCE25FFC4140079EAFB /* RankHeaderCell.xib */; };
 		530976FC1E69AD0700411F46 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 530976FB1E69AD0700411F46 /* GoogleService-Info.plist */; };
 		530976FD1E69B1CA00411F46 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 530976FB1E69AD0700411F46 /* GoogleService-Info.plist */; };
@@ -26,6 +23,8 @@
 		531BA2431E1EA7EF00B83B73 /* RankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531BA2411E1EA7EF00B83B73 /* RankCell.swift */; };
 		531BA2441E1EA7EF00B83B73 /* RankCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 531BA2421E1EA7EF00B83B73 /* RankCell.xib */; };
 		53215D191E12B3EF00A878B3 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53215D181E12B3EF00A878B3 /* Video.swift */; };
+		532165AF281E6BE200A07717 /* Int+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532165AE281E6BE200A07717 /* Int+Addition.swift */; };
+		532165BA281E6E5700A07717 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 532165BC281E6E5700A07717 /* InfoPlist.strings */; };
 		532CBB8F23F7EA47002EE0D6 /* GameScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532CBB8E23F7EA46002EE0D6 /* GameScheduleViewModel.swift */; };
 		532CBB9023F84072002EE0D6 /* GameScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532CBB8E23F7EA46002EE0D6 /* GameScheduleViewModel.swift */; };
 		532CBB9223F84991002EE0D6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532CBB9123F84991002EE0D6 /* BaseViewController.swift */; };
@@ -211,7 +210,6 @@
 		53006D9E25FF896F0079EAFB /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		53006DA025FF89880079EAFB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		53006DA725FF898C0079EAFB /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		53006DB925FFBEBC0079EAFB /* Int+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Addition.swift"; sourceTree = "<group>"; };
 		53006DCD25FFC4140079EAFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RankHeaderCell.xib; sourceTree = "<group>"; };
 		53006DDC25FFC5260079EAFB /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/RankHeaderCell.strings"; sourceTree = "<group>"; };
 		530976FB1E69AD0700411F46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -239,6 +237,10 @@
 		531BA2411E1EA7EF00B83B73 /* RankCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RankCell.swift; path = View/RankCell.swift; sourceTree = "<group>"; };
 		531BA2421E1EA7EF00B83B73 /* RankCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RankCell.xib; path = View/RankCell.xib; sourceTree = "<group>"; };
 		53215D181E12B3EF00A878B3 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Video.swift; path = Model/Video.swift; sourceTree = "<group>"; };
+		532165AE281E6BE200A07717 /* Int+Addition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Int+Addition.swift"; path = "Extension/Int+Addition.swift"; sourceTree = "<group>"; };
+		532165B6281E6E1300A07717 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		532165BB281E6E5700A07717 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		532165BD281E6F8F00A07717 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		532CBB8E23F7EA46002EE0D6 /* GameScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameScheduleViewModel.swift; path = ViewModel/GameScheduleViewModel.swift; sourceTree = "<group>"; };
 		532CBB9123F84991002EE0D6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = View/ViewController/BaseViewController.swift; sourceTree = "<group>"; };
 		532CBB9323F84EA4002EE0D6 /* GameHeaderCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameHeaderCellViewModel.swift; path = CPBLFan/View/ViewController/GameHeaderCellViewModel.swift; sourceTree = SOURCE_ROOT; };
@@ -311,7 +313,6 @@
 		53CBA2A11E0D5F5E0012FFFB /* CPBLFan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPBLFan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53CBA2A41E0D5F5F0012FFFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53CBA2AD1E0D5F5F0012FFFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		53CBA2B21E0D5F5F0012FFFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53CBA2B71E0D5F5F0012FFFB /* CPBLFanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CPBLFanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53CBA2BB1E0D5F5F0012FFFB /* CPBLFanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPBLFanTests.swift; sourceTree = "<group>"; };
 		53CBA2BD1E0D5F5F0012FFFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -444,12 +445,12 @@
 		53B396E31E1D36C20032D0DA /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				532165AE281E6BE200A07717 /* Int+Addition.swift */,
 				53B396E41E1D37100032D0DA /* UIBarButtonItem+Addition.swift */,
 				5353FB8E1E23D6C000BDE259 /* UIColor+Addition.swift */,
 				5309A2001E227A8600FB0037 /* UIImage+Addition.swift */,
 				53645AA82413A94700433BA7 /* UITableView+Addition.swift */,
 				530C8CA325FE122A00A0D919 /* String+Addition.swift */,
-				53006DB925FFBEBC0079EAFB /* Int+Addition.swift */,
 				5374A3AA26060A6900BD2DEC /* UIViewController+Addition.swift */,
 				536B748327DDEA3700A49A81 /* Color+Addition.swift */,
 			);
@@ -501,6 +502,7 @@
 		53CBA2A31E0D5F5F0012FFFB /* CPBLFan */ = {
 			isa = PBXGroup;
 			children = (
+				532165B6281E6E1300A07717 /* Info.plist */,
 				53B396E31E1D36C20032D0DA /* Extension */,
 				53CBA2D61E0D66660012FFFB /* Helpers */,
 				53CBA2D71E0D66770012FFFB /* Model */,
@@ -512,9 +514,9 @@
 				53B396E21E1C04390032D0DA /* CPBLFan-Bridging-Header.h */,
 				536B60871E6334DB0027C796 /* CPBLFan.entitlements */,
 				530976FB1E69AD0700411F46 /* GoogleService-Info.plist */,
-				53CBA2B21E0D5F5F0012FFFB /* Info.plist */,
 				5317B2B5246C1E86003A6523 /* keys.xcconfig */,
 				53510986246B020D0030006B /* Localizable.strings */,
+				532165BC281E6E5700A07717 /* InfoPlist.strings */,
 			);
 			path = CPBLFan;
 			sourceTree = "<group>";
@@ -909,6 +911,7 @@
 				53CBA2AC1E0D5F5F0012FFFB /* Main.storyboard in Resources */,
 				53B9AD8B23EFFA54004A4E29 /* News.storyboard in Resources */,
 				53CBA2DF1E0D7DAC0012FFFB /* NewsCell.xib in Resources */,
+				532165BA281E6E5700A07717 /* InfoPlist.strings in Resources */,
 				53B9AD9723EFFD0B004A4E29 /* Rank.storyboard in Resources */,
 				531BA2441E1EA7EF00B83B73 /* RankCell.xib in Resources */,
 				53006DCC25FFC4140079EAFB /* RankHeaderCell.xib in Resources */,
@@ -1141,7 +1144,6 @@
 				536B60811E62B5740027C796 /* TodayGameCell.swift in Sources */,
 				536B60711E62A92D0027C796 /* TodayViewController.swift in Sources */,
 				53006DB325FFA3B60079EAFB /* String+Addition.swift in Sources */,
-				53006DC625FFC17F0079EAFB /* Int+Addition.swift in Sources */,
 				536B60831E62B77E0027C796 /* UIImage+Addition.swift in Sources */,
 				53645AAB2413AA5600433BA7 /* UITableView+Addition.swift in Sources */,
 			);
@@ -1158,7 +1160,6 @@
 				536238051E44CAE20091DA9C /* Game.swift in Sources */,
 				5336D25C1E4368A300CAF66A /* GameCell.swift in Sources */,
 				5386F78723E5FA1A00D670EF /* GameCellViewModel.swift in Sources */,
-				53006DBA25FFBEBC0079EAFB /* Int+Addition.swift in Sources */,
 				5336D25F1E437A0400CAF66A /* GameHeaderCell.swift in Sources */,
 				532CBB9423F84EA4002EE0D6 /* GameHeaderCellViewModel.swift in Sources */,
 				536238011E44C5440091DA9C /* GameScheduleViewController.swift in Sources */,
@@ -1167,6 +1168,7 @@
 				537DB6541F151661008B7648 /* GameViewController.swift in Sources */,
 				536238031E44CAA20091DA9C /* GameViewModel.swift in Sources */,
 				5386F77D23E5F9FA00D670EF /* IdentifierHelper.swift in Sources */,
+				532165AF281E6BE200A07717 /* Int+Addition.swift in Sources */,
 				53788A211E10070F00C3F04B /* News.swift in Sources */,
 				53CBA2DE1E0D7DAC0012FFFB /* NewsCell.swift in Sources */,
 				5386F78523E5FA1A00D670EF /* NewsCellViewModel.swift in Sources */,
@@ -1242,7 +1244,6 @@
 				53CE89E01E615C4D00C528BC /* UIImage+Addition.swift in Sources */,
 				53645AAA2413AA5500433BA7 /* UITableView+Addition.swift in Sources */,
 				53006DAD25FFA3B50079EAFB /* String+Addition.swift in Sources */,
-				53006DC025FFC17E0079EAFB /* Int+Addition.swift in Sources */,
 				53CE89EB1E6164F200C528BC /* WidgetCell.swift in Sources */,
 				53CE89EF1E61716500C528BC /* WidgetHeaderCell.swift in Sources */,
 			);
@@ -1305,6 +1306,15 @@
 			);
 			name = RankHeaderCell.xib;
 			path = View;
+			sourceTree = "<group>";
+		};
+		532165BC281E6E5700A07717 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				532165BB281E6E5700A07717 /* zh-Hant */,
+				532165BD281E6F8F00A07717 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		53510986246B020D0030006B /* Localizable.strings */ = {
@@ -1430,7 +1440,7 @@
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Sparkr. All rights reserved.";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.8.2;
+				MARKETING_VERSION = 1.8.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan.TodayGameWidget;
@@ -1464,7 +1474,7 @@
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Sparkr. All rights reserved.";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.8.2;
+				MARKETING_VERSION = 1.8.3;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan.TodayGameWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1487,7 +1497,7 @@
 				INFOPLIST_FILE = "Schedule-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.8.2;
+				MARKETING_VERSION = 1.8.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Schedule-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8a276960-7ae1-4aa0-b1e4-f569745c93d8";
@@ -1508,7 +1518,7 @@
 				INFOPLIST_FILE = "Schedule-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.8.2;
+				MARKETING_VERSION = 1.8.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Schedule-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8a276960-7ae1-4aa0-b1e4-f569745c93d8";
@@ -1654,7 +1664,7 @@
 				INFOPLIST_FILE = CPBLFan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.8.2;
+				MARKETING_VERSION = 1.8.3;
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "539e0c24-b0d2-40f0-8851-4a7d3a418cb9";
@@ -1680,7 +1690,7 @@
 				INFOPLIST_FILE = CPBLFan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.8.2;
+				MARKETING_VERSION = 1.8.3;
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2214cd66-8fb7-4bc8-b27e-cbe7f1bd991a";
@@ -1771,7 +1781,7 @@
 				INFOPLIST_FILE = "Rank-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.8.2;
+				MARKETING_VERSION = 1.8.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Rank-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b259db02-3e52-444f-9cd0-c096a549d989";
@@ -1792,7 +1802,7 @@
 				INFOPLIST_FILE = "Rank-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.8.2;
+				MARKETING_VERSION = 1.8.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Rank-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b259db02-3e52-444f-9cd0-c096a549d989";
