@@ -1,0 +1,12 @@
+/* 
+  InfoPlist.strings
+  CPBLFan
+
+  Created by Yang Tun-Kai on 2022/5/1.
+  Copyright © 2022 Sparkr. All rights reserved.
+*/
+
+"QUICK_ACTION_SCHEDULE_TITLE"="職棒賽程";
+"QUICK_ACTION_RANK_TITLE"="聯盟排名";
+"QUICK_ACTION_STATICSTICS_TITLE"="個人成績";
+"QUICK_ACTION_VIDEO_TITLE"="職棒影音";
