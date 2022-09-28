@@ -18,7 +18,7 @@ struct TodayGameMediumView : View {
         ZStack(alignment: .leading) {
             (colorScheme == .dark) ? Color.darkBlue : Color.lightBlue
             
-            VStack(alignment: .center, spacing: entry.games.count < 5 ? 15 : 5) {
+            VStack(alignment: .center, spacing: entry.games.count < 3 ? 15 : 5) {
                 Text("today_game".localized())
                     .foregroundColor(.white)
                     .font(.title2)
@@ -29,8 +29,8 @@ struct TodayGameMediumView : View {
                 if !entry.games.isEmpty {
                     HStack(spacing: 5) {
                         ForEach(entry.games, id: \.game) { game in
-                            GameView(with: game, and: entry.games.count)
-                        }
+                            GameView(with: game, and: entry.games.count)                            
+                        }.frame(maxWidth: .infinity)
                     }
                     .padding(.horizontal, 10)
                     .frame(maxWidth: .infinity, alignment: (entry.games.count > 2) ? .center : .leading)
@@ -43,6 +43,7 @@ struct TodayGameMediumView : View {
                         .foregroundColor((colorScheme == .dark) ? .gray.opacity(0.8) : .white.opacity(0.7))
                 }
             }
+            .padding(.bottom, (entry.games.count > 2) ? 5 : 0)
         }
         .widgetURL(URL(string: "CPBLFan://?game"))
     }

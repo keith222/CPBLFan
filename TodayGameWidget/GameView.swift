@@ -21,7 +21,47 @@ struct GameView : View {
     }
     
     var body: some View {
-        HStack(spacing: 0){
+        if (count <= 4) {
+            let imageSize = (count <= 3) ? 35.0 : 25.0
+            
+            VStack(spacing: 3) {
+                HStack(alignment: .center, spacing: 0) {
+                    Image(game.guest?.logoLocalizedString ?? "")
+                        .resizable()
+                        .frame(width: imageSize, height: imageSize)
+                    
+                    Text("VS")
+                        .foregroundColor(.white)
+                        .font(.system(size: 10))
+                        .fontWeight(.bold)
+                        .frame(width: 15)
+                    
+                    Image(game.home?.logoLocalizedString ?? "")
+                        .resizable()
+                        .frame(width: imageSize, height: imageSize)
+                }
+                
+                Text("Game \(game.game ?? 0)")
+                    .foregroundColor(.white)
+                    .font(.system(size: 10))
+                    .fontWeight(.bold)
+                
+                Text("@\(((game.place ?? "") + "_short").localized())")
+                    .foregroundColor(.white)
+                    .font(.system(size: 10))
+                    .fontWeight(.bold)
+                
+                Text("\(game.time ?? "") (GMT+8)")
+                    .foregroundColor(.white)
+                    .font(.system(size: 10))
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(5)
+            .background(.white.opacity(0.1))
+            .clipShape(RoundedRectangle(cornerRadius:10))
+        } else {
             VStack(alignment: .center, spacing: 0) {
                 Image(game.guest?.logoLocalizedString ?? "")
                     .resizable()
@@ -37,50 +77,25 @@ struct GameView : View {
                     .resizable()
                     .frame(width: 35, height: 35)
                 
-                if (count >= 5) {
-                    Text("G \(game.game ?? 0)")
-                        .foregroundColor(.white)
-                        .font(.system(size: 10))
-                        .fontWeight(.bold)
-                    
-                    Text("\(game.time ?? "")")
-                        .foregroundColor(.white)
-                        .font(.system(size: 10))
-                        .fontWeight(.bold)
-                    
-                    Text("(GMT+8)")
-                        .foregroundColor(.white)
-                        .font(.system(size: 9))
-                    
-                }
-            }
-            
-            if count < 5 {
-                VStack(alignment: .center, spacing: 5) {
-                    Text("G \(game.game ?? 0)")
-                        .foregroundColor(.white)
-                        .font(.system(size: 12))
-                        .fontWeight(.bold)
-                    
-                    Text("\(((game.place ?? "") + "_short").localized())")
-                        .foregroundColor(.white)
-                        .font(.system(size: 12))
-                        .fontWeight(.bold)
-                    
-                    Text("\(game.time ?? "")")
-                        .foregroundColor(.white)
-                        .font(.system(size: 12))
-                        .fontWeight(.bold)
-                    
-                    Text("(GMT+8)")
-                        .foregroundColor(.white)
-                        .font(.system(size: 8))
+                Text("G \(game.game ?? 0)")
+                    .foregroundColor(.white)
+                    .font(.system(size: 10))
+                    .fontWeight(.bold)
                 
-                }
+                Text("\(game.time ?? "")")
+                    .foregroundColor(.white)
+                    .font(.system(size: 10))
+                    .fontWeight(.bold)
+                
+                Text("(GMT+8)")
+                    .foregroundColor(.white)
+                    .font(.system(size: 9))
+                
             }
+            .frame(maxWidth: .infinity)
+            .padding(5)
+            .background(.white.opacity(0.1))
+            .clipShape(RoundedRectangle(cornerRadius:10))
         }
-        .padding(5)
-        .background(.white.opacity(0.1))
-        .clipShape(RoundedRectangle(cornerRadius:10))
     }
 }
