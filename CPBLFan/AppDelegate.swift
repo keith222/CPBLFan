@@ -33,6 +33,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Tab bar style
         UITabBar.appearance().tintColor = .darkBlue
         
+        if #available(iOS 15.0, *) {
+            let appearance = UITabBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = .white
+            UITabBar.appearance().standardAppearance = appearance
+            UITabBar.appearance().scrollEdgeAppearance = appearance
+        }
         
         // Use Firebase library to configure APIs
         FirebaseApp.configure()
