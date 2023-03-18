@@ -72,6 +72,7 @@ class GameScheduleViewModel {
                 self?.processFetched(year, month: month, gameItems: games)
 
             } catch(let error) {
+                print(error)
                 self?.errorHandleClosure?(error.localizedDescription)
                 os_log("Error: %s", error.localizedDescription)
             }

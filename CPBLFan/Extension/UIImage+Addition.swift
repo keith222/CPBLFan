@@ -26,6 +26,8 @@ extension UIImage{
             filename = "3-0"
         case _ where team.contains("富邦") || team.contains("Guardians"):
             filename = "4"
+        case _ where team.contains("台鋼") || team.contains("TSG Hawks"):
+            filename = "6"
         default:
             return UIImage(named: "logo")!
         }

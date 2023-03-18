@@ -22,6 +22,8 @@ extension String {
             return "AEO011".localized()
         } else if self.contains("AAA011") || self.contains("味全龍") || self.contains("DRAGONS") {
             return "AAA011".localized()
+        } else if self.contains("AKP011") || self.contains("台鋼雄鷹") || self.contains("TSG Hawks") {
+            return "AKP011".localized()
         }
         return "無"
     }
