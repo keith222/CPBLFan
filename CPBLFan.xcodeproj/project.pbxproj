@@ -48,7 +48,7 @@
 		5347E65F27DE223700940046 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 530BD3BC27DA294F00B487E2 /* SwiftUI.framework */; };
 		5347E66227DE223700940046 /* TodayGameWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347E66127DE223700940046 /* TodayGameWidget.swift */; };
 		5347E66427DE223800940046 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5347E66327DE223800940046 /* Assets.xcassets */; };
-		5347E66827DE223800940046 /* TodayGameWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5347E65D27DE223600940046 /* TodayGameWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5347E66827DE223800940046 /* TodayGameWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5347E65D27DE223600940046 /* TodayGameWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5347E66C27DE22B500940046 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536238041E44CAE20091DA9C /* Game.swift */; };
 		5347E66D27DE22B800940046 /* Color+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536B748327DDEA3700A49A81 /* Color+Addition.swift */; };
 		5347E66E27DE22BD00940046 /* String+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530C8CA325FE122A00A0D919 /* String+Addition.swift */; };
@@ -74,7 +74,7 @@
 		536B606E1E62A92D0027C796 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53CE89CA1E61532E00C528BC /* NotificationCenter.framework */; };
 		536B60711E62A92D0027C796 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536B60701E62A92D0027C796 /* TodayViewController.swift */; };
 		536B60741E62A92D0027C796 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 536B60721E62A92D0027C796 /* MainInterface.storyboard */; };
-		536B60781E62A92D0027C796 /* Schedule-Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 536B606D1E62A92C0027C796 /* Schedule-Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		536B60781E62A92D0027C796 /* Schedule-Widget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 536B606D1E62A92C0027C796 /* Schedule-Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		536B607C1E62B53A0027C796 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2DA1E0D66AB0012FFFB /* APIService.swift */; };
 		536B607D1E62B53A0027C796 /* TableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2E61E0D920D0012FFFB /* TableViewHelper.swift */; };
 		536B607E1E62B5420027C796 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536238021E44CAA20091DA9C /* GameViewModel.swift */; };
@@ -134,7 +134,7 @@
 		53CE89CB1E61532E00C528BC /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53CE89CA1E61532E00C528BC /* NotificationCenter.framework */; };
 		53CE89CE1E61532E00C528BC /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CE89CD1E61532E00C528BC /* TodayViewController.swift */; };
 		53CE89D11E61532E00C528BC /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CE89CF1E61532E00C528BC /* MainInterface.storyboard */; };
-		53CE89D51E61532E00C528BC /* Rank-Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 53CE89C91E61532E00C528BC /* Rank-Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		53CE89D51E61532E00C528BC /* Rank-Widget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 53CE89C91E61532E00C528BC /* Rank-Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		53CE89DB1E6155B600C528BC /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2DA1E0D66AB0012FFFB /* APIService.swift */; };
 		53CE89DC1E6155B600C528BC /* TableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2E61E0D920D0012FFFB /* TableViewHelper.swift */; };
 		53CE89DD1E6155F000C528BC /* RankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538F75EC1E20BBBF001671EE /* RankViewModel.swift */; };
@@ -188,17 +188,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		530152331E0FBABB00AE6FDE /* Embed App Extensions */ = {
+		530152331E0FBABB00AE6FDE /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				53CE89D51E61532E00C528BC /* Rank-Widget.appex in Embed App Extensions */,
-				5347E66827DE223800940046 /* TodayGameWidgetExtension.appex in Embed App Extensions */,
-				536B60781E62A92D0027C796 /* Schedule-Widget.appex in Embed App Extensions */,
+				53CE89D51E61532E00C528BC /* Rank-Widget.appex in Embed Foundation Extensions */,
+				5347E66827DE223800940046 /* TodayGameWidgetExtension.appex in Embed Foundation Extensions */,
+				536B60781E62A92D0027C796 /* Schedule-Widget.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -717,7 +717,7 @@
 				53CBA29D1E0D5F5E0012FFFB /* Sources */,
 				53CBA29E1E0D5F5E0012FFFB /* Frameworks */,
 				53CBA29F1E0D5F5E0012FFFB /* Resources */,
-				530152331E0FBABB00AE6FDE /* Embed App Extensions */,
+				530152331E0FBABB00AE6FDE /* Embed Foundation Extensions */,
 				53B568CB1E68605800F9AE7A /* ShellScript */,
 				531C4F571F1E605A005BC3ED /* ShellScript */,
 				E94AB123C5FBF8031986A6AD /* [CP] Embed Pods Frameworks */,
@@ -795,7 +795,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1420;
 				ORGANIZATIONNAME = Sparkr;
 				TargetAttributes = {
 					5347E65C27DE223600940046 = {
@@ -1068,6 +1068,7 @@
 				"${BUILT_PRODUCTS_DIR}/FirebaseABTesting/FirebaseABTesting.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCoreInternal/FirebaseCoreInternal.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseCrashlytics/FirebaseCrashlytics.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseDatabase/FirebaseDatabase.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseInAppMessaging/FirebaseInAppMessaging.framework",
@@ -1090,6 +1091,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseABTesting.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreDiagnostics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreInternal.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCrashlytics.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseDatabase.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInAppMessaging.framework",
@@ -1440,7 +1442,7 @@
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Sparkr. All rights reserved.";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.8.4;
+				MARKETING_VERSION = 1.8.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan.TodayGameWidget;
@@ -1474,7 +1476,7 @@
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Sparkr. All rights reserved.";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.8.4;
+				MARKETING_VERSION = 1.8.5;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan.TodayGameWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1497,7 +1499,7 @@
 				INFOPLIST_FILE = "Schedule-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.8.4;
+				MARKETING_VERSION = 1.8.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Schedule-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8a276960-7ae1-4aa0-b1e4-f569745c93d8";
@@ -1518,7 +1520,7 @@
 				INFOPLIST_FILE = "Schedule-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.8.4;
+				MARKETING_VERSION = 1.8.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Schedule-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8a276960-7ae1-4aa0-b1e4-f569745c93d8";
@@ -1664,7 +1666,7 @@
 				INFOPLIST_FILE = CPBLFan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.8.4;
+				MARKETING_VERSION = 1.8.5;
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "539e0c24-b0d2-40f0-8851-4a7d3a418cb9";
@@ -1690,7 +1692,7 @@
 				INFOPLIST_FILE = CPBLFan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.8.4;
+				MARKETING_VERSION = 1.8.5;
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2214cd66-8fb7-4bc8-b27e-cbe7f1bd991a";
@@ -1781,7 +1783,7 @@
 				INFOPLIST_FILE = "Rank-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.8.4;
+				MARKETING_VERSION = 1.8.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Rank-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b259db02-3e52-444f-9cd0-c096a549d989";
@@ -1802,7 +1804,7 @@
 				INFOPLIST_FILE = "Rank-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.8.4;
+				MARKETING_VERSION = 1.8.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Rank-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b259db02-3e52-444f-9cd0-c096a549d989";
