@@ -54,7 +54,7 @@ struct Provider: TimelineProvider {
                 // convert firebase data to dictionary
                 let jsonDictionary = data.compactMap({ ($0.value as? AnyObject) })
 
-                print(jsonDictionary)
+//                print(jsonDictionary)
                 // data jsonalize
                 let jsonData = try JSONSerialization.data(withJSONObject: jsonDictionary, options: [])
                 // data map to model

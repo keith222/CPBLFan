@@ -16,7 +16,7 @@ struct TodayGameMediumView : View {
     
     var body: some View {
         ZStack(alignment: .leading) {
-            (colorScheme == .dark) ? Color.darkBlue : Color.lightBlue
+            (colorScheme == .dark) ? Color.lightBlue : Color.darkBlue
             
             VStack(alignment: .center, spacing: entry.games.count < 3 ? 15 : 5) {
                 Text("today_game".localized())

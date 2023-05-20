@@ -94,7 +94,7 @@ struct GameView : View {
             }
             .frame(maxWidth: .infinity)
             .padding(5)
-            .background(.white.opacity(0.1))
+            .background(.white.opacity(0.2))
             .clipShape(RoundedRectangle(cornerRadius:10))
         }
     }

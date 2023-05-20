@@ -27,7 +27,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.setUp()
         self.bindViewModel()
     }
@@ -38,6 +37,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         self.seasonTableView.sectionHeaderHeight = 30
         self.seasonTableView.isHidden = true
         self.seasonTableView.tableFooterView = UIView()
+        
+        if #available(iOS 15, *) {
+            self.seasonTableView.sectionHeaderTopPadding = 0
+        }
         
         self.alertLabel.isHidden = true
         
@@ -82,13 +85,13 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         var currentSize: CGSize = self.preferredContentSize
         switch activeDisplayMode {
         case .expanded:
-            currentSize.height = 293
+            currentSize.height = 345
             self.preferredContentSize = currentSize
         case .compact:
             currentSize.height = 115
             self.preferredContentSize = maxSize
         default:
-            currentSize.height = 293
+            currentSize.height = 345
             self.preferredContentSize = currentSize
         }
     }
