@@ -8,7 +8,7 @@
 
 import UIKit
 import NotificationCenter
-import Firebase
+import FirebaseCore
 
 class TodayViewController: UIViewController, NCWidgetProviding {
     

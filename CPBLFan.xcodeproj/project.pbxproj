@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2001451150CD41827D674337 /* Pods_CPBLFan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4CA9F1CA718AD299F1D9A3 /* Pods_CPBLFan.framework */; };
-		2D28F559D092FFB37E427E19 /* Pods_Schedule_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3ED3908743194B4BD5FF990 /* Pods_Schedule_Widget.framework */; };
+		10345AC2EEA31A9225DC968B /* Pods_CPBLFanWidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9910310B9A606ED5E7CC28 /* Pods_CPBLFanWidgetExtension.framework */; };
 		53006D9525FF890D0079EAFB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53006D9725FF890D0079EAFB /* InfoPlist.strings */; };
 		53006D9F25FF89880079EAFB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53006DA125FF89880079EAFB /* InfoPlist.strings */; };
 		53006DAD25FFA3B50079EAFB /* String+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530C8CA325FE122A00A0D919 /* String+Addition.swift */; };
@@ -33,6 +32,17 @@
 		532CBB9623F94915002EE0D6 /* GameHeaderCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532CBB9323F84EA4002EE0D6 /* GameHeaderCellViewModel.swift */; };
 		532CBB9723F94A3D002EE0D6 /* IdentifierHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F77B23E5F9F900D670EF /* IdentifierHelper.swift */; };
 		532CBB9823F94A3D002EE0D6 /* IdentifierHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F77B23E5F9F900D670EF /* IdentifierHelper.swift */; };
+		533338072B92193F00511D00 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2DA1E0D66AB0012FFFB /* APIService.swift */; };
+		533338082B921A2500511D00 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 530976FB1E69AD0700411F46 /* GoogleService-Info.plist */; };
+		533338102B92304100511D00 /* SeasonRankWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9BF412B8F46FA0011D6B7 /* SeasonRankWidget.swift */; };
+		533338112B92304100511D00 /* SeasonRankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5333380C2B92216100511D00 /* SeasonRankView.swift */; };
+		533338122B92304100511D00 /* SeasonRankLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5333380A2B92201E00511D00 /* SeasonRankLargeView.swift */; };
+		533338132B92304100511D00 /* CPBLFanWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9BF3F2B8F46FA0011D6B7 /* CPBLFanWidgetBundle.swift */; };
+		533338152B92325400511D00 /* SeasonRankProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533338142B92325400511D00 /* SeasonRankProvider.swift */; };
+		533338172B92326300511D00 /* SeasonRankEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533338162B92326300511D00 /* SeasonRankEntry.swift */; };
+		5333381A2B92350500511D00 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538F75EA1E20BACE001671EE /* Rank.swift */; };
+		5333381C2B9237D000511D00 /* RankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5333381B2B9237D000511D00 /* RankView.swift */; };
+		5333381E2B92380B00511D00 /* SeasonRankSmallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5333381D2B92380B00511D00 /* SeasonRankSmallView.swift */; };
 		5334C83325FFD58A00A08AC3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53510986246B020D0030006B /* Localizable.strings */; };
 		5334C83925FFD58B00A08AC3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53510986246B020D0030006B /* Localizable.strings */; };
 		53359AAC1E27ADA500C29687 /* StatsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53359AAB1E27ADA500C29687 /* StatsListViewController.swift */; };
@@ -48,7 +58,7 @@
 		5347E65F27DE223700940046 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 530BD3BC27DA294F00B487E2 /* SwiftUI.framework */; };
 		5347E66227DE223700940046 /* TodayGameWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347E66127DE223700940046 /* TodayGameWidget.swift */; };
 		5347E66427DE223800940046 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5347E66327DE223800940046 /* Assets.xcassets */; };
-		5347E66827DE223800940046 /* TodayGameWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5347E65D27DE223600940046 /* TodayGameWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5347E66827DE223800940046 /* CPBLFanWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5347E65D27DE223600940046 /* CPBLFanWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5347E66C27DE22B500940046 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536238041E44CAE20091DA9C /* Game.swift */; };
 		5347E66D27DE22B800940046 /* Color+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536B748327DDEA3700A49A81 /* Color+Addition.swift */; };
 		5347E66E27DE22BD00940046 /* String+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530C8CA325FE122A00A0D919 /* String+Addition.swift */; };
@@ -75,7 +85,6 @@
 		536B60711E62A92D0027C796 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536B60701E62A92D0027C796 /* TodayViewController.swift */; };
 		536B60741E62A92D0027C796 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 536B60721E62A92D0027C796 /* MainInterface.storyboard */; };
 		536B60781E62A92D0027C796 /* Schedule-Widget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 536B606D1E62A92C0027C796 /* Schedule-Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		536B607C1E62B53A0027C796 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2DA1E0D66AB0012FFFB /* APIService.swift */; };
 		536B607D1E62B53A0027C796 /* TableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2E61E0D920D0012FFFB /* TableViewHelper.swift */; };
 		536B607E1E62B5420027C796 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536238021E44CAA20091DA9C /* GameViewModel.swift */; };
 		536B60811E62B5740027C796 /* TodayGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536B607F1E62B5740027C796 /* TodayGameCell.swift */; };
@@ -84,6 +93,20 @@
 		536B60841E62C8E40027C796 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536238041E44CAE20091DA9C /* Game.swift */; };
 		536B60861E62DEC10027C796 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53CBA2AD1E0D5F5F0012FFFB /* Assets.xcassets */; };
 		536B748427DDEA3700A49A81 /* Color+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536B748327DDEA3700A49A81 /* Color+Addition.swift */; };
+		5373B8FA2B92F95200FCF386 /* SeasonRankIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5373B8F92B92F95200FCF386 /* SeasonRankIntent.swift */; };
+		5373B9142B942D7000FCF386 /* View+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5373B9122B94280D00FCF386 /* View+Addition.swift */; };
+		5373B9172B94456000FCF386 /* SeasonRankRectangularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5373B9152B94448B00FCF386 /* SeasonRankRectangularView.swift */; };
+		5373B9192B9448EF00FCF386 /* SeasonRankInlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5373B9182B9448EF00FCF386 /* SeasonRankInlineView.swift */; };
+		5373B91B2B960E7000FCF386 /* SeasonRankCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5373B91A2B960E7000FCF386 /* SeasonRankCircularView.swift */; };
+		5373B91D2B97316900FCF386 /* RankHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5373B91C2B97316900FCF386 /* RankHeaderView.swift */; };
+		5373B91F2B974E6A00FCF386 /* SeasonSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5373B91E2B974E6A00FCF386 /* SeasonSelectionView.swift */; };
+		5373B9222B98B3F900FCF386 /* TeamGameProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5373B9212B98B3F900FCF386 /* TeamGameProvider.swift */; };
+		5373B9242B98B40A00FCF386 /* TeamGameWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5373B9232B98B40A00FCF386 /* TeamGameWidget.swift */; };
+		5373B9262B98B70000FCF386 /* TeamGameEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5373B9252B98B70000FCF386 /* TeamGameEntry.swift */; };
+		5373B9282B98B98300FCF386 /* TeamGameSmallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5373B9272B98B98300FCF386 /* TeamGameSmallView.swift */; };
+		5373B92A2B98B99800FCF386 /* TeamGameIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5373B9292B98B99800FCF386 /* TeamGameIntent.swift */; };
+		5373B92C2B98BB5500FCF386 /* TeamGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5373B92B2B98BB5500FCF386 /* TeamGameView.swift */; };
+		5373B92E2B98BDE300FCF386 /* TeamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5373B92D2B98BDE300FCF386 /* TeamEntity.swift */; };
 		5374A3AB26060A6900BD2DEC /* UIViewController+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374A3AA26060A6900BD2DEC /* UIViewController+Addition.swift */; };
 		53788A211E10070F00C3F04B /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53788A201E10070F00C3F04B /* News.swift */; };
 		53792F42246C69DF001E9416 /* WidgetHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53792F44246C69DF001E9416 /* WidgetHeaderCell.xib */; };
@@ -103,9 +126,9 @@
 		5386F78D23E72B3800D670EF /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5386F78C23E72B3800D670EF /* WebKit.framework */; };
 		538F75EB1E20BACE001671EE /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538F75EA1E20BACE001671EE /* Rank.swift */; };
 		538F75ED1E20BBBF001671EE /* RankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538F75EC1E20BBBF001671EE /* RankViewModel.swift */; };
-		53A3877027E1051C00FCA6BB /* TodayGameMediumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A3876F27E1051C00FCA6BB /* TodayGameMediumView.swift */; };
+		53A3877027E1051C00FCA6BB /* TodayGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A3876F27E1051C00FCA6BB /* TodayGameView.swift */; };
 		53A3877227E1053000FCA6BB /* TodayGameEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A3877127E1053000FCA6BB /* TodayGameEntry.swift */; };
-		53A3877427E1053D00FCA6BB /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A3877327E1053D00FCA6BB /* Provider.swift */; };
+		53A3877427E1053D00FCA6BB /* GameProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A3877327E1053D00FCA6BB /* GameProvider.swift */; };
 		53A3877627E1062000FCA6BB /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A3877527E1062000FCA6BB /* GameView.swift */; };
 		53A6FE2F1E13F72700B68243 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A6FE2D1E13F72700B68243 /* VideoCell.swift */; };
 		53A6FE301E13F72700B68243 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53A6FE2E1E13F72700B68243 /* VideoCell.xib */; };
@@ -135,7 +158,6 @@
 		53CE89CE1E61532E00C528BC /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CE89CD1E61532E00C528BC /* TodayViewController.swift */; };
 		53CE89D11E61532E00C528BC /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CE89CF1E61532E00C528BC /* MainInterface.storyboard */; };
 		53CE89D51E61532E00C528BC /* Rank-Widget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 53CE89C91E61532E00C528BC /* Rank-Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		53CE89DB1E6155B600C528BC /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2DA1E0D66AB0012FFFB /* APIService.swift */; };
 		53CE89DC1E6155B600C528BC /* TableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2E61E0D920D0012FFFB /* TableViewHelper.swift */; };
 		53CE89DD1E6155F000C528BC /* RankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538F75EC1E20BBBF001671EE /* RankViewModel.swift */; };
 		53CE89E01E615C4D00C528BC /* UIImage+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5309A2001E227A8600FB0037 /* UIImage+Addition.swift */; };
@@ -145,8 +167,9 @@
 		53CE89ED1E61653500C528BC /* WidgetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53CE89EC1E61653500C528BC /* WidgetCell.xib */; };
 		53CE89EF1E61716500C528BC /* WidgetHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CE89EE1E61716500C528BC /* WidgetHeaderCell.swift */; };
 		53ED2CE027DF9C0E00EFFE32 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 530976FB1E69AD0700411F46 /* GoogleService-Info.plist */; };
-		B81C1A10CE52F1C9E9F7306C /* Pods_Rank_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA890A7BEA51D59749E98AFD /* Pods_Rank_Widget.framework */; };
-		C415B333E62720A309E9F8FA /* Pods_TodayGameWidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B98F17255A951CA3B96D16BF /* Pods_TodayGameWidgetExtension.framework */; };
+		AF29653B0720AB8C6F9BD6DD /* Pods_CPBLFan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959AAB9621371077842B2F5E /* Pods_CPBLFan.framework */; };
+		C063BBD869858BA69EE9F53E /* Pods_Schedule_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F77D509AC2F5F3A5ADBCAB7 /* Pods_Schedule_Widget.framework */; };
+		DB780DE59667FCE3BCCFDFB3 /* Pods_Rank_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 532337C212A2538E6AB68898 /* Pods_Rank_Widget.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -194,8 +217,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				5347E66827DE223800940046 /* CPBLFanWidgetExtension.appex in Embed Foundation Extensions */,
 				53CE89D51E61532E00C528BC /* Rank-Widget.appex in Embed Foundation Extensions */,
-				5347E66827DE223800940046 /* TodayGameWidgetExtension.appex in Embed Foundation Extensions */,
 				536B60781E62A92D0027C796 /* Schedule-Widget.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
@@ -204,8 +227,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		26F0D973EC524C31B4C4023E /* Pods-TodayGameWidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayGameWidgetExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodayGameWidgetExtension/Pods-TodayGameWidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
-		33A63E445BD3C441C933A21C /* Pods-CPBLFan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPBLFan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CPBLFan/Pods-CPBLFan.debug.xcconfig"; sourceTree = "<group>"; };
+		023772BC4E6C11F1EA9643EA /* Pods-CPBLFan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPBLFan.debug.xcconfig"; path = "Target Support Files/Pods-CPBLFan/Pods-CPBLFan.debug.xcconfig"; sourceTree = "<group>"; };
+		0A776F770F2E23FFF41259B0 /* Pods-Schedule-Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schedule-Widget.release.xcconfig"; path = "Target Support Files/Pods-Schedule-Widget/Pods-Schedule-Widget.release.xcconfig"; sourceTree = "<group>"; };
+		0DC6119172D9107ABB850BDB /* Pods-CPBLFan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPBLFan.release.xcconfig"; path = "Target Support Files/Pods-CPBLFan/Pods-CPBLFan.release.xcconfig"; sourceTree = "<group>"; };
+		36957DCAD7C5571F910714C2 /* Pods-TodayGameWidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayGameWidgetExtension.debug.xcconfig"; path = "Target Support Files/Pods-TodayGameWidgetExtension/Pods-TodayGameWidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		3F77D509AC2F5F3A5ADBCAB7 /* Pods_Schedule_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Schedule_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		48068A929240C3E0415DBAC6 /* Pods-CPBLFanWidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPBLFanWidgetExtension.debug.xcconfig"; path = "Target Support Files/Pods-CPBLFanWidgetExtension/Pods-CPBLFanWidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		53006D9D25FF89110079EAFB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		53006D9E25FF896F0079EAFB /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		53006DA025FF89880079EAFB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -241,9 +268,16 @@
 		532165B6281E6E1300A07717 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		532165BB281E6E5700A07717 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		532165BD281E6F8F00A07717 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		532337C212A2538E6AB68898 /* Pods_Rank_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rank_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		532CBB8E23F7EA46002EE0D6 /* GameScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameScheduleViewModel.swift; path = ViewModel/GameScheduleViewModel.swift; sourceTree = "<group>"; };
 		532CBB9123F84991002EE0D6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = View/ViewController/BaseViewController.swift; sourceTree = "<group>"; };
 		532CBB9323F84EA4002EE0D6 /* GameHeaderCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameHeaderCellViewModel.swift; path = CPBLFan/View/ViewController/GameHeaderCellViewModel.swift; sourceTree = SOURCE_ROOT; };
+		5333380A2B92201E00511D00 /* SeasonRankLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonRankLargeView.swift; sourceTree = "<group>"; };
+		5333380C2B92216100511D00 /* SeasonRankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonRankView.swift; sourceTree = "<group>"; };
+		533338142B92325400511D00 /* SeasonRankProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonRankProvider.swift; sourceTree = "<group>"; };
+		533338162B92326300511D00 /* SeasonRankEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonRankEntry.swift; sourceTree = "<group>"; };
+		5333381B2B9237D000511D00 /* RankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankView.swift; sourceTree = "<group>"; };
+		5333381D2B92380B00511D00 /* SeasonRankSmallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonRankSmallView.swift; sourceTree = "<group>"; };
 		53359AAB1E27ADA500C29687 /* StatsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatsListViewController.swift; path = View/ViewController/StatsListViewController.swift; sourceTree = "<group>"; };
 		53359AAD1E27B18B00C29687 /* StatsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatsList.swift; path = Model/StatsList.swift; sourceTree = "<group>"; };
 		53359AAF1E27B1EA00C29687 /* StatsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatsListViewModel.swift; path = ViewModel/StatsListViewModel.swift; sourceTree = "<group>"; };
@@ -252,7 +286,7 @@
 		5336D25E1E437A0400CAF66A /* GameHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameHeaderCell.swift; path = View/GameHeaderCell.swift; sourceTree = "<group>"; };
 		5336D2601E437A2700CAF66A /* GameHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GameHeaderCell.xib; path = View/GameHeaderCell.xib; sourceTree = "<group>"; };
 		533F89EA2208161B0000F440 /* DateSelectCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateSelectCollectionViewController.swift; path = View/ViewController/DateSelectCollectionViewController.swift; sourceTree = "<group>"; };
-		5347E65D27DE223600940046 /* TodayGameWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayGameWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5347E65D27DE223600940046 /* CPBLFanWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CPBLFanWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		5347E66127DE223700940046 /* TodayGameWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayGameWidget.swift; sourceTree = "<group>"; };
 		5347E66327DE223800940046 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5347E66527DE223800940046 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -279,6 +313,20 @@
 		536B60801E62B5740027C796 /* TodayGameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TodayGameCell.xib; sourceTree = "<group>"; };
 		536B60871E6334DB0027C796 /* CPBLFan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CPBLFan.entitlements; sourceTree = "<group>"; };
 		536B748327DDEA3700A49A81 /* Color+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Color+Addition.swift"; path = "Extension/Color+Addition.swift"; sourceTree = "<group>"; };
+		5373B8F92B92F95200FCF386 /* SeasonRankIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonRankIntent.swift; sourceTree = "<group>"; };
+		5373B9122B94280D00FCF386 /* View+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Addition.swift"; sourceTree = "<group>"; };
+		5373B9152B94448B00FCF386 /* SeasonRankRectangularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonRankRectangularView.swift; sourceTree = "<group>"; };
+		5373B9182B9448EF00FCF386 /* SeasonRankInlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonRankInlineView.swift; sourceTree = "<group>"; };
+		5373B91A2B960E7000FCF386 /* SeasonRankCircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonRankCircularView.swift; sourceTree = "<group>"; };
+		5373B91C2B97316900FCF386 /* RankHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankHeaderView.swift; sourceTree = "<group>"; };
+		5373B91E2B974E6A00FCF386 /* SeasonSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonSelectionView.swift; sourceTree = "<group>"; };
+		5373B9212B98B3F900FCF386 /* TeamGameProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamGameProvider.swift; sourceTree = "<group>"; };
+		5373B9232B98B40A00FCF386 /* TeamGameWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamGameWidget.swift; sourceTree = "<group>"; };
+		5373B9252B98B70000FCF386 /* TeamGameEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamGameEntry.swift; sourceTree = "<group>"; };
+		5373B9272B98B98300FCF386 /* TeamGameSmallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamGameSmallView.swift; sourceTree = "<group>"; };
+		5373B9292B98B99800FCF386 /* TeamGameIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamGameIntent.swift; sourceTree = "<group>"; };
+		5373B92B2B98BB5500FCF386 /* TeamGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamGameView.swift; sourceTree = "<group>"; };
+		5373B92D2B98BDE300FCF386 /* TeamEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamEntity.swift; sourceTree = "<group>"; };
 		5374A3AA26060A6900BD2DEC /* UIViewController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Addition.swift"; sourceTree = "<group>"; };
 		53788A201E10070F00C3F04B /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = News.swift; path = Model/News.swift; sourceTree = "<group>"; };
 		53792F43246C69DF001E9416 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WidgetHeaderCell.xib; sourceTree = "<group>"; };
@@ -299,9 +347,9 @@
 		5389784E269987690007D3DA /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Schedule.strings"; sourceTree = "<group>"; };
 		538F75EA1E20BACE001671EE /* Rank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Rank.swift; path = Model/Rank.swift; sourceTree = "<group>"; };
 		538F75EC1E20BBBF001671EE /* RankViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RankViewModel.swift; path = ViewModel/RankViewModel.swift; sourceTree = "<group>"; };
-		53A3876F27E1051C00FCA6BB /* TodayGameMediumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayGameMediumView.swift; sourceTree = "<group>"; };
+		53A3876F27E1051C00FCA6BB /* TodayGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayGameView.swift; sourceTree = "<group>"; };
 		53A3877127E1053000FCA6BB /* TodayGameEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayGameEntry.swift; sourceTree = "<group>"; };
-		53A3877327E1053D00FCA6BB /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		53A3877327E1053D00FCA6BB /* GameProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProvider.swift; sourceTree = "<group>"; };
 		53A3877527E1062000FCA6BB /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		53A6FE2D1E13F72700B68243 /* VideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoCell.swift; path = View/VideoCell.swift; sourceTree = "<group>"; };
 		53A6FE2E1E13F72700B68243 /* VideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VideoCell.xib; path = View/VideoCell.xib; sourceTree = "<group>"; };
@@ -310,6 +358,9 @@
 		53B396E41E1D37100032D0DA /* UIBarButtonItem+Addition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIBarButtonItem+Addition.swift"; path = "Extension/UIBarButtonItem+Addition.swift"; sourceTree = "<group>"; };
 		53B9AD8323EFD5E0004A4E29 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayerViewModel.swift; path = ViewModel/PlayerViewModel.swift; sourceTree = "<group>"; };
 		53B9AD8523EFDB66004A4E29 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Player.swift; path = Model/Player.swift; sourceTree = "<group>"; };
+		53C9BF3F2B8F46FA0011D6B7 /* CPBLFanWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPBLFanWidgetBundle.swift; sourceTree = "<group>"; };
+		53C9BF412B8F46FA0011D6B7 /* SeasonRankWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonRankWidget.swift; sourceTree = "<group>"; };
+		53C9BF4D2B90D6E20011D6B7 /* FirebaseDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53CBA2A11E0D5F5E0012FFFB /* CPBLFan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPBLFan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53CBA2A41E0D5F5F0012FFFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53CBA2AD1E0D5F5F0012FFFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -334,16 +385,16 @@
 		53CE89EA1E6164F200C528BC /* WidgetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetCell.swift; sourceTree = "<group>"; };
 		53CE89EC1E61653500C528BC /* WidgetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WidgetCell.xib; sourceTree = "<group>"; };
 		53CE89EE1E61716500C528BC /* WidgetHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetHeaderCell.swift; sourceTree = "<group>"; };
-		8CB900F5DEFEBAA58E8EBD95 /* Pods-Schedule-Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schedule-Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Schedule-Widget/Pods-Schedule-Widget.debug.xcconfig"; sourceTree = "<group>"; };
-		943B49B7EBD897BE0277A819 /* Pods-Schedule-Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schedule-Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Schedule-Widget/Pods-Schedule-Widget.release.xcconfig"; sourceTree = "<group>"; };
-		B97B8B3BD2182D65A2A4F0CC /* Pods-Rank-Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rank-Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rank-Widget/Pods-Rank-Widget.debug.xcconfig"; sourceTree = "<group>"; };
-		B98F17255A951CA3B96D16BF /* Pods_TodayGameWidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayGameWidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB6E4D973F11C15A80172EAE /* Pods-Rank-Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rank-Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rank-Widget/Pods-Rank-Widget.release.xcconfig"; sourceTree = "<group>"; };
-		E3ED3908743194B4BD5FF990 /* Pods_Schedule_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Schedule_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED54CC14C0CC754B2E8A8546 /* Pods-TodayGameWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayGameWidgetExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodayGameWidgetExtension/Pods-TodayGameWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
-		F3FC4FF9ECC545551F027CFE /* Pods-CPBLFan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPBLFan.release.xcconfig"; path = "Pods/Target Support Files/Pods-CPBLFan/Pods-CPBLFan.release.xcconfig"; sourceTree = "<group>"; };
-		FA890A7BEA51D59749E98AFD /* Pods_Rank_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rank_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FE4CA9F1CA718AD299F1D9A3 /* Pods_CPBLFan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPBLFan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		64AC14774AF5DD5468A57B80 /* Pods-SeasonRankWidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeasonRankWidgetExtension.debug.xcconfig"; path = "Target Support Files/Pods-SeasonRankWidgetExtension/Pods-SeasonRankWidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		692C7B50B62250FE104C02CC /* Pods-SeasonRankWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeasonRankWidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-SeasonRankWidgetExtension/Pods-SeasonRankWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
+		838638BE8189285CB3A3DE3D /* Pods-Rank-Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rank-Widget.debug.xcconfig"; path = "Target Support Files/Pods-Rank-Widget/Pods-Rank-Widget.debug.xcconfig"; sourceTree = "<group>"; };
+		959AAB9621371077842B2F5E /* Pods_CPBLFan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPBLFan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C25A16EB1EF4FFD5065E6927 /* Pods-TodayGameWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayGameWidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-TodayGameWidgetExtension/Pods-TodayGameWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
+		C6246BC9549AD4EE7DF1CF7E /* Pods-Rank-Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rank-Widget.release.xcconfig"; path = "Target Support Files/Pods-Rank-Widget/Pods-Rank-Widget.release.xcconfig"; sourceTree = "<group>"; };
+		CF711CCC39AFFD7F94D17D40 /* Pods-Schedule-Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schedule-Widget.debug.xcconfig"; path = "Target Support Files/Pods-Schedule-Widget/Pods-Schedule-Widget.debug.xcconfig"; sourceTree = "<group>"; };
+		D705E5438F29B9A616621D03 /* Pods-CPBLFanWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPBLFanWidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-CPBLFanWidgetExtension/Pods-CPBLFanWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
+		F141B8808096AF8B49407C36 /* Pods_SeasonRankWidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeasonRankWidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD9910310B9A606ED5E7CC28 /* Pods_CPBLFanWidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPBLFanWidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -351,9 +402,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10345AC2EEA31A9225DC968B /* Pods_CPBLFanWidgetExtension.framework in Frameworks */,
 				5347E65F27DE223700940046 /* SwiftUI.framework in Frameworks */,
 				5347E65E27DE223700940046 /* WidgetKit.framework in Frameworks */,
-				C415B333E62720A309E9F8FA /* Pods_TodayGameWidgetExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,7 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				536B606E1E62A92D0027C796 /* NotificationCenter.framework in Frameworks */,
-				2D28F559D092FFB37E427E19 /* Pods_Schedule_Widget.framework in Frameworks */,
+				C063BBD869858BA69EE9F53E /* Pods_Schedule_Widget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,8 +421,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF29653B0720AB8C6F9BD6DD /* Pods_CPBLFan.framework in Frameworks */,
 				5386F78D23E72B3800D670EF /* WebKit.framework in Frameworks */,
-				2001451150CD41827D674337 /* Pods_CPBLFan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,7 +445,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53CE89CB1E61532E00C528BC /* NotificationCenter.framework in Frameworks */,
-				B81C1A10CE52F1C9E9F7306C /* Pods_Rank_Widget.framework in Frameworks */,
+				DB780DE59667FCE3BCCFDFB3 /* Pods_Rank_Widget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,18 +466,49 @@
 			path = CellViewModel;
 			sourceTree = "<group>";
 		};
-		5347E66027DE223700940046 /* TodayGameWidget */ = {
+		5333380E2B92301A00511D00 /* TodayGame */ = {
 			isa = PBXGroup;
 			children = (
-				5347E66127DE223700940046 /* TodayGameWidget.swift */,
-				5347E66327DE223800940046 /* Assets.xcassets */,
-				5347E66527DE223800940046 /* Info.plist */,
-				53A3876F27E1051C00FCA6BB /* TodayGameMediumView.swift */,
-				53A3877127E1053000FCA6BB /* TodayGameEntry.swift */,
-				53A3877327E1053D00FCA6BB /* Provider.swift */,
+				53A3877327E1053D00FCA6BB /* GameProvider.swift */,
 				53A3877527E1062000FCA6BB /* GameView.swift */,
+				53A3877127E1053000FCA6BB /* TodayGameEntry.swift */,
+				53A3876F27E1051C00FCA6BB /* TodayGameView.swift */,
+				5347E66127DE223700940046 /* TodayGameWidget.swift */,
 			);
-			path = TodayGameWidget;
+			path = TodayGame;
+			sourceTree = "<group>";
+		};
+		5333380F2B92302200511D00 /* SeasonRank */ = {
+			isa = PBXGroup;
+			children = (
+				5333381B2B9237D000511D00 /* RankView.swift */,
+				533338162B92326300511D00 /* SeasonRankEntry.swift */,
+				5373B9182B9448EF00FCF386 /* SeasonRankInlineView.swift */,
+				5373B8F92B92F95200FCF386 /* SeasonRankIntent.swift */,
+				5333380A2B92201E00511D00 /* SeasonRankLargeView.swift */,
+				533338142B92325400511D00 /* SeasonRankProvider.swift */,
+				5373B9152B94448B00FCF386 /* SeasonRankRectangularView.swift */,
+				5333381D2B92380B00511D00 /* SeasonRankSmallView.swift */,
+				5333380C2B92216100511D00 /* SeasonRankView.swift */,
+				53C9BF412B8F46FA0011D6B7 /* SeasonRankWidget.swift */,
+				5373B91A2B960E7000FCF386 /* SeasonRankCircularView.swift */,
+				5373B91C2B97316900FCF386 /* RankHeaderView.swift */,
+				5373B91E2B974E6A00FCF386 /* SeasonSelectionView.swift */,
+			);
+			path = SeasonRank;
+			sourceTree = "<group>";
+		};
+		5347E66027DE223700940046 /* CPBLFanWidget */ = {
+			isa = PBXGroup;
+			children = (
+				5373B9202B98B3E400FCF386 /* TeamGame */,
+				5333380F2B92302200511D00 /* SeasonRank */,
+				5333380E2B92301A00511D00 /* TodayGame */,
+				5347E66327DE223800940046 /* Assets.xcassets */,
+				53C9BF3F2B8F46FA0011D6B7 /* CPBLFanWidgetBundle.swift */,
+				5347E66527DE223800940046 /* Info.plist */,
+			);
+			path = CPBLFanWidget;
 			sourceTree = "<group>";
 		};
 		536B606F1E62A92D0027C796 /* Schedule-Widget */ = {
@@ -442,17 +524,32 @@
 			path = "Schedule-Widget";
 			sourceTree = "<group>";
 		};
+		5373B9202B98B3E400FCF386 /* TeamGame */ = {
+			isa = PBXGroup;
+			children = (
+				5373B9212B98B3F900FCF386 /* TeamGameProvider.swift */,
+				5373B9232B98B40A00FCF386 /* TeamGameWidget.swift */,
+				5373B9252B98B70000FCF386 /* TeamGameEntry.swift */,
+				5373B9272B98B98300FCF386 /* TeamGameSmallView.swift */,
+				5373B9292B98B99800FCF386 /* TeamGameIntent.swift */,
+				5373B92B2B98BB5500FCF386 /* TeamGameView.swift */,
+				5373B92D2B98BDE300FCF386 /* TeamEntity.swift */,
+			);
+			path = TeamGame;
+			sourceTree = "<group>";
+		};
 		53B396E31E1D36C20032D0DA /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				536B748327DDEA3700A49A81 /* Color+Addition.swift */,
 				532165AE281E6BE200A07717 /* Int+Addition.swift */,
+				530C8CA325FE122A00A0D919 /* String+Addition.swift */,
 				53B396E41E1D37100032D0DA /* UIBarButtonItem+Addition.swift */,
 				5353FB8E1E23D6C000BDE259 /* UIColor+Addition.swift */,
 				5309A2001E227A8600FB0037 /* UIImage+Addition.swift */,
 				53645AA82413A94700433BA7 /* UITableView+Addition.swift */,
-				530C8CA325FE122A00A0D919 /* String+Addition.swift */,
 				5374A3AA26060A6900BD2DEC /* UIViewController+Addition.swift */,
-				536B748327DDEA3700A49A81 /* Color+Addition.swift */,
+				5373B9122B94280D00FCF386 /* View+Addition.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -479,10 +576,10 @@
 				53CBA2C51E0D5F5F0012FFFB /* CPBLFanUITests */,
 				53CE89CC1E61532E00C528BC /* Rank-Widget */,
 				536B606F1E62A92D0027C796 /* Schedule-Widget */,
-				5347E66027DE223700940046 /* TodayGameWidget */,
+				5347E66027DE223700940046 /* CPBLFanWidget */,
 				53CBA2A21E0D5F5F0012FFFB /* Products */,
-				97A7D9A1F9BF4BA2F55CB60C /* Pods */,
 				66FD5EA4EBFE2AD74F66A754 /* Frameworks */,
+				E048DAFC2B9C4945B8DCBA33 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -492,9 +589,9 @@
 				53CBA2A11E0D5F5E0012FFFB /* CPBLFan.app */,
 				53CBA2B71E0D5F5F0012FFFB /* CPBLFanTests.xctest */,
 				53CBA2C21E0D5F5F0012FFFB /* CPBLFanUITests.xctest */,
+				5347E65D27DE223600940046 /* CPBLFanWidgetExtension.appex */,
 				53CE89C91E61532E00C528BC /* Rank-Widget.appex */,
 				536B606D1E62A92C0027C796 /* Schedule-Widget.appex */,
-				5347E65D27DE223600940046 /* TodayGameWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -502,7 +599,6 @@
 		53CBA2A31E0D5F5F0012FFFB /* CPBLFan */ = {
 			isa = PBXGroup;
 			children = (
-				532165B6281E6E1300A07717 /* Info.plist */,
 				53B396E31E1D36C20032D0DA /* Extension */,
 				53CBA2D61E0D66660012FFFB /* Helpers */,
 				53CBA2D71E0D66770012FFFB /* Model */,
@@ -514,9 +610,10 @@
 				53B396E21E1C04390032D0DA /* CPBLFan-Bridging-Header.h */,
 				536B60871E6334DB0027C796 /* CPBLFan.entitlements */,
 				530976FB1E69AD0700411F46 /* GoogleService-Info.plist */,
+				532165B6281E6E1300A07717 /* Info.plist */,
+				532165BC281E6E5700A07717 /* InfoPlist.strings */,
 				5317B2B5246C1E86003A6523 /* keys.xcconfig */,
 				53510986246B020D0030006B /* Localizable.strings */,
-				532165BC281E6E5700A07717 /* InfoPlist.strings */,
 			);
 			path = CPBLFan;
 			sourceTree = "<group>";
@@ -643,41 +740,47 @@
 		66FD5EA4EBFE2AD74F66A754 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				53C9BF4D2B90D6E20011D6B7 /* FirebaseDatabase.framework */,
 				53CE89CA1E61532E00C528BC /* NotificationCenter.framework */,
+				959AAB9621371077842B2F5E /* Pods_CPBLFan.framework */,
+				FD9910310B9A606ED5E7CC28 /* Pods_CPBLFanWidgetExtension.framework */,
+				532337C212A2538E6AB68898 /* Pods_Rank_Widget.framework */,
+				3F77D509AC2F5F3A5ADBCAB7 /* Pods_Schedule_Widget.framework */,
+				F141B8808096AF8B49407C36 /* Pods_SeasonRankWidgetExtension.framework */,
+				530BD3BC27DA294F00B487E2 /* SwiftUI.framework */,
 				5386F78C23E72B3800D670EF /* WebKit.framework */,
 				530BD3BA27DA294F00B487E2 /* WidgetKit.framework */,
-				530BD3BC27DA294F00B487E2 /* SwiftUI.framework */,
-				B98F17255A951CA3B96D16BF /* Pods_TodayGameWidgetExtension.framework */,
-				FE4CA9F1CA718AD299F1D9A3 /* Pods_CPBLFan.framework */,
-				FA890A7BEA51D59749E98AFD /* Pods_Rank_Widget.framework */,
-				E3ED3908743194B4BD5FF990 /* Pods_Schedule_Widget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		97A7D9A1F9BF4BA2F55CB60C /* Pods */ = {
+		E048DAFC2B9C4945B8DCBA33 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				33A63E445BD3C441C933A21C /* Pods-CPBLFan.debug.xcconfig */,
-				F3FC4FF9ECC545551F027CFE /* Pods-CPBLFan.release.xcconfig */,
-				B97B8B3BD2182D65A2A4F0CC /* Pods-Rank-Widget.debug.xcconfig */,
-				BB6E4D973F11C15A80172EAE /* Pods-Rank-Widget.release.xcconfig */,
-				8CB900F5DEFEBAA58E8EBD95 /* Pods-Schedule-Widget.debug.xcconfig */,
-				943B49B7EBD897BE0277A819 /* Pods-Schedule-Widget.release.xcconfig */,
-				26F0D973EC524C31B4C4023E /* Pods-TodayGameWidgetExtension.debug.xcconfig */,
-				ED54CC14C0CC754B2E8A8546 /* Pods-TodayGameWidgetExtension.release.xcconfig */,
+				023772BC4E6C11F1EA9643EA /* Pods-CPBLFan.debug.xcconfig */,
+				0DC6119172D9107ABB850BDB /* Pods-CPBLFan.release.xcconfig */,
+				48068A929240C3E0415DBAC6 /* Pods-CPBLFanWidgetExtension.debug.xcconfig */,
+				D705E5438F29B9A616621D03 /* Pods-CPBLFanWidgetExtension.release.xcconfig */,
+				838638BE8189285CB3A3DE3D /* Pods-Rank-Widget.debug.xcconfig */,
+				C6246BC9549AD4EE7DF1CF7E /* Pods-Rank-Widget.release.xcconfig */,
+				CF711CCC39AFFD7F94D17D40 /* Pods-Schedule-Widget.debug.xcconfig */,
+				0A776F770F2E23FFF41259B0 /* Pods-Schedule-Widget.release.xcconfig */,
+				64AC14774AF5DD5468A57B80 /* Pods-SeasonRankWidgetExtension.debug.xcconfig */,
+				692C7B50B62250FE104C02CC /* Pods-SeasonRankWidgetExtension.release.xcconfig */,
+				36957DCAD7C5571F910714C2 /* Pods-TodayGameWidgetExtension.debug.xcconfig */,
+				C25A16EB1EF4FFD5065E6927 /* Pods-TodayGameWidgetExtension.release.xcconfig */,
 			);
-			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5347E65C27DE223600940046 /* TodayGameWidgetExtension */ = {
+		5347E65C27DE223600940046 /* CPBLFanWidgetExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5347E66B27DE223800940046 /* Build configuration list for PBXNativeTarget "TodayGameWidgetExtension" */;
+			buildConfigurationList = 5347E66B27DE223800940046 /* Build configuration list for PBXNativeTarget "CPBLFanWidgetExtension" */;
 			buildPhases = (
-				7AA9847422267A0DAE5890E5 /* [CP] Check Pods Manifest.lock */,
+				BF6C8DD4560458831809DA03 /* [CP] Check Pods Manifest.lock */,
 				5347E65927DE223600940046 /* Sources */,
 				5347E65A27DE223600940046 /* Frameworks */,
 				5347E65B27DE223600940046 /* Resources */,
@@ -686,16 +789,16 @@
 			);
 			dependencies = (
 			);
-			name = TodayGameWidgetExtension;
+			name = CPBLFanWidgetExtension;
 			productName = TodayGameWidgetExtension;
-			productReference = 5347E65D27DE223600940046 /* TodayGameWidgetExtension.appex */;
+			productReference = 5347E65D27DE223600940046 /* CPBLFanWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		536B606C1E62A92C0027C796 /* Schedule-Widget */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 536B607B1E62A92D0027C796 /* Build configuration list for PBXNativeTarget "Schedule-Widget" */;
 			buildPhases = (
-				53F7FE80F7F411C654366A2D /* [CP] Check Pods Manifest.lock */,
+				93496F7E13EEDAB89ABB3602 /* [CP] Check Pods Manifest.lock */,
 				536B60691E62A92C0027C796 /* Sources */,
 				536B606A1E62A92C0027C796 /* Frameworks */,
 				536B606B1E62A92C0027C796 /* Resources */,
@@ -713,14 +816,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53CBA2CB1E0D5F5F0012FFFB /* Build configuration list for PBXNativeTarget "CPBLFan" */;
 			buildPhases = (
-				24982F13417E05BD5FD3B7C6 /* [CP] Check Pods Manifest.lock */,
+				47B7A91DF6505AD339371530 /* [CP] Check Pods Manifest.lock */,
 				53CBA29D1E0D5F5E0012FFFB /* Sources */,
 				53CBA29E1E0D5F5E0012FFFB /* Frameworks */,
 				53CBA29F1E0D5F5E0012FFFB /* Resources */,
 				530152331E0FBABB00AE6FDE /* Embed Foundation Extensions */,
 				53B568CB1E68605800F9AE7A /* ShellScript */,
 				531C4F571F1E605A005BC3ED /* ShellScript */,
-				E94AB123C5FBF8031986A6AD /* [CP] Embed Pods Frameworks */,
+				2339FB5EA7919B7AA6878BFB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -774,7 +877,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53CE89D81E61532E00C528BC /* Build configuration list for PBXNativeTarget "Rank-Widget" */;
 			buildPhases = (
-				A92D439B20574D03C2EE9CB6 /* [CP] Check Pods Manifest.lock */,
+				C2B9B730F0E3BA923B25FD1D /* [CP] Check Pods Manifest.lock */,
 				53CE89C51E61532E00C528BC /* Sources */,
 				53CE89C61E61532E00C528BC /* Frameworks */,
 				53CE89C71E61532E00C528BC /* Resources */,
@@ -794,8 +897,9 @@
 		53CBA2991E0D5F5E0012FFFB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1420;
+				BuildIndependentTargetsInParallel = YES;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
 				ORGANIZATIONNAME = Sparkr;
 				TargetAttributes = {
 					5347E65C27DE223600940046 = {
@@ -868,7 +972,7 @@
 				53CBA2C11E0D5F5F0012FFFB /* CPBLFanUITests */,
 				53CE89C81E61532E00C528BC /* Rank-Widget */,
 				536B606C1E62A92C0027C796 /* Schedule-Widget */,
-				5347E65C27DE223600940046 /* TodayGameWidgetExtension */,
+				5347E65C27DE223600940046 /* CPBLFanWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -879,8 +983,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5347E66427DE223800940046 /* Assets.xcassets in Resources */,
-				53ED2CE027DF9C0E00EFFE32 /* GoogleService-Info.plist in Resources */,
 				5347E67027DE456900940046 /* Assets.xcassets in Resources */,
+				53ED2CE027DF9C0E00EFFE32 /* GoogleService-Info.plist in Resources */,
 				5347E66F27DE3E8600940046 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -890,9 +994,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				536B60861E62DEC10027C796 /* Assets.xcassets in Resources */,
-				5334C83925FFD58B00A08AC3 /* Localizable.strings in Resources */,
 				530976FD1E69B1CA00411F46 /* GoogleService-Info.plist in Resources */,
 				53006D9525FF890D0079EAFB /* InfoPlist.strings in Resources */,
+				5334C83925FFD58B00A08AC3 /* Localizable.strings in Resources */,
 				536B60741E62A92D0027C796 /* MainInterface.storyboard in Resources */,
 				536B60821E62B5740027C796 /* TodayGameCell.xib in Resources */,
 			);
@@ -906,12 +1010,12 @@
 				5336D25D1E4368A300CAF66A /* GameCell.xib in Resources */,
 				5336D2611E437A2700CAF66A /* GameHeaderCell.xib in Resources */,
 				530976FC1E69AD0700411F46 /* GoogleService-Info.plist in Resources */,
+				532165BA281E6E5700A07717 /* InfoPlist.strings in Resources */,
 				53CBA2B11E0D5F5F0012FFFB /* LaunchScreen.storyboard in Resources */,
 				53510984246B020D0030006B /* Localizable.strings in Resources */,
 				53CBA2AC1E0D5F5F0012FFFB /* Main.storyboard in Resources */,
 				53B9AD8B23EFFA54004A4E29 /* News.storyboard in Resources */,
 				53CBA2DF1E0D7DAC0012FFFB /* NewsCell.xib in Resources */,
-				532165BA281E6E5700A07717 /* InfoPlist.strings in Resources */,
 				53B9AD9723EFFD0B004A4E29 /* Rank.storyboard in Resources */,
 				531BA2441E1EA7EF00B83B73 /* RankCell.xib in Resources */,
 				53006DCC25FFC4140079EAFB /* RankHeaderCell.xib in Resources */,
@@ -943,8 +1047,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				53CE89E51E6160A900C528BC /* Assets.xcassets in Resources */,
-				5334C83325FFD58A00A08AC3 /* Localizable.strings in Resources */,
+				533338082B921A2500511D00 /* GoogleService-Info.plist in Resources */,
 				53006D9F25FF89880079EAFB /* InfoPlist.strings in Resources */,
+				5334C83325FFD58A00A08AC3 /* Localizable.strings in Resources */,
 				53CE89D11E61532E00C528BC /* MainInterface.storyboard in Resources */,
 				53CE89ED1E61653500C528BC /* WidgetCell.xib in Resources */,
 				53792F42246C69DF001E9416 /* WidgetHeaderCell.xib in Resources */,
@@ -954,70 +1059,71 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		24982F13417E05BD5FD3B7C6 /* [CP] Check Pods Manifest.lock */ = {
+		2339FB5EA7919B7AA6878BFB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
+				"${PODS_ROOT}/Target Support Files/Pods-CPBLFan/Pods-CPBLFan-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseABTesting/FirebaseABTesting.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseAppCheckInterop/FirebaseAppCheckInterop.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCoreExtension/FirebaseCoreExtension.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCoreInternal/FirebaseCoreInternal.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCrashlytics/FirebaseCrashlytics.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseDatabase/FirebaseDatabase.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseInAppMessaging/FirebaseInAppMessaging.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseMessaging/FirebaseMessaging.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseSessions/FirebaseSessions.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseSharedSwift/FirebaseSharedSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesSwift/Promises.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CPBLFan-checkManifestLockResult.txt",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseABTesting.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseAppCheckInterop.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreInternal.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCrashlytics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseDatabase.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInAppMessaging.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseMessaging.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseSessions.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseSharedSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Promises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CPBLFan/Pods-CPBLFan-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		531C4F571F1E605A005BC3ED /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
-		};
-		53B568CB1E68605800F9AE7A /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Replace this with the GOOGLE_APP_ID from your GoogleService-Info.plist file\nGOOGLE_APP_ID=1:4885271827:ios:d9648250693bc047UIAlertController\n";
-		};
-		53F7FE80F7F411C654366A2D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Schedule-Widget-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7AA9847422267A0DAE5890E5 /* [CP] Check Pods Manifest.lock */ = {
+		47B7A91DF6505AD339371530 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1032,85 +1138,106 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TodayGameWidgetExtension-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-CPBLFan-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A92D439B20574D03C2EE9CB6 /* [CP] Check Pods Manifest.lock */ = {
+		531C4F571F1E605A005BC3ED /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
+		53B568CB1E68605800F9AE7A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Replace this with the GOOGLE_APP_ID from your GoogleService-Info.plist file\nGOOGLE_APP_ID=1:4885271827:ios:d9648250693bc047UIAlertController\n";
+		};
+		93496F7E13EEDAB89ABB3602 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Rank-Widget-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Schedule-Widget-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E94AB123C5FBF8031986A6AD /* [CP] Embed Pods Frameworks */ = {
+		BF6C8DD4560458831809DA03 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CPBLFan/Pods-CPBLFan-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseABTesting/FirebaseABTesting.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCoreInternal/FirebaseCoreInternal.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCrashlytics/FirebaseCrashlytics.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseDatabase/FirebaseDatabase.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseInAppMessaging/FirebaseInAppMessaging.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseMessaging/FirebaseMessaging.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			inputFileListPaths = (
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseABTesting.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreDiagnostics.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreInternal.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCrashlytics.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseDatabase.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInAppMessaging.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseMessaging.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"$(DERIVED_FILE_DIR)/Pods-CPBLFanWidgetExtension-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CPBLFan/Pods-CPBLFan-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2B9B730F0E3BA923B25FD1D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Rank-Widget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1120,14 +1247,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53A3877227E1053000FCA6BB /* TodayGameEntry.swift in Sources */,
 				5347E66D27DE22B800940046 /* Color+Addition.swift in Sources */,
-				53A3877427E1053D00FCA6BB /* Provider.swift in Sources */,
-				5347E66227DE223700940046 /* TodayGameWidget.swift in Sources */,
-				53A3877027E1051C00FCA6BB /* TodayGameMediumView.swift in Sources */,
-				5347E66E27DE22BD00940046 /* String+Addition.swift in Sources */,
-				53A3877627E1062000FCA6BB /* GameView.swift in Sources */,
+				5373B92C2B98BB5500FCF386 /* TeamGameView.swift in Sources */,
+				533338132B92304100511D00 /* CPBLFanWidgetBundle.swift in Sources */,
 				5347E66C27DE22B500940046 /* Game.swift in Sources */,
+				53A3877427E1053D00FCA6BB /* GameProvider.swift in Sources */,
+				53A3877627E1062000FCA6BB /* GameView.swift in Sources */,
+				5333381A2B92350500511D00 /* Rank.swift in Sources */,
+				5373B9242B98B40A00FCF386 /* TeamGameWidget.swift in Sources */,
+				5373B92A2B98B99800FCF386 /* TeamGameIntent.swift in Sources */,
+				5373B91F2B974E6A00FCF386 /* SeasonSelectionView.swift in Sources */,
+				5333381C2B9237D000511D00 /* RankView.swift in Sources */,
+				533338172B92326300511D00 /* SeasonRankEntry.swift in Sources */,
+				5373B9192B9448EF00FCF386 /* SeasonRankInlineView.swift in Sources */,
+				5373B8FA2B92F95200FCF386 /* SeasonRankIntent.swift in Sources */,
+				5373B91B2B960E7000FCF386 /* SeasonRankCircularView.swift in Sources */,
+				5373B9262B98B70000FCF386 /* TeamGameEntry.swift in Sources */,
+				533338122B92304100511D00 /* SeasonRankLargeView.swift in Sources */,
+				5373B9282B98B98300FCF386 /* TeamGameSmallView.swift in Sources */,
+				533338152B92325400511D00 /* SeasonRankProvider.swift in Sources */,
+				5373B91D2B97316900FCF386 /* RankHeaderView.swift in Sources */,
+				5373B9172B94456000FCF386 /* SeasonRankRectangularView.swift in Sources */,
+				5333381E2B92380B00511D00 /* SeasonRankSmallView.swift in Sources */,
+				533338112B92304100511D00 /* SeasonRankView.swift in Sources */,
+				533338102B92304100511D00 /* SeasonRankWidget.swift in Sources */,
+				5347E66E27DE22BD00940046 /* String+Addition.swift in Sources */,
+				53A3877227E1053000FCA6BB /* TodayGameEntry.swift in Sources */,
+				53A3877027E1051C00FCA6BB /* TodayGameView.swift in Sources */,
+				5347E66227DE223700940046 /* TodayGameWidget.swift in Sources */,
+				5373B92E2B98BDE300FCF386 /* TeamEntity.swift in Sources */,
+				5373B9142B942D7000FCF386 /* View+Addition.swift in Sources */,
+				5373B9222B98B3F900FCF386 /* TeamGameProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1135,17 +1285,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				536B607C1E62B53A0027C796 /* APIService.swift in Sources */,
+				533338072B92193F00511D00 /* APIService.swift in Sources */,
 				536B60841E62C8E40027C796 /* Game.swift in Sources */,
 				532CBB9523F94907002EE0D6 /* GameCellViewModel.swift in Sources */,
 				532CBB9623F94915002EE0D6 /* GameHeaderCellViewModel.swift in Sources */,
 				532CBB9023F84072002EE0D6 /* GameScheduleViewModel.swift in Sources */,
 				536B607E1E62B5420027C796 /* GameViewModel.swift in Sources */,
 				532CBB9723F94A3D002EE0D6 /* IdentifierHelper.swift in Sources */,
+				53006DB325FFA3B60079EAFB /* String+Addition.swift in Sources */,
 				536B607D1E62B53A0027C796 /* TableViewHelper.swift in Sources */,
 				536B60811E62B5740027C796 /* TodayGameCell.swift in Sources */,
 				536B60711E62A92D0027C796 /* TodayViewController.swift in Sources */,
-				53006DB325FFA3B60079EAFB /* String+Addition.swift in Sources */,
 				536B60831E62B77E0027C796 /* UIImage+Addition.swift in Sources */,
 				53645AAB2413AA5600433BA7 /* UITableView+Addition.swift in Sources */,
 			);
@@ -1158,6 +1308,7 @@
 				53CBA2DB1E0D66AB0012FFFB /* APIService.swift in Sources */,
 				53CBA2A51E0D5F5F0012FFFB /* AppDelegate.swift in Sources */,
 				532CBB9223F84991002EE0D6 /* BaseViewController.swift in Sources */,
+				536B748427DDEA3700A49A81 /* Color+Addition.swift in Sources */,
 				533F89EB220816230000F440 /* DateSelectCollectionViewController.swift in Sources */,
 				536238051E44CAE20091DA9C /* Game.swift in Sources */,
 				5336D25C1E4368A300CAF66A /* GameCell.swift in Sources */,
@@ -1166,7 +1317,6 @@
 				532CBB9423F84EA4002EE0D6 /* GameHeaderCellViewModel.swift in Sources */,
 				536238011E44C5440091DA9C /* GameScheduleViewController.swift in Sources */,
 				532CBB8F23F7EA47002EE0D6 /* GameScheduleViewModel.swift in Sources */,
-				536B748427DDEA3700A49A81 /* Color+Addition.swift in Sources */,
 				537DB6541F151661008B7648 /* GameViewController.swift in Sources */,
 				536238031E44CAA20091DA9C /* GameViewModel.swift in Sources */,
 				5386F77D23E5F9FA00D670EF /* IdentifierHelper.swift in Sources */,
@@ -1194,19 +1344,19 @@
 				53359AAE1E27B18B00C29687 /* StatsList.swift in Sources */,
 				535272071E26740D00E1FFC7 /* StatsListCell.swift in Sources */,
 				5386F78923E5FA1A00D670EF /* StatsListCellViewModel.swift in Sources */,
-				5374A3AB26060A6900BD2DEC /* UIViewController+Addition.swift in Sources */,
 				53359AAC1E27ADA500C29687 /* StatsListViewController.swift in Sources */,
 				53359AB01E27B1EA00C29687 /* StatsListViewModel.swift in Sources */,
 				5353FB871E23CD4600BDE259 /* StatsViewController.swift in Sources */,
 				5354E13B1E2523B800B87E4D /* StatsViewModel.swift in Sources */,
+				530C8CA425FE122A00A0D919 /* String+Addition.swift in Sources */,
 				53CBA2E71E0D920D0012FFFB /* TableViewHelper.swift in Sources */,
 				53B396E51E1D37100032D0DA /* UIBarButtonItem+Addition.swift in Sources */,
 				5353FB8F1E23D6C000BDE259 /* UIColor+Addition.swift in Sources */,
 				5309A2011E227A8600FB0037 /* UIImage+Addition.swift in Sources */,
 				53645AA92413A94700433BA7 /* UITableView+Addition.swift in Sources */,
+				5374A3AB26060A6900BD2DEC /* UIViewController+Addition.swift in Sources */,
 				53215D191E12B3EF00A878B3 /* Video.swift in Sources */,
 				53A6FE2F1E13F72700B68243 /* VideoCell.swift in Sources */,
-				530C8CA425FE122A00A0D919 /* String+Addition.swift in Sources */,
 				5386F78A23E5FA1A00D670EF /* VideoCellViewModel.swift in Sources */,
 				53B396E11E1C02D00032D0DA /* VideoPlayerViewController.swift in Sources */,
 				5386F77823E5F97E00D670EF /* VideoPlayerViewModel.swift in Sources */,
@@ -1235,17 +1385,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53CE89DB1E6155B600C528BC /* APIService.swift in Sources */,
 				532CBB9823F94A3D002EE0D6 /* IdentifierHelper.swift in Sources */,
 				53CE89E21E615C6E00C528BC /* Rank.swift in Sources */,
 				5386F78B23E72ADA00D670EF /* RankCellViewModel.swift in Sources */,
 				53CE89DD1E6155F000C528BC /* RankViewModel.swift in Sources */,
+				53006DAD25FFA3B50079EAFB /* String+Addition.swift in Sources */,
 				53CE89DC1E6155B600C528BC /* TableViewHelper.swift in Sources */,
 				53CE89CE1E61532E00C528BC /* TodayViewController.swift in Sources */,
 				533E5948241FC71300C1ECC7 /* UIColor+Addition.swift in Sources */,
 				53CE89E01E615C4D00C528BC /* UIImage+Addition.swift in Sources */,
 				53645AAA2413AA5500433BA7 /* UITableView+Addition.swift in Sources */,
-				53006DAD25FFA3B50079EAFB /* String+Addition.swift in Sources */,
 				53CE89EB1E6164F200C528BC /* WidgetCell.swift in Sources */,
 				53CE89EF1E61716500C528BC /* WidgetHeaderCell.swift in Sources */,
 			);
@@ -1256,7 +1405,7 @@
 /* Begin PBXTargetDependency section */
 		5347E66727DE223800940046 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5347E65C27DE223600940046 /* TodayGameWidgetExtension */;
+			target = 5347E65C27DE223600940046 /* CPBLFanWidgetExtension */;
 			targetProxy = 5347E66627DE223800940046 /* PBXContainerItemProxy */;
 		};
 		536B60771E62A92D0027C796 /* PBXTargetDependency */ = {
@@ -1313,8 +1462,8 @@
 		532165BC281E6E5700A07717 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				532165BB281E6E5700A07717 /* zh-Hant */,
 				532165BD281E6F8F00A07717 /* en */,
+				532165BB281E6E5700A07717 /* zh-Hant */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1421,10 +1570,10 @@
 /* Begin XCBuildConfiguration section */
 		5347E66927DE223800940046 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 26F0D973EC524C31B4C4023E /* Pods-TodayGameWidgetExtension.debug.xcconfig */;
+			baseConfigurationReference = 48068A929240C3E0415DBAC6 /* Pods-CPBLFanWidgetExtension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBlue;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1437,15 +1586,19 @@
 				DEVELOPMENT_TEAM = 8MREJM6257;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TodayGameWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = TodayGameWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Sparkr. All rights reserved.";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.8.7;
+				INFOPLIST_FILE = CPBLFanWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CPBLFanWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Sparkr. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan.TodayGameWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1456,10 +1609,10 @@
 		};
 		5347E66A27DE223800940046 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED54CC14C0CC754B2E8A8546 /* Pods-TodayGameWidgetExtension.release.xcconfig */;
+			baseConfigurationReference = D705E5438F29B9A616621D03 /* Pods-CPBLFanWidgetExtension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBlue;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1469,18 +1622,24 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8MREJM6257;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 8MREJM6257;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TodayGameWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = TodayGameWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Sparkr. All rights reserved.";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.8.7;
+				INFOPLIST_FILE = CPBLFanWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CPBLFanWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Sparkr. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.9.0;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan.TodayGameWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "CPBLFan-Today-Game-Widget";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "CPBLFan-Widget";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1490,7 +1649,7 @@
 		};
 		536B60791E62A92D0027C796 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8CB900F5DEFEBAA58E8EBD95 /* Pods-Schedule-Widget.debug.xcconfig */;
+			baseConfigurationReference = CF711CCC39AFFD7F94D17D40 /* Pods-Schedule-Widget.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
@@ -1498,8 +1657,12 @@
 				DEVELOPMENT_TEAM = 8MREJM6257;
 				INFOPLIST_FILE = "Schedule-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.8.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Schedule-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8a276960-7ae1-4aa0-b1e4-f569745c93d8";
@@ -1511,7 +1674,7 @@
 		};
 		536B607A1E62A92D0027C796 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 943B49B7EBD897BE0277A819 /* Pods-Schedule-Widget.release.xcconfig */;
+			baseConfigurationReference = 0A776F770F2E23FFF41259B0 /* Pods-Schedule-Widget.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
@@ -1519,8 +1682,12 @@
 				DEVELOPMENT_TEAM = 8MREJM6257;
 				INFOPLIST_FILE = "Schedule-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.8.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Schedule-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8a276960-7ae1-4aa0-b1e4-f569745c93d8";
@@ -1535,6 +1702,7 @@
 			baseConfigurationReference = 5317B2B5246C1E86003A6523 /* keys.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1556,7 +1724,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1569,6 +1737,7 @@
 				DEVELOPMENT_TEAM = 8MREJM6257;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1598,6 +1767,7 @@
 			baseConfigurationReference = 5317B2B5246C1E86003A6523 /* keys.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1619,7 +1789,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1632,6 +1802,7 @@
 				DEVELOPMENT_TEAM = 8MREJM6257;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1643,7 +1814,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1651,11 +1823,12 @@
 		};
 		53CBA2CC1E0D5F5F0012FFFB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 33A63E445BD3C441C933A21C /* Pods-CPBLFan.debug.xcconfig */;
+			baseConfigurationReference = 023772BC4E6C11F1EA9643EA /* Pods-CPBLFan.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS = NO;
 				CODE_SIGN_ENTITLEMENTS = CPBLFan/CPBLFan.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1665,24 +1838,32 @@
 				DEVELOPMENT_TEAM = 8MREJM6257;
 				INFOPLIST_FILE = CPBLFan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.8.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "539e0c24-b0d2-40f0-8851-4a7d3a418cb9";
 				PROVISIONING_PROFILE_SPECIFIER = "Development-CPBLFan";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "CPBLFan/CPBLFan-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		53CBA2CD1E0D5F5F0012FFFB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F3FC4FF9ECC545551F027CFE /* Pods-CPBLFan.release.xcconfig */;
+			baseConfigurationReference = 0DC6119172D9107ABB850BDB /* Pods-CPBLFan.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS = NO;
 				CODE_SIGN_ENTITLEMENTS = CPBLFan/CPBLFan.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
@@ -1691,14 +1872,21 @@
 				DEVELOPMENT_TEAM = 8MREJM6257;
 				INFOPLIST_FILE = CPBLFan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.8.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2214cd66-8fb7-4bc8-b27e-cbe7f1bd991a";
 				PROVISIONING_PROFILE_SPECIFIER = "CPBL Fan";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "CPBLFan/CPBLFan-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1711,7 +1899,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CPBLFanTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFanTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1729,7 +1921,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CPBLFanTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFanTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1746,7 +1942,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CPBLFanUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFanUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1763,7 +1963,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CPBLFanUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFanUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1774,7 +1978,7 @@
 		};
 		53CE89D61E61532E00C528BC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B97B8B3BD2182D65A2A4F0CC /* Pods-Rank-Widget.debug.xcconfig */;
+			baseConfigurationReference = 838638BE8189285CB3A3DE3D /* Pods-Rank-Widget.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
@@ -1782,8 +1986,12 @@
 				DEVELOPMENT_TEAM = 8MREJM6257;
 				INFOPLIST_FILE = "Rank-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.8.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Rank-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b259db02-3e52-444f-9cd0-c096a549d989";
@@ -1795,7 +2003,7 @@
 		};
 		53CE89D71E61532E00C528BC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB6E4D973F11C15A80172EAE /* Pods-Rank-Widget.release.xcconfig */;
+			baseConfigurationReference = C6246BC9549AD4EE7DF1CF7E /* Pods-Rank-Widget.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
@@ -1803,8 +2011,12 @@
 				DEVELOPMENT_TEAM = 8MREJM6257;
 				INFOPLIST_FILE = "Rank-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.8.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Rank-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b259db02-3e52-444f-9cd0-c096a549d989";
@@ -1817,7 +2029,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5347E66B27DE223800940046 /* Build configuration list for PBXNativeTarget "TodayGameWidgetExtension" */ = {
+		5347E66B27DE223800940046 /* Build configuration list for PBXNativeTarget "CPBLFanWidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5347E66927DE223800940046 /* Debug */,
