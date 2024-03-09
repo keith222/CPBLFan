@@ -30,13 +30,13 @@ class WidgetCell: UITableViewCell, BindView{
     func bindViewModel(_ viewModel: Any) {
         if let rankCellViewModel = viewModel as? RankCellViewModel{
             // cell content
-            self.rankLabel.text = "\(rankCellViewModel.rank ?? 0)"
-            self.teamLogoImageView.image = UIImage.logoImage(team: rankCellViewModel.team)
-            self.winLabel.text = rankCellViewModel.win
-            self.tieLabel.text = rankCellViewModel.tie
-            self.loseLabel.text = rankCellViewModel.lose
-            self.percentageLabel.text = rankCellViewModel.percentage
-            self.gamebehindLabel.text = rankCellViewModel.gamebehind
+            self.rankLabel.text = rankCellViewModel.rank?.string ?? "1"
+            self.teamLogoImageView.image = UIImage(named: rankCellViewModel.team?.logoLocalizedString ?? "")
+            self.winLabel.text = rankCellViewModel.win?.string ?? "0"
+            self.tieLabel.text = rankCellViewModel.tie?.string ?? "0"
+            self.loseLabel.text = rankCellViewModel.lose?.string ?? "0"
+            self.percentageLabel.text = rankCellViewModel.winningRate?.string ?? "0.0"
+            self.gamebehindLabel.text = rankCellViewModel.gamebehind?.string ?? "0.0"
         }
     }
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import NotificationCenter
+import FirebaseCore
 
 class TodayViewController: UIViewController, NCWidgetProviding {
     
@@ -32,6 +33,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     private func setUp() {
+        // Use Firebase library to configure APIs
+        FirebaseApp.configure()
+        
         // set tableview layout
         self.seasonTableView.rowHeight = 45
         self.seasonTableView.sectionHeaderHeight = 30
