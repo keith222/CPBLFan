@@ -8,7 +8,6 @@
 
 import WidgetKit
 import Foundation
-import CoreGraphics
 
 struct GameEntry: TimelineEntry {
     let date: Date

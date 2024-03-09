@@ -9,21 +9,22 @@
 import WidgetKit
 import SwiftUI
 import SwifterSwift
-import Firebase
+import FirebaseCore
 
-@main
 struct TodayGameWidget: Widget {
     init() { FirebaseApp.configure() }
     
     let kind: String = "TodayGameWidget"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            TodayGameMediumView(entry: entry)
+        StaticConfiguration(kind: kind, provider: GameProvider()) { entry in
+            TodayGameView(entry: entry)
+                .widgetBackground(Color("WidgetBlue"))
         }
         .configurationDisplayName("today_game".localized())
         .description("today_game_description")
         .supportedFamilies([.systemMedium])
+        .contentMarginsDisabled()
     }
 }
 

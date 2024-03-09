@@ -89,7 +89,7 @@ struct GameView : View {
                 
                 Text("(GMT+8)")
                     .foregroundColor(.white)
-                    .font(.system(size: 9))
+                    .font(.system(size: 8))
                 
             }
             .frame(maxWidth: .infinity)

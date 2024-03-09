@@ -1,5 +1,5 @@
 //
-//  Provider.swift
+//  GameProvider.swift
 //  TodayGameWidgetExtension
 //
 //  Created by Yang Tun-Kai on 2022/3/16.
@@ -7,10 +7,11 @@
 //
 
 import WidgetKit
-import Firebase
+import FirebaseCore
+import FirebaseDatabase
 import os
 
-struct Provider: TimelineProvider {
+struct GameProvider: TimelineProvider {
     private let ref: DatabaseReference = Database.database().reference()
     
     func placeholder(in context: Context) -> GameEntry {
@@ -54,7 +55,6 @@ struct Provider: TimelineProvider {
                 // convert firebase data to dictionary
                 let jsonDictionary = data.compactMap({ ($0.value as? AnyObject) })
 
-//                print(jsonDictionary)
                 // data jsonalize
                 let jsonData = try JSONSerialization.data(withJSONObject: jsonDictionary, options: [])
                 // data map to model
