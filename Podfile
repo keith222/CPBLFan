@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '10.0'
+platform :ios, '12.0'
 
 target 'CPBLFan' do
 
@@ -36,8 +36,8 @@ target 'Rank-Widget' do
    #Pods about Swift Language
    pod 'SwifterSwift' 
    #Pods about internet request/response/parse
-   pod 'Alamofire', '~> 5.2'
-   pod 'Kanna', '~> 5.2.2'
+   pod 'GoogleUtilities'
+   pod 'Firebase/Database'
 end
 
 target 'Schedule-Widget' do
@@ -57,25 +57,21 @@ target 'Schedule-Widget' do
     pod 'Firebase/Messaging'
 end
 
-target 'TodayGameWidgetExtension' do
-   use_frameworks!
+target 'CPBLFanWidgetExtension' do
+  use_frameworks!
 
-   #Pods for today widget
-   #Pods about Swift Language
-   pod 'SwifterSwift'
-   #Pods about internet request/response/parse
-   pod 'Alamofire', '~> 5.2'
-   #Google Firebase
-   pod 'GoogleUtilities'
-   pod 'Firebase/Database'
+  #Pods for widget
+  #Pods about Swift Language
+  pod 'SwifterSwift'
+  #Google Firebase
+  pod 'GoogleUtilities'
+  pod 'Firebase/Database'
 end
 
 post_install do |installer|
-     installer.pods_project.targets.each do |target|
-         target.build_configurations.each do |config|
-            if config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].to_f < 11.0
-              config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11.0'
-            end
-         end
-     end
+ installer.pods_project.targets.each do |target|
+  target.build_configurations.each do |config|
+   config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
   end
+ end
+end
