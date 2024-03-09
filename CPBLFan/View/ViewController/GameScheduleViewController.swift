@@ -68,7 +68,7 @@ class GameScheduleViewController: BaseViewController {
     private func setUp() {
         self.dateSelectDelegate = self
         // set navigation bar
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "filter"), style: .plain, target: self, action: #selector(self.presentToDateSelect))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "filter"), style: .plain, target: self, action: #selector(self.pushToDateSelect))
         self.navigationController?.navigationBar.backgroundColor = UIColor.CompromisedColors.background
         
         // set tableview
@@ -106,11 +106,13 @@ class GameScheduleViewController: BaseViewController {
         self.gameScheduleViewModel.fetchGame()
     }
     
-    @objc private func presentToDateSelect() {
+    @objc private func pushToDateSelect() {
         let destination: DateSelectCollectionViewController = UIStoryboard(name: IdentifierHelper.schedule, bundle: nil).instantiateViewController(withClass: DateSelectCollectionViewController.self)!
         destination.dateSelectDelegate = self
-        let navigationController = UINavigationController(rootViewController: destination)
-        self.present(navigationController, animated: true, completion: nil)
+        destination.year = self.gameScheduleViewModel.year
+        destination.month = self.gameScheduleViewModel.month
+        destination.team = self.gameScheduleViewModel.team
+        self.navigationController?.pushViewController(destination, animated: true)
     }
     
     @IBAction func loadDataAction(_ sender: UIButton) {
@@ -149,9 +151,10 @@ class GameScheduleViewController: BaseViewController {
 
 extension GameScheduleViewController: DateSelectDelegate {
     
-    func dateSelected(with year: Int, and month: Int) {
+    func dateSelected(with year: Int, and month: Int, team: String) {
         self.gameScheduleViewModel.year = year
         self.gameScheduleViewModel.month = month
+        self.gameScheduleViewModel.team = team
         HUD.show(.progress)
         self.loadData()
     }

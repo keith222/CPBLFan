@@ -9,7 +9,8 @@
 import Foundation
 import os
 import Alamofire
-import Firebase
+import FirebaseCore
+import FirebaseDatabase
 import SwifterSwift
 
 class GameScheduleViewModel {
@@ -27,7 +28,7 @@ class GameScheduleViewModel {
             self.reloadTableViewClosure?(gameScheduleCellViewModels)
         }
     }
-
+    
     var numberOfCells: Int {
         return gameScheduleCellViewModels.count
     }
@@ -38,6 +39,7 @@ class GameScheduleViewModel {
     var year: Int = 0
     var month: Int = 0
     var day: Int = 0
+    var team: String = "all"
     
     init(){
         self.initDate()
@@ -46,7 +48,7 @@ class GameScheduleViewModel {
     
     func fetchGame(){
         self.gameScheduleCellViewModels.removeAll()
-
+        
         ref.child(year.string).child(month.string).observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
             // check data if existed
             guard let data = snapshot.children.allObjects as? [DataSnapshot], !data.isEmpty else {
@@ -55,22 +57,29 @@ class GameScheduleViewModel {
             }
             
             do {
-                
                 // convert firebase data to dictionary
                 let jsonDictionary = data.compactMap({ ($0.key, ($0.value as? [AnyObject])) })
                     .reduce(into: [String: [AnyObject]](), { $0.updateValue($1.1, forKey: $1.0) })
-
+                
                 // data jsonalize
                 let jsonData = try JSONSerialization.data(withJSONObject: jsonDictionary, options: [])
                 // data map to model
-                let games = (try JSONDecoder().decode(GameItem.self, from: jsonData)).sorted(by: { (Int($0.key) ?? 0) < (Int($1.key) ?? 0) })
+                var games = try JSONDecoder().decode(GameItem.self, from: jsonData)//
+                
                 guard let year = self?.year, let month = self?.month else {
                     self?.errorHandleClosure?(nil)
                     return
                 }
+              
+                if let team = self?.team, team != "all" {
+                    games = games.filter({ $0.value.contains(where: { $0.guest == team || $0.home == team })})
+                    games = games.mapValues({ $0.filter({ $0.guest == team || $0.home == team })})
+                }
                 
-                self?.processFetched(year, month: month, gameItems: games)
-
+                let sortedGames = games.sorted(by: { (Int($0.key) ?? 0) < (Int($1.key) ?? 0) })
+                
+                self?.processFetched(year, month: month, gameItems: sortedGames)
+                
             } catch(let error) {
                 print(error)
                 self?.errorHandleClosure?(error.localizedDescription)

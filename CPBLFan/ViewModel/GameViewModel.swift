@@ -32,11 +32,11 @@ class GameViewModel{
         return self.game?.place ?? ""
     }
     var guestScore: String {
-        guard let score = self.game?.g_score, !score.isEmpty else { return "--" }
+        guard let score = self.game?.gScore, !score.isEmpty else { return "--" }
         return score
     }
     var homeScore: String {
-        guard let score = self.game?.h_score, !score.isEmpty else { return "--" }
+        guard let score = self.game?.hScore, !score.isEmpty else { return "--" }
         return score
     }
     var stream: URL? {

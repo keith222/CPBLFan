@@ -46,7 +46,7 @@ class GameViewController: BaseViewController {
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        self.streamButton.borderColor = .darkBlue
+        self.streamButton.layer.borderColor = UIColor.darkBlue.cgColor
     }
     
     
@@ -57,10 +57,10 @@ class GameViewController: BaseViewController {
         
         self.title = "賽事資訊".localized()
         
-        self.streamButton.cornerRadius = 5
-        self.streamButton.borderWidth = 0.5
+        self.streamButton.layer.cornerRadius = 5
+        self.streamButton.layer.borderWidth = 0.5
+        self.streamButton.layer.borderColor = UIColor.darkBlue.cgColor
         self.streamButton.tintColor = .darkBlue
-        self.streamButton.borderColor = .darkBlue
         
         self.scoreView.backgroundColor = .darkBlue
         
