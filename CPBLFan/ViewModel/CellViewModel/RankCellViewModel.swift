@@ -12,9 +12,9 @@ struct RankCellViewModel {
     
     let team: String?
     let rank: Int?
-    let win: String?
-    let lose: String?
-    let tie: String?
-    let percentage: String?
-    let gamebehind: String?
+    let win: Int?
+    let lose: Int?
+    let tie: Int?
+    let winningRate: Double?
+    let gamebehind: Double?
 }

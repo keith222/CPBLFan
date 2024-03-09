@@ -42,7 +42,7 @@ struct GameCellViewModel {
     }
     
     var guestScore: String {
-        guard let gScore = self.game?.g_score, !gScore.isEmpty else { return "--" }
+        guard let gScore = self.game?.gScore, !gScore.isEmpty else { return "--" }
         return gScore
     }
     
@@ -51,7 +51,7 @@ struct GameCellViewModel {
     }
     
     var homeScore: String {
-        guard let hScore = self.game?.h_score, !hScore.isEmpty else { return "--" }
+        guard let hScore = self.game?.hScore, !hScore.isEmpty else { return "--" }
         return hScore
     }
     

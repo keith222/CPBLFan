@@ -42,7 +42,7 @@ class PresentViewControllerHelper: NSObject, UIViewControllerAnimatedTransitioni
             recipeView.clipsToBounds = true
         }
                 
-        recipeView.cornerRadius = presenting ? 20.0 : 0.0
+        recipeView.layer.cornerRadius = presenting ? 20.0 : 0.0
         recipeView.layer.masksToBounds = true
 
         containerView.addSubview(toView)
@@ -51,7 +51,7 @@ class PresentViewControllerHelper: NSObject, UIViewControllerAnimatedTransitioni
         let animator = UIViewPropertyAnimator(duration: self.duration, dampingRatio: 0.8, animations: { [weak self] in
             recipeView.transform = .identity
             recipeView.center = CGPoint(x: finalFrame.midX, y: finalFrame.midY)
-            recipeView.cornerRadius = !(self?.presenting ?? true) ? 20.0 : 0.0
+            recipeView.layer.cornerRadius = !(self?.presenting ?? true) ? 20.0 : 0.0
             
             if !(self?.presenting ?? true) {
                 recipeView.frame = finalFrame

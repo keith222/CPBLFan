@@ -19,7 +19,7 @@ class StatsCell: UITableViewCell, BindView {
         super.awakeFromNib()
         // Initialization code
         
-        self.categoryLabel.cornerRadius = self.categoryLabel.bounds.height / 2
+        self.categoryLabel.layer.cornerRadius = self.categoryLabel.bounds.height / 2
     }
 
     func bindViewModel(_ viewModel: Any) {
