@@ -899,13 +899,11 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1520;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 1530;
 				ORGANIZATIONNAME = Sparkr;
 				TargetAttributes = {
 					5347E65C27DE223600940046 = {
 						CreatedOnToolsVersion = 13.2.1;
-						DevelopmentTeam = 8MREJM6257;
-						ProvisioningStyle = Automatic;
 					};
 					536B606C1E62A92C0027C796 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1580,10 +1578,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 8MREJM6257;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 8MREJM6257;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CPBLFanWidget/Info.plist;
@@ -1595,11 +1594,13 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.9.0;
+				MARKETING_VERSION = 1.9.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Development-CPBLFan-Widget";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1634,7 +1635,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.9.0;
+				MARKETING_VERSION = 1.9.1;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1662,7 +1663,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.9.0;
+				MARKETING_VERSION = 1.9.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Schedule-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8a276960-7ae1-4aa0-b1e4-f569745c93d8";
@@ -1687,7 +1688,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.9.0;
+				MARKETING_VERSION = 1.9.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Schedule-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8a276960-7ae1-4aa0-b1e4-f569745c93d8";
@@ -1842,7 +1843,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9.0;
+				MARKETING_VERSION = 1.9.1;
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "539e0c24-b0d2-40f0-8851-4a7d3a418cb9";
@@ -1870,17 +1871,19 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8MREJM6257;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 8MREJM6257;
 				INFOPLIST_FILE = CPBLFan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9.0;
+				MARKETING_VERSION = 1.9.1;
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2214cd66-8fb7-4bc8-b27e-cbe7f1bd991a";
 				PROVISIONING_PROFILE_SPECIFIER = "CPBL Fan";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "CPBL Fan";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
@@ -1991,7 +1994,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.9.0;
+				MARKETING_VERSION = 1.9.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Rank-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b259db02-3e52-444f-9cd0-c096a549d989";
@@ -2009,6 +2012,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8MREJM6257;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 8MREJM6257;
 				INFOPLIST_FILE = "Rank-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2016,11 +2020,12 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.9.0;
+				MARKETING_VERSION = 1.9.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Rank-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b259db02-3e52-444f-9cd0-c096a549d989";
 				PROVISIONING_PROFILE_SPECIFIER = "CPBLFan-Rank-Widget";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "CPBLFan-Rank-Widget";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};

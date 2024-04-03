@@ -50,7 +50,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             nibName: IdentifierHelper.todayGameCell
         )
         
-        self.extensionContext?.widgetLargestAvailableDisplayMode = .compact
+        if #available(iOS 10, *) {
+            self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
+        }
     }
     
     private func bindViewModel() {
@@ -74,6 +76,23 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         self.gameScheduleViewModel.updateDateClosure = { [weak self] _ in
             self?.alertLabel.isHidden = false            
+        }
+    }
+    
+    // for epanding view
+    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+        
+        var currentSize: CGSize = self.preferredContentSize
+        switch activeDisplayMode {
+        case .expanded:
+            currentSize.height = 155
+            self.preferredContentSize = currentSize
+        case .compact:
+            currentSize.height = 110
+            self.preferredContentSize = maxSize
+        default:
+            currentSize.height = 155
+            self.preferredContentSize = currentSize
         }
     }
     
