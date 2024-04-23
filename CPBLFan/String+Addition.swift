@@ -54,24 +54,23 @@ extension String {
     }
     
     func getIndex() -> Int{
-        switch self {
-        case "AVG", "ERA":
+        if self == "AVG" || self == "ERA" {
             return 1
-        case "H", "W":
+        } else if self == "H" || self == "W" {
             return 7
-        case "HR":
+        } else if self == "HR" {
             return 11
-        case "RBI":
+        } else if self == "RBI" {
             return 6
-        case "SB", "SO":
+        } else if self == "SB" || self == "SO" {
             return 21
-        case "SV":
+        } else if self == "SV" {
             return 9
-        case "HLD":
+        } else if self == "HLD" {
             return 10
-        default:
-            return 0
         }
+        
+        return 0
     }
     
     var logoLocalizedString: String {
