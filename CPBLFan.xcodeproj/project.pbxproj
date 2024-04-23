@@ -103,7 +103,6 @@
 		5373B9222B98B3F900FCF386 /* TeamGameProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5373B9212B98B3F900FCF386 /* TeamGameProvider.swift */; };
 		5373B9242B98B40A00FCF386 /* TeamGameWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5373B9232B98B40A00FCF386 /* TeamGameWidget.swift */; };
 		5373B9262B98B70000FCF386 /* TeamGameEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5373B9252B98B70000FCF386 /* TeamGameEntry.swift */; };
-		5373B9282B98B98300FCF386 /* TeamGameSmallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5373B9272B98B98300FCF386 /* TeamGameSmallView.swift */; };
 		5373B92A2B98B99800FCF386 /* TeamGameIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5373B9292B98B99800FCF386 /* TeamGameIntent.swift */; };
 		5373B92C2B98BB5500FCF386 /* TeamGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5373B92B2B98BB5500FCF386 /* TeamGameView.swift */; };
 		5373B92E2B98BDE300FCF386 /* TeamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5373B92D2B98BDE300FCF386 /* TeamEntity.swift */; };
@@ -141,6 +140,7 @@
 		53B9AD9423EFFCFF004A4E29 /* Statistics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53B9AD9223EFFCFF004A4E29 /* Statistics.storyboard */; };
 		53B9AD9723EFFD0B004A4E29 /* Rank.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53B9AD9523EFFD0B004A4E29 /* Rank.storyboard */; };
 		53B9AD9A23EFFD43004A4E29 /* Video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53B9AD9823EFFD43004A4E29 /* Video.storyboard */; };
+		53BBC6512BBDA3E4005C4382 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 53BBC6502BBDA3E4005C4382 /* PrivacyInfo.xcprivacy */; };
 		53CBA2A51E0D5F5F0012FFFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA2A41E0D5F5F0012FFFB /* AppDelegate.swift */; };
 		53CBA2AC1E0D5F5F0012FFFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CBA2AA1E0D5F5F0012FFFB /* Main.storyboard */; };
 		53CBA2AE1E0D5F5F0012FFFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53CBA2AD1E0D5F5F0012FFFB /* Assets.xcassets */; };
@@ -323,7 +323,6 @@
 		5373B9212B98B3F900FCF386 /* TeamGameProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamGameProvider.swift; sourceTree = "<group>"; };
 		5373B9232B98B40A00FCF386 /* TeamGameWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamGameWidget.swift; sourceTree = "<group>"; };
 		5373B9252B98B70000FCF386 /* TeamGameEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamGameEntry.swift; sourceTree = "<group>"; };
-		5373B9272B98B98300FCF386 /* TeamGameSmallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamGameSmallView.swift; sourceTree = "<group>"; };
 		5373B9292B98B99800FCF386 /* TeamGameIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamGameIntent.swift; sourceTree = "<group>"; };
 		5373B92B2B98BB5500FCF386 /* TeamGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamGameView.swift; sourceTree = "<group>"; };
 		5373B92D2B98BDE300FCF386 /* TeamEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamEntity.swift; sourceTree = "<group>"; };
@@ -358,6 +357,7 @@
 		53B396E41E1D37100032D0DA /* UIBarButtonItem+Addition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIBarButtonItem+Addition.swift"; path = "Extension/UIBarButtonItem+Addition.swift"; sourceTree = "<group>"; };
 		53B9AD8323EFD5E0004A4E29 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayerViewModel.swift; path = ViewModel/PlayerViewModel.swift; sourceTree = "<group>"; };
 		53B9AD8523EFDB66004A4E29 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Player.swift; path = Model/Player.swift; sourceTree = "<group>"; };
+		53BBC6502BBDA3E4005C4382 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		53C9BF3F2B8F46FA0011D6B7 /* CPBLFanWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPBLFanWidgetBundle.swift; sourceTree = "<group>"; };
 		53C9BF412B8F46FA0011D6B7 /* SeasonRankWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonRankWidget.swift; sourceTree = "<group>"; };
 		53C9BF4D2B90D6E20011D6B7 /* FirebaseDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -507,6 +507,7 @@
 				5347E66327DE223800940046 /* Assets.xcassets */,
 				53C9BF3F2B8F46FA0011D6B7 /* CPBLFanWidgetBundle.swift */,
 				5347E66527DE223800940046 /* Info.plist */,
+				53BBC6502BBDA3E4005C4382 /* PrivacyInfo.xcprivacy */,
 			);
 			path = CPBLFanWidget;
 			sourceTree = "<group>";
@@ -530,7 +531,6 @@
 				5373B9212B98B3F900FCF386 /* TeamGameProvider.swift */,
 				5373B9232B98B40A00FCF386 /* TeamGameWidget.swift */,
 				5373B9252B98B70000FCF386 /* TeamGameEntry.swift */,
-				5373B9272B98B98300FCF386 /* TeamGameSmallView.swift */,
 				5373B9292B98B99800FCF386 /* TeamGameIntent.swift */,
 				5373B92B2B98BB5500FCF386 /* TeamGameView.swift */,
 				5373B92D2B98BDE300FCF386 /* TeamEntity.swift */,
@@ -983,6 +983,7 @@
 				5347E66427DE223800940046 /* Assets.xcassets in Resources */,
 				5347E67027DE456900940046 /* Assets.xcassets in Resources */,
 				53ED2CE027DF9C0E00EFFE32 /* GoogleService-Info.plist in Resources */,
+				53BBC6512BBDA3E4005C4382 /* PrivacyInfo.xcprivacy in Resources */,
 				5347E66F27DE3E8600940046 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1075,6 +1076,7 @@
 				"${BUILT_PRODUCTS_DIR}/FirebaseInAppMessaging/FirebaseInAppMessaging.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseMessaging/FirebaseMessaging.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseRemoteConfigInterop/FirebaseRemoteConfigInterop.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseSessions/FirebaseSessions.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseSharedSwift/FirebaseSharedSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
@@ -1102,6 +1104,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInAppMessaging.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseMessaging.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseRemoteConfigInterop.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseSessions.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseSharedSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
@@ -1262,7 +1265,6 @@
 				5373B91B2B960E7000FCF386 /* SeasonRankCircularView.swift in Sources */,
 				5373B9262B98B70000FCF386 /* TeamGameEntry.swift in Sources */,
 				533338122B92304100511D00 /* SeasonRankLargeView.swift in Sources */,
-				5373B9282B98B98300FCF386 /* TeamGameSmallView.swift in Sources */,
 				533338152B92325400511D00 /* SeasonRankProvider.swift in Sources */,
 				5373B91D2B97316900FCF386 /* RankHeaderView.swift in Sources */,
 				5373B9172B94456000FCF386 /* SeasonRankRectangularView.swift in Sources */,
@@ -1594,7 +1596,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.9.1;
+				MARKETING_VERSION = 1.9.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan.Widget;
@@ -1635,7 +1637,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.9.1;
+				MARKETING_VERSION = 1.9.3;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1663,7 +1665,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.9.1;
+				MARKETING_VERSION = 1.9.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Schedule-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8a276960-7ae1-4aa0-b1e4-f569745c93d8";
@@ -1688,7 +1690,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.9.1;
+				MARKETING_VERSION = 1.9.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Schedule-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8a276960-7ae1-4aa0-b1e4-f569745c93d8";
@@ -1843,7 +1845,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9.1;
+				MARKETING_VERSION = 1.9.3;
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "539e0c24-b0d2-40f0-8851-4a7d3a418cb9";
@@ -1878,7 +1880,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9.1;
+				MARKETING_VERSION = 1.9.3;
 				PRODUCT_BUNDLE_IDENTIFIER = sparkr.CPBLFan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2214cd66-8fb7-4bc8-b27e-cbe7f1bd991a";
@@ -1994,7 +1996,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.9.1;
+				MARKETING_VERSION = 1.9.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Rank-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b259db02-3e52-444f-9cd0-c096a549d989";
@@ -2020,7 +2022,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.9.1;
+				MARKETING_VERSION = 1.9.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "sparkr.CPBLFan.Rank-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b259db02-3e52-444f-9cd0-c096a549d989";
