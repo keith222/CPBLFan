@@ -51,29 +51,29 @@ struct TeamGameView: View {
             
             if !entry.entity.id.isEmpty {
                 HStack(spacing: 0) {
-                    Image(entry.entity.id.logoLocalizedString)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 65, height: 70)
-                    
-                    Text("VS")
-                        .foregroundColor(.white)
-                        .font(.system(size: 12))
-                        .fontWeight(.bold)
-                        .frame(width: 20)
-                    
-                    if let game = entry.game, let guest = game.guest {
+                    if let game = entry.game, let home = game.home, let guest = game.guest {
                         Image(guest.logoLocalizedString)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 65, height: 70)
                         
+                        Text("VS")
+                            .foregroundColor(.white)
+                            .font(.system(size: 12))
+                            .fontWeight(.bold)
+                            .frame(width: 20)
+                        
+                        Image(home.logoLocalizedString)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 65, height: 70)
+                        
                     } else {
-                        Text("No Game Today")
+                        Text("no_game_today")
                             .font(.system(size: 18))
                             .fontWeight(.semibold)
                             .multilineTextAlignment(.center)
-                            .frame(width: 65, height: 70)
+                            .frame(width: 150, height: 70, alignment: .center)
                             .foregroundColor(.white)
                     }
                 }

@@ -74,7 +74,7 @@ struct TeamGameProvider: AppIntentTimelineProvider {
             // data jsonalize
             let jsonData = try JSONSerialization.data(withJSONObject: jsonDictionary, options: [])
             // data map to model
-            let game = (try JSONDecoder().decode([Game].self, from: jsonData)).filter({ $0.home == team }).first
+            let game = (try JSONDecoder().decode([Game].self, from: jsonData)).filter({ $0.home == team || $0.guest == team }).first
             
             return game
             
