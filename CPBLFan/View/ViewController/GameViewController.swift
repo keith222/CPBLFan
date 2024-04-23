@@ -59,6 +59,7 @@ class GameViewController: BaseViewController {
         
         self.streamButton.layer.cornerRadius = 5
         self.streamButton.layer.borderWidth = 0.5
+        self.streamButton.layer.masksToBounds = true
         self.streamButton.layer.borderColor = UIColor.darkBlue.cgColor
         self.streamButton.tintColor = .darkBlue
         

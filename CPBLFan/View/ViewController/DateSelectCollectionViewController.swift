@@ -120,6 +120,7 @@ class DateSelectCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IdentifierHelper.dateCell, for: indexPath)
         cell.backgroundColor = UIColor.CompromisedColors.tertiarySystemBackground
         cell.layer.cornerRadius = 5
+        cell.layer.masksToBounds = true
         cell.layer.borderWidth = 2
         
         var borderColor = UIColor.clear
