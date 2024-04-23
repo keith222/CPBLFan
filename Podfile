@@ -11,7 +11,7 @@ target 'CPBLFan' do
   
   #Pods about internet request/response/parse
   pod 'Alamofire', '~> 5.2'
-  pod 'Kanna', '~> 5.2.2'
+  pod 'Kanna'
   
   #Pods for detect net connection
   pod 'ReachabilitySwift'
@@ -49,7 +49,7 @@ target 'Schedule-Widget' do
     
     #Pods about internet request/response/parse
     pod 'Alamofire', '~> 5.2'
-    pod 'Kanna', '~> 5.2.2'
+    pod 'Kanna'
     
     #Google Firebase
     pod 'GoogleUtilities'
