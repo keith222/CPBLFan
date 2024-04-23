@@ -20,13 +20,14 @@ struct RankView: View {
     var rank: Rank
     
     var body: some View {
-        HStack(spacing: 15) {
+        HStack(spacing: 14) {
             Text(rank.displayRank.string)
                 .frame(width: 15)
             
             if !rank.team.logoLocalizedString.isEmpty {
                 Image(rank.team.logoLocalizedString)
                     .resizable()
+                    .scaledToFit()
                     .padding(1)
                     .frame(width: 35, height: 35)
                     .padding(.horizontal, 5)
@@ -46,7 +47,7 @@ struct RankView: View {
                 .frame(width: 25)
             
             Text(rank.winningRate.string)
-                .frame(width: 40)
+                .frame(width: 50)
             
             Text(rank.gameBehind.string)
                 .frame(width: 30)

@@ -22,7 +22,7 @@ struct SeasonRankLargeView: View {
         return isDarkMode ? .lightBlue : .darkBlue
     }
     private var backgroundColor: Color {
-        return isDarkMode ?  Color.white.opacity(0.2) :  Color.black.opacity(0.2)
+        return isDarkMode ?  Color.white.opacity(0.4) :  Color.black.opacity(0.2)
     }
     
     var entry: SeasonRankProvider.Entry

@@ -15,7 +15,7 @@ struct RankHeaderView: View {
     var backgroundColor: Color
     
     var body: some View {
-        HStack(spacing: 15) {
+        HStack(spacing: 14) {
             Text("#")
                 .frame(width: 15)
             
@@ -32,7 +32,7 @@ struct RankHeaderView: View {
                 .frame(width: 25)
             
             Text("pct")
-                .frame(width: 40)
+                .frame(width: 50)
             
             Text("GB")
                 .frame(width: 30)
